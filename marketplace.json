@@ -1,0 +1,265 @@
+{
+  "name": "awesome-financial-skills",
+  "description": "为金融从业者策展的技能清单：清单只存坐标，技能按需取回",
+  "owner": {
+    "name": "OpenFCP"
+  },
+  "plugins": [
+    {
+      "name": "consumer-protection-review",
+      "description": "营销材料、协议条款、定价方案、销售话术的合规审查：六维审查模型、八项权益映射、风险定级与法规依据库。",
+      "version": "1.0.0",
+      "category": "consumer-protection",
+      "author": {
+        "name": "八大权益"
+      },
+      "homepage": "https://skillhub.cn/skills/consumer-protection-review",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/consumer-protection-review.zip",
+        "sha256": "7e0ac2b7fc0f7726645d2f5ef12c8f194664ccbb5498b3b20e6efad621ff8ebb"
+      }
+    },
+    {
+      "name": "consumer-protection-annual-evaluation",
+      "description": "年度消保监管评价自评全流程：指标解读、台账分工、证据链整理、自评报告撰写、失分诊断与模拟打分。",
+      "version": "1.0.0",
+      "category": "consumer-protection",
+      "author": {
+        "name": "八大权益"
+      },
+      "homepage": "https://skillhub.cn/skills/consumer-protection-annual-evaluation",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/consumer-protection-annual-evaluation.zip",
+        "sha256": "0de4bdea508ae6143057100f36e4fe507e9fd60f24668dcafad7d5bcdf4fac62"
+      }
+    },
+    {
+      "name": "compliance-sales",
+      "description": "营销宣传八不得审查、禁用词扫描、双录规范、适当性匹配（P1-P5/R1-R5）与渠道合作机构管理。",
+      "version": "1.0.0",
+      "category": "consumer-protection",
+      "author": {
+        "name": "八大权益"
+      },
+      "homepage": "https://skillhub.cn/skills/compliance-sales",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/compliance-sales.zip",
+        "sha256": "1b5eaeb618eb82cabc3394af760f2e792d70508416e7925107216d8d21bc3b16"
+      }
+    },
+    {
+      "name": "complaint-management",
+      "description": "投诉数据统计分析、分类打标（JR/T 0169-2018）、复杂投诉谈判支持、和解协议起草、溯源整改与月报生成。",
+      "version": "1.0.0",
+      "category": "consumer-protection",
+      "author": {
+        "name": "八大权益"
+      },
+      "homepage": "https://skillhub.cn/skills/complaint-management",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/complaint-management.zip",
+        "sha256": "1995af6f01ee474f17d136280f98c7cd545f7cedebf5295ae3b59029cf8e139f"
+      }
+    },
+    {
+      "name": "consumer-protection-inspection",
+      "description": "检查制度与年度计划、六大领域检查执行、检查方案与记录表生成、整改跟踪台账与覆盖率统计。",
+      "version": "1.0.0",
+      "category": "consumer-protection",
+      "author": {
+        "name": "八大权益"
+      },
+      "homepage": "https://skillhub.cn/skills/consumer-protection-inspection",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/consumer-protection-inspection.zip",
+        "sha256": "4757ccf90ce8c6dd09a610934a222d672ee3b621b58e946e5a5e12a279c14c8d"
+      }
+    },
+    {
+      "name": "ai-ppt-skill",
+      "description": "五阶段交互工作流生成可直接编辑的 .pptx：20 种图表类型、8 大温和色系，从大纲到成片一次交付。",
+      "version": "3.0.0",
+      "category": "office-design",
+      "author": {
+        "name": "ppt-master"
+      },
+      "homepage": "https://skillhub.cn/skills/ai-ppt-skill",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/ai-ppt-skill.zip",
+        "sha256": "c3c8893c0cc3ae504704ce9f80017753ab7b0c0cf06a1c912ea07f8548ece87b"
+      }
+    },
+    {
+      "name": "gongwenformat-pro",
+      "description": "按 GB/T 9704-2012 把 Markdown/TXT/DOCX 转成国标格式 Word：红头、发文字号、版记、字体字号与页边距一次到位。",
+      "version": "1.0.0",
+      "category": "office-design",
+      "author": {
+        "name": "user_2ecc1bb2"
+      },
+      "homepage": "https://skillhub.cn/skills/gongwenformat-pro",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/gongwenformat-pro.zip",
+        "sha256": "e26d58adfa41d3a13073ef9df6823afeb0178d6916088611c70e974b22dde5b3"
+      }
+    },
+    {
+      "name": "ppt-win32com-editor",
+      "description": "通过 PowerPoint COM 接口就地修改已有 .pptx，布局、图片、形状、渐变与特效全部保留；只改不重建。仅支持 Windows。",
+      "version": "1.0.0",
+      "category": "office-design",
+      "author": {
+        "name": "user_bd21c5dc"
+      },
+      "homepage": "https://skillhub.cn/skills/ppt-win32com-editor",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/ppt-win32com-editor.zip",
+        "sha256": "8790e80d2ebd0686664e01e708ba163e599fe02e825006bf2e8cb0091dc61e94"
+      }
+    },
+    {
+      "name": "official-document-skill",
+      "description": "起草、改写、润色与校核中文公文与政务应用文：文种选择、格式规范、克制语体、事实密度与降 AI 味。",
+      "version": "1.4.0",
+      "category": "office-design",
+      "author": {
+        "name": "user_a601cd18"
+      },
+      "homepage": "https://skillhub.cn/skills/official-document-skill",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/official-document-skill.zip",
+        "sha256": "b102ea8349abb01b4531a39a0e346a6d979d46a5a56b5df356f3ed5c995dfad6"
+      }
+    },
+    {
+      "name": "xiaoshuojubenzhuanfenjing",
+      "description": "从小说到剧本再到分镜的完整链路：素材挖点、三幕结构、场景剧本、分镜表、角色人设卡与 AI 绘图/视频提示词。",
+      "version": "1.0.0",
+      "category": "office-design",
+      "author": {
+        "name": "davtime"
+      },
+      "homepage": "https://skillhub.cn/skills/xiaoshuojubenzhuanfenjing",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/xiaoshuojubenzhuanfenjing.zip",
+        "sha256": "73b4ba26af3882037b2c6fd49f532576e533a6ed314a3b751141ae0b55981caf"
+      }
+    },
+    {
+      "name": "aistockresearcher",
+      "description": "A股/港股/美股/基金/ETF/期货/黄金/债券全资产量化分析与概率预测：多源自动降级、分位数与方向概率、可追溯证据链，支持导出 Word/PPT/PDF。",
+      "version": "14.0.0",
+      "category": "data-tech",
+      "author": {
+        "name": "skill-of-me"
+      },
+      "homepage": "https://skillhub.cn/skills/aistockresearcher",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/aistockresearcher.zip",
+        "sha256": "22152e7c5046e18b28f37795ec5305dd4aca294fc191b839c0fecd9cd37ce9e1"
+      }
+    },
+    {
+      "name": "generate-chart",
+      "description": "分析数据特征并推荐最佳图表组合，用 Plotly 生成交互式 HTML 仪表板，覆盖柱状/折线/散点/箱线/热力/旭日等十余种图型。",
+      "version": "1.0.0",
+      "category": "data-tech",
+      "author": {
+        "name": "user_af28adda"
+      },
+      "homepage": "https://skillhub.cn/skills/generate-chart",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/generate-chart.zip",
+        "sha256": "0943205fba8802e3a65472214978ce04afd9f46923de6c2fc364790c3cf9bad6"
+      }
+    },
+    {
+      "name": "tianji-business-search",
+      "description": "企业情报聚合查询：工商信息、股东结构、经营状态、司法风险、融资上市与舆情，用于投融资尽调、竞品分析与商业合作背景核验。",
+      "version": "1.0.0",
+      "category": "data-tech",
+      "author": {
+        "name": "user_83002a29"
+      },
+      "homepage": "https://skillhub.cn/skills/tianji-business-search",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/tianji-business-search.zip",
+        "sha256": "c393b756ceabf5445b09799faf716c43a07caad36562c7e64eb5619d313b69a8"
+      }
+    },
+    {
+      "name": "smart-charts",
+      "description": "把 CSV/Excel/JSON 转成独立可交互的 ECharts HTML：32 类图表、3 套主题、全离线无 CDN，并内置数据画像与事实卡供解读引用。",
+      "version": "8.4.0",
+      "category": "data-tech",
+      "author": {
+        "name": "smart-charts"
+      },
+      "homepage": "https://skillhub.cn/skills/smart-charts",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/smart-charts.zip",
+        "sha256": "65a9d0137128b271eb47991e2af4858af728ece15bc25fc72bb64f96a2750956"
+      }
+    },
+    {
+      "name": "academic-figures",
+      "description": "一条命令从 JSON/CSV/Excel 生成顶刊级学术图表：40 种图型（森林图、KM 曲线、ROC、列线图、火山图、PRISMA 等）、色盲安全配色、期刊预设与 600dpi 多格式导出。",
+      "version": "1.0.0",
+      "category": "data-tech",
+      "author": {
+        "name": "indiv-sorsor"
+      },
+      "homepage": "https://skillhub.cn/skills/academic-figures",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/academic-figures.zip",
+        "sha256": "8c226f135d1486a3c5533a9a11d956a097c9493e04313176f974474459d47d01"
+      }
+    },
+    {
+      "name": "law-skills",
+      "description": "法律咨询、要素式/通用民事起诉状起草，以及国家法律法规数据库实时法条查询；含逻辑自检与诉讼时效追踪。",
+      "version": "6.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": "马常成律师"
+      },
+      "homepage": "https://skillhub.cn/skills/law-skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/law-skills.zip",
+        "sha256": "4b52edf5e9433a44e92fbde6bc5bd2a38d27feb937b6f197e315951274cbf5f5"
+      }
+    }
+  ]
+}

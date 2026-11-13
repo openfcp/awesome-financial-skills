@@ -1,127 +1,271 @@
 #!/usr/bin/env python3
-"""pack_market.py — 把清单打包成本地市场目录，供 WorkBuddy「添加市场」用。
+"""生成「清单型市场」：市场只看清单，点哪个装哪个，仓里不存未授权正文。
 
-仓库本身只存引用（这是 refactor 后的底线），但 WorkBuddy 的市场机制只认
-「装着完整技能的市场包」。折中：正文在**运行时**取回原件，落到本地产物目录
-`dist/marketplace/`（.gitignore 掉，永不进仓库），市场源填这个目录的本地路径。
+两条硬约束：
+  1. 添加市场只下载 marketplace.json（几 KB），不预下载任何技能；
+  2. 不在本仓保存其他作者的技能正文。
 
-    python3 scripts/pack_market.py                 # 全量打包
-    python3 scripts/pack_market.py --only law-skills
-    python3 scripts/pack_market.py --fresh         # 忽略已有目录，全部重取
-    python3 scripts/pack_market.py --zip           # 额外产出 dist/awesome-financial-skills.zip
+据此把 16 条分成两类：
 
-打完它会打印一行「市场源」——把那行绝对路径粘进 技能 → 套件 → 添加市场。
---zip 的产物用 scripts/publish_market.py 推到仓库 marketplace 分支，供在线链接。
+  镜像包（license 允许再分发，如 MIT）
+      从 SkillHub 取回正文 + 补 .codebuddy-plugin/plugin.json + NOTICE，
+      点装后即可离线使用。NOTICE 里写清作者、原页面、许可证。
+
+  取件包（license 为 proprietary 或未声明）
+      包里只有我们自己的 plugin.json / SKILL.md / fetch.py（几 KB），
+      不含任何他人正文；首次使用时由 fetch.py 现从 SkillHub 取。
+
+产物：
+  dist/pkgs/<id>.zip      每个技能一个包
+  marketplace.json        市场清单（16 条，全部 archive 源，指向 marketplace 分支）
+
+用法：
+    python3 scripts/pack_market.py              # 全部
+    python3 scripts/pack_market.py --only law-skills,smart-charts
+    python3 scripts/pack_market.py --force      # 忽略缓存重新取回
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
+import io
 import json
 import shutil
-import sys
+import urllib.request
+import zipfile
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-import install as inst  # noqa: E402
+ROOT = Path(__file__).resolve().parent.parent
+DIST = ROOT / "dist"
+PKGS = DIST / "pkgs"
+INDEX = ROOT / "marketplace.json"
+RAW_MAIN = "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main"
+RAW_MKT = "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace"
+SKILLHUB_ZIP = "https://api.skillhub.cn/api/v1/download?slug={slug}"
+UA = {"User-Agent": "afs-market-pack"}
+FIXED_TIME = (2026, 1, 1, 0, 0, 0)
 
-REPO = Path(__file__).resolve().parent.parent
-DEFAULT_OUT = REPO / "dist" / "marketplace"
+# 允许再分发的许可证（其余一律按「未授权」处理，只出取件包）
+REDISTRIBUTABLE = {"mit", "apache-2.0", "bsd-2-clause", "bsd-3-clause", "isc", "mpl-2.0", "cc0-1.0", "unlicense"}
 
 
-def build(out: Path, only: set[str] | None, fresh: bool) -> int:
-    cat = inst.load_catalog(None)
-    if cat.get("format") != 3:
-        raise SystemExit(f"[pack] 清单 format={cat.get('format')}，只认 3")
+def get(url: str, timeout: int = 90) -> bytes:
+    return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout).read()
 
-    cat_titles = {c["id"]: c["title"] for c in cat["categories"]}
-    plugins_dir = out / "plugins"
-    if fresh and out.is_dir():
-        shutil.rmtree(out)
 
-    entries, ok, fail = [], 0, []
-    for s in cat["skills"]:
-        if only and s["id"] not in only:
-            continue
-        target = None
+def write_zip(root: Path, out: Path) -> bytes:
+    out.parent.mkdir(parents=True, exist_ok=True)
+    if out.exists():
+        out.unlink()
+    with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
+        for p in sorted(root.rglob("*")):
+            if p.is_dir() or "__pycache__" in p.parts or p.name == ".DS_Store":
+                continue
+            info = zipfile.ZipInfo(p.relative_to(root).as_posix(), date_time=FIXED_TIME)
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = (0o644 & 0xFFFF) << 16
+            z.writestr(info, p.read_bytes())
+    return out.read_bytes()
+
+
+def plugin_json(name: str, desc: str, version: str) -> str:
+    return json.dumps({"name": name, "description": desc, "version": version},
+                      ensure_ascii=False, indent=2) + "\n"
+
+
+def notice_md(s: dict) -> str:
+    src = s["source"]
+    return f"""# 来源与许可
+
+这个技能包由 **awesome-financial-skills** 清单整理，仅做分发搬运，不修改原作者内容。
+
+| 项 | 值 |
+|---|---|
+| 技能 | {s['name']['zh']}（`{s['id']}`） |
+| 作者 | {s.get('author', '未署名')} |
+| 原页面 | https://skillhub.cn/skills/{src['slug']} |
+| 原始来源 | SkillHub（namespace `{src.get('namespace', '-')}`） |
+| 许可证 | {s.get('license', '未声明')} |
+| 清单版本 | {s.get('version', '-')} |
+
+正文版权归原作者所有。若你是作者并要求下架，请到
+https://github.com/openfcp/awesome-financial-skills/issues 提一个 issue，
+我们会在确认后 24 小时内移除对应包与清单条目。
+"""
+
+
+SHIM_SKILL = """---
+name: {name}
+description: {desc}（首次使用时自动从 SkillHub 取回正文）
+---
+
+# {name}
+
+这是一张**取件卡**：本插件不包含技能正文，正文在原作者处（SkillHub）。
+
+## 首次使用：先取件
+
+```bash
+python3 scripts/fetch.py
+```
+
+脚本位于本插件目录下的 `scripts/fetch.py`。它会去 SkillHub 取回「{id}」的当前版本，
+安装到 `~/.workbuddy/skills`。取件成功后再继续。
+
+## 取件之后
+
+读取刚装好的技能目录里的 `SKILL.md`（`~/.workbuddy/skills/{dirname}/SKILL.md`），
+按其中的说明执行用户的请求。若用户已经装过该技能，`fetch.py` 会提示已存在，直接读即可。
+
+## 说明
+
+- 这个包只有我们自己的取件代码（几 KB），没有任何他人正文
+- 每次取的都是原作者当前发布的最新版
+- 取件失败：`404 / Version not found` 多为作者新版本仍在扫描，稍后重试；网络不通时换用
+  `https://fastly.jsdelivr.net/gh/openfcp/awesome-financial-skills@main/catalog.json`
+"""
+
+FETCH_PY = '''#!/usr/bin/env python3
+"""取件器：从 SkillHub 取回本插件对应的技能，装到 ~/.workbuddy/skills。
+
+只有十几行 —— 真正的下载逻辑复用仓库里的 install.py（单一实现，避免两处漂移）。
+"""
+import subprocess
+import sys
+import tempfile
+import urllib.request
+
+ID = "{id}"
+MIRRORS = (
+    "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main",
+    "https://fastly.jsdelivr.net/gh/openfcp/awesome-financial-skills@main",
+)
+
+
+def fetch(path):
+    last = None
+    for base in MIRRORS:
         try:
-            files = inst.fetch(s)
-            name = (inst.frontmatter_name(files.get("SKILL.md", b"").decode("utf-8", "replace"))
-                    or inst.safe_dirname(s["id"]))
-            target = plugins_dir / name
-            (target / ".codebuddy-plugin").mkdir(parents=True, exist_ok=True)
-            for rel, data in files.items():
-                p = target / rel
-                p.parent.mkdir(parents=True, exist_ok=True)
-                p.write_bytes(data)
-            (target / ".codebuddy-plugin" / "plugin.json").write_text(
-                json.dumps({
-                    "name": name,
-                    "description": s.get("summary", {}).get("zh", s["name"]["zh"]),
-                    "version": str(s.get("version", "1.0.0")),
-                }, ensure_ascii=False, indent=2) + "\n",
-                encoding="utf-8")
-            entries.append({
-                "name": name,
-                "description": s.get("summary", {}).get("zh", s["name"]["zh"]),
-                "version": str(s.get("version", "1.0.0")),
-                "source": f"./plugins/{name}",
-                "category": cat_titles.get(s["category"], {}).get("zh", s["category"]),
-                **({"author": {"name": s["author"]}} if s.get("author") else {}),
-            })
-            ok += 1
-            print(f"  ✓ {s['id']:<40} → plugins/{name}（{len(files)} 文件）")
-        except Exception as e:                                   # noqa: BLE001
-            fail.append(s["id"])
-            print(f"  ✗ {s['id']:<40} {e}")
-            if target and target.is_dir():
-                shutil.rmtree(target, ignore_errors=True)  # 失败不留半成品
-
-    if not entries:
-        print("[pack] 一条都没打上，不写清单", file=sys.stderr)
-        return 1
-
-    market = {
-        "name": cat["id"],
-        "description": cat["description"]["zh"],
-        "owner": {"name": "OpenFCP"},
-        "plugins": entries,
-    }
-    (out / ".codebuddy-plugin").mkdir(parents=True, exist_ok=True)
-    (out / ".codebuddy-plugin" / "marketplace.json").write_text(
-        json.dumps(market, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-
-    print(f"\n[pack] 成功 {ok} · 失败 {len(fail)}"
-          + (f"（{', '.join(fail)}）" if fail else ""))
-    print(f"[pack] 市场目录 {out}")
-    print(f"[pack] 添加市场 → 市场源填：{out}")
-    return 0 if not fail else 2
+            return urllib.request.urlopen(f"{{base}}{{path}}", timeout=40).read()
+        except Exception as e:  # noqa: BLE001
+            last = e
+    raise SystemExit(f"取件失败，两个镜像都不可达：{{last}}")
 
 
-def make_zip(out: Path, zip_path: Path) -> None:
-    """把市场目录压成 zip，zip 根即市场根（.codebuddy-plugin/ 在顶层）。"""
-    import zipfile
-    entries = sorted(p for p in out.rglob("*") if p.is_file())
-    with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
-        for p in entries:
-            z.write(p, p.relative_to(out).as_posix())
-    print(f"[pack] zip {zip_path}（{zip_path.stat().st_size/1024/1024:.1f} MB，{len(entries)} 文件）")
+tmp = tempfile.mkdtemp()
+script = f"{{tmp}}/install.py"
+open(script, "wb").write(fetch("/scripts/install.py"))
+open(f"{{tmp}}/catalog.json", "wb").write(fetch("/catalog.json"))
+sys.exit(subprocess.call([sys.executable, script,
+                          "--catalog", f"{{tmp}}/catalog.json", "--only", ID]))
+'''
+
+
+def build_mirror(s: dict, force: bool) -> bytes:
+    sid = s["id"]
+    dst = PKGS / f"{sid}.zip"
+    if dst.is_file() and not force:
+        return dst.read_bytes()
+    raw = get(SKILLHUB_ZIP.format(slug=s["source"]["slug"]), timeout=180)
+    stage = DIST / "_stage" / sid
+    if stage.exists():
+        shutil.rmtree(stage)
+    stage.mkdir(parents=True)
+    with zipfile.ZipFile(io.BytesIO(raw)) as z:
+        for n in z.namelist():
+            if n.startswith("__MACOSX/") or n.endswith("/"):
+                continue
+            z.extract(n, stage)
+    # SkillHub 包若整体套了一层目录，摊平
+    entries = [p for p in stage.iterdir() if p.name not in {".DS_Store"}]
+    if len(entries) == 1 and entries[0].is_dir():
+        inner = entries[0]
+        for p in inner.iterdir():
+            shutil.move(str(p), str(stage / p.name))
+        inner.rmdir()
+    meta_dir = stage / ".codebuddy-plugin"
+    if not meta_dir.is_dir():
+        meta_dir.mkdir(parents=True)
+    (stage / ".codebuddy-plugin" / "plugin.json").write_text(
+        plugin_json(sid, s["summary"]["zh"], s.get("version", "1.0.0")), encoding="utf-8")
+    (stage / "NOTICE.md").write_text(notice_md(s), encoding="utf-8")
+    data = write_zip(stage, dst)
+    shutil.rmtree(stage)
+    return data
+
+
+def build_shim(s: dict, dirname: str) -> bytes:
+    sid = s["id"]
+    stage = DIST / "_stage" / sid
+    if stage.exists():
+        shutil.rmtree(stage)
+    (stage / ".codebuddy-plugin").mkdir(parents=True)
+    (stage / "scripts").mkdir()
+    (stage / ".codebuddy-plugin" / "plugin.json").write_text(
+        plugin_json(sid, s["summary"]["zh"], s.get("version", "1.0.0")), encoding="utf-8")
+    (stage / "SKILL.md").write_text(
+        SHIM_SKILL.format(name=s["name"]["zh"], desc=s["summary"]["zh"],
+                          id=sid, dirname=dirname), encoding="utf-8")
+    (stage / "scripts" / "fetch.py").write_text(FETCH_PY.format(id=sid), encoding="utf-8")
+    data = write_zip(stage, PKGS / f"{sid}.zip")
+    shutil.rmtree(stage)
+    return data
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--out", default=str(DEFAULT_OUT), help=f"输出目录（默认 {DEFAULT_OUT}）")
     ap.add_argument("--only", help="只打这些 id，逗号分隔")
-    ap.add_argument("--fresh", action="store_true", help="清掉输出目录全部重取")
-    ap.add_argument("--zip", action="store_true",
-                    help="额外产出 dist/awesome-financial-skills.zip（在线市场源用）")
+    ap.add_argument("--force", action="store_true", help="忽略已有包，重新取回")
     a = ap.parse_args()
-    out = Path(a.out).expanduser()
-    rc = build(out, {x.strip() for x in a.only.split(",")} if a.only else None, a.fresh)
-    if a.zip and (rc == 0 or out.is_dir()):
-        make_zip(out, out.parent / "awesome-financial-skills.zip")
-    return rc
+    only = {x.strip() for x in a.only.split(",")} if a.only else None
+
+    cat = json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
+    cat["skills"] = [s for s in cat["skills"] if not only or s["id"] in only]
+
+    PKGS.mkdir(parents=True, exist_ok=True)
+    entries, mirrored, shimmed = [], [], []
+    for s in cat["skills"]:
+        sid = s["id"]
+        lic = str(s.get("license", "")).lower()
+        if lic in REDISTRIBUTABLE:
+            data = build_mirror(s, a.force)
+            mirrored.append(sid)
+            kind = "镜像"
+        else:
+            # 目录名沿用 install.py 的规则：SKILL.md 的 name，取不到就用 id
+            data = build_shim(s, sid)
+            shimmed.append(sid)
+            kind = "取件"
+        entries.append({
+            "name": sid,
+            "description": s["summary"]["zh"],
+            "version": s.get("version", "1.0.0"),
+            "category": s.get("category", ""),
+            "author": {"name": s.get("author", "未署名")},
+            "homepage": f"https://skillhub.cn/skills/{s['source']['slug']}",
+            "license": s.get("license", "未声明"),
+            "source": {
+                "source": "archive",
+                "url": f"{RAW_MKT}/pkgs/{sid}.zip",
+                "sha256": hashlib.sha256(data).hexdigest(),
+            },
+        })
+        print(f"[pack] {sid:<44} {kind}  {len(data)/1024:>7.1f} KB")
+
+    index = {
+        "name": "awesome-financial-skills",
+        "description": "为金融从业者策展的技能清单：清单只存坐标，技能按需取回",
+        "owner": {"name": "OpenFCP"},
+        "plugins": entries,
+    }
+    INDEX.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    total = sum(p.stat().st_size for p in PKGS.glob("*.zip"))
+    print(f"\n[pack] 镜像 {len(mirrored)} 条（许可允许再分发）：{', '.join(mirrored) or '-'}")
+    print(f"[pack] 取件 {len(shimmed)} 条（未授权，只放取件器）：{len(shimmed)} 个包")
+    print(f"[pack] 分支总体积 {total/1024/1024:.2f} MB · 清单 {INDEX.name} {INDEX.stat().st_size/1024:.1f} KB")
+    return 0
 
 
 if __name__ == "__main__":

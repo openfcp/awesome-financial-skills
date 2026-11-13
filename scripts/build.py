@@ -103,11 +103,13 @@ def validate(cat: dict) -> None:
     # 跳过 .gitignore 掉的产物目录（dist/ 等）——pack_market.py 的本地市场包
     # 就落在那里，正文运行时取回、永不进仓库，不该被当成"仓内副本"。
     ignore_dirs = gitignored_dirs()
+    # plugin/ 是我们自己写的入口插件（清单式市场的壳），不是收录来的技能正文
+    own_code = {"plugin"}
     for md in ROOT.rglob("SKILL.md"):
         if any(part in ignore_dirs for part in md.parts):
             continue
         rel = md.parent.resolve().relative_to(ROOT).as_posix()
-        if rel in vendored or rel.startswith(".git"):
+        if rel in vendored or rel.startswith(".git") or rel.split("/")[0] in own_code:
             continue
         fail(f"仓库内出现未声明的技能正文：{rel}/SKILL.md（清单只存引用，正文请留在原作者仓库）")
 

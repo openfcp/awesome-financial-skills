@@ -178,15 +178,16 @@ footer a{color:var(--ink-2)}
           <span class="k">WorkBuddy</span>
           <span class="role" data-zh="技能市场" data-en="Skill market">技能市场</span>
         </div>
-        <div class="v" data-zh="添加市场 → 把这个 zip 地址填进市场源" data-en="Add marketplace → paste this zip URL as the source">添加市场 → 把这个 zip 地址填进市场源</div>
+        <div class="v" data-zh="添加市场 → 填清单地址，16 张卡按需下载" data-en="Add marketplace → paste the index URL; 16 cards, downloaded on demand">添加市场 → 填清单地址，16 张卡按需下载</div>
         <div class="urlbox">
           <code id="url-wb"></code>
           <button class="copy" data-copy="url-wb" data-zh="复制" data-en="Copy">复制</button>
         </div>
         <ol class="steps">
-          <li data-zh="技能 → 套件 → 右上角「添加市场」，把上面这个 <b>zip 地址</b>粘进市场源" data-en="Skills → Suites → “Add marketplace”; paste the <b>zip URL</b> above as the source">技能 → 套件 → 右上角「添加市场」，把上面这个 <b>zip 地址</b>粘进市场源</li>
-          <li data-zh="main 分支只存引用；zip 是构建产物，住在 <em>marketplace</em> 分支（scripts/publish_market.py 发布）" data-en="The main branch stores references only; the zip is a build artifact on the <em>marketplace</em> branch (published via scripts/publish_market.py)">main 分支只存引用；zip 是构建产物，住在 <em>marketplace</em> 分支（scripts/publish_market.py 发布）</li>
-          <li data-zh="raw 不通时改用 jsDelivr：<em>fastly.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/awesome-financial-skills.zip</em>" data-en="If raw is unreachable, use jsDelivr: <em>fastly.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/awesome-financial-skills.zip</em>">raw 不通时改用 jsDelivr：<em>fastly.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/awesome-financial-skills.zip</em></li>
+          <li data-zh="技能 → 套件 → 右上角「添加市场」，把上面这个 <b>清单地址</b>粘进市场源" data-en="Skills → Suites → “Add marketplace”; paste the <b>index URL</b> above as the source">技能 → 套件 → 右上角「添加市场」，把上面这个 <b>清单地址</b>粘进市场源</li>
+          <li data-zh="添加时只下载这份清单（11 KB），<b>不会</b>把技能全部拉到本地" data-en="Only the index (11 KB) is downloaded — skills are <b>not</b> pulled up front">添加时只下载这份清单（11 KB），<b>不会</b>把技能全部拉到本地</li>
+          <li data-zh="市场里看到 16 张卡，点哪张装哪张：MIT 的 3 条装完即用，其余 13 条首次使用时从 SkillHub 现取正文" data-en="16 cards appear; install on click. The 3 MIT skills work offline right away, the other 13 fetch their body from SkillHub on first use">市场里看到 16 张卡，点哪张装哪张：MIT 的 3 条装完即用，其余 13 条首次使用时从 SkillHub 现取正文</li>
+          <li data-zh="未获再分发许可的技能，卡里只有取件器（2 KB，我们自己的代码），仓内不存他人正文" data-en="For skills without a redistribution license the card holds only a 2 KB fetcher (our own code); no third-party body is stored in the repo">未获再分发许可的技能，卡里只有取件器（2 KB，我们自己的代码），仓内不存他人正文</li>
           <li data-zh="或者不想用市场界面：终端一条命令 <em>curl -fsSL https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main/install.sh | bash -s -- --all</em>" data-en="Or skip the UI: <em>curl -fsSL https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main/install.sh | bash -s -- --all</em>">或者不想用市场界面：终端一条命令 <em>curl -fsSL https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main/install.sh | bash -s -- --all</em></li>
         </ol>
       </div>
@@ -254,8 +255,7 @@ footer a{color:var(--ink-2)}
   // raw 优先：jsDelivr 会把 @main 的解析结果缓存十几小时，改完仓它还在发旧副本
   const RAW  = "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main";
   document.getElementById("url-dsh").textContent = RAW + "/catalog.json";
-  document.getElementById("url-wb").textContent  =
-    "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/awesome-financial-skills.zip";
+  document.getElementById("url-wb").textContent  = RAW + "/marketplace.json";
   document.getElementById("url-cli").textContent = "skillhub install consumer-protection-review --namespace user_e3180ba3";
   document.getElementById("stamp").textContent   = "updated " + C.updated;
 

@@ -28,32 +28,34 @@
 | 用途 | 地址 | 怎么用 |
 |---|---|---|
 | **浏览 / 检索** | https://openfcp.github.io/awesome-financial-skills/ | 直接打开：九类筛选、来源筛选、中英切换、一键复制安装命令 |
-| **WorkBuddy 安装** | 添加市场（zip 链接）或终端一条命令，见下 | 读清单 → 从原件取正文 → 装进 WorkBuddy |
+| **WorkBuddy 安装** | 添加市场（清单地址）或终端一条命令，见下 | 读清单 → 点哪张装哪张 → 正文按需取回 |
 | **SkillHub CLI** | `skillhub install <slug> --namespace <ns>` | 目录里每条都带完整命令，站点卡片可复制 |
 
-### WorkBuddy：添加市场（在线链接）
+### WorkBuddy：添加市场（清单地址）
 
-技能 → 套件 → 右上角「添加市场」，市场源填（二选一，都可公网访问）：
+技能 → 套件 → 右上角「添加市场」，市场源填：
 
 ```
-https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/awesome-financial-skills.zip
-https://fastly.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/awesome-financial-skills.zip
+https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main/marketplace.json
 ```
 
-main 分支只存引用；这个 zip 是**构建产物**，住在专用 `marketplace` 分支上（等同 Release 资产）。发布/更新两条命令：
+**添加时只下载这份清单（11 KB），不会把技能全部拉到本地。** 之后市场里出现 16 张卡，点哪张装哪张。
+
+清单里每条都是 `archive` 源，按许可证分成两类：
+
+| 类型 | 条数 | 包里是什么 | 装完能不能直接用 |
+|---|---|---|---|
+| **镜像**（MIT） | 3 | 从 SkillHub 取回的正文 + `plugin.json` + `NOTICE.md`（作者/原页面/许可） | ✅ 能，离线可用 |
+| **取件器**（proprietary 或未声明） | 13 | 只有我们自己的 `plugin.json` / `SKILL.md` / `fetch.py`，约 2 KB | 首次使用时跑一次 `fetch.py`，从 SkillHub 现取正文 |
+
+这样安排是因为：**未获再分发许可的正文不进本仓**。镜像的 3 条在包内附了 `NOTICE.md` 写明作者、原页面与许可证；如果你是作者并要求下架，到 issue 区提一条，我们 24 小时内移除对应包与清单条目。
+
+更新市场（改了清单或想刷新镜像内容）：
 
 ```bash
-python3 scripts/pack_market.py --zip     # 正文从原件取回，打进 dist/…zip
-python3 scripts/publish_market.py        # 推到 marketplace 分支，打印在线地址
+python3 scripts/pack_market.py     # 出 16 个包到 dist/pkgs，并重写 marketplace.json
+python3 scripts/publish_market.py  # 推到 marketplace 分支，打印市场源地址
 ```
-
-### WorkBuddy：本地路径添加（离线）
-
-```bash
-python3 scripts/pack_market.py
-```
-
-跑完把打印出来的绝对路径（默认 `…/awesome-financial-skills/dist/marketplace`）填进市场源即可，效果同上，不依赖网络。
 
 ### WorkBuddy：终端一条命令
 
@@ -137,6 +139,7 @@ GitHub 源把 `source` 换成：
 
 ```
 catalog.json              唯一真相源：分类 + 技能引用（双语、来源、安装方式、取回规则）
+marketplace.json          WorkBuddy 市场清单（构建产物，16 条 archive 源）
 schema.json               catalog 的 JSON Schema（构建时校验）
 install.sh                一条命令装的引导脚本
 docs/                     GitHub Pages 站点目录（Pages 只认 / 或 /docs）
@@ -144,6 +147,8 @@ docs/                     GitHub Pages 站点目录（Pages 只认 / 或 /docs�
   catalog.js              ← 构建产物，站点内嵌数据（带内容指纹）
 scripts/
   install.py              读清单 → 回原件取正文 → 装进技能目录（WorkBuddy 侧）
+  pack_market.py          出市场包：许可允许再分发的出镜像，其余出取件器
+  publish_market.py       把 dist/pkgs 推到 marketplace 分支（整体替换）
   build.py                校验清单 + 生成 docs/catalog.js
   sync.py                 经 GitHub API 推送改动（绕开直连 github.com 的限制）
   release.sh              一键发布：校验 + 验证引用 + 构建 + 推送
