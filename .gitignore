@@ -12,3 +12,6 @@ __pycache__/
 
 # sync.py 记录的"远程最新提交"：供 build.py 生成 git 源的 commit 字段，本地产物不推送
 .commit-sha
+
+# 本地市场包（pack_market.py 的产物，正文运行时取回，永不进仓库）
+dist/

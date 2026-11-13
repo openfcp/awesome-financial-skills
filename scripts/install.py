@@ -15,7 +15,8 @@
 设计约束（踩过的坑，别改回去）：
 
 1. **不复制正文进仓库**。原作者更新后，本脚本每次装的都是最新原件；仓库里那份
-   副本一旦存在就必然过期，而且版权不属于清单作者。
+   副本一旦存在就必然过期，而且版权不属于清单作者。想要 WorkBuddy「添加市场」
+   界面的，用 scripts/pack_market.py 在本地打市场目录（gitignore 掉，不进仓库）。
 2. **token 只发给 api.github.com**。以前把 GitHub token 加到所有请求头上，连
    jsDelivr 这类第三方 CDN 也带上，被平台判成凭证泄漏而拒收。见 auth_headers()。
 3. **下载失败就是失败，不做"装个空壳"的降级**。空壳技能在 WorkBuddy 里能列出
@@ -37,6 +38,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -44,7 +46,12 @@ import zipfile
 from pathlib import Path
 
 REPO_SLUG = "openfcp/awesome-financial-skills"
-DEFAULT_CATALOG = f"https://fastly.jsdelivr.net/gh/{REPO_SLUG}@main/catalog.json"
+# 按顺序试。raw 优先：jsDelivr 会把 @main 解析结果缓存十几小时，仓库改完它还在发
+# 旧清单（曾用一份 format 2 的旧清单去装已经不存在的 ./plugins/*，全部失败）。
+CATALOG_MIRRORS = (
+    f"https://raw.githubusercontent.com/{REPO_SLUG}/main/catalog.json",
+    f"https://fastly.jsdelivr.net/gh/{REPO_SLUG}@main/catalog.json",
+)
 LOCAL_CATALOG = Path(__file__).resolve().parent.parent / "catalog.json"
 
 SKILLHUB_ZIP = "https://api.skillhub.cn/api/v1/download?slug={slug}"
@@ -116,14 +123,30 @@ def get_first(urls: list[str], timeout: int = 60) -> tuple[bytes, str]:
 
 
 def load_catalog(spec: str | None) -> dict:
-    """spec 可以是 http(s) 地址、本地路径，或 None（有本地清单就用本地）。"""
+    """spec 可以是 http(s) 地址、本地路径，或 None（有本地清单就用本地）。
+
+    None 且没有本地清单时，按 CATALOG_MIRRORS 逐个试，只接受 format 3 的那份：
+    镜像发旧副本时宁可报错，也不要拿旧清单去解析已经删掉的路径。
+    """
     if spec:
         if re.match(r"^https?://", spec):
             return json.loads(get(spec).decode("utf-8"))
         return json.loads(Path(spec).expanduser().read_text(encoding="utf-8"))
     if LOCAL_CATALOG.is_file():
         return json.loads(LOCAL_CATALOG.read_text(encoding="utf-8"))
-    return json.loads(get(DEFAULT_CATALOG).decode("utf-8"))
+    errs = []
+    for url in CATALOG_MIRRORS:
+        try:
+            # 加时间戳，绕开 CDN 上那份旧副本
+            data = json.loads(get(f"{url}?t={int(time.time())}").decode("utf-8"))
+        except Exception as e:                                   # noqa: BLE001
+            errs.append(f"{url} → {e}")
+            continue
+        if data.get("format") == 3:
+            return data
+        errs.append(f"{url} → 还在发旧清单 format={data.get('format')}")
+    raise SystemExit("[install] 取不到 format 3 的清单：\n  " + "\n  ".join(errs) +
+                     "\n  用 --catalog 直接指向仓库里的 catalog.json 再试。")
 
 
 def frontmatter_name(text: str) -> str | None:
@@ -390,7 +413,9 @@ def main() -> int:
 
     cat = load_catalog(args.catalog)
     if cat.get("format") != 3:
-        print(f"[install] 警告：清单 format={cat.get('format')}，本脚本按 3 处理", file=sys.stderr)
+        raise SystemExit(
+            f"[install] 清单 format={cat.get('format')}，本脚本只认 3。\n"
+            "         多半是某处还留着旧副本：用 --catalog 指向仓库里的 catalog.json 再试。")
 
     dest = Path(args.dir).expanduser() if args.dir else default_dir()
 

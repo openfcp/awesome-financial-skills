@@ -184,10 +184,12 @@ footer a{color:var(--ink-2)}
           <button class="copy" data-copy="url-wb" data-zh="复制" data-en="Copy">复制</button>
         </div>
         <ol class="steps">
+          <li data-zh="这是<b>终端命令</b>：粘进「添加市场」的市场源框会报错，那个框只认 GitHub 仓库 / zip 地址 / 本地路径" data-en="This is a <b>terminal command</b>. Pasting it into the “Add marketplace” source field fails — that field only takes a GitHub repo, a zip URL, or a local path">这是<b>终端命令</b>：粘进「添加市场」的市场源框会报错，那个框只认 GitHub 仓库 / zip 地址 / 本地路径</li>
           <li data-zh="终端执行上面这条命令，默认装到 <em>~/.workbuddy/skills</em>" data-en="Run it in a terminal; installs to <em>~/.workbuddy/skills</em>">终端执行上面这条命令，默认装到 <em>~/.workbuddy/skills</em></li>
           <li data-zh="只装一个：末尾加 <em>--only law-skills</em>；换目录：加 <em>--dir</em>" data-en="One skill only: append <em>--only law-skills</em>; custom dir: add <em>--dir</em>">只装一个：末尾加 <em>--only law-skills</em>；换目录：加 <em>--dir</em></li>
           <li data-zh="先看有什么：<em>--list</em>；只验证引用通不通：<em>--verify</em>" data-en="Browse first: <em>--list</em>; just check references: <em>--verify</em>">先看有什么：<em>--list</em>；只验证引用通不通：<em>--verify</em></li>
-          <li data-zh="装完刷新技能列表即可，正文每次都取最新原件" data-en="Refresh the skill list; bodies are always fetched fresh">装完刷新技能列表即可，正文每次都取最新原件</li>
+          <li data-zh="装完刷新技能列表即可，正文每次都取最新原件；raw 取不通时把命令里的域名换成 <em>fastly.jsdelivr.net/gh/openfcp/awesome-financial-skills@main</em>" data-en="Refresh the skill list; bodies are always fetched fresh. If raw is unreachable, swap the host for <em>fastly.jsdelivr.net/gh/openfcp/awesome-financial-skills@main</em>">装完刷新技能列表即可，正文每次都取最新原件；raw 取不通时把命令里的域名换成 <em>fastly.jsdelivr.net/gh/openfcp/awesome-financial-skills@main</em></li>
+          <li data-zh="想用「添加市场」界面：克隆本仓后跑 <em>scripts/pack_market.py</em>，把生成的 <em>dist/marketplace</em> 目录路径填进市场源" data-en="Prefer the “Add marketplace” UI? Clone the repo, run <em>scripts/pack_market.py</em>, and paste the <em>dist/marketplace</em> path as the source">想用「添加市场」界面：克隆本仓后跑 <em>scripts/pack_market.py</em>，把生成的 <em>dist/marketplace</em> 目录路径填进市场源</li>
         </ol>
       </div>
 
@@ -251,9 +253,10 @@ footer a{color:var(--ink-2)}
 <script>
 (function(){
   const C = window.__CATALOG__;
-  const CDN = "https://fastly.jsdelivr.net/gh/openfcp/awesome-financial-skills@main";
-  document.getElementById("url-dsh").textContent = CDN + "/catalog.json";
-  document.getElementById("url-wb").textContent  = "curl -fsSL " + CDN + "/install.sh | bash -s -- --all";
+  // raw 优先：jsDelivr 会把 @main 的解析结果缓存十几小时，改完仓它还在发旧副本
+  const RAW  = "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main";
+  document.getElementById("url-dsh").textContent = RAW + "/catalog.json";
+  document.getElementById("url-wb").textContent  = "curl -fsSL " + RAW + "/install.sh | bash -s -- --all";
   document.getElementById("url-cli").textContent = "skillhub install consumer-protection-review --namespace user_e3180ba3";
   document.getElementById("stamp").textContent   = "updated " + C.updated;
 

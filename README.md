@@ -34,11 +34,23 @@
 ### WorkBuddy：一条命令装完
 
 ```bash
-curl -fsSL https://fastly.jsdelivr.net/gh/openfcp/awesome-financial-skills@main/install.sh \
+curl -fsSL https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main/install.sh \
   | bash -s -- --all
 ```
 
-`install.sh` 只是把 `scripts/install.py` 和 `catalog.json` 取到临时目录再执行。也可以克隆仓库后本地跑：
+> 这是**终端命令**，不是「添加市场」的市场源。那个输入框只认 GitHub 仓库、zip 地址、本地路径；把 `curl …` 粘进去会报 `Internal error`。
+
+### WorkBuddy：想用「添加市场」界面
+
+市场机制只认装着完整技能的市场包，而本仓库不存正文。折中方案是本地打包（正文运行时从原件取回，落到 gitignore 掉的 `dist/`，**永不进仓库**）：
+
+```bash
+python3 scripts/pack_market.py          # 17 条全部取回并打包
+```
+
+跑完把打印出来的那行**绝对路径**（默认 `…/awesome-financial-skills/dist/marketplace`）填进 技能 → 套件 → 添加市场 的市场源框即可。之后在市场里逐个挑着装；重打一次 `pack_market.py` 就能拿到各技能的最新版。
+
+### WorkBuddy：或一条命令装完`install.sh` 只是把 `scripts/install.py` 和 `catalog.json` 取到临时目录再执行。取件按 `raw` → `jsDelivr` 顺序试，并带时间戳查询串：jsDelivr 会把 `@main` 解析结果缓存十几小时，只认它时会拿到旧清单。也可以克隆仓库后本地跑：
 
 ```bash
 python3 scripts/install.py --list                  # 清单里有什么、本机装没装
