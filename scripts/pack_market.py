@@ -8,8 +8,10 @@
     python3 scripts/pack_market.py                 # 全量打包
     python3 scripts/pack_market.py --only law-skills
     python3 scripts/pack_market.py --fresh         # 忽略已有目录，全部重取
+    python3 scripts/pack_market.py --zip           # 额外产出 dist/awesome-financial-skills.zip
 
 打完它会打印一行「市场源」——把那行绝对路径粘进 技能 → 套件 → 添加市场。
+--zip 的产物用 scripts/publish_market.py 推到仓库 marketplace 分支，供在线链接。
 """
 
 from __future__ import annotations
@@ -96,15 +98,30 @@ def build(out: Path, only: set[str] | None, fresh: bool) -> int:
     return 0 if not fail else 2
 
 
+def make_zip(out: Path, zip_path: Path) -> None:
+    """把市场目录压成 zip，zip 根即市场根（.codebuddy-plugin/ 在顶层）。"""
+    import zipfile
+    entries = sorted(p for p in out.rglob("*") if p.is_file())
+    with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
+        for p in entries:
+            z.write(p, p.relative_to(out).as_posix())
+    print(f"[pack] zip {zip_path}（{zip_path.stat().st_size/1024/1024:.1f} MB，{len(entries)} 文件）")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", default=str(DEFAULT_OUT), help=f"输出目录（默认 {DEFAULT_OUT}）")
     ap.add_argument("--only", help="只打这些 id，逗号分隔")
     ap.add_argument("--fresh", action="store_true", help="清掉输出目录全部重取")
+    ap.add_argument("--zip", action="store_true",
+                    help="额外产出 dist/awesome-financial-skills.zip（在线市场源用）")
     a = ap.parse_args()
-    only = {x.strip() for x in a.only.split(",")} if a.only else None
-    return build(Path(a.out).expanduser(), only, a.fresh)
+    out = Path(a.out).expanduser()
+    rc = build(out, {x.strip() for x in a.only.split(",")} if a.only else None, a.fresh)
+    if a.zip and (rc == 0 or out.is_dir()):
+        make_zip(out, out.parent / "awesome-financial-skills.zip")
+    return rc
 
 
 if __name__ == "__main__":

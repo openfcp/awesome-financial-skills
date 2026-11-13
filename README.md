@@ -28,10 +28,34 @@
 | 用途 | 地址 | 怎么用 |
 |---|---|---|
 | **浏览 / 检索** | https://openfcp.github.io/awesome-financial-skills/ | 直接打开：九类筛选、来源筛选、中英切换、一键复制安装命令 |
-| **WorkBuddy 安装** | 见下方一条命令 | 读清单 → 从原件取正文 → 写进 `~/.workbuddy/skills` |
+| **WorkBuddy 安装** | 添加市场（zip 链接）或终端一条命令，见下 | 读清单 → 从原件取正文 → 装进 WorkBuddy |
 | **SkillHub CLI** | `skillhub install <slug> --namespace <ns>` | 目录里每条都带完整命令，站点卡片可复制 |
 
-### WorkBuddy：一条命令装完
+### WorkBuddy：添加市场（在线链接）
+
+技能 → 套件 → 右上角「添加市场」，市场源填（二选一，都可公网访问）：
+
+```
+https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/awesome-financial-skills.zip
+https://fastly.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/awesome-financial-skills.zip
+```
+
+main 分支只存引用；这个 zip 是**构建产物**，住在专用 `marketplace` 分支上（等同 Release 资产）。发布/更新两条命令：
+
+```bash
+python3 scripts/pack_market.py --zip     # 正文从原件取回，打进 dist/…zip
+python3 scripts/publish_market.py        # 推到 marketplace 分支，打印在线地址
+```
+
+### WorkBuddy：本地路径添加（离线）
+
+```bash
+python3 scripts/pack_market.py
+```
+
+跑完把打印出来的绝对路径（默认 `…/awesome-financial-skills/dist/marketplace`）填进市场源即可，效果同上，不依赖网络。
+
+### WorkBuddy：终端一条命令
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main/install.sh \
@@ -40,17 +64,7 @@ curl -fsSL https://raw.githubusercontent.com/openfcp/awesome-financial-skills/ma
 
 > 这是**终端命令**，不是「添加市场」的市场源。那个输入框只认 GitHub 仓库、zip 地址、本地路径；把 `curl …` 粘进去会报 `Internal error`。
 
-### WorkBuddy：想用「添加市场」界面
-
-市场机制只认装着完整技能的市场包，而本仓库不存正文。折中方案是本地打包（正文运行时从原件取回，落到 gitignore 掉的 `dist/`，**永不进仓库**）：
-
-```bash
-python3 scripts/pack_market.py          # 17 条全部取回并打包
-```
-
-跑完把打印出来的那行**绝对路径**（默认 `…/awesome-financial-skills/dist/marketplace`）填进 技能 → 套件 → 添加市场 的市场源框即可。之后在市场里逐个挑着装；重打一次 `pack_market.py` 就能拿到各技能的最新版。
-
-### WorkBuddy：或一条命令装完`install.sh` 只是把 `scripts/install.py` 和 `catalog.json` 取到临时目录再执行。取件按 `raw` → `jsDelivr` 顺序试，并带时间戳查询串：jsDelivr 会把 `@main` 解析结果缓存十几小时，只认它时会拿到旧清单。也可以克隆仓库后本地跑：
+`install.sh` 只是把 `scripts/install.py` 和 `catalog.json` 取到临时目录再执行。取件按 `raw` → `jsDelivr` 顺序试，并带时间戳查询串：jsDelivr 会把 `@main` 解析结果缓存十几小时，只认它时会拿到旧清单。也可以克隆仓库后本地跑：
 
 ```bash
 python3 scripts/install.py --list                  # 清单里有什么、本机装没装
