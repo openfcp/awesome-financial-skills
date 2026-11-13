@@ -260,6 +260,30 @@ def main() -> int:
         "owner": {"name": "OpenFCP"},
         "plugins": entries,
     }
+    if only:
+        # --only 只重打选中的包，清单必须与既有内容合并。
+        # 否则会把 16 条写成 1 条，已发布的市场里其余 15 张卡直接从用户眼前消失。
+        prev = {}
+        if INDEX.is_file():
+            try:
+                old = json.loads(INDEX.read_text(encoding="utf-8"))
+                prev = {p.get("name"): p for p in old.get("plugins", []) if p.get("name")}
+            except (json.JSONDecodeError, OSError):
+                prev = {}
+        order = [s["id"] for s in json.loads(
+            (ROOT / "catalog.json").read_text(encoding="utf-8"))["skills"]]
+        fresh = {p["name"]: p for p in entries}
+        merged = []
+        for sid in order:                       # 先按 catalog 顺序
+            if sid in fresh:
+                merged.append(fresh.pop(sid))
+            elif sid in prev:
+                merged.append(prev[sid])
+        merged.extend(fresh.values())           # 不在 catalog 顺序里的新条目
+        merged.extend(p for n, p in prev.items() if n not in {m["name"] for m in merged})
+        index["plugins"] = merged
+        print(f"\n[pack] --only 模式：清单合并后 {len(merged)} 条"
+              f"（本次重打 {len(entries)} 条，沿用 {len(merged) - len(entries)} 条）")
     INDEX.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     total = sum(p.stat().st_size for p in PKGS.glob("*.zip"))
     print(f"\n[pack] 镜像 {len(mirrored)} 条（许可允许再分发）：{', '.join(mirrored) or '-'}")

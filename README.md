@@ -51,11 +51,18 @@ https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main/marketpl
 
 这样安排是因为：**未获再分发许可的正文不进本仓**。镜像的 3 条在包内附了 `NOTICE.md` 写明作者、原页面与许可证；如果你是作者并要求下架，到 issue 区提一条，我们 24 小时内移除对应包与清单条目。
 
-更新市场（改了清单或想刷新镜像内容）：
+**新增技能后，站点和市场要分别更新**（`catalog.json` 是共同源头，但两条链路由两套脚本生成，互不触发）：
+
+```bash
+WITH_MARKET=1 ./scripts/release.sh "feat: 新增 xx"   # 站点 + 市场包 + 市场清单，一条搞定
+```
+
+只刷新市场包、不动站点：
 
 ```bash
 python3 scripts/pack_market.py     # 出 16 个包到 dist/pkgs，并重写 marketplace.json
 python3 scripts/publish_market.py  # 推到 marketplace 分支，打印市场源地址
+./scripts/release.sh "chore: 更新市场清单"   # marketplace.json 在 main 上，还得推一次
 ```
 
 ### WorkBuddy：终端一条命令

@@ -409,7 +409,7 @@ scripts/
   publish_market.py     把 dist/pkgs 整体推到 marketplace 分支（API，不带 base_tree）
   build.py              校验清单 + 零正文守卫 + 生成 docs/catalog.js
   sync.py               经 GitHub API 推送 main（绕开直连 github.com 的限制）
-  release.sh            一键发布：校验 + 验证引用 + 构建 + 推 main
+  release.sh            一键发布：校验 + 验证引用 + 构建 + 推 main（`WITH_MARKET=1` 时连带出包 + 发市场分支）
 dist/                   ← gitignore，本地构建产物（pkgs/ 新、archives/ 为历史遗留）
 ```
 
@@ -421,12 +421,34 @@ dist/                   ← gitignore，本地构建产物（pkgs/ 新、archive
 
 ### 加一条技能
 
+关键前提：**站点和市场是两条独立链路，互不触发**。
+
+```
+catalog.json ──build.py──────────────▶ docs/catalog.js ──▶ 静态站
+     └───────pack_market.py──────────▶ marketplace.json + dist/pkgs/*.zip
+                     └──publish_market.py──▶ marketplace 分支（用户点装时下载的包）
+```
+
+所以「加一条技能」完整是四步：
+
 1. 在 SkillHub 上确认它存在（唯一权威来源）；
 2. 在 `catalog.json` 的 `skills` 里加一条（`id` / 双语 name+summary / `category` / `license` / `source` / `install.skillhub`）；
 3. `python3 scripts/build.py --check` —— 校验 + 零正文守卫；
-4. `./scripts/release.sh "feat: 新增 xx"` —— 校验 + 验证每条引用可达 + 构建 + 推送。
+4. `WITH_MARKET=1 ./scripts/release.sh "feat: 新增 xx"`。
 
-### 更新市场
+第 4 步一条命令做完全部：校验 → 逐条验证引用可达 → 生成站点数据 → 出包 + 更新市场清单 → 推 marketplace 分支 → 推 main。
+
+**不带 `WITH_MARKET=1` 会怎样**：站点上出现新卡片，但 WorkBuddy 市场里没有——因为 `build.py` 不生成 `marketplace.json`。这是最容易漏的一步，也是"市场清单能不能自动更新"的答案：**不能自动，要靠这条命令带出来**。
+
+只重打某一个包（比如作者更新了正文）：
+
+```bash
+WITH_MARKET=1 MARKET_ONLY=law-skills ./scripts/release.sh "chore: 刷新 law-skills"
+```
+
+`pack_market.py --only` 只重打选中的包，**清单与既有 `marketplace.json` 合并**，不会把 16 条写残成 1 条（见 D15）。
+
+### 只更新市场，不动站点
 
 ```bash
 python3 scripts/pack_market.py                      # 出 16 个包到 dist/pkgs，重写 marketplace.json
@@ -435,12 +457,6 @@ python3 scripts/publish_market.py                   # 推到 marketplace 分支�
 ```
 
 顺序不能反：`publish_market.py` 读的是 `pack_market.py` 刚写的 `marketplace.json` 里的 sha256。**包变了而清单没推，用户的 sha256 校验会失败。**
-
-只重打某几条：
-
-```bash
-python3 scripts/pack_market.py --only law-skills,smart-charts --force
-```
 
 ### 本地验证
 
@@ -483,6 +499,8 @@ npm run serve                           # 本地预览站点 :8787
 | D12 | `publish_market.py` 的 API 调用带退避重试 | 本机出口代理对 `api.github.com` 偶发 502，重试即可，不是代码问题 |
 | D13 | 市场清单先于包发布 | 清单里的 sha256 是包的指纹；包变了清单没更新 → 校验失败 |
 | D14 | 站点 `catalog.js` 打内容指纹 | Pages 的 600s 缓存会造成「改了没生效」的假故障 |
+| D15 | `pack_market.py --only` 改为与既有清单**合并** | 原实现只把选中的条目写回 `marketplace.json`，`--only law-skills` 会把 16 条写成 1 条——用户市场里其余 15 张卡直接消失。实测复现后修掉，合并结果与原清单字节一致（幂等） |
+| D16 | `release.sh` 加 `WITH_MARKET=1`（默认关） | 站点与市场是两套脚本，只跑默认流程会「站点有新卡片、市场没有」。默认关是为了不必要地重传 2 MB 包；加技能时必须显式带上 |
 
 ---
 
@@ -508,7 +526,7 @@ npm run serve                           # 本地预览站点 :8787
 3. **不要把 `proprietary` 条目改成镜像包**，即使技术上很容易。许可不明按未授权处理。
 4. **不要在 `marketplace.json` 里改用整包 zip 或 github 市场源**，那会让用户添加市场时下载全部内容，是明确被否决的方案。
 5. **改完包必须同时更新清单**，否则用户的 sha256 校验失败，表现为"装不上"而非"清单旧"。
-6. **发布顺序**：`pack_market.py` → `publish_market.py`（分支）→ `release.sh`（main）。
+6. **发布顺序**：加技能用 `WITH_MARKET=1 ./scripts/release.sh`（内部顺序 pack → publish → sync main）。手工分步时顺序是 `pack_market.py` → `publish_market.py` → `release.sh`；只跑前两步等于市场分支更新了、`marketplace.json` 没上线，用户看到的还是旧清单。
 7. **别用 `--amend` 改历史**，`main` 上的提交是站点和清单的版本记录。
 
 ---

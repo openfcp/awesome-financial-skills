@@ -6,8 +6,13 @@
 #   DRY=1 ./scripts/release.sh              # 只看会改什么，不推送
 #   SKIP_VERIFY=1 ./scripts/release.sh      # 跳过引用连通性检查（离线时用）
 #
-# 仓库里没有插件包、没有 npm 发布、没有 dsh 索引 —— 只有一份清单和站点，
-# 所以发布只有一步：build 出 docs/catalog.js，然后 sync 推上去。
+#   WITH_MARKET=1 ./scripts/release.sh "feat: 新增 xx"
+#       同时重出市场包、更新 marketplace.json、推到 marketplace 分支。
+#       **加了新技能就要带这个**，否则站点有新卡片、WorkBuddy 市场里没有。
+#   WITH_MARKET=1 MARKET_ONLY=xx,yy ./scripts/release.sh   # 只重打这几个包
+#
+# 两条链路由两套脚本负责，互不触发：站点 ← build.py；市场 ← pack_market.py +
+# publish_market.py。默认只走站点链路。
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -30,6 +35,19 @@ fi
 
 echo "── 3/4 生成站点数据 ────────────────────────"
 python3 scripts/build.py
+
+# 加了新技能、或想让市场里的包跟上最新正文时，用 WITH_MARKET=1。
+# 市场清单（marketplace.json）和技能包（marketplace 分支）都不由 build.py 生成，
+# 只跑 build + sync 会让「站点有新技能、市场里没有」——两条链路必须分别更新。
+if [ "${WITH_MARKET:-0}" = "1" ]; then
+  echo "── 3b/4 出市场包并发布到 marketplace 分支 ───"
+  if [ -n "${MARKET_ONLY:-}" ]; then
+    python3 scripts/pack_market.py --only "${MARKET_ONLY}"
+  else
+    python3 scripts/pack_market.py
+  fi
+  python3 scripts/publish_market.py
+fi
 
 echo "── 4/4 推送 ────────────────────────────────"
 python3 scripts/sync.py -m "$MSG" "${DRY_ARGS[@]+"${DRY_ARGS[@]}"}"
