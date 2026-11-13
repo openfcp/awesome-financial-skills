@@ -38,19 +38,22 @@
 技能 → 套件 → 右上角「添加市场」，市场源填：
 
 ```
-https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main/marketplace.json
+https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@main/marketplace.json
 ```
+
+（备用 raw 地址：`https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main/marketplace.json`，国内时常整站超时，优先用上面那条。）
 
 **添加时只下载这份清单（11 KB），不会把技能全部拉到本地。** 之后市场里出现 16 张卡，点哪张装哪张。
 
-清单里每条都是 `archive` 源，按许可证分成两类：
+清单里每条都是 `archive` 源，**16 条全部是「取件器」**：
 
 | 类型 | 条数 | 包里是什么 | 装完能不能直接用 |
 |---|---|---|---|
-| **镜像**（MIT） | 3 | 从 SkillHub 取回的正文 + `plugin.json` + `NOTICE.md`（作者/原页面/许可） | ✅ 能，离线可用 |
-| **取件器**（proprietary 或未声明） | 13 | 只有我们自己的 `plugin.json` / `SKILL.md` / `fetch.py`，约 2 KB | 首次使用时跑一次 `fetch.py`，从 SkillHub 现取正文 |
+| **取件器**（全部） | 16 | 只有我们自己的 `plugin.json` / `SKILL.md` / `fetch.py`，2 KB 上下 | 首次使用时跑一次 `fetch.py`，从原作者处现取正文 |
 
-这样安排是因为：**未获再分发许可的正文不进本仓**。镜像的 3 条在包内附了 `NOTICE.md` 写明作者、原页面与许可证；如果你是作者并要求下架，到 issue 区提一条，我们 24 小时内移除对应包与清单条目。
+这样做是因为：**本仓不存任何他人正文**，对方的许可是他的事，我们不替他做再分发决定。整个市场的 16 个包合计 34 KB。
+
+早先 MIT 许可的 3 条曾做成「镜像包」（正文随包分发，附 `NOTICE.md`），现已统一改为取件器——MIT 允许再分发，但仓更小、点装更快。如果你是作者并要求下架，到 issue 区提一条，我们 24 小时内移除对应包与清单条目。
 
 **新增技能后，站点和市场要分别更新**（`catalog.json` 是共同源头，但两条链路由两套脚本生成，互不触发）：
 

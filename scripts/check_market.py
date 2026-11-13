@@ -30,6 +30,13 @@ ROOT = Path(__file__).resolve().parent.parent
 SLUG = "openfcp/awesome-financial-skills"
 BRANCH = "marketplace"
 MANIFEST_URL = f"https://raw.githubusercontent.com/{SLUG}/main/marketplace.json"
+# raw 在国内经常整站超时（实测多次 30s 零字节），验收不能因此误报「清单没推上去」。
+MANIFEST_MIRRORS = [
+    MANIFEST_URL,
+    f"https://fastly.jsdelivr.net/gh/{SLUG}@main/marketplace.json",
+    f"https://gcore.jsdelivr.net/gh/{SLUG}@main/marketplace.json",
+    f"https://cdn.jsdelivr.net/gh/{SLUG}@main/marketplace.json",
+]
 UA = {"User-Agent": "afs-check-market"}
 
 problems: list[str] = []
@@ -38,6 +45,22 @@ warns: list[str] = []
 
 def get(url: str, timeout: int = 60) -> bytes:
     return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout).read()
+
+
+def get_manifest() -> tuple:
+    """按 raw → 三个 jsDelivr 镜像取线上清单，返回 (清单, 实际命中的地址)。
+
+    只要有一个源取到就算过——验收要回答的是「清单推上去了没」，
+    不是「raw 通不通」。哪个源命中也一并报出来，方便判断是不是在走镜像。
+    """
+    last: Exception | None = None
+    for url in MANIFEST_MIRRORS:
+        try:
+            data = json.loads(get(f"{url}?t={__import__('time').time()}", timeout=25).decode())
+            return data, url
+        except Exception as e:                              # noqa: BLE001
+            last = e
+    raise RuntimeError(f"四个源都取不到（最后错误：{last}）")
 
 
 def gh_api(path: str):
@@ -62,11 +85,14 @@ def main() -> int:
     if not a.quiet:
         print(f"[1/4] 本地清单 {len(lp)} 条")
 
-    # 1. 线上清单
+    # 1. 线上清单（走镜像链，raw 不通不算失败）
     try:
-        remote = json.loads(get(f"{MANIFEST_URL}?t={__import__('time').time()}").decode())
+        remote, served = get_manifest()
+        if not a.quiet:
+            src = "raw" if served == MANIFEST_URL else served.split("/")[2]
+            print(f"[1/4] 线上清单 {len(remote.get('plugins', []))} 条（取自 {src}）")
     except Exception as e:                                  # noqa: BLE001
-        problems.append(f"取不到线上清单 {MANIFEST_URL}：{e}")
+        problems.append(f"取不到线上清单：{e}")
         remote = {"plugins": []}
     rp = {p["name"]: p for p in remote.get("plugins", [])}
     if remote.get("plugins"):

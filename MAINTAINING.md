@@ -10,9 +10,10 @@
 | 我要做什么 | 命令 |
 |---|---|
 | **新增一条技能** | `WITH_MARKET=1 MARKET_ONLY=<新id> ./scripts/release.sh "feat: 新增 xx"` |
-| **作者更新了正文**（镜像包） | `WITH_MARKET=1 MARKET_FORCE=1 MARKET_ONLY=<id> ./scripts/release.sh "chore: 刷新 xx"` |
+| **作者更新了正文** | **不用管**（取件器每次现取）；仅镜像包需 `WITH_MARKET=1 MARKET_FORCE=1 MARKET_ONLY=<id> ./scripts/release.sh "chore: 刷新 xx"` |
 | **下架一条技能** | 删 `catalog.json` 条目 → `WITH_MARKET=1 ./scripts/release.sh "chore: 下架 xx"` |
 | **只改文案 / 分类 / 排序** | `./scripts/release.sh "docs: …"`（带 `WITH_MARKET=1` 才会刷新市场卡片描述） |
+| **控制仓体积**（全部取件器） | 打包加 `--shim-only`：16 个包共 34 KB（当前就是这么发的） |
 | **发布后验收** | `python3 scripts/check_market.py`（市场）+ `python3 scripts/check_clients.py`（客户端能看到哪一版） |
 | **只看不动** | `DRY=1 ./scripts/release.sh` |
 
@@ -140,35 +141,25 @@ WITH_MARKET=1 MARKET_ONLY=new-skill-id ./scripts/release.sh "feat: 新增 中文
 
 ### A5 · 在 WorkBuddy 里确认
 
-市场卡片来自 `marketplace.json`，重新添加一次市场（或刷新市场源）就能看到新卡；点装后按卡片类型决定体验：
+市场卡片来自 `marketplace.json`，重新添加一次市场（或刷新市场源）就能看到新卡。
 
-- **镜像包**（`license` 是 MIT 等）：点装即可用，离线可用。
-- **取件器**（其余）：点装后第一次调用时，按 `SKILL.md` 的指引跑一次 `python3 scripts/fetch.py` 取回正文。
+**当前 16 条全是取件器**：点装后第一次调用时，按 `SKILL.md` 的指引跑一次 `python3 scripts/fetch.py` 取回正文。包只有 2 KB，点装瞬间完成，真正的下载发生在首次使用（从原作者处、单个技能，不在市场侧）。
+
+> 如果哪天要用回「镜像包」（正文随包分发、装完离线可用），打包时去掉 `--shim-only` 即可——但那样分支体积会从 34 KB 涨回 2 MB，且每次发布都会把这份体积写进 git 历史。
 
 ---
 
 ## 4. 场景 B：作者更新了正文
 
-两种包的处理完全不同，先看是哪一类：
+**现在不需要做任何事。** 16 条全是取件器，每次使用都从原作者处现取最新版，不存在"包里是旧正文"的问题。
 
-```bash
-python3 -c "
-import json
-for p in json.load(open('marketplace.json'))['plugins']:
-    print(f\"{p['name']:<44}{p['license']}\")
-"
-```
-
-| 类型 | 要不要重打 | 命令 |
-|---|---|---|
-| 取件器（`proprietary`） | **不用**。每次用都从原作者处现取最新版 | —— |
-| 镜像包（MIT 等） | **要**，而且必须 `MARKET_FORCE=1` 才会重新下载正文 | 见下 |
+只有当某条被切成镜像包（去掉 `--shim-only` 后打包）时，才需要按下面的方式重打：
 
 ```bash
 WITH_MARKET=1 MARKET_FORCE=1 MARKET_ONLY=law-skills ./scripts/release.sh "chore: 刷新 law-skills"
 ```
 
-不加 `MARKET_FORCE=1` 时，`pack_market.py` 会直接复用 `dist/pkgs/` 里的旧包（这是为了不让每次发版都重下 3 个镜像），于是"刷新"其实什么都没做。
+不加 `MARKET_FORCE=1` 时，`pack_market.py` 会直接复用 `dist/pkgs/` 里的旧包，于是"刷新"其实什么都没做。
 
 ---
 
@@ -214,7 +205,9 @@ python3 scripts/build.py --check          # 确认环境 OK
 python3 scripts/install.py --verify       # 确认 16 条引用都还取得到
 ```
 
-`dist/` 是 gitignore 的本地产物，新克隆里没有。第一次 `pack_market.py` 会从 SkillHub 下载 3 个镜像包（约 2 MB），之后走缓存。
+`dist/` 是 gitignore 的本地产物，新克隆里没有。第一次 `pack_market.py` 只做本地打包，**不下载任何正文**（16 个取件器共 34 KB，秒出）。只有去掉 `--shim-only` 想重建镜像包时，才会从 SkillHub 下载正文。
+
+> 打包全程在内存里构包，不建 `_stage` 目录、不删任何文件，重复跑不会残留。
 
 > 本仓**不要用 `git commit` / `git push`**：本机直连 github.com 会被代理拒。所有推送走 `scripts/sync.py`（GitHub API）。本地 `.git` 历史与远程不一致是正常现象。
 
@@ -301,7 +294,8 @@ cdn      16 条  updated=2026-11-13  ✓
 | `仓库内出现未声明的技能正文` | 把技能正文复制进仓了 | 删掉；正文只留在原作者处 |
 | 取件器第一次用提示「已存在」 | 该技能之前装过 | 直接读 `~/.workbuddy/skills/<name>/SKILL.md`，不用再取 |
 | `[publish] 清单里有 N 条没有对应的包` | 只 `pack` 了部分，或包被删了 | `python3 scripts/pack_market.py` 补齐再发 |
-| 加了技能但 `[pack]` 报 `镜像包只支持 skillhub 源` | GitHub 源被标成 MIT，走了镜像分支 | 正常，GitHub 源一律出取件器；脚本已自动改走取件器，若仍报错检查脚本版本 |
+| 加了技能但 `[pack]` 报 `镜像包只支持 skillhub 源` | GitHub 源被标成 MIT，走了镜像分支（没加 `--shim-only`） | 正常，GitHub 源一律出取件器；加 `--shim-only` 就不会有镜像分支 |
+| `check_market.py` 报「取不到线上清单」 | raw 整站超时（国内常见），不是清单没推 | 脚本已按 raw → 3 个 jsDelivr 镜像回退，四个都不通才是真问题；重跑即可 |
 | dsh 里看不到新条目 | ①目录缓存 6 小时 ②页脚显示 `snapshot`（离线用随包快照）③落到 jsDelivr 旧缓存 | 页脚点「刷新」；仍旧先跑 `check_clients.py` 看是哪个镜像落后——落在 fastly 就只能等它过期；再不行 `rm -f ~/.dsh/storages/financial-skills/catalog.cache.json` 重刷 |
 
 ---

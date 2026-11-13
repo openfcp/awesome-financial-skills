@@ -320,14 +320,16 @@ REDISTRIBUTABLE = {"mit","apache-2.0","bsd-2-clause","bsd-3-clause","isc","mpl-2
 
 | | 镜像包 | 取件器 |
 |---|---|---|
-| 条件 | `license` ∈ 白名单 | 其余（含 `proprietary` / 未声明） |
-| 条数 | 3（`aistockresearcher` / `smart-charts` / `law-skills`） | 13 |
+| 条件 | `license` ∈ 白名单 **且** 未加 `--shim-only` | 其余（含 `proprietary` / 未声明 / 所有 GitHub 源） |
+| 当前条数 | **0**（已用 `--shim-only` 全量转为取件器） | **16** |
 | 包里是什么 | SkillHub 取回的正文 + `plugin.json` + `NOTICE.md` | 只有我们自己的 3 个文件：`plugin.json` / `SKILL.md` / `scripts/fetch.py` |
-| 体积 | 63 KB / 960 KB / 983 KB | 约 2.1 KB |
+| 体积 | 63 KB / 960 KB / 983 KB（曾用过，共 1.96 MB） | 约 2.1 KB，16 个合计 **34 KB** |
 | 点装后 | 立即可用，离线可用 | 首次使用时跑一次 `fetch.py` 现取正文 |
 | 版权处理 | `NOTICE.md` 写明作者、原页面、许可、下架通道 | 包里没有任何他人正文 |
 
 许可不明就按「未授权」处理——这是默认值，不是失败分支。
+
+**为什么连 MIT 也不做镜像了（D20）**：MIT 允许再分发，法律上没问题；但每做一条镜像，分支就多一份正文，而且每次发布都会把这份体积再写一遍 git 历史。16 条里有 3 条镜像就占 1.96 MB，涨到 1000 条时会变成上百 MB。取件器把这笔成本推给了"真正要用的人"：他点装 2 KB，首次使用时下他自己需要的那一个技能。仓里始终 34 KB，与收录条数几乎无关。
 
 ### 7.3 取件器怎么工作
 
@@ -407,7 +409,7 @@ docs/
 scripts/
   install.py            读清单 → 回原件取正文 → 装进 ~/.workbuddy/skills
   add_skill.py          收录一条：inspect 读原件元信息 / add / update / list（写 catalog.json）
-  pack_market.py        出市场包：许可允许再分发的出镜像，其余出取件器；同时重写 marketplace.json
+  pack_market.py        出市场包（当前 --shim-only：全部取件器，16 个共 34 KB）；重写 marketplace.json
   publish_market.py     把 dist/pkgs 整体推到 marketplace 分支（API，不带 base_tree）
   build.py              校验清单 + 零正文守卫 + 生成 docs/catalog.js
   sync.py               经 GitHub API 推送 main（绕开直连 github.com 的限制）
@@ -509,7 +511,10 @@ npm run serve                           # 本地预览站点 :8787
 | D16 | `release.sh` 加 `WITH_MARKET=1`（默认关） | 站点与市场是两套脚本，只跑默认流程会「站点有新卡片、市场没有」。默认关是为了不必要地重传 2 MB 包；加技能时必须显式带上 |
 | D17 | GitHub 源一律出取件器，不做镜像 | 一个仓库可能混多种许可，整体搬运等于替作者做再分发决定。镜像分支加了硬断言（非 skillhub 源直接拒绝），市场卡片 `homepage` 按来源分别指向 SkillHub 页或仓库首页 |
 | D18 | 新增 `check_market.py` 做发布后验收 | 典型事故是「包传了清单没推」「清单改了包没重打」——两边都返回成功，只有 sha256 对不上，表现成"装不上"且难反查。脚本 30 秒给出结论，`release.sh` 在 `WITH_MARKET=1` 时自动调用（失败只提醒不中断） |
-| D19 | `pack_market.py` 清理孤儿包，`publish_market.py` 只上传清单点名的包 | 下架一个技能后，本地残留 zip 会被 publish 重新推上分支，等于把已下架的正文留在仓里。现在清单是唯一真相，两边都按清单收敛 |
+| D19 | `publish_market.py` 只上传清单点名的包 | 下架一个技能后，本地残留 zip 会被 publish 重新推上分支，等于把已下架的正文留在仓里。现在清单是唯一真相 |
+| D20 | MIT 条目也不做镜像，全量 `--shim-only` | MIT 允许再分发，法律上没问题；但 3 条镜像就让分支占 1.96 MB，且每次发布都把这份体积再写一遍 git 历史（仓已累计到 8.4 MB，其中约 6 MB 是这类历史）。改后 16 个包共 34 KB，且这个数字几乎不随收录条数增长 |
+| D21 | 打包改为「纯内存构包」，不建 `_stage`、不删文件 | 原实现先铺 `dist/_stage/<id>` 再 `rmtree`，构建中途被打断就留垃圾，而且带删除的构建在受限环境里会被拦。现在 `write_zip({路径: 内容}, out)` 直接生成 zip 字节、就地覆盖；`--only` 的孤儿包也只报告不删 |
+| D22 | 市场源推荐 jsDelivr 地址，raw 降为备用 | 实测 raw.githubusercontent.com 多次整站 30 秒零字节超时，而用户「添加市场」填的就是这个地址——填不通就等于市场加不上。`publish_market.py` 现在先打印 jsDelivr 那条 |
 
 ---
 
@@ -518,8 +523,8 @@ npm run serve                           # 本地预览站点 :8787
 | 限制 | 现状 | 可能的解法 |
 |---|---|---|
 | 取件器首次使用要手动跑 `fetch.py` | 13 条都是这个体验，是一层摩擦 | 需要市场/技能支持「安装后钩子」才能自动；当前没有这个机制 |
-| 镜像包的 sha256 绑定上游版本 | 作者更新 SkillHub 上的正文后，包内镜像过期，需重跑 `pack_market.py` | 定期跑 `--force` 重打；或加 CI 定时任务比对 |
-| `marketplace` 分支每次整体替换 | 每次发布都要重传 16 个 blob（2 MB） | 量级还小，先不做增量 |
+| 镜像包的 sha256 绑定上游版本 | 仅在使用镜像包时成立（当前 0 条，全是取件器，不涉及） | 若将来重建镜像：定期 `--force` 重打，或加 CI 比对 |
+| `marketplace` 分支每次整体替换 | 每次发布重传 16 个 blob（合计 34 KB），量级极小 | 无需优化 |
 | 16 条全走 SkillHub，GitHub 源的取件链路未被真实使用 | `pack_market.py` 已支持（GitHub 源出取件器、`fetch.py` 复用 `install.py` 的 github resolver），但线上没有条目验证过 | 收录第一条 GitHub 源技能时按 MAINTAINING 场景 A 走一遍并补测 |
 | 清单只校验「可达」，不校验内容变化 | `install.py --verify` 只确认能取到 `SKILL.md` | 可加 `--verify --strict` 比对 `name` / 版本 |
 | 声明 9 个分类，5 个空着（`research-analysis` / `risk-management` / `invest-trading` / `product-business` / `other`） | `build.py` 只打印提示，不报错；站点上这几类筛不出东西 | 要么补条目，要么删掉分类 |
@@ -547,7 +552,7 @@ npm run serve                           # 本地预览站点 :8787
 |---|---|
 | 坐标 / reference | 清单里记录的"去哪儿取"，不含正文 |
 | 正文 / body | 技能的 `SKILL.md` 及其附件，版权归原作者 |
-| 镜像包 | 许可允许再分发的技能，正文被取回并打进包 |
+| 镜像包 | 许可允许再分发的技能，正文被取回并打进包（机制保留，当前未使用） |
 | 取件器 | 不含他人正文的 2 KB 包，首次使用时现取 |
 | 市场源 | 「添加市场」输入框里填的东西；决定添加时下载多少 |
 | 市场清单 | `marketplace.json`，市场里显示哪些卡片 |

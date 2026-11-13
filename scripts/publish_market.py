@@ -112,8 +112,9 @@ def main() -> int:
         api("POST", f"/repos/{SLUG}/git/refs", {"ref": f"refs/heads/{BRANCH}", "sha": commit["sha"]})
     print(f"[publish] {BRANCH} → {commit['sha'][:10]}（{len(tree_entries)} 个包）")
 
-    print("\n[publish] 添加市场 → 市场源，填这一条：")
-    print(f"  https://raw.githubusercontent.com/{SLUG}/main/marketplace.json")
+    print("\n[publish] 添加市场 → 市场源，国内优先填 jsDelivr 这条：")
+    print(f"  https://cdn.jsdelivr.net/gh/{SLUG}@main/marketplace.json")
+    print(f"  备用（raw，国内时常整站超时）：https://raw.githubusercontent.com/{SLUG}/main/marketplace.json")
     print(f"  （清单 {len(index['plugins'])} 条，均为 archive 源）")
     print("\n[publish] 注意：分支已换新包，main 上的 marketplace.json 还是旧的 sha256。")
     print("          紧接着跑 ./scripts/release.sh 推 main，否则这段时间点装会校验失败。")
