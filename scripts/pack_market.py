@@ -31,7 +31,6 @@ import argparse
 import hashlib
 import io
 import json
-import shutil
 import urllib.request
 import zipfile
 from pathlib import Path
@@ -54,19 +53,23 @@ def get(url: str, timeout: int = 90) -> bytes:
     return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout).read()
 
 
-def write_zip(root: Path, out: Path) -> bytes:
+def write_zip(files: dict, out: Path) -> bytes:
+    """把 {包内路径: 内容} 直接写成 zip，全程在内存里，不落任何临时目录。
+
+    之前是「先铺一个 _stage 目录、压完再 rmtree」，缺点是构建过程会删目录，
+    一旦被打断就留垃圾；现在没有任何删除动作，重复跑也不会残留。
+    """
     out.parent.mkdir(parents=True, exist_ok=True)
-    if out.exists():
-        out.unlink()
-    with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
-        for p in sorted(root.rglob("*")):
-            if p.is_dir() or "__pycache__" in p.parts or p.name == ".DS_Store":
-                continue
-            info = zipfile.ZipInfo(p.relative_to(root).as_posix(), date_time=FIXED_TIME)
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
+        for name in sorted(files):
+            info = zipfile.ZipInfo(name, date_time=FIXED_TIME)
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = (0o644 & 0xFFFF) << 16
-            z.writestr(info, p.read_bytes())
-    return out.read_bytes()
+            z.writestr(info, files[name])
+    data = buf.getvalue()
+    out.write_bytes(data)      # 就地覆盖，不 unlink
+    return data
 
 
 def plugin_json(name: str, desc: str, version: str) -> str:
@@ -183,31 +186,21 @@ def build_mirror(s: dict, force: bool) -> bytes:
     if dst.is_file() and not force:
         return dst.read_bytes()
     raw = get(SKILLHUB_ZIP.format(slug=s["source"]["slug"]), timeout=180)
-    stage = DIST / "_stage" / sid
-    if stage.exists():
-        shutil.rmtree(stage)
-    stage.mkdir(parents=True)
+    files = {}
     with zipfile.ZipFile(io.BytesIO(raw)) as z:
         for n in z.namelist():
-            if n.startswith("__MACOSX/") or n.endswith("/"):
+            if n.startswith("__MACOSX/") or n.endswith("/") or n.endswith(".DS_Store"):
                 continue
-            z.extract(n, stage)
+            files[n] = z.read(n)
     # SkillHub 包若整体套了一层目录，摊平
-    entries = [p for p in stage.iterdir() if p.name not in {".DS_Store"}]
-    if len(entries) == 1 and entries[0].is_dir():
-        inner = entries[0]
-        for p in inner.iterdir():
-            shutil.move(str(p), str(stage / p.name))
-        inner.rmdir()
-    meta_dir = stage / ".codebuddy-plugin"
-    if not meta_dir.is_dir():
-        meta_dir.mkdir(parents=True)
-    (stage / ".codebuddy-plugin" / "plugin.json").write_text(
-        plugin_json(sid, s["summary"]["zh"], s.get("version", "1.0.0")), encoding="utf-8")
-    (stage / "NOTICE.md").write_text(notice_md(s), encoding="utf-8")
-    data = write_zip(stage, dst)
-    shutil.rmtree(stage)
-    return data
+    tops = {n.split("/")[0] for n in files}
+    if len(tops) == 1 and all("/" in n for n in files):
+        prefix = next(iter(tops)) + "/"
+        files = {n[len(prefix):]: v for n, v in files.items()}
+    files[".codebuddy-plugin/plugin.json"] = plugin_json(
+        sid, s["summary"]["zh"], s.get("version", "1.0.0")).encode()
+    files["NOTICE.md"] = notice_md(s).encode()
+    return write_zip(files, dst)
 
 
 def where_from(s: dict) -> str:
@@ -217,20 +210,15 @@ def where_from(s: dict) -> str:
 
 def build_shim(s: dict, dirname: str) -> bytes:
     sid = s["id"]
-    stage = DIST / "_stage" / sid
-    if stage.exists():
-        shutil.rmtree(stage)
-    (stage / ".codebuddy-plugin").mkdir(parents=True)
-    (stage / "scripts").mkdir()
-    (stage / ".codebuddy-plugin" / "plugin.json").write_text(
-        plugin_json(sid, s["summary"]["zh"], s.get("version", "1.0.0")), encoding="utf-8")
-    (stage / "SKILL.md").write_text(
-        SHIM_SKILL.format(name=s["name"]["zh"], desc=s["summary"]["zh"], id=sid,
-                          dirname=dirname, where=where_from(s)), encoding="utf-8")
-    (stage / "scripts" / "fetch.py").write_text(FETCH_PY.format(id=sid), encoding="utf-8")
-    data = write_zip(stage, PKGS / f"{sid}.zip")
-    shutil.rmtree(stage)
-    return data
+    files = {
+        ".codebuddy-plugin/plugin.json": plugin_json(
+            sid, s["summary"]["zh"], s.get("version", "1.0.0")).encode(),
+        "SKILL.md": SHIM_SKILL.format(
+            name=s["name"]["zh"], desc=s["summary"]["zh"], id=sid,
+            dirname=dirname, where=where_from(s)).encode(),
+        "scripts/fetch.py": FETCH_PY.format(id=sid).encode(),
+    }
+    return write_zip(files, PKGS / f"{sid}.zip")
 
 
 def main() -> int:
@@ -238,6 +226,9 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--only", help="只打这些 id，逗号分隔")
     ap.add_argument("--force", action="store_true", help="忽略已有包，重新取回")
+    ap.add_argument("--shim-only", action="store_true",
+                    help="全部出取件器，包括 MIT 许可的技能：仓里不留任何他人正文，"
+                         "所有包约 2 KB。代价是首次使用要跑一次 fetch.py")
     a = ap.parse_args()
     only = {x.strip() for x in a.only.split(",")} if a.only else None
 
@@ -251,7 +242,8 @@ def main() -> int:
         lic = str(s.get("license", "")).lower()
         # 镜像只在「许可允许 + 来源是 SkillHub（单包、单一许可）」时才做。
         # GitHub 源一律取件：一个仓库可能混着多种许可，整体搬运等于替作者做决定。
-        if lic in REDISTRIBUTABLE and s["source"]["type"] == "skillhub":
+        # --shim-only 时连 MIT 也只出取件器：仓里零他人正文，包 2 KB，代价是首次使用跑 fetch.py。
+        if lic in REDISTRIBUTABLE and s["source"]["type"] == "skillhub" and not a.shim_only:
             data = build_mirror(s, a.force)
             mirrored.append(sid)
             kind = "镜像"
@@ -315,15 +307,12 @@ def main() -> int:
             print(f"[pack] 已从 catalog 移除、本次一并从清单删除：{', '.join(dropped)}")
     INDEX.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    # 清单是唯一真相：不在清单里的本地包一律清掉，避免已下架的正文被 publish 重新上传
+    # 清单是唯一真相：不在清单里的本地包不会被 publish 上传（它只传清单点名的包）。
+    # 这里只报告、不删除——构建过程保持零删除，留着也无害，想清就手动删 dist/pkgs。
     keep = {p["name"] for p in index["plugins"]}
-    pruned = []
-    for z in sorted(PKGS.glob("*.zip")):
-        if z.stem not in keep:
-            z.unlink()
-            pruned.append(z.stem)
-    if pruned:
-        print(f"[pack] 清理孤儿包（不在清单里，已下架或改名）：{', '.join(pruned)}")
+    orphans = [z.stem for z in sorted(PKGS.glob("*.zip")) if z.stem not in keep]
+    if orphans:
+        print(f"[pack] 以下本地包已不在清单里（不会被上传，可手动清）：{', '.join(orphans)}")
 
     total = sum(p.stat().st_size for p in PKGS.glob("*.zip")
                 if p.stem in keep)
