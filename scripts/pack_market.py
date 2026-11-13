@@ -97,7 +97,7 @@ https://github.com/openfcp/awesome-financial-skills/issues 提一个 issue，
 
 SHIM_SKILL = """---
 name: {name}
-description: {desc}（首次使用时自动从{where}取回正文）
+description: {desc}（首次使用时自动从 {where} 取回正文）
 ---
 
 # {name}
@@ -110,7 +110,7 @@ description: {desc}（首次使用时自动从{where}取回正文）
 python3 scripts/fetch.py
 ```
 
-脚本位于本插件目录下的 `scripts/fetch.py`。它会去{where}取回「{id}」的当前版本，
+脚本位于本插件目录下的 `scripts/fetch.py`。它会去 {where} 取回「{id}」的当前版本，
 安装到 `~/.workbuddy/skills`。取件成功后再继续。
 
 ## 取件之后
