@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>金融行业skill精选 · Awesome Financial Skills</title>
+<meta name="description" content="为金融从业者策展的 AI 技能清单：按业务场景分类，标注能力边界与来源。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2036%2036'%3E%3Crect%20x='1.5'%20y='1.5'%20width='15'%20height='15'%20rx='4.2'%20fill='%230f5c4a'/%3E%3Ccircle%20cx='16.5'%20cy='9'%20r='2.7'%20fill='%230f5c4a'/%3E%3Crect%20x='19.5'%20y='1.5'%20width='15'%20height='15'%20rx='4.2'%20fill='%233d8a76'/%3E%3Ccircle%20cx='27'%20cy='16.5'%20r='2.7'%20fill='%233d8a76'/%3E%3Crect%20x='19.5'%20y='19.5'%20width='15'%20height='15'%20rx='4.2'%20fill='%237aad9d'/%3E%3Ccircle%20cx='19.5'%20cy='27'%20r='2.7'%20fill='%237aad9d'/%3E%3Crect%20x='1.5'%20y='19.5'%20width='15'%20height='15'%20rx='4.2'%20fill='%23b4cec5'/%3E%3Ccircle%20cx='9'%20cy='19.5'%20r='2.7'%20fill='%23b4cec5'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#fbfbf9; --panel:#ffffff; --ink:#16181d; --ink-2:#5b6270; --ink-3:#8b929e;
+  --line:#e6e4de; --line-2:#f0eeea;
+  --accent:#0f5c4a; --accent-soft:#e8f2ee; --accent-ink:#0b4638;
+  --radius:14px; --shadow:0 1px 2px rgba(22,24,29,.04), 0 8px 24px -12px rgba(22,24,29,.18);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  font-size:15px; line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent-ink); text-decoration:none}
+a:hover{text-decoration:underline}
+code,kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.wrap{max-width:1060px; margin:0 auto; padding:0 22px}
+
+/* ---------- header ---------- */
+header{padding:40px 0 26px; border-bottom:1px solid var(--line)}
+.brand{display:flex; align-items:flex-start; justify-content:space-between; gap:20px; flex-wrap:wrap}
+h1{font-size:29px; line-height:1.25; margin:0 0 4px; letter-spacing:-.4px; font-weight:680}
+h1 .h1-row{display:flex; align-items:flex-start; gap:12px}
+h1 .h1-text{min-width:0}
+h1 .logo{width:32px; height:32px; flex:none; display:block; margin-top:2px}
+h1 .en{display:block; font-size:12.5px; font-weight:500; letter-spacing:.8px; text-transform:uppercase; color:var(--ink-3); margin-top:7px}
+.lede{color:var(--ink-2); max-width:62ch; margin:12px 0 0; font-size:14px}
+/* 中英切换：默认极淡，悬停才浮现 */
+.lang{display:flex; align-items:center; gap:1px; flex:none; opacity:.42; transition:opacity .2s}
+.lang:hover,.lang:focus-within{opacity:1}
+.lang button{border:0; background:none; padding:2px 6px; border-radius:0; font-size:12px; color:var(--ink-3);
+  cursor:pointer; font-family:inherit; letter-spacing:.2px}
+.lang button[aria-pressed="true"]{color:var(--ink-2); font-weight:600}
+.lang button + button{border-left:1px solid var(--line)}
+
+/* ---------- endpoints ---------- */
+/* 三卡横排、等高 */
+.endpoints{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:22px; align-items:stretch}
+.ep{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:15px 16px 16px;
+  box-shadow:var(--shadow); min-width:0; display:flex; flex-direction:column; min-height:330px}
+@media(max-width:860px){
+  .endpoints{grid-template-columns:1fr}
+  .ep{min-height:0}
+}
+.ep-head{display:flex; align-items:center; gap:8px; margin-bottom:4px}
+.ep-head .k{font-size:11.5px; letter-spacing:.6px; text-transform:uppercase; color:var(--ink-3); font-weight:600}
+.ep-head .role{font-size:10.5px; font-weight:600; padding:1.5px 7px; border-radius:5px; background:var(--accent-soft); color:var(--accent-ink)}
+.ep .v{font-size:14px; font-weight:620; margin-bottom:10px; line-height:1.5}
+.urlbox{display:flex; gap:6px; align-items:stretch; background:#f7f7f4; border:1px solid var(--line-2); border-radius:9px; padding:7px 8px 7px 10px; min-width:0}
+.urlbox code{font-size:10.5px; line-height:1.5; color:var(--ink-2); word-break:break-all; overflow-wrap:anywhere; flex:1; min-width:0}
+button.copy{border:1px solid var(--line); background:var(--panel); color:var(--ink-2); border-radius:6px; padding:3px 9px;
+  font-size:11.5px; cursor:pointer; font-family:inherit; flex:none; align-self:flex-start; transition:.15s; white-space:nowrap}
+button.copy:hover{border-color:var(--accent); color:var(--accent-ink); background:var(--accent-soft)}
+button.copy.done{border-color:var(--accent); color:var(--accent-ink); background:var(--accent-soft)}
+.steps{margin:11px 0 0; padding:0; list-style:none; counter-reset:s; font-size:12.5px; color:var(--ink-2)}
+.steps li{counter-increment:s; position:relative; padding-left:22px; margin-top:5px; line-height:1.55}
+.steps li::before{content:counter(s); position:absolute; left:0; top:2px; width:15px; height:15px; border-radius:50%;
+  background:var(--accent-soft); color:var(--accent-ink); font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; line-height:1}
+.steps b{color:var(--ink); font-weight:620}
+.steps em{font-style:normal; background:#f4f3ef; border:1px solid var(--line-2); border-radius:4px; padding:0 4px; font-size:11.5px; color:var(--ink-2)}
+
+/* ---------- toolbar ---------- */
+.toolbar{position:sticky; top:0; z-index:20; background:rgba(251,251,249,.94); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line); padding:12px 0}
+.toolbar .wrap{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+.search{flex:1 1 220px; display:flex; align-items:center; gap:8px; background:var(--panel); border:1px solid var(--line);
+  border-radius:10px; padding:7px 12px}
+.search input{border:0; outline:0; background:none; width:100%; font-size:14px; font-family:inherit; color:var(--ink)}
+.search input::placeholder{color:var(--ink-3)}
+.seg{display:flex; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--panel)}
+.seg button{border:0; background:none; padding:7px 12px; font-size:13px; color:var(--ink-2); cursor:pointer; font-family:inherit}
+.seg button[aria-pressed="true"]{background:var(--ink); color:#fff}
+
+/* ---------- chips ---------- */
+.chips{display:flex; gap:8px; flex-wrap:wrap; padding:18px 0 4px}
+.chip{border:1px solid var(--line); background:var(--panel); border-radius:999px; padding:6px 13px; font-size:13px;
+  color:var(--ink-2); cursor:pointer; font-family:inherit; display:inline-flex; align-items:center; gap:7px; transition:.15s}
+.chip:hover{border-color:#cfccc4}
+.chip[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:#fff}
+.chip .n{font-size:11px; opacity:.65; font-variant-numeric:tabular-nums}
+
+/* ---------- list ---------- */
+main{padding:16px 0 56px}
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:14px; margin-top:14px}
+.card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:17px 17px 13px;
+  box-shadow:var(--shadow); display:flex; flex-direction:column; transition:.18s; min-width:0}
+.card:hover{transform:translateY(-2px); border-color:#d8d5cc}
+.card h3{margin:0 0 2px; font-size:16.5px; font-weight:660; letter-spacing:-.2px}
+.card .id{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; color:var(--ink-3); margin-bottom:9px; word-break:break-all}
+.card p{margin:0 0 11px; color:var(--ink-2); font-size:13.5px; flex:1}
+.badges{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px}
+.b{font-size:11px; padding:2.5px 8px; border-radius:6px; font-weight:600; letter-spacing:.2px}
+.b.cat{background:var(--accent-soft); color:var(--accent-ink)}
+.b.skillhub{background:var(--accent-soft); color:var(--accent-ink)}
+.b.github{background:#eef0f4; color:#3d4553}
+.b.ver{background:#f4f3ef; color:var(--ink-3); font-weight:500; font-family:ui-monospace,Menlo,monospace}
+.card .foot{border-top:1px solid var(--line-2); padding-top:11px; display:flex; align-items:center; gap:8px; min-width:0}
+.card .cmd{font-family:ui-monospace,Menlo,monospace; font-size:10.5px; color:var(--ink-3); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; min-width:0}
+
+/* ---------- empty ---------- */
+.empty-state{margin-top:34px; text-align:center; color:var(--ink-3); padding:36px 20px; border:1px dashed var(--line); border-radius:var(--radius)}
+.empty-state b{display:block; color:var(--ink-2); font-size:15px; margin-bottom:6px}
+.pending{margin-top:36px}
+.pending h2{font-size:12px; letter-spacing:.6px; text-transform:uppercase; color:var(--ink-3); font-weight:600; margin:0 0 12px}
+.pending-list{display:flex; flex-wrap:wrap; gap:8px}
+.pending-item{font-size:12.5px; color:var(--ink-3); border:1px dashed var(--line); border-radius:8px; padding:5px 10px}
+
+footer{border-top:1px solid var(--line); padding:24px 0 36px; color:var(--ink-3); font-size:12.5px}
+footer .wrap{display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap}
+footer a{color:var(--ink-2)}
+.toast{position:fixed; left:50%; bottom:26px; transform:translateX(-50%) translateY(12px); opacity:0;
+  background:var(--ink); color:#fff; font-size:13px; padding:9px 18px; border-radius:999px; pointer-events:none; transition:.22s; z-index:60}
+.toast.on{opacity:1; transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <div>
+        <h1>
+          <span class="h1-row">
+            <svg class="logo" viewBox="0 0 36 36" width="32" height="32" role="img" aria-label="金融行业skill精选">
+              <rect x="1.5" y="1.5" width="15" height="15" rx="4.2" fill="#0f5c4a"/>
+              <circle cx="16.5" cy="9" r="2.7" fill="#0f5c4a"/>
+              <rect x="19.5" y="1.5" width="15" height="15" rx="4.2" fill="#3d8a76"/>
+              <circle cx="27" cy="16.5" r="2.7" fill="#3d8a76"/>
+              <rect x="19.5" y="19.5" width="15" height="15" rx="4.2" fill="#7aad9d"/>
+              <circle cx="19.5" cy="27" r="2.7" fill="#7aad9d"/>
+              <rect x="1.5" y="19.5" width="15" height="15" rx="4.2" fill="#b4cec5"/>
+              <circle cx="9" cy="19.5" r="2.7" fill="#b4cec5"/>
+            </svg>
+            <span class="h1-text">
+              <span data-zh="金融行业skill精选" data-en="Awesome Financial Skills">金融行业skill精选</span>
+              <span class="en" data-zh="Awesome Financial Skills" data-en="金融行业 · 技能精选">Awesome Financial Skills</span>
+            </span>
+          </span>
+        </h1>
+        <p class="lede" id="lede"></p>
+      </div>
+      <div class="lang" role="group" aria-label="language">
+        <button data-lang="zh" aria-pressed="true">中文</button>
+        <button data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+
+    <div class="endpoints">
+      <div class="ep">
+        <div class="ep-head">
+          <span class="k">catalog.json</span>
+          <span class="role" data-zh="唯一真相源" data-en="Source of truth">唯一真相源</span>
+        </div>
+        <div class="v" data-zh="两个客户端都只读这一份清单" data-en="Both clients read this one file">两个客户端都只读这一份清单</div>
+        <div class="urlbox">
+          <code id="url-dsh"></code>
+          <button class="copy" data-copy="url-dsh" data-zh="复制" data-en="Copy">复制</button>
+        </div>
+        <ol class="steps">
+          <li data-zh="清单<b>只存引用</b>，不含技能正文" data-en="<b>References only</b> — no skill bodies inside">清单<b>只存引用</b>，不含技能正文</li>
+          <li data-zh="每条记 <em>source.type</em> 与坐标：SkillHub 的 <em>namespace/slug</em>，或 GitHub 的 <em>repo/path/ref</em>" data-en="Each entry records <em>source.type</em> plus coordinates: SkillHub <em>namespace/slug</em>, or GitHub <em>repo/path/ref</em>">每条记 <em>source.type</em> 与坐标：SkillHub 的 <em>namespace/slug</em>，或 GitHub 的 <em>repo/path/ref</em></li>
+          <li data-zh="客户端按顶部的 <em>resolve</em> 规则回原件取正文" data-en="Clients fetch bodies from the original using the <em>resolve</em> rules at the top">客户端按顶部的 <em>resolve</em> 规则回原件取正文</li>
+          <li data-zh="新增收录只改这一份文件，不再往仓里复制正文" data-en="New entries edit this one file; nothing gets copied in">新增收录只改这一份文件，不再往仓里复制正文</li>
+        </ol>
+      </div>
+
+      <div class="ep">
+        <div class="ep-head">
+          <span class="k">WorkBuddy</span>
+          <span class="role" data-zh="一条命令" data-en="One command">一条命令</span>
+        </div>
+        <div class="v" data-zh="跑一条命令，按清单装进技能目录" data-en="Run one command; skills land in your skill directory">跑一条命令，按清单装进技能目录</div>
+        <div class="urlbox">
+          <code id="url-wb"></code>
+          <button class="copy" data-copy="url-wb" data-zh="复制" data-en="Copy">复制</button>
+        </div>
+        <ol class="steps">
+          <li data-zh="终端执行上面这条命令，默认装到 <em>~/.workbuddy/skills</em>" data-en="Run it in a terminal; installs to <em>~/.workbuddy/skills</em>">终端执行上面这条命令，默认装到 <em>~/.workbuddy/skills</em></li>
+          <li data-zh="只装一个：末尾加 <em>--only law-skills</em>；换目录：加 <em>--dir</em>" data-en="One skill only: append <em>--only law-skills</em>; custom dir: add <em>--dir</em>">只装一个：末尾加 <em>--only law-skills</em>；换目录：加 <em>--dir</em></li>
+          <li data-zh="先看有什么：<em>--list</em>；只验证引用通不通：<em>--verify</em>" data-en="Browse first: <em>--list</em>; just check references: <em>--verify</em>">先看有什么：<em>--list</em>；只验证引用通不通：<em>--verify</em></li>
+          <li data-zh="装完刷新技能列表即可，正文每次都取最新原件" data-en="Refresh the skill list; bodies are always fetched fresh">装完刷新技能列表即可，正文每次都取最新原件</li>
+        </ol>
+      </div>
+
+      <div class="ep">
+        <div class="ep-head">
+          <span class="k">SkillHub CLI</span>
+          <span class="role" data-zh="不用索引" data-en="No index needed">不用索引</span>
+        </div>
+        <div class="v" data-zh="只装某一个技能" data-en="Install a single skill">只装某一个技能</div>
+        <div class="urlbox">
+          <code id="url-cli"></code>
+          <button class="copy" data-copy="url-cli" data-zh="复制" data-en="Copy">复制</button>
+        </div>
+        <ol class="steps">
+          <li data-zh="终端里执行上面那条命令" data-en="Run the command above in a terminal">终端里执行上面那条命令</li>
+          <li data-zh="想装别的，把 <em>slug</em> 换掉；完整的 slug 见表内每张卡片" data-en="Swap the <em>slug</em> to install another one">想装别的，把 <em>slug</em> 换掉；完整的 slug 见表内每张卡片</li>
+          <li data-zh="加 <em>--dir ~/.workbuddy/skills</em> 可直接装到 WorkBuddy" data-en="Add <em>--dir ~/.workbuddy/skills</em> to target WorkBuddy">加 <em>--dir ~/.workbuddy/skills</em> 可直接装到 WorkBuddy</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="wrap">
+    <label class="search">
+      <span style="color:var(--ink-3)">⌕</span>
+      <input id="q" type="search" placeholder="搜索技能、标签、岗位…" autocomplete="off">
+    </label>
+    <div class="seg" role="group" aria-label="source filter">
+      <button data-src="all" aria-pressed="true" data-zh="全部来源" data-en="All sources">全部来源</button>
+      <button data-src="skillhub" aria-pressed="false">SkillHub</button>
+      <button data-src="github" aria-pressed="false">GitHub</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="chips" id="chips"></div>
+  <main>
+    <div class="grid" id="grid"></div>
+    <div id="none" class="empty-state" hidden></div>
+    <div class="pending" id="pending" hidden>
+      <h2 data-zh="待收录分类" data-en="Categories awaiting entries">待收录分类</h2>
+      <div class="pending-list" id="pending-list"></div>
+    </div>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div><span data-zh="清单源文件" data-en="Source of truth">清单源文件</span>：<a href="https://github.com/openfcp/awesome-financial-skills/blob/main/catalog.json">catalog.json</a>
+      · <span data-zh="收录标准" data-en="Inclusion criteria">收录标准</span>：<a href="https://github.com/openfcp/awesome-financial-skills#收录标准">README</a></div>
+    <div><span data-zh="由 OpenFCP 策展" data-en="Curated by OpenFCP">由 OpenFCP 策展</span> · <span id="stamp"></span></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="catalog.js?v=eed4efa1"></script>
+<script>
+(function(){
+  const C = window.__CATALOG__;
+  const CDN = "https://fastly.jsdelivr.net/gh/openfcp/awesome-financial-skills@main";
+  document.getElementById("url-dsh").textContent = CDN + "/catalog.json";
+  document.getElementById("url-wb").textContent  = "curl -fsSL " + CDN + "/install.sh | bash -s -- --all";
+  document.getElementById("url-cli").textContent = "skillhub install consumer-protection-review --namespace user_e3180ba3";
+  document.getElementById("stamp").textContent   = "updated " + C.updated;
+
+  let lang = "zh", cat = "all", src = "all", q = "";
+
+  const T = (o) => (o && (o[lang] || o.zh)) || "";
+  const catOf = (id) => C.categories.find(c => c.id === id) || {title:{}};
+  const esc = (s) => String(s).replace(/[&<>"]/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+
+  const UI = {
+    zh: {search:"搜索技能、标签、岗位…", none:"没有匹配的技能", noneHint:"换个关键词，或切回「全部分类」", copied:"已复制", copy:"复制命令", pending:"待收录"},
+    en: {search:"Search skills, tags, roles…", none:"No matching skills", noneHint:"Try another keyword or reset the category", copied:"Copied", copy:"Copy", pending:"Open call"}
+  };
+
+  function applyI18n(){
+    document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+    document.querySelectorAll("[data-zh]").forEach(el => {
+      el.innerHTML = el.dataset[lang] || el.dataset.zh;
+    });
+    document.getElementById("q").placeholder = UI[lang].search;
+    document.getElementById("lede").textContent = T(C.description);
+    document.querySelectorAll(".lang button").forEach(b =>
+      b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+  }
+
+  function counts(){
+    const m = {};
+    C.skills.forEach(s => { m[s.category] = (m[s.category] || 0) + 1; });
+    return m;
+  }
+
+  function renderChips(){
+    const n = counts();
+    const el = document.getElementById("chips");
+    let html = `<button class="chip" data-cat="all" aria-pressed="${cat==="all"}">`
+      + (lang==="zh"?"全部":"All") + `<span class="n">${C.skills.length}</span></button>`;
+    C.categories.forEach(c => {
+      html += `<button class="chip" data-cat="${c.id}" aria-pressed="${cat===c.id}" title="${esc(T(c.description))}">`
+        + esc(T(c.title)) + `<span class="n">${n[c.id]||0}</span></button>`;
+    });
+    el.innerHTML = html;
+    el.querySelectorAll(".chip").forEach(b => b.onclick = () => { cat = b.dataset.cat; render(); });
+  }
+
+  function cmdFor(s){
+    if (s.install && s.install.skillhub) return s.install.skillhub;
+    if (s.install && s.install.plugin) return "plugin: " + s.install.plugin.replace("./","");
+    return "";
+  }
+
+  function renderCards(){
+    const list = C.skills.filter(s => {
+      if (cat !== "all" && s.category !== cat) return false;
+      if (src !== "all" && s.source.type !== src) return false;
+      if (!q) return true;
+      const hay = [T(s.name), T(s.summary), s.id, ...(s.tags||[])].join(" ").toLowerCase();
+      return hay.includes(q.toLowerCase());
+    });
+
+    const grid = document.getElementById("grid");
+    grid.innerHTML = list.map(s => `
+      <article class="card" id="${s.id}">
+        <h3>${esc(T(s.name))}</h3>
+        <div class="id">${esc(s.id)}</div>
+        <div class="badges">
+          <span class="b cat">${esc(T(catOf(s.category).title))}</span>
+          <span class="b ${s.source.type}">${s.source.type}</span>
+          <span class="b ver">v${esc(s.version)}</span>
+        </div>
+        <p>${esc(T(s.summary))}</p>
+        <div class="foot">
+          <span class="cmd" title="${esc(cmdFor(s))}">${esc(cmdFor(s))}</span>
+          <button class="copy" data-cmd="${esc(cmdFor(s))}">${UI[lang].copy}</button>
+        </div>
+      </article>`).join("");
+
+    grid.querySelectorAll("button.copy").forEach(b => b.onclick = () => copy(b.dataset.cmd, b));
+
+    const none = document.getElementById("none");
+    none.hidden = list.length > 0;
+    if (!list.length){
+      none.innerHTML = `<b>${UI[lang].none}</b>${UI[lang].noneHint}`;
+    }
+
+    const n = counts();
+    const pend = C.categories.filter(c => !n[c.id]);
+    const pendBox = document.getElementById("pending");
+    pendBox.hidden = cat !== "all" || q !== "" || pend.length === 0;
+    document.getElementById("pending-list").innerHTML = pend
+      .map(c => `<span class="pending-item">${esc(T(c.title))} · ${UI[lang].pending}</span>`).join("");
+  }
+
+  function render(){ renderChips(); renderCards(); }
+
+  function copy(text, btn){
+    const done = () => {
+      const old = btn.textContent;
+      btn.textContent = UI[lang].copied; btn.classList.add("done");
+      toast(UI[lang].copied);
+      setTimeout(() => { btn.textContent = old; btn.classList.remove("done"); }, 1400);
+    };
+    if (navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(text).then(done).catch(() => fallback(text, done));
+    } else fallback(text, done);
+  }
+
+  function fallback(text, done){
+    const ta = document.createElement("textarea");
+    ta.value = text; ta.style.position="fixed"; ta.style.opacity="0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); done(); } catch(e){}
+    document.body.removeChild(ta);
+  }
+
+  let tt;
+  function toast(msg){
+    const t = document.getElementById("toast");
+    t.textContent = msg; t.classList.add("on");
+    clearTimeout(tt); tt = setTimeout(() => t.classList.remove("on"), 1600);
+  }
+
+  document.querySelectorAll(".lang button").forEach(b => b.onclick = () => {
+    lang = b.dataset.lang; applyI18n(); render();
+  });
+
+  document.querySelectorAll(".seg button").forEach(b => b.onclick = () => {
+    src = b.dataset.src;
+    document.querySelectorAll(".seg button").forEach(x =>
+      x.setAttribute("aria-pressed", String(x.dataset.src === src)));
+    renderCards();
+  });
+
+  let qt;
+  document.getElementById("q").addEventListener("input", e => {
+    clearTimeout(qt);
+    qt = setTimeout(() => { q = e.target.value.trim(); renderCards(); }, 120);
+  });
+
+  document.querySelectorAll("button.copy[data-copy]").forEach(b => b.onclick = () =>
+    copy(document.getElementById(b.dataset.copy).textContent, b));
+
+  applyI18n(); render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "name": "awesome-financial-skills",
+  "version": "2026.1113.1530",
+  "description": "Curated AI skills for finance professionals — a reference-only catalog: clients read it, nothing is vendored.",
+  "keywords": [
+    "awesome-list",
+    "finance",
+    "fintech",
+    "ai-agents",
+    "skills",
+    "consumer-protection",
+    "skillhub"
+  ],
+  "homepage": "https://openfcp.github.io/awesome-financial-skills/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openfcp/awesome-financial-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/openfcp/awesome-financial-skills/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "catalog.json",
+    "schema.json",
+    "install.sh",
+    "scripts/install.py",
+    "scripts/build.py",
+    "docs/",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./catalog.json"
+  },
+  "scripts": {
+    "build": "python3 scripts/build.py",
+    "check": "python3 scripts/build.py --check",
+    "verify": "python3 scripts/install.py --verify",
+    "install-skills": "python3 scripts/install.py --all",
+    "sync": "python3 scripts/build.py && python3 scripts/sync.py",
+    "serve": "python3 -m http.server 8787 --directory docs"
+  }
+}

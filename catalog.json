@@ -1,0 +1,654 @@
+{
+  "format": 3,
+  "id": "awesome-financial-skills",
+  "updated": "2026-11-13",
+  "title": {
+    "zh": "金融行业skill精选",
+    "en": "Awesome Financial Skills"
+  },
+  "description": {
+    "zh": "为金融从业者策展的 AI 技能清单：按业务场景分类，标注能力边界与来源",
+    "en": "A curated index of AI skills for finance professionals — organized by business scenario, with capability boundaries and provenance made explicit."
+  },
+  "sources": {
+    "skillhub": {
+      "title": {
+        "zh": "SkillHub",
+        "en": "SkillHub"
+      },
+      "note": {
+        "zh": "国内优先的技能商店，安装快、有签名校验。同一技能两处都有时，优先取 SkillHub。",
+        "en": "China-first skill registry with fast installs and signature verification. Preferred when a skill exists in both places."
+      }
+    },
+    "github": {
+      "title": {
+        "zh": "GitHub",
+        "en": "GitHub"
+      },
+      "note": {
+        "zh": "作者自托管仓库，版本与正文由作者掌控。",
+        "en": "Author-hosted repositories where the author controls version and content."
+      }
+    }
+  },
+  "resolve": {
+    "note": {
+      "zh": "本清单只存引用，不存技能正文。两个消费端（WorkBuddy 脚本 / dsh 插件）按 source.type 取下列取回正文。",
+      "en": "This catalog stores references only, never skill bodies. Consumers fetch content by source.type using the rules below."
+    },
+    "skillhub": {
+      "kind": "zip",
+      "url": "https://api.skillhub.cn/api/v1/download?slug={slug}",
+      "note": {
+        "zh": "GET 得到 zip，解压后 SKILL.md 在根目录；namespace 仅作展示与去重，下载不需要它。",
+        "en": "GET returns a zip with SKILL.md at its root; namespace is for display/dedup only, not needed to download."
+      }
+    },
+    "github": {
+      "kind": "files",
+      "raw": "https://raw.githubusercontent.com/{repo}/{ref}/{path}/{file}",
+      "api": "https://api.github.com/repos/{repo}/contents/{path}?ref={ref}",
+      "note": {
+        "zh": "按目录逐个取文件。raw 不可达时走 api（可带 token），再不可达走 jsDelivr 镜像。",
+        "en": "Fetch files under the directory. Fall back to the API (token optional), then to the jsDelivr mirror."
+      }
+    }
+  },
+  "categories": [
+    {
+      "id": "consumer-protection",
+      "title": {
+        "zh": "消费者保护",
+        "en": "Consumer Protection"
+      },
+      "description": {
+        "zh": "消保审查、投诉处理、消保检查、消保评价、合规销售、金融教育等岗位职责。",
+        "en": "Review, complaints, inspection, regulatory self-assessment, sales compliance and financial education."
+      }
+    },
+    {
+      "id": "office-design",
+      "title": {
+        "zh": "办公与设计",
+        "en": "Office & Design"
+      },
+      "description": {
+        "zh": "公文撰写、PPT 框架、表格处理、海报与图表等交付物生产。",
+        "en": "Documents, slide frameworks, spreadsheets, posters and charts."
+      }
+    },
+    {
+      "id": "data-tech",
+      "title": {
+        "zh": "数据与技术",
+        "en": "Data & Engineering"
+      },
+      "description": {
+        "zh": "数据清洗、指标口径、脚本工具、系统集成与工程实现。",
+        "en": "Data cleaning, metric definitions, scripting, system integration and engineering."
+      }
+    },
+    {
+      "id": "research-analysis",
+      "title": {
+        "zh": "研究与分析",
+        "en": "Research & Analysis"
+      },
+      "description": {
+        "zh": "行业研究、财报拆解、竞品对比、数据洞察与结论输出。",
+        "en": "Industry research, financial statement analysis, competitive benchmarking and insight generation."
+      }
+    },
+    {
+      "id": "compliance-legal",
+      "title": {
+        "zh": "合规与法律",
+        "en": "Compliance & Legal"
+      },
+      "description": {
+        "zh": "法规检索、制度起草、条款比对、监管口径解读与合同审查。",
+        "en": "Regulation lookup, policy drafting, clause comparison, regulatory interpretation and contract review."
+      }
+    },
+    {
+      "id": "risk-management",
+      "title": {
+        "zh": "风险管理",
+        "en": "Risk Management"
+      },
+      "description": {
+        "zh": "信用风险、操作风险、反欺诈、反洗钱与内控检查。",
+        "en": "Credit risk, operational risk, anti-fraud, AML and internal control."
+      }
+    },
+    {
+      "id": "invest-trading",
+      "title": {
+        "zh": "投资与交易",
+        "en": "Investment & Trading"
+      },
+      "description": {
+        "zh": "行情解读、估值建模、组合分析、交易执行辅助。",
+        "en": "Market interpretation, valuation modeling, portfolio analysis and execution support."
+      }
+    },
+    {
+      "id": "product-business",
+      "title": {
+        "zh": "产品与业务",
+        "en": "Product & Business"
+      },
+      "description": {
+        "zh": "产品设计、需求分析、业务流程梳理、运营方案与增长策略。",
+        "en": "Product design, requirements, process mapping, operations and growth."
+      }
+    },
+    {
+      "id": "other",
+      "title": {
+        "zh": "其他",
+        "en": "Other"
+      },
+      "description": {
+        "zh": "跨领域或暂未归类的技能。",
+        "en": "Cross-domain or not yet categorized."
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "consumer-protection-review",
+      "name": {
+        "zh": "消保审查",
+        "en": "Consumer Protection Review"
+      },
+      "summary": {
+        "zh": "营销材料、协议条款、定价方案、销售话术的合规审查：六维审查模型、八项权益映射、风险定级与法规依据库。",
+        "en": "Compliance review for marketing materials, contract terms, pricing and sales scripts — six-dimension model, rights mapping, risk grading and a regulation library."
+      },
+      "category": "consumer-protection",
+      "tags": [
+        "审查",
+        "营销材料",
+        "条款",
+        "风险定级"
+      ],
+      "version": "1.0.0",
+      "author": "八大权益",
+      "license": "proprietary",
+      "source": {
+        "type": "skillhub",
+        "namespace": "user_e3180ba3",
+        "slug": "consumer-protection-review"
+      },
+      "install": {
+        "skillhub": "skillhub install consumer-protection-review --namespace user_e3180ba3"
+      }
+    },
+    {
+      "id": "consumer-protection-annual-evaluation",
+      "name": {
+        "zh": "消保评价",
+        "en": "Consumer Protection Evaluation"
+      },
+      "summary": {
+        "zh": "年度消保监管评价自评全流程：指标解读、台账分工、证据链整理、自评报告撰写、失分诊断与模拟打分。",
+        "en": "End-to-end annual regulatory self-assessment: indicator interpretation, ledger assignments, evidence chains, report writing, loss diagnosis and mock scoring."
+      },
+      "category": "consumer-protection",
+      "tags": [
+        "评价",
+        "自评",
+        "监管评级",
+        "证据链"
+      ],
+      "version": "1.0.0",
+      "author": "八大权益",
+      "license": "proprietary",
+      "source": {
+        "type": "skillhub",
+        "namespace": "user_e3180ba3",
+        "slug": "consumer-protection-annual-evaluation"
+      },
+      "install": {
+        "skillhub": "skillhub install consumer-protection-annual-evaluation --namespace user_e3180ba3"
+      }
+    },
+    {
+      "id": "compliance-sales",
+      "name": {
+        "zh": "合规销售",
+        "en": "Compliance Sales"
+      },
+      "summary": {
+        "zh": "营销宣传八不得审查、禁用词扫描、双录规范、适当性匹配（P1-P5/R1-R5）与渠道合作机构管理。",
+        "en": "Marketing compliance review, banned-term scanning, dual-recording standards, suitability matching (P1-P5/R1-R5) and channel partner management."
+      },
+      "category": "consumer-protection",
+      "tags": [
+        "销售",
+        "适当性",
+        "双录",
+        "营销宣传"
+      ],
+      "version": "1.0.0",
+      "author": "八大权益",
+      "license": "proprietary",
+      "source": {
+        "type": "skillhub",
+        "namespace": "user_e3180ba3",
+        "slug": "compliance-sales"
+      },
+      "install": {
+        "skillhub": "skillhub install compliance-sales --namespace user_e3180ba3"
+      }
+    },
+    {
+      "id": "complaint-management",
+      "name": {
+        "zh": "投诉管理",
+        "en": "Complaint Management"
+      },
+      "summary": {
+        "zh": "投诉数据统计分析、分类打标（JR/T 0169-2018）、复杂投诉谈判支持、和解协议起草、溯源整改与月报生成。",
+        "en": "Complaint analytics, classification under JR/T 0169-2018, negotiation support, settlement drafting, root-cause rectification and monthly reporting."
+      },
+      "category": "consumer-protection",
+      "tags": [
+        "投诉",
+        "数据分析",
+        "谈判",
+        "整改"
+      ],
+      "version": "1.0.0",
+      "author": "八大权益",
+      "license": "proprietary",
+      "source": {
+        "type": "skillhub",
+        "namespace": "user_e3180ba3",
+        "slug": "complaint-management"
+      },
+      "install": {
+        "skillhub": "skillhub install complaint-management --namespace user_e3180ba3"
+      }
+    },
+    {
+      "id": "consumer-protection-inspection",
+      "name": {
+        "zh": "消保检查",
+        "en": "Consumer Protection Inspection"
+      },
+      "summary": {
+        "zh": "检查制度与年度计划、六大领域检查执行、检查方案与记录表生成、整改跟踪台账与覆盖率统计。",
+        "en": "Inspection systems and annual plans, six-domain execution, plan and record templates, rectification tracking and coverage statistics."
+      },
+      "category": "consumer-protection",
+      "tags": [
+        "检查",
+        "整改",
+        "内控"
+      ],
+      "version": "1.0.0",
+      "author": "八大权益",
+      "license": "proprietary",
+      "source": {
+        "type": "skillhub",
+        "namespace": "user_e3180ba3",
+        "slug": "consumer-protection-inspection"
+      },
+      "install": {
+        "skillhub": "skillhub install consumer-protection-inspection --namespace user_e3180ba3"
+      }
+    },
+    {
+      "id": "official-source-qa",
+      "name": {
+        "zh": "官方口径问答",
+        "en": "Official Source Q&A"
+      },
+      "summary": {
+        "zh": "把客户的事实性问题变成一条可直接发送的答复：检索官方网站与监管原文，交叉核验后逐条溯源。",
+        "en": "Turns customer factual questions into a send-ready answer, grounded in official and regulatory sources with citation per conclusion."
+      },
+      "category": "consumer-protection",
+      "tags": [
+        "口径",
+        "法规检索",
+        "客服"
+      ],
+      "version": "1.0.0",
+      "author": "八大权益",
+      "license": "proprietary",
+      "source": {
+        "type": "github",
+        "repo": "openfcp/awesome-financial-skills",
+        "path": "skills/official-source-qa",
+        "ref": "main",
+        "vendored": true
+      },
+      "install": {
+        "plugin": "./skills/official-source-qa"
+      }
+    },
+    {
+      "id": "ai-ppt-skill",
+      "name": {
+        "zh": "PPT Master · 智能生成",
+        "en": "PPT Master"
+      },
+      "summary": {
+        "zh": "五阶段交互工作流生成可直接编辑的 .pptx：20 种图表类型、8 大温和色系，从大纲到成片一次交付。",
+        "en": "A five-stage interactive workflow that produces editable .pptx decks — 20 chart types and 8 muted palettes, from outline to finished file."
+      },
+      "category": "office-design",
+      "tags": [
+        "PPT",
+        "演示文稿",
+        "图表",
+        "python-pptx"
+      ],
+      "version": "3.0.0",
+      "author": "ppt-master",
+      "license": "proprietary",
+      "source": {
+        "type": "skillhub",
+        "namespace": "user_741c61d8",
+        "slug": "ai-ppt-skill"
+      },
+      "install": {
+        "skillhub": "skillhub install ai-ppt-skill --namespace user_741c61d8"
+      }
+    },
+    {
+      "id": "gongwenformat-pro",
+      "name": {
+        "zh": "公文排版 Pro",
+        "en": "Official Document Typesetting Pro"
+      },
+      "summary": {
+        "zh": "按 GB/T 9704-2012 把 Markdown/TXT/DOCX 转成国标格式 Word：红头、发文字号、版记、字体字号与页边距一次到位。",
+        "en": "Converts Markdown/TXT/DOCX into GB/T 9704-2012 compliant Word files — red header, document number, colophon, fonts, sizes and margins all handled."
+      },
+      "category": "office-design",
+      "tags": [
+        "公文",
+        "排版",
+        "GB/T 9704",
+        "docx"
+      ],
+      "version": "1.0.0",
+      "author": "user_2ecc1bb2",
+      "license": "proprietary",
+      "source": {
+        "type": "skillhub",
+        "namespace": "user_2ecc1bb2",
+        "slug": "gongwenformat-pro"
+      },
+      "install": {
+        "skillhub": "skillhub install gongwenformat-pro --namespace user_2ecc1bb2"
+      }
+    },
+    {
+      "id": "ppt-win32com-editor",
+      "name": {
+        "zh": "PPT 原位编辑（win32com）",
+        "en": "PPT In-place Editor (win32com)"
+      },
+      "summary": {
+        "zh": "通过 PowerPoint COM 接口就地修改已有 .pptx，布局、图片、形状、渐变与特效全部保留；只改不重建。仅支持 Windows。",
+        "en": "Edits an existing .pptx in place through the PowerPoint COM interface, preserving layouts, images, shapes, gradients and effects — modify, never rebuild. Windows only."
+      },
+      "category": "office-design",
+      "tags": [
+        "PPT",
+        "编辑",
+        "COM",
+        "Windows"
+      ],
+      "version": "1.0.0",
+      "author": "user_bd21c5dc",
+      "license": "proprietary",
+      "source": {
+        "type": "skillhub",
+        "namespace": "user_bd21c5dc",
+        "slug": "ppt-win32com-editor"
+      },
+      "install": {
+        "skillhub": "skillhub install ppt-win32com-editor --namespace user_bd21c5dc"
+      }
+    },
+    {
+      "id": "official-document-skill",
+      "name": {
+        "zh": "公文写作",
+        "en": "Chinese Official Document Writing"
+      },
+      "summary": {
+        "zh": "起草、改写、润色与校核中文公文与政务应用文：文种选择、格式规范、克制语体、事实密度与降 AI 味。",
+        "en": "Drafts, rewrites, polishes and audits Chinese official documents and government writing — document type selection, format rules, restrained institutional tone, factual density and AI-flavor cleanup."
+      },
+      "category": "office-design",
+      "tags": [
+        "公文",
+        "政务写作",
+        "降AI味",
+        "文种校核"
+      ],
+      "version": "1.4.0",
+      "author": "user_a601cd18",
+      "license": "proprietary",
+      "source": {
+        "type": "skillhub",
+        "namespace": "user_a601cd18",
+        "slug": "official-document-skill"
+      },
+      "install": {
+        "skillhub": "skillhub install official-document-skill --namespace user_a601cd18"
+      }
+    },
+    {
+      "id": "xiaoshuojubenzhuanfenjing",
+      "name": {
+        "zh": "小说剧本分镜流水线",
+        "en": "Novel → Script → Storyboard Pipeline"
+      },
+      "summary": {
+        "zh": "从小说到剧本再到分镜的完整链路：素材挖点、三幕结构、场景剧本、分镜表、角色人设卡与 AI 绘图/视频提示词。",
+        "en": "An end-to-end chain from novel to screenplay to storyboard — material mining, three-act structure, scene scripts, shot lists, character sheets and AI image/video prompts."
+      },
+      "category": "office-design",
+      "tags": [
+        "剧本",
+        "分镜",
+        "小说改编",
+        "Prompt"
+      ],
+      "version": "1.0.0",
+      "author": "davtime",
+      "license": "proprietary",
+      "source": {
+        "type": "skillhub",
+        "namespace": "davtime",
+        "slug": "xiaoshuojubenzhuanfenjing"
+      },
+      "install": {
+        "skillhub": "skillhub install xiaoshuojubenzhuanfenjing --namespace davtime"
+      }
+    },
+    {
+      "id": "aistockresearcher",
+      "name": {
+        "zh": "全球智能投研",
+        "en": "Global Stock Researcher"
+      },
+      "summary": {
+        "zh": "A股/港股/美股/基金/ETF/期货/黄金/债券全资产量化分析与概率预测：多源自动降级、分位数与方向概率、可追溯证据链，支持导出 Word/PPT/PDF。",
+        "en": "Quantitative analysis and probabilistic forecasting across A-shares, HK/US equities, funds, ETFs, futures, gold and bonds — multi-source fallback, quantiles and directional probability, traceable evidence, Word/PPT/PDF export."
+      },
+      "category": "data-tech",
+      "tags": [
+        "投研",
+        "股票",
+        "量化",
+        "概率预测"
+      ],
+      "version": "14.0.0",
+      "author": "skill-of-me",
+      "license": "MIT",
+      "source": {
+        "type": "skillhub",
+        "namespace": "user_9d5a2a39",
+        "slug": "aistockresearcher"
+      },
+      "install": {
+        "skillhub": "skillhub install aistockresearcher --namespace user_9d5a2a39"
+      }
+    },
+    {
+      "id": "generate-chart",
+      "name": {
+        "zh": "智能数据可视化",
+        "en": "Smart Data Visualization"
+      },
+      "summary": {
+        "zh": "分析数据特征并推荐最佳图表组合，用 Plotly 生成交互式 HTML 仪表板，覆盖柱状/折线/散点/箱线/热力/旭日等十余种图型。",
+        "en": "Profiles the data, recommends the best chart mix and renders an interactive Plotly HTML dashboard across bar, line, scatter, box, heatmap, sunburst and a dozen more types."
+      },
+      "category": "data-tech",
+      "tags": [
+        "可视化",
+        "仪表板",
+        "Plotly",
+        "HTML"
+      ],
+      "version": "1.0.0",
+      "author": "user_af28adda",
+      "license": "proprietary",
+      "source": {
+        "type": "skillhub",
+        "namespace": "user_af28adda",
+        "slug": "generate-chart"
+      },
+      "install": {
+        "skillhub": "skillhub install generate-chart --namespace user_af28adda"
+      }
+    },
+    {
+      "id": "tianji-business-search",
+      "name": {
+        "zh": "天机商查",
+        "en": "Tianji Business Search"
+      },
+      "summary": {
+        "zh": "企业情报聚合查询：工商信息、股东结构、经营状态、司法风险、融资上市与舆情，用于投融资尽调、竞品分析与商业合作背景核验。",
+        "en": "Company intelligence lookup — registration, shareholder structure, operating status, litigation risk, funding and public sentiment for due diligence, competitive analysis and partner vetting."
+      },
+      "category": "data-tech",
+      "tags": [
+        "企业查询",
+        "尽调",
+        "司法风险",
+        "舆情"
+      ],
+      "version": "1.0.0",
+      "author": "user_83002a29",
+      "license": "proprietary",
+      "source": {
+        "type": "skillhub",
+        "namespace": "user_83002a29",
+        "slug": "tianji-business-search"
+      },
+      "install": {
+        "skillhub": "skillhub install tianji-business-search --namespace user_83002a29"
+      }
+    },
+    {
+      "id": "smart-charts",
+      "name": {
+        "zh": "智能图表",
+        "en": "Smart Charts"
+      },
+      "summary": {
+        "zh": "把 CSV/Excel/JSON 转成独立可交互的 ECharts HTML：32 类图表、3 套主题、全离线无 CDN，并内置数据画像与事实卡供解读引用。",
+        "en": "Turns CSV/Excel/JSON into standalone interactive ECharts HTML — 32 chart types, 3 themes, fully offline without CDN, with data profiling and embedded fact sheets for citation."
+      },
+      "category": "data-tech",
+      "tags": [
+        "图表",
+        "ECharts",
+        "离线",
+        "数据画像"
+      ],
+      "version": "8.4.0",
+      "author": "smart-charts",
+      "license": "MIT",
+      "source": {
+        "type": "skillhub",
+        "namespace": "user_5b28ea14",
+        "slug": "smart-charts"
+      },
+      "install": {
+        "skillhub": "skillhub install smart-charts --namespace user_5b28ea14"
+      }
+    },
+    {
+      "id": "academic-figures",
+      "name": {
+        "zh": "学术配图",
+        "en": "Academic Figures"
+      },
+      "summary": {
+        "zh": "一条命令从 JSON/CSV/Excel 生成顶刊级学术图表：40 种图型（森林图、KM 曲线、ROC、列线图、火山图、PRISMA 等）、色盲安全配色、期刊预设与 600dpi 多格式导出。",
+        "en": "Generates journal-grade academic figures from JSON/CSV/Excel in one command — 40 chart types (forest, KM, ROC, nomogram, volcano, PRISMA and more), colorblind-safe palettes, journal presets and 600 dpi multi-format export."
+      },
+      "category": "data-tech",
+      "tags": [
+        "学术图表",
+        "SCI",
+        "森林图",
+        "出版级"
+      ],
+      "version": "1.0.0",
+      "author": "indiv-sorsor",
+      "license": "proprietary",
+      "source": {
+        "type": "skillhub",
+        "namespace": "indiv-sorsor",
+        "slug": "academic-figures"
+      },
+      "install": {
+        "skillhub": "skillhub install academic-figures --namespace indiv-sorsor"
+      }
+    },
+    {
+      "id": "law-skills",
+      "name": {
+        "zh": "法律咨询与起诉状",
+        "en": "Legal Consultation & Complaint Drafting"
+      },
+      "summary": {
+        "zh": "法律咨询、要素式/通用民事起诉状起草，以及国家法律法规数据库实时法条查询；含逻辑自检与诉讼时效追踪。",
+        "en": "Legal consultation, element-based and general civil complaint drafting, and live statute lookup against the national legal database — with logic self-check and limitation-period tracking."
+      },
+      "category": "compliance-legal",
+      "tags": [
+        "法律",
+        "起诉状",
+        "法条查询",
+        "诉讼"
+      ],
+      "version": "6.0",
+      "author": "马常成律师",
+      "license": "MIT",
+      "source": {
+        "type": "skillhub",
+        "namespace": "user_5fa95d36",
+        "slug": "law-skills"
+      },
+      "install": {
+        "skillhub": "skillhub install law-skills --namespace user_5fa95d36"
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+name: 提交金融技能
+description: 推荐一个值得收录的金融 Skill / MCP / Agent
+title: "[提交] "
+labels: ["submission"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: 项目名称与链接
+      placeholder: 例：xxx-skill · https://github.com/owner/repo
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 所属分类
+      options:
+        - 消费者保护
+        - 办公与设计
+        - 数据与技术
+        - 研究与分析
+        - 合规与法律
+        - 风险管理
+        - 投资与交易
+        - 产品与业务
+        - 其他
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: 类型
+      options:
+        - Skill 包
+        - MCP 服务
+        - Agent
+        - 桌面应用
+        - 工具库
+        - 数据集
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: 一句话说明
+      description: 解决什么岗位的什么问题，80 字以内
+    validations:
+      required: true
+
+  - type: textarea
+    id: boundary
+    attributes:
+      label: 能力边界
+      description: 不适用于什么场景？哪一步必须人工介入？
+    validations:
+      required: true
+
+  - type: textarea
+    id: experience
+    attributes:
+      label: 实际使用情况
+      description: 你用它做过什么任务，效果如何，哪些地方需要返工？
+    validations:
+      required: true
+
+  - type: input
+    id: license
+    attributes:
+      label: 开源协议
+      placeholder: 例：MIT / Apache-2.0 / Apache-2.0 + 禁止商用
+    validations:
+      required: true

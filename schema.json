@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Awesome Financial Skills Catalog",
+  "description": "金融技能清单的唯一真相源。只存引用，不存技能正文：每条记录 source.type 与坐标，消费端按 resolve 规则回原件取回。",
+  "type": "object",
+  "required": ["format", "id", "updated", "title", "description", "resolve", "categories", "skills"],
+  "properties": {
+    "format": { "type": "integer", "const": 3 },
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "updated": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "title": { "$ref": "#/definitions/bilingual" },
+    "description": { "$ref": "#/definitions/bilingual" },
+    "sources": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["title", "note"],
+        "properties": {
+          "title": { "$ref": "#/definitions/bilingual" },
+          "note": { "$ref": "#/definitions/bilingual" }
+        }
+      }
+    },
+    "resolve": {
+      "type": "object",
+      "description": "按 source.type 取回正文的规则。消费端不应硬编码 URL，读这里。",
+      "required": ["note", "skillhub", "github"],
+      "properties": {
+        "note": { "$ref": "#/definitions/bilingual" },
+        "skillhub": {
+          "type": "object",
+          "required": ["kind", "url"],
+          "properties": {
+            "kind": { "type": "string", "const": "zip" },
+            "url": { "type": "string", "description": "含 {slug} 占位符，GET 得到 zip" },
+            "note": { "$ref": "#/definitions/bilingual" }
+          }
+        },
+        "github": {
+          "type": "object",
+          "required": ["kind"],
+          "properties": {
+            "kind": { "type": "string", "const": "files" },
+            "raw": { "type": "string", "description": "含 {repo} {ref} {path} 占位符" },
+            "api": { "type": "string", "description": "含 {repo} {path} {ref} 占位符" },
+            "note": { "$ref": "#/definitions/bilingual" }
+          }
+        }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "title"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "title": { "$ref": "#/definitions/bilingual" },
+          "description": { "$ref": "#/definitions/bilingual" }
+        }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "summary", "category", "version", "license", "source"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "name": { "$ref": "#/definitions/bilingual" },
+          "summary": { "$ref": "#/definitions/bilingual" },
+          "category": { "type": "string", "description": "必须命中 categories[].id" },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "version": { "type": "string" },
+          "author": { "type": "string" },
+          "license": { "type": "string" },
+          "source": {
+            "type": "object",
+            "required": ["type"],
+            "properties": {
+              "type": { "type": "string", "enum": ["skillhub", "github"] },
+              "namespace": { "type": "string", "description": "skillhub：作者命名空间" },
+              "slug": { "type": "string", "description": "skillhub：技能 slug，下载地址由它拼出" },
+              "repo": { "type": "string", "description": "github：owner/repo" },
+              "path": { "type": "string", "description": "github：技能目录（含 SKILL.md）" },
+              "ref": { "type": "string", "description": "github：分支或 commit" },
+              "vendored": {
+                "type": "boolean",
+                "description": "true 表示正文就在本仓该目录下 —— 仅限未上架 SkillHub 的技能，构建时会校验目录真实存在"
+              }
+            }
+          },
+          "install": {
+            "type": "object",
+            "properties": {
+              "skillhub": { "type": "string", "description": "SkillHub 安装命令，站点卡片显示这一条" },
+              "plugin": { "type": "string", "description": "仓内自带正文的目录（仅 vendored 技能）" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "bilingual": {
+      "type": "object",
+      "required": ["zh", "en"],
+      "properties": {
+        "zh": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}
