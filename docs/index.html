@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>金融行业skill精选 · Awesome Financial Skills</title>
+<title>金融行业skills精选 · Awesome Financial Skills</title>
 <meta name="description" content="为金融从业者策展的 AI 技能清单：按业务场景分类，标注能力边界与来源。">
 <link rel="icon" type="image/svg+xml" href="logo.svg">
 <style>
@@ -61,10 +61,6 @@ h1 .en{display:block; font-size:12.5px; font-weight:500; letter-spacing:.8px; te
 .ep-note b{color:var(--ink); font-weight:620}
 /* 只留一个 flex 子项：内联 <b> 若直接放在 flex 容器里会被拆成独立项目，文字会断成三截 */
 .ep-note > span{flex:1; min-width:0}
-/* 贴底的一行，三卡对齐，下部不留大片空白 */
-.ep-foot{margin-top:auto; padding-top:12px; font-size:11.5px; color:var(--ink-3)}
-.ep-foot a{color:var(--ink-2)}
-.ep-foot a:hover{color:var(--accent-ink)}
 button.copy{border:1px solid var(--line); background:var(--panel); color:var(--ink-2); border-radius:6px; padding:3px 9px;
   font-size:11.5px; cursor:pointer; font-family:inherit; flex:none; transition:.15s; white-space:nowrap}
 button.copy:hover{border-color:var(--accent); color:var(--accent-ink); background:var(--accent-soft)}
@@ -83,7 +79,7 @@ button.copy.done{border-color:var(--accent); color:var(--accent-ink); background
 .search{flex:1 1 220px; display:flex; align-items:center; gap:8px; background:var(--panel); border:1px solid var(--line);
   border-radius:10px; padding:7px 12px}
 .search input{border:0; outline:0; background:none; width:100%; font-size:14px; font-family:inherit; color:var(--ink)}
-.search input::placeholder{color:var(--ink-3)}
+.search-ico{color:var(--ink-3); flex:none; display:block}
 .seg{display:flex; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--panel)}
 .seg button{border:0; background:none; padding:7px 12px; font-size:13px; color:var(--ink-2); cursor:pointer; font-family:inherit}
 .seg button[aria-pressed="true"]{background:var(--accent-soft); color:var(--accent-ink); font-weight:600;
@@ -135,9 +131,9 @@ footer a{color:var(--ink-2)}
       <div>
         <h1>
           <span class="h1-row">
-            <img class="logo" src="logo.svg" width="32" height="32" alt="金融行业skill精选">
+            <img class="logo" src="logo.svg" width="32" height="32" alt="金融行业skills精选">
             <span class="h1-text">
-              <span data-zh="金融行业skill精选" data-en="Awesome Financial Skills">金融行业skill精选</span>
+              <span data-zh="金融行业skills精选" data-en="Awesome Financial Skills">金融行业skills精选</span>
               <span class="en" data-zh="Awesome Financial Skills" data-en="金融行业 · 技能精选">Awesome Financial Skills</span>
             </span>
           </span>
@@ -165,7 +161,6 @@ footer a{color:var(--ink-2)}
           <li data-zh="在市场里打开需要的技能卡片，点「安装」" data-en="Open the skill card in the market and click <b>Install</b>">在市场里打开需要的技能卡片，点「安装」</li>
           <li data-zh="安装完成后在对话中调用该技能" data-en="Call the skill in a conversation once installed">安装完成后在对话中调用该技能</li>
         </ol>
-        <div class="ep-foot"><a href="https://github.com/openfcp/awesome-financial-skills">清单与说明 ↗</a></div>
       </div>
 
       <div class="ep">
@@ -182,7 +177,6 @@ footer a{color:var(--ink-2)}
           <li data-zh="在 profile 的 <em>dsh.profile.bundles</em> 加入 <em>dsh-financial-skills</em>" data-en="Add <em>dsh-financial-skills</em> to <em>dsh.profile.bundles</em> in the profile">在 profile 的 <em>dsh.profile.bundles</em> 加入 <em>dsh-financial-skills</em></li>
           <li data-zh="彻底退出并重启 DSH，左侧栏点「金融技能」" data-en="Fully quit and restart DSH, then open <b>金融技能</b> in the sidebar">彻底退出并重启 DSH，左侧栏点「金融技能」</li>
         </ol>
-        <div class="ep-foot"><a href="https://github.com/openfcp/dsh-financial-skills">插件仓库与完整步骤 ↗</a></div>
       </div>
 
       <div class="ep">
@@ -196,7 +190,6 @@ footer a{color:var(--ink-2)}
           <li data-zh="粘贴到 WorkBuddy 或 DSH 对话框，直接发送" data-en="Paste it into a WorkBuddy or DSH chat and send">粘贴到 WorkBuddy 或 DSH 对话框，直接发送</li>
           <li data-zh="等它取回正文并装到技能目录，装完即可调用" data-en="Wait for it to fetch and install the skill, then call it">等它取回正文并装到技能目录，装完即可调用</li>
         </ol>
-        <div class="ep-foot"><a href="#grid">看下方技能列表 ↓</a></div>
       </div>
     </div>
   </div>
@@ -205,8 +198,11 @@ footer a{color:var(--ink-2)}
 <div class="toolbar">
   <div class="wrap">
     <label class="search">
-      <span style="color:var(--ink-3)">⌕</span>
-      <input id="q" type="search" placeholder="搜索技能、标签、岗位…" autocomplete="off">
+      <svg class="search-ico" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
+        <circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M12.6 12.6 L17 17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <input id="q" type="search" aria-label="搜索技能" autocomplete="off">
     </label>
     <div class="seg" role="group" aria-label="source filter">
       <button data-src="all" aria-pressed="true" data-zh="全部来源" data-en="All sources">全部来源</button>
@@ -252,8 +248,8 @@ footer a{color:var(--ink-2)}
   const esc = (s) => String(s).replace(/[&<>"]/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
 
   const UI = {
-    zh: {search:"搜索技能、标签、岗位…", none:"没有匹配的技能", noneHint:"换个关键词，或切回「全部分类」", copied:"已复制", copy:"复制提示词"},
-    en: {search:"Search skills, tags, roles…", none:"No matching skills", noneHint:"Try another keyword or reset the category", copied:"Copied", copy:"Copy prompt"}
+    zh: {none:"没有匹配的技能", noneHint:"换个关键词，或切回「全部分类」", copied:"已复制", copy:"复制提示词"},
+    en: {none:"No matching skills", noneHint:"Try another keyword or reset the category", copied:"Copied", copy:"Copy prompt"}
   };
 
   function applyI18n(){
@@ -261,7 +257,6 @@ footer a{color:var(--ink-2)}
     document.querySelectorAll("[data-zh]").forEach(el => {
       el.innerHTML = el.dataset[lang] || el.dataset.zh;
     });
-    document.getElementById("q").placeholder = UI[lang].search;
     document.getElementById("lede").textContent = T(C.description);
     document.querySelectorAll(".lang button").forEach(b =>
       b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
