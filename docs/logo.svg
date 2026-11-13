@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36" role="img" aria-label="金融行业skill精选">
+  <rect x="1.5" y="1.5" width="15" height="15" rx="4.2" fill="#0f5c4a"/>
+  <circle cx="16.5" cy="9" r="2.7" fill="#0f5c4a"/>
+  <rect x="19.5" y="1.5" width="15" height="15" rx="4.2" fill="#3d8a76"/>
+  <circle cx="27" cy="16.5" r="2.7" fill="#3d8a76"/>
+  <rect x="19.5" y="19.5" width="15" height="15" rx="4.2" fill="#7aad9d"/>
+  <circle cx="19.5" cy="27" r="2.7" fill="#7aad9d"/>
+  <rect x="1.5" y="19.5" width="15" height="15" rx="4.2" fill="#b4cec5"/>
+  <circle cx="9" cy="19.5" r="2.7" fill="#b4cec5"/>
+</svg>

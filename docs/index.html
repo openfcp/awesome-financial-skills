@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>金融行业skill精选 · Awesome Financial Skills</title>
 <meta name="description" content="为金融从业者策展的 AI 技能清单：按业务场景分类，标注能力边界与来源。">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2036%2036'%3E%3Crect%20x='1.5'%20y='1.5'%20width='15'%20height='15'%20rx='4.2'%20fill='%230f5c4a'/%3E%3Ccircle%20cx='16.5'%20cy='9'%20r='2.7'%20fill='%230f5c4a'/%3E%3Crect%20x='19.5'%20y='1.5'%20width='15'%20height='15'%20rx='4.2'%20fill='%233d8a76'/%3E%3Ccircle%20cx='27'%20cy='16.5'%20r='2.7'%20fill='%233d8a76'/%3E%3Crect%20x='19.5'%20y='19.5'%20width='15'%20height='15'%20rx='4.2'%20fill='%237aad9d'/%3E%3Ccircle%20cx='19.5'%20cy='27'%20r='2.7'%20fill='%237aad9d'/%3E%3Crect%20x='1.5'%20y='19.5'%20width='15'%20height='15'%20rx='4.2'%20fill='%23b4cec5'/%3E%3Ccircle%20cx='9'%20cy='19.5'%20r='2.7'%20fill='%23b4cec5'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
 <style>
 :root{
   --bg:#fbfbf9; --panel:#ffffff; --ink:#16181d; --ink-2:#5b6270; --ink-3:#8b929e;
@@ -43,22 +43,28 @@ h1 .en{display:block; font-size:12.5px; font-weight:500; letter-spacing:.8px; te
 .lang button + button{border-left:1px solid var(--line)}
 
 /* ---------- endpoints ---------- */
-/* 三卡横排、等高 */
+/* 三卡横排、等高：统一地址框高度 + 统一三步，避免下部留白 */
 .endpoints{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:22px; align-items:stretch}
 .ep{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:15px 16px 16px;
-  box-shadow:var(--shadow); min-width:0; display:flex; flex-direction:column; min-height:330px}
+  box-shadow:var(--shadow); min-width:0; display:flex; flex-direction:column}
 @media(max-width:860px){
   .endpoints{grid-template-columns:1fr}
-  .ep{min-height:0}
 }
-.ep-head{display:flex; align-items:center; gap:8px; margin-bottom:4px}
+.ep-head{display:flex; align-items:center; gap:8px; margin-bottom:10px}
 .ep-head .k{font-size:11.5px; letter-spacing:.6px; text-transform:uppercase; color:var(--ink-3); font-weight:600}
 .ep-head .role{font-size:10.5px; font-weight:600; padding:1.5px 7px; border-radius:5px; background:var(--accent-soft); color:var(--accent-ink)}
-.ep .v{font-size:14px; font-weight:620; margin-bottom:10px; line-height:1.5}
-.urlbox{display:flex; gap:6px; align-items:stretch; background:#f7f7f4; border:1px solid var(--line-2); border-radius:9px; padding:7px 8px 7px 10px; min-width:0}
+.urlbox{display:flex; gap:6px; align-items:center; background:#f7f7f4; border:1px solid var(--line-2); border-radius:9px;
+  padding:7px 8px 7px 10px; min-width:0; min-height:72px}
 .urlbox code{font-size:10.5px; line-height:1.5; color:var(--ink-2); word-break:break-all; overflow-wrap:anywhere; flex:1; min-width:0}
+.ep-note{background:#f7f7f4; border:1px solid var(--line-2); border-radius:9px; padding:9px 11px; min-height:72px;
+  font-size:12px; line-height:1.55; color:var(--ink-2); display:flex; align-items:center}
+.ep-note b{color:var(--ink); font-weight:620}
+/* 贴底的一行，三卡对齐，下部不留大片空白 */
+.ep-foot{margin-top:auto; padding-top:12px; font-size:11.5px; color:var(--ink-3)}
+.ep-foot a{color:var(--ink-2)}
+.ep-foot a:hover{color:var(--accent-ink)}
 button.copy{border:1px solid var(--line); background:var(--panel); color:var(--ink-2); border-radius:6px; padding:3px 9px;
-  font-size:11.5px; cursor:pointer; font-family:inherit; flex:none; align-self:flex-start; transition:.15s; white-space:nowrap}
+  font-size:11.5px; cursor:pointer; font-family:inherit; flex:none; transition:.15s; white-space:nowrap}
 button.copy:hover{border-color:var(--accent); color:var(--accent-ink); background:var(--accent-soft)}
 button.copy.done{border-color:var(--accent); color:var(--accent-ink); background:var(--accent-soft)}
 .steps{margin:11px 0 0; padding:0; list-style:none; counter-reset:s; font-size:12.5px; color:var(--ink-2)}
@@ -78,7 +84,8 @@ button.copy.done{border-color:var(--accent); color:var(--accent-ink); background
 .search input::placeholder{color:var(--ink-3)}
 .seg{display:flex; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--panel)}
 .seg button{border:0; background:none; padding:7px 12px; font-size:13px; color:var(--ink-2); cursor:pointer; font-family:inherit}
-.seg button[aria-pressed="true"]{background:var(--ink); color:#fff}
+.seg button[aria-pressed="true"]{background:var(--accent-soft); color:var(--accent-ink); font-weight:600;
+  box-shadow:inset 0 0 0 1px rgba(15,92,74,.10)}
 
 /* ---------- chips ---------- */
 .chips{display:flex; gap:8px; flex-wrap:wrap; padding:18px 0 4px}
@@ -109,16 +116,12 @@ main{padding:16px 0 56px}
 /* ---------- empty ---------- */
 .empty-state{margin-top:34px; text-align:center; color:var(--ink-3); padding:36px 20px; border:1px dashed var(--line); border-radius:var(--radius)}
 .empty-state b{display:block; color:var(--ink-2); font-size:15px; margin-bottom:6px}
-.pending{margin-top:36px}
-.pending h2{font-size:12px; letter-spacing:.6px; text-transform:uppercase; color:var(--ink-3); font-weight:600; margin:0 0 12px}
-.pending-list{display:flex; flex-wrap:wrap; gap:8px}
-.pending-item{font-size:12.5px; color:var(--ink-3); border:1px dashed var(--line); border-radius:8px; padding:5px 10px}
 
 footer{border-top:1px solid var(--line); padding:24px 0 36px; color:var(--ink-3); font-size:12.5px}
 footer .wrap{display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap}
 footer a{color:var(--ink-2)}
 .toast{position:fixed; left:50%; bottom:26px; transform:translateX(-50%) translateY(12px); opacity:0;
-  background:var(--ink); color:#fff; font-size:13px; padding:9px 18px; border-radius:999px; pointer-events:none; transition:.22s; z-index:60}
+  background:var(--accent-ink); color:#fff; font-size:13px; padding:9px 18px; border-radius:999px; pointer-events:none; transition:.22s; z-index:60}
 .toast.on{opacity:1; transform:translateX(-50%) translateY(0)}
 </style>
 </head>
@@ -130,16 +133,7 @@ footer a{color:var(--ink-2)}
       <div>
         <h1>
           <span class="h1-row">
-            <svg class="logo" viewBox="0 0 36 36" width="32" height="32" role="img" aria-label="金融行业skill精选">
-              <rect x="1.5" y="1.5" width="15" height="15" rx="4.2" fill="#0f5c4a"/>
-              <circle cx="16.5" cy="9" r="2.7" fill="#0f5c4a"/>
-              <rect x="19.5" y="1.5" width="15" height="15" rx="4.2" fill="#3d8a76"/>
-              <circle cx="27" cy="16.5" r="2.7" fill="#3d8a76"/>
-              <rect x="19.5" y="19.5" width="15" height="15" rx="4.2" fill="#7aad9d"/>
-              <circle cx="19.5" cy="27" r="2.7" fill="#7aad9d"/>
-              <rect x="1.5" y="19.5" width="15" height="15" rx="4.2" fill="#b4cec5"/>
-              <circle cx="9" cy="19.5" r="2.7" fill="#b4cec5"/>
-            </svg>
+            <img class="logo" src="logo.svg" width="32" height="32" alt="金融行业skill精选">
             <span class="h1-text">
               <span data-zh="金融行业skill精选" data-en="Awesome Financial Skills">金融行业skill精选</span>
               <span class="en" data-zh="Awesome Financial Skills" data-en="金融行业 · 技能精选">Awesome Financial Skills</span>
@@ -157,56 +151,50 @@ footer a{color:var(--ink-2)}
     <div class="endpoints">
       <div class="ep">
         <div class="ep-head">
-          <span class="k">catalog.json</span>
-          <span class="role" data-zh="唯一真相源" data-en="Source of truth">唯一真相源</span>
-        </div>
-        <div class="v" data-zh="两个客户端都只读这一份清单" data-en="Both clients read this one file">两个客户端都只读这一份清单</div>
-        <div class="urlbox">
-          <code id="url-dsh"></code>
-          <button class="copy" data-copy="url-dsh" data-zh="复制" data-en="Copy">复制</button>
-        </div>
-        <ol class="steps">
-          <li data-zh="清单<b>只存引用</b>，不含技能正文" data-en="<b>References only</b> — no skill bodies inside">清单<b>只存引用</b>，不含技能正文</li>
-          <li data-zh="每条记 <em>source.type</em> 与坐标：SkillHub 的 <em>namespace/slug</em>，或 GitHub 的 <em>repo/path/ref</em>" data-en="Each entry records <em>source.type</em> plus coordinates: SkillHub <em>namespace/slug</em>, or GitHub <em>repo/path/ref</em>">每条记 <em>source.type</em> 与坐标：SkillHub 的 <em>namespace/slug</em>，或 GitHub 的 <em>repo/path/ref</em></li>
-          <li data-zh="客户端按顶部的 <em>resolve</em> 规则回原件取正文" data-en="Clients fetch bodies from the original using the <em>resolve</em> rules at the top">客户端按顶部的 <em>resolve</em> 规则回原件取正文</li>
-          <li data-zh="新增收录只改这一份文件，不再往仓里复制正文" data-en="New entries edit this one file; nothing gets copied in">新增收录只改这一份文件，不再往仓里复制正文</li>
-        </ol>
-      </div>
-
-      <div class="ep">
-        <div class="ep-head">
           <span class="k">WorkBuddy</span>
           <span class="role" data-zh="技能市场" data-en="Skill market">技能市场</span>
         </div>
-        <div class="v" data-zh="添加市场 → 填清单地址，16 张卡按需下载" data-en="Add marketplace → paste the index URL; 16 cards, downloaded on demand">添加市场 → 填清单地址，16 张卡按需下载</div>
         <div class="urlbox">
           <code id="url-wb"></code>
           <button class="copy" data-copy="url-wb" data-zh="复制" data-en="Copy">复制</button>
         </div>
         <ol class="steps">
-          <li data-zh="技能 → 套件 → 右上角「添加市场」，把上面这个 <b>清单地址</b>粘进市场源" data-en="Skills → Suites → “Add marketplace”; paste the <b>index URL</b> above as the source">技能 → 套件 → 右上角「添加市场」，把上面这个 <b>清单地址</b>粘进市场源</li>
-          <li data-zh="添加时只下载这份清单（11 KB），<b>不会</b>把技能全部拉到本地" data-en="Only the index (11 KB) is downloaded — skills are <b>not</b> pulled up front">添加时只下载这份清单（11 KB），<b>不会</b>把技能全部拉到本地</li>
-          <li data-zh="市场里看到 16 张卡，点哪张装哪张：MIT 的 3 条装完即用，其余 13 条首次使用时从 SkillHub 现取正文" data-en="16 cards appear; install on click. The 3 MIT skills work offline right away, the other 13 fetch their body from SkillHub on first use">市场里看到 16 张卡，点哪张装哪张：MIT 的 3 条装完即用，其余 13 条首次使用时从 SkillHub 现取正文</li>
-          <li data-zh="未获再分发许可的技能，卡里只有取件器（2 KB，我们自己的代码），仓内不存他人正文" data-en="For skills without a redistribution license the card holds only a 2 KB fetcher (our own code); no third-party body is stored in the repo">未获再分发许可的技能，卡里只有取件器（2 KB，我们自己的代码），仓内不存他人正文</li>
-          <li data-zh="或者不想用市场界面：终端一条命令 <em>curl -fsSL https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main/install.sh | bash -s -- --all</em>" data-en="Or skip the UI: <em>curl -fsSL https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main/install.sh | bash -s -- --all</em>">或者不想用市场界面：终端一条命令 <em>curl -fsSL https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main/install.sh | bash -s -- --all</em></li>
+          <li data-zh="技能 → 套件 → 右上角「添加市场」，粘贴上面的<b>清单地址</b>" data-en="Skills → Suites → “Add marketplace”, paste the <b>index URL</b> above">技能 → 套件 → 右上角「添加市场」，粘贴上面的<b>清单地址</b></li>
+          <li data-zh="在市场里打开需要的技能卡片，点「安装」" data-en="Open the skill card in the market and click <b>Install</b>">在市场里打开需要的技能卡片，点「安装」</li>
+          <li data-zh="安装完成后在对话中调用该技能" data-en="Call the skill in a conversation once installed">安装完成后在对话中调用该技能</li>
         </ol>
+        <div class="ep-foot"><a href="https://github.com/openfcp/awesome-financial-skills">清单与说明 ↗</a></div>
       </div>
 
       <div class="ep">
         <div class="ep-head">
-          <span class="k">SkillHub CLI</span>
-          <span class="role" data-zh="不用索引" data-en="No index needed">不用索引</span>
+          <span class="k">DeepSeek Harness</span>
+          <span class="role" data-zh="插件" data-en="Plugin">插件</span>
         </div>
-        <div class="v" data-zh="只装某一个技能" data-en="Install a single skill">只装某一个技能</div>
         <div class="urlbox">
-          <code id="url-cli"></code>
-          <button class="copy" data-copy="url-cli" data-zh="复制" data-en="Copy">复制</button>
+          <code id="url-dsh"></code>
+          <button class="copy" data-copy="url-dsh" data-zh="复制" data-en="Copy">复制</button>
         </div>
         <ol class="steps">
-          <li data-zh="终端里执行上面那条命令" data-en="Run the command above in a terminal">终端里执行上面那条命令</li>
-          <li data-zh="想装别的，把 <em>slug</em> 换掉；完整的 slug 见表内每张卡片" data-en="Swap the <em>slug</em> to install another one">想装别的，把 <em>slug</em> 换掉；完整的 slug 见表内每张卡片</li>
-          <li data-zh="加 <em>--dir ~/.workbuddy/skills</em> 可直接装到 WorkBuddy" data-en="Add <em>--dir ~/.workbuddy/skills</em> to target WorkBuddy">加 <em>--dir ~/.workbuddy/skills</em> 可直接装到 WorkBuddy</li>
+          <li data-zh="终端执行 <em>dsh plugin --profile desktop add github:openfcp/dsh-financial-skills</em>" data-en="Run <em>dsh plugin --profile desktop add github:openfcp/dsh-financial-skills</em>">终端执行 <em>dsh plugin --profile desktop add github:openfcp/dsh-financial-skills</em></li>
+          <li data-zh="在 profile 的 <em>dsh.profile.bundles</em> 加入 <em>dsh-financial-skills</em>" data-en="Add <em>dsh-financial-skills</em> to <em>dsh.profile.bundles</em> in the profile">在 profile 的 <em>dsh.profile.bundles</em> 加入 <em>dsh-financial-skills</em></li>
+          <li data-zh="彻底退出并重启 DSH，左侧栏点「金融技能」" data-en="Fully quit and restart DSH, then open <b>金融技能</b> in the sidebar">彻底退出并重启 DSH，左侧栏点「金融技能」</li>
         </ol>
+        <div class="ep-foot"><a href="https://github.com/openfcp/dsh-financial-skills">插件仓库与完整步骤 ↗</a></div>
+      </div>
+
+      <div class="ep">
+        <div class="ep-head">
+          <span class="k" data-zh="单独安装" data-en="Single skill">单独安装</span>
+          <span class="role" data-zh="复制提示词" data-en="Copy prompt">复制提示词</span>
+        </div>
+        <div class="ep-note" data-zh="不想装市场或插件？下方每张技能卡片右下角的「复制提示词」，复制的是一条<b>可直接安装</b>的指令，粘贴到对话发送即可装好。" data-en="No marketplace or plugin needed: each card's <b>Copy prompt</b> button copies a ready-to-run install instruction. Paste it into a chat and send.">不想装市场或插件？下方每张技能卡片右下角的「复制提示词」，复制的是一条<b>可直接安装</b>的指令，粘贴到对话发送即可装好。</div>
+        <ol class="steps">
+          <li data-zh="在下方列表找到需要的技能，点卡片右下「复制提示词」" data-en="Find the skill below and click <b>Copy prompt</b> on its card">在下方列表找到需要的技能，点卡片右下「复制提示词」</li>
+          <li data-zh="粘贴到 WorkBuddy 或 DSH 对话框，直接发送" data-en="Paste it into a WorkBuddy or DSH chat and send">粘贴到 WorkBuddy 或 DSH 对话框，直接发送</li>
+          <li data-zh="等它取回正文并装到技能目录，装完即可调用" data-en="Wait for it to fetch and install the skill, then call it">等它取回正文并装到技能目录，装完即可调用</li>
+        </ol>
+        <div class="ep-foot"><a href="#grid">看下方技能列表 ↓</a></div>
       </div>
     </div>
   </div>
@@ -231,10 +219,6 @@ footer a{color:var(--ink-2)}
   <main>
     <div class="grid" id="grid"></div>
     <div id="none" class="empty-state" hidden></div>
-    <div class="pending" id="pending" hidden>
-      <h2 data-zh="待收录分类" data-en="Categories awaiting entries">待收录分类</h2>
-      <div class="pending-list" id="pending-list"></div>
-    </div>
   </main>
 </div>
 
@@ -253,10 +237,10 @@ footer a{color:var(--ink-2)}
 (function(){
   const C = window.__CATALOG__;
   // raw 优先：jsDelivr 会把 @main 的解析结果缓存十几小时，改完仓它还在发旧副本
-  const RAW  = "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main";
-  document.getElementById("url-dsh").textContent = RAW + "/catalog.json";
+  const RAW = "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main";
+  const CATALOG_URL = RAW + "/catalog.json";
   document.getElementById("url-wb").textContent  = RAW + "/marketplace.json";
-  document.getElementById("url-cli").textContent = "skillhub install consumer-protection-review --namespace user_e3180ba3";
+  document.getElementById("url-dsh").textContent = "https://github.com/openfcp/dsh-financial-skills";
   document.getElementById("stamp").textContent   = "updated " + C.updated;
 
   let lang = "zh", cat = "all", src = "all", q = "";
@@ -266,8 +250,8 @@ footer a{color:var(--ink-2)}
   const esc = (s) => String(s).replace(/[&<>"]/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
 
   const UI = {
-    zh: {search:"搜索技能、标签、岗位…", none:"没有匹配的技能", noneHint:"换个关键词，或切回「全部分类」", copied:"已复制", copy:"复制命令", pending:"待收录"},
-    en: {search:"Search skills, tags, roles…", none:"No matching skills", noneHint:"Try another keyword or reset the category", copied:"Copied", copy:"Copy", pending:"Open call"}
+    zh: {search:"搜索技能、标签、岗位…", none:"没有匹配的技能", noneHint:"换个关键词，或切回「全部分类」", copied:"已复制", copy:"复制提示词"},
+    en: {search:"Search skills, tags, roles…", none:"No matching skills", noneHint:"Try another keyword or reset the category", copied:"Copied", copy:"Copy prompt"}
   };
 
   function applyI18n(){
@@ -300,10 +284,34 @@ footer a{color:var(--ink-2)}
     el.querySelectorAll(".chip").forEach(b => b.onclick = () => { cat = b.dataset.cat; render(); });
   }
 
-  function cmdFor(s){
-    if (s.install && s.install.skillhub) return s.install.skillhub;
-    if (s.install && s.install.plugin) return "plugin: " + s.install.plugin.replace("./","");
-    return "";
+  // 每条卡片复制的是「可直接安装的提示词」：带坐标、取回规则、目标目录与校验要求。
+  function promptFor(s){
+    const name = T(s.name), source = s.source || {};
+    const zipUrl = "https://api.skillhub.cn/api/v1/download?slug=" + (source.slug || s.id);
+    let fetchLine;
+    if (source.type === "skillhub"){
+      fetchLine = lang === "zh"
+        ? `取回：按清单 resolve.skillhub，GET ${zipUrl} 得到 zip，解压后 SKILL.md 在根目录（namespace: ${source.namespace || "—"}）。`
+        : `Fetch: follow resolve.skillhub, GET ${zipUrl} for a zip with SKILL.md at its root (namespace: ${source.namespace || "—"}).`;
+    } else {
+      fetchLine = lang === "zh"
+        ? `取回：按清单 resolve.github，从 ${source.repo || ""} 的 ${source.path || ""}（ref ${source.ref || "main"}）逐文件下载，raw 不通依次退到 GitHub API 与 jsDelivr。`
+        : `Fetch: follow resolve.github, download every file from ${source.repo || ""}/${source.path || ""} (ref ${source.ref || "main"}) via raw, falling back to GitHub API then jsDelivr.`;
+    }
+    if (lang === "zh") return [
+      `请帮我安装技能「${name}」（id: ${s.id}）。`,
+      `清单：${CATALOG_URL}（按其中的 resolve 规则和该条 source 坐标取回正文，不要使用别处的副本）。`,
+      fetchLine,
+      `把取回的全部文件安装到 ~/.workbuddy/skills/${s.id}/，确认 SKILL.md 存在且可读。`,
+      `下载或校验失败就报错并清理暂存，不要留下空壳；完成后告诉我安装路径和文件数。`
+    ].join("\n");
+    return [
+      `Please install the skill "${name}" (id: ${s.id}).`,
+      `Catalog: ${CATALOG_URL} (follow its resolve rules and this entry's source coordinates; do not use copies from elsewhere).`,
+      fetchLine,
+      `Install every fetched file into ~/.workbuddy/skills/${s.id}/ and verify SKILL.md exists and is readable.`,
+      `On download or validation failure, report the error and clean up staging; never leave a partial install. Then report the install path and file count.`
+    ].join("\n");
   }
 
   function renderCards(){
@@ -311,12 +319,19 @@ footer a{color:var(--ink-2)}
       if (cat !== "all" && s.category !== cat) return false;
       if (src !== "all" && s.source.type !== src) return false;
       if (!q) return true;
-      const hay = [T(s.name), T(s.summary), s.id, ...(s.tags||[])].join(" ").toLowerCase();
+      // 名称/摘要的中英两版都进检索池：切到 EN 后仍能用中文关键词搜到
+      const hay = [
+        s.name && s.name.zh, s.name && s.name.en,
+        s.summary && s.summary.zh, s.summary && s.summary.en,
+        s.id, T(catOf(s.category).title), ...(s.tags||[])
+      ].filter(Boolean).join(" ").toLowerCase();
       return hay.includes(q.toLowerCase());
     });
 
     const grid = document.getElementById("grid");
-    grid.innerHTML = list.map(s => `
+    grid.innerHTML = list.map(s => {
+      const p = promptFor(s);
+      return `
       <article class="card" id="${s.id}">
         <h3>${esc(T(s.name))}</h3>
         <div class="id">${esc(s.id)}</div>
@@ -327,25 +342,19 @@ footer a{color:var(--ink-2)}
         </div>
         <p>${esc(T(s.summary))}</p>
         <div class="foot">
-          <span class="cmd" title="${esc(cmdFor(s))}">${esc(cmdFor(s))}</span>
-          <button class="copy" data-cmd="${esc(cmdFor(s))}">${UI[lang].copy}</button>
+          <span class="cmd" title="${esc(p)}">${esc(p.split("\n")[0])}</span>
+          <button class="copy" data-prompt="${esc(p)}">${UI[lang].copy}</button>
         </div>
-      </article>`).join("");
+      </article>`;
+    }).join("");
 
-    grid.querySelectorAll("button.copy").forEach(b => b.onclick = () => copy(b.dataset.cmd, b));
+    grid.querySelectorAll("button.copy").forEach(b => b.onclick = () => copy(b.dataset.prompt, b));
 
     const none = document.getElementById("none");
     none.hidden = list.length > 0;
     if (!list.length){
       none.innerHTML = `<b>${UI[lang].none}</b>${UI[lang].noneHint}`;
     }
-
-    const n = counts();
-    const pend = C.categories.filter(c => !n[c.id]);
-    const pendBox = document.getElementById("pending");
-    pendBox.hidden = cat !== "all" || q !== "" || pend.length === 0;
-    document.getElementById("pending-list").innerHTML = pend
-      .map(c => `<span class="pending-item">${esc(T(c.title))} · ${UI[lang].pending}</span>`).join("");
   }
 
   function render(){ renderChips(); renderCards(); }
