@@ -54,6 +54,9 @@ gh auth status         # 需要已登录：sync.py 和 publish_market.py 都从 
 
 ## 3. 场景 A：新增一条技能
 
+> 也可以交给 skill：把「来源 + 名称 + 地址 + 类别」发给 AI，`awesome-skill-curator` 会走完下面全部步骤（读原件 → 写清单 → 发版 → 验收 → 告诉你刷新两个客户端）。
+> 手动做的话，机械部分用 `python3 scripts/add_skill.py`，别手改 JSON。
+
 ### A1 · 确认来源
 
 **首选 SkillHub。** 同一个技能两处都有时，记 SkillHub 的坐标——正文由它托管，且有签名校验。
@@ -266,6 +269,7 @@ gh api "repos/openfcp/awesome-financial-skills/git/trees/marketplace?recursive=1
 | 取件器第一次用提示「已存在」 | 该技能之前装过 | 直接读 `~/.workbuddy/skills/<name>/SKILL.md`，不用再取 |
 | `[publish] 清单里有 N 条没有对应的包` | 只 `pack` 了部分，或包被删了 | `python3 scripts/pack_market.py` 补齐再发 |
 | 加了技能但 `[pack]` 报 `镜像包只支持 skillhub 源` | GitHub 源被标成 MIT，走了镜像分支 | 正常，GitHub 源一律出取件器；脚本已自动改走取件器，若仍报错检查脚本版本 |
+| dsh 里看不到新条目 | 目录缓存 6 小时，或页脚显示 `snapshot`（离线用随包快照） | 页脚点「刷新」；仍旧则 `rm -f ~/.dsh/storages/financial-skills/catalog.cache.json` 再刷 |
 
 ---
 

@@ -406,6 +406,7 @@ docs/
   catalog.js            ← 构建产物，站点内嵌数据（带内容指纹）
 scripts/
   install.py            读清单 → 回原件取正文 → 装进 ~/.workbuddy/skills
+  add_skill.py          收录一条：inspect 读原件元信息 / add / update / list（写 catalog.json）
   pack_market.py        出市场包：许可允许再分发的出镜像，其余出取件器；同时重写 marketplace.json
   publish_market.py     把 dist/pkgs 整体推到 marketplace 分支（API，不带 base_tree）
   build.py              校验清单 + 零正文守卫 + 生成 docs/catalog.js
