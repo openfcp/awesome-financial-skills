@@ -59,6 +59,8 @@ h1 .en{display:block; font-size:12.5px; font-weight:500; letter-spacing:.8px; te
 .ep-note{background:#f7f7f4; border:1px solid var(--line-2); border-radius:9px; padding:9px 11px; min-height:72px;
   font-size:12px; line-height:1.55; color:var(--ink-2); display:flex; align-items:center}
 .ep-note b{color:var(--ink); font-weight:620}
+/* 只留一个 flex 子项：内联 <b> 若直接放在 flex 容器里会被拆成独立项目，文字会断成三截 */
+.ep-note > span{flex:1; min-width:0}
 /* 贴底的一行，三卡对齐，下部不留大片空白 */
 .ep-foot{margin-top:auto; padding-top:12px; font-size:11.5px; color:var(--ink-3)}
 .ep-foot a{color:var(--ink-2)}
@@ -188,7 +190,7 @@ footer a{color:var(--ink-2)}
           <span class="k" data-zh="单独安装" data-en="Single skill">单独安装</span>
           <span class="role" data-zh="复制提示词" data-en="Copy prompt">复制提示词</span>
         </div>
-        <div class="ep-note" data-zh="不想装市场或插件？下方每张技能卡片右下角的「复制提示词」，复制的是一条<b>可直接安装</b>的指令，粘贴到对话发送即可装好。" data-en="No marketplace or plugin needed: each card's <b>Copy prompt</b> button copies a ready-to-run install instruction. Paste it into a chat and send.">不想装市场或插件？下方每张技能卡片右下角的「复制提示词」，复制的是一条<b>可直接安装</b>的指令，粘贴到对话发送即可装好。</div>
+        <div class="ep-note"><span data-zh="不想装市场或插件：点下方每张技能卡片右下角的「复制提示词」，会复制一条<b>可直接安装</b>的指令；粘贴到对话发送，就能装好这一个技能。" data-en="No marketplace or plugin needed: click <b>Copy prompt</b> on any skill card below to copy a ready-to-run install instruction; paste it into a chat and send to install that one skill.">不想装市场或插件：点下方每张技能卡片右下角的「复制提示词」，会复制一条<b>可直接安装</b>的指令；粘贴到对话发送，就能装好这一个技能。</span></div>
         <ol class="steps">
           <li data-zh="在下方列表找到需要的技能，点卡片右下「复制提示词」" data-en="Find the skill below and click <b>Copy prompt</b> on its card">在下方列表找到需要的技能，点卡片右下「复制提示词」</li>
           <li data-zh="粘贴到 WorkBuddy 或 DSH 对话框，直接发送" data-en="Paste it into a WorkBuddy or DSH chat and send">粘贴到 WorkBuddy 或 DSH 对话框，直接发送</li>
