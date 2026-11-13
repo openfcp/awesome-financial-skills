@@ -412,6 +412,7 @@ scripts/
   build.py              校验清单 + 零正文守卫 + 生成 docs/catalog.js
   sync.py               经 GitHub API 推送 main（绕开直连 github.com 的限制）
   check_market.py       发布后验收：线上清单 / 分支包集合 / sha256 三者是否自洽
+  check_clients.py      发布后核对客户端：raw + 3 个 jsDelivr 镜像 + dsh 缓存各是哪一版
   release.sh            一键发布：校验 + 验证引用 + 构建 + 推 main（`WITH_MARKET=1` 时连带出包 + 发市场分支 + 验收）
 dist/                   ← gitignore，本地构建产物（pkgs/ 新、archives/ 为历史遗留）
 ```
@@ -522,6 +523,7 @@ npm run serve                           # 本地预览站点 :8787
 | 16 条全走 SkillHub，GitHub 源的取件链路未被真实使用 | `pack_market.py` 已支持（GitHub 源出取件器、`fetch.py` 复用 `install.py` 的 github resolver），但线上没有条目验证过 | 收录第一条 GitHub 源技能时按 MAINTAINING 场景 A 走一遍并补测 |
 | 清单只校验「可达」，不校验内容变化 | `install.py --verify` 只确认能取到 `SKILL.md` | 可加 `--verify --strict` 比对 `name` / 版本 |
 | 声明 9 个分类，5 个空着（`research-analysis` / `risk-management` / `invest-trading` / `product-business` / `other`） | `build.py` 只打印提示，不报错；站点上这几类筛不出东西 | 要么补条目，要么删掉分类 |
+| dsh 面板可能拿到旧清单（下发版本不受控） | 它按 `raw → fastly → gcore → cdn` 顺序取，第一个成功就用，不比新旧；jsDelivr 的 `@main` 分支缓存最长 12 小时。实测过一次 fastly 还停在上一版 | 用 `check_clients.py` 定位；等缓存过期，不改清单。根治要靠插件侧改成「多源取最新」或改用不可变 tag 地址 |
 
 ---
 

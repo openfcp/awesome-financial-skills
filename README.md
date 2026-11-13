@@ -163,6 +163,7 @@ scripts/
   build.py                校验清单 + 生成 docs/catalog.js
   sync.py                 经 GitHub API 推送改动（绕开直连 github.com 的限制）
   check_market.py         发布后验收：清单 / 分支包集合 / sha256 是否自洽
+  check_clients.py        发布后核对：raw + 3 个镜像 + dsh 缓存各是哪一版
   release.sh              一键发布：校验 + 验证引用 + 构建 + 推送（WITH_MARKET=1 连带出包发市场）
 ```
 

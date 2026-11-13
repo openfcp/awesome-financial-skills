@@ -13,7 +13,7 @@
 | **作者更新了正文**（镜像包） | `WITH_MARKET=1 MARKET_FORCE=1 MARKET_ONLY=<id> ./scripts/release.sh "chore: 刷新 xx"` |
 | **下架一条技能** | 删 `catalog.json` 条目 → `WITH_MARKET=1 ./scripts/release.sh "chore: 下架 xx"` |
 | **只改文案 / 分类 / 排序** | `./scripts/release.sh "docs: …"`（带 `WITH_MARKET=1` 才会刷新市场卡片描述） |
-| **发布后验收** | `python3 scripts/check_market.py` |
+| **发布后验收** | `python3 scripts/check_market.py`（市场）+ `python3 scripts/check_clients.py`（客户端能看到哪一版） |
 | **只看不动** | `DRY=1 ./scripts/release.sh` |
 
 ---
@@ -255,6 +255,39 @@ gh api "repos/openfcp/awesome-financial-skills/git/trees/marketplace?recursive=1
 
 ---
 
+## 8b. 客户端刷新核对：用户点刷新后看到的是哪一版
+
+市场验收过了（包与 sha 都对），仍可能有人看到旧清单——问题不在本仓，在 CDN。用一条命令查清：
+
+```bash
+python3 scripts/check_clients.py          # 加 --purge 顺便请求 jsDelivr 清缓存
+```
+
+它核对四处：本地 `catalog.json` / 线上 raw / 三个 jsDelivr 镜像 / 本机 dsh 缓存，每处都标是否与本地一致。
+
+**为什么会不一致**：dsh 面板插件（`dsh-financial-skills`）的取数链是
+
+```
+raw.githubusercontent → fastly jsDelivr → gcore jsDelivr → cdn jsDelivr
+```
+
+**按顺序取，第一个成功就用，不比较新旧**。所以 raw 一时不通、而 fastly 的分支缓存还停在上一版时，刷新后就是旧清单，界面不报任何错。jsDelivr 的 `@main` 分支缓存最长 12 小时。
+
+实测过的一次（2026-11-13）：
+
+```
+raw      16 条  updated=2026-11-13  ✓
+fastly   17 条  updated=2026-11-12  ✗ 还带着已下架的 official-source-qa
+gcore    16 条  updated=2026-11-13  ✓
+cdn      16 条  updated=2026-11-13  ✓
+```
+
+处理原则：**等 CDN，不改清单**。让用户多点两次「刷新」（raw 一恢复就拿到新版），或 `rm -f ~/.dsh/storages/financial-skills/catalog.cache.json` 后重刷。不要为了让某个镜像跟上而重发一遍清单——那只会让两边都变旧。
+
+另一个别混淆的东西：dsh 里 `@openfcp/<id>` 这类**单技能插件**是从本仓 `plugins/<id>` 按固定 commit 装的，装完即冻结；本仓已不再保留 `plugins/` 目录，它们既不会随刷新更新、也无法重装。要更新只能卸载后从市场/取件器重装。
+
+---
+
 ## 9. 排错
 
 | 现象 | 原因 | 处理 |
@@ -269,7 +302,7 @@ gh api "repos/openfcp/awesome-financial-skills/git/trees/marketplace?recursive=1
 | 取件器第一次用提示「已存在」 | 该技能之前装过 | 直接读 `~/.workbuddy/skills/<name>/SKILL.md`，不用再取 |
 | `[publish] 清单里有 N 条没有对应的包` | 只 `pack` 了部分，或包被删了 | `python3 scripts/pack_market.py` 补齐再发 |
 | 加了技能但 `[pack]` 报 `镜像包只支持 skillhub 源` | GitHub 源被标成 MIT，走了镜像分支 | 正常，GitHub 源一律出取件器；脚本已自动改走取件器，若仍报错检查脚本版本 |
-| dsh 里看不到新条目 | 目录缓存 6 小时，或页脚显示 `snapshot`（离线用随包快照） | 页脚点「刷新」；仍旧则 `rm -f ~/.dsh/storages/financial-skills/catalog.cache.json` 再刷 |
+| dsh 里看不到新条目 | ①目录缓存 6 小时 ②页脚显示 `snapshot`（离线用随包快照）③落到 jsDelivr 旧缓存 | 页脚点「刷新」；仍旧先跑 `check_clients.py` 看是哪个镜像落后——落在 fastly 就只能等它过期；再不行 `rm -f ~/.dsh/storages/financial-skills/catalog.cache.json` 重刷 |
 
 ---
 
@@ -295,4 +328,5 @@ gh api "repos/openfcp/awesome-financial-skills/git/trees/marketplace?recursive=1
 - [ ] `[publish]` 的包数与清单条数一致
 - [ ] `[sync]` 打印了新的 commit
 - [ ] `check_market.py` 输出 `✓ 通过`
+- [ ] `check_clients.py` 里 `raw` 与本地一致（不一致说明清单没推上去）
 - [ ] WorkBuddy 市场里能看到新卡，点装可用
