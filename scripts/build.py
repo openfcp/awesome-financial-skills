@@ -5,8 +5,9 @@
     python3 scripts/build.py --check    # 只校验
     python3 scripts/build.py --urls     # 顺带打印每条引用的取回地址
 
-本仓库只做一件事：维护一份**引用清单**。技能正文一律不进来 —— 16 条指向
-SkillHub，1 条指向本仓 skills/ 目录（未上架 SkillHub 的唯一例外）。
+本仓库只做一件事：维护一份**引用清单**。技能正文一律不进来 —— 当前 16 条
+全部指向 SkillHub，仓内零正文。`vendored` 逃生舱保留着（正文确须在仓时才用），
+当前没有任何条目使用它。
 
 所以构建产物只剩一个：`docs/catalog.js`（给 index.html 用的内嵌数据）。
 以前那套 dsh 索引、WorkBuddy 整包 zip、每个技能一份 package.json/index.js/

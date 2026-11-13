@@ -5,6 +5,7 @@
 
 **网站**：https://openfcp.github.io/awesome-financial-skills/
 **清单源文件**：[`catalog.json`](./catalog.json)（唯一真相源，站点数据由它生成）
+**架构与原理**：[`ARCHITECTURE.md`](./ARCHITECTURE.md)（WorkBuddy 市场怎么工作、为什么这么设计、踩过的坑）
 
 ---
 
@@ -138,6 +139,7 @@ GitHub 源把 `source` 换成：
 ## 目录结构
 
 ```
+ARCHITECTURE.md           架构与原理：市场机制、数据流、许可分流、决策日志
 catalog.json              唯一真相源：分类 + 技能引用（双语、来源、安装方式、取回规则）
 marketplace.json          WorkBuddy 市场清单（构建产物，16 条 archive 源）
 schema.json               catalog 的 JSON Schema（构建时校验）

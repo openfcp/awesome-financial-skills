@@ -27,6 +27,7 @@ import json
 import os
 import subprocess
 import sys
+import time
 import urllib.error
 import urllib.request
 
@@ -61,26 +62,43 @@ def record_sha(sha):
         pass
 
 
-def api(method, path, payload=None):
+def api(method, path, payload=None, tries=5):
     """调用 GitHub REST API。gh CLI 已登录，token 从它那里取。
 
     HTTP 错误不直接抛出，返回 {"_error": code, "_body": ...} 由调用方判断——
     空仓库等"预期内"的错误需要分支处理。
+
+    但 502/503/504 和隧道错误要重试：本机出口代理对 api.github.com 会偶发
+    502（CONNECT tunnel failed），urllib 抛的是 URLError 而不是 HTTPError，
+    不重试就直接 traceback 退出。publish_market.py 早就加了这层，这里补齐。
     """
     token = subprocess.check_output(["gh", "auth", "token"]).decode().strip()
     url = f"https://api.github.com{path}"
     data = json.dumps(payload).encode() if payload is not None else None
-    req = urllib.request.Request(url, data=data, method=method)
-    req.add_header("Authorization", f"Bearer {token}")
-    req.add_header("Accept", "application/vnd.github+json")
-    req.add_header("User-Agent", "awesome-financial-skills-sync")
-    if data:
-        req.add_header("Content-Type", "application/json")
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return json.loads(resp.read().decode())
-    except urllib.error.HTTPError as e:
-        return {"_error": e.code, "_body": e.read().decode()[:400]}
+
+    last = None
+    for i in range(tries):
+        req = urllib.request.Request(url, data=data, method=method)
+        req.add_header("Authorization", f"Bearer {token}")
+        req.add_header("Accept", "application/vnd.github+json")
+        req.add_header("User-Agent", "awesome-financial-skills-sync")
+        if data:
+            req.add_header("Content-Type", "application/json")
+        try:
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                return json.loads(resp.read().decode())
+        except urllib.error.HTTPError as e:
+            last = {"_error": e.code, "_body": e.read().decode()[:400]}
+            if e.code in (502, 503, 504) and i < tries - 1:
+                time.sleep(5 * (i + 1))
+                continue
+            return last
+        except (urllib.error.URLError, TimeoutError) as e:
+            last = {"_error": 0, "_body": f"网络失败（第 {i + 1}/{tries} 次）：{e}"}
+            if i < tries - 1:
+                time.sleep(5 * (i + 1))
+                continue
+    return last
 
 
 def die(context, err):
