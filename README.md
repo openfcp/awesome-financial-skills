@@ -19,7 +19,7 @@
 
 现在的做法：`catalog.json` 里每条只记**坐标**（SkillHub 的 `namespace/slug`，或 GitHub 的 `repo/path/ref`），消费端按清单顶部的 `resolve` 规则回原件取正文。仓库体积从 22 MB 降到 20 KB 量级，收录新技能只改一行 JSON。
 
-> **唯一例外**：`official-source-qa` 未上架 SkillHub、也没有独立仓库，正文仍放在本仓 `skills/official-source-qa/`，并用 `"vendored": true` 显式声明。构建会校验该目录真实存在，其他任何位置出现 `SKILL.md` 都会让构建失败——防止副本再长回来。
+> **零正文**：仓内任何位置出现清单未声明的 `SKILL.md` 都会让构建失败——防止副本再长回来。`vendored: true` 机制保留给"正文确实必须在本仓"的特例（当前没有），用到时构建会校验目录真实存在。
 
 ---
 
@@ -129,7 +129,7 @@ GitHub 源把 `source` 换成：
 "install": { "plugin": "./skills/xxx" }
 ```
 
-`vendored: true` 只在"正文确实在本仓"时用（目前仅 `official-source-qa`），构建会校验目录存在。
+`vendored: true` 只在"正文确实必须在本仓"时用（当前没有这类条目），构建会校验目录存在。
 
 ---
 
@@ -139,7 +139,6 @@ GitHub 源把 `source` 换成：
 catalog.json              唯一真相源：分类 + 技能引用（双语、来源、安装方式、取回规则）
 schema.json               catalog 的 JSON Schema（构建时校验）
 install.sh                一条命令装的引导脚本
-skills/official-source-qa/  唯一自带正文的技能（未上架 SkillHub）
 docs/                     GitHub Pages 站点目录（Pages 只认 / 或 /docs）
   index.html              静态站（单文件，无外部依赖，file:// 也能打开）
   catalog.js              ← 构建产物，站点内嵌数据（带内容指纹）

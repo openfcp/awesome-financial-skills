@@ -302,36 +302,6 @@
       }
     },
     {
-      "id": "official-source-qa",
-      "name": {
-        "zh": "官方口径问答",
-        "en": "Official Source Q&A"
-      },
-      "summary": {
-        "zh": "把客户的事实性问题变成一条可直接发送的答复：检索官方网站与监管原文，交叉核验后逐条溯源。",
-        "en": "Turns customer factual questions into a send-ready answer, grounded in official and regulatory sources with citation per conclusion."
-      },
-      "category": "consumer-protection",
-      "tags": [
-        "口径",
-        "法规检索",
-        "客服"
-      ],
-      "version": "1.0.0",
-      "author": "八大权益",
-      "license": "proprietary",
-      "source": {
-        "type": "github",
-        "repo": "openfcp/awesome-financial-skills",
-        "path": "skills/official-source-qa",
-        "ref": "main",
-        "vendored": true
-      },
-      "install": {
-        "plugin": "./skills/official-source-qa"
-      }
-    },
-    {
       "id": "ai-ppt-skill",
       "name": {
         "zh": "PPT Master · 智能生成",
