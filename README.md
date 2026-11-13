@@ -6,6 +6,7 @@
 **网站**：https://openfcp.github.io/awesome-financial-skills/
 **清单源文件**：[`catalog.json`](./catalog.json)（唯一真相源，站点数据由它生成）
 **架构与原理**：[`ARCHITECTURE.md`](./ARCHITECTURE.md)（WorkBuddy 市场怎么工作、为什么这么设计、踩过的坑）
+**维护手册**：[`MAINTAINING.md`](./MAINTAINING.md)（新增 / 刷新 / 下架一条技能，各自的命令与验收）
 
 ---
 
@@ -147,6 +148,7 @@ GitHub 源把 `source` 换成：
 
 ```
 ARCHITECTURE.md           架构与原理：市场机制、数据流、许可分流、决策日志
+MAINTAINING.md            维护手册：新增 / 刷新 / 下架技能的操作步骤与验收
 catalog.json              唯一真相源：分类 + 技能引用（双语、来源、安装方式、取回规则）
 marketplace.json          WorkBuddy 市场清单（构建产物，16 条 archive 源）
 schema.json               catalog 的 JSON Schema（构建时校验）
@@ -160,7 +162,8 @@ scripts/
   publish_market.py       把 dist/pkgs 推到 marketplace 分支（整体替换）
   build.py                校验清单 + 生成 docs/catalog.js
   sync.py                 经 GitHub API 推送改动（绕开直连 github.com 的限制）
-  release.sh              一键发布：校验 + 验证引用 + 构建 + 推送
+  check_market.py         发布后验收：清单 / 分支包集合 / sha256 是否自洽
+  release.sh              一键发布：校验 + 验证引用 + 构建 + 推送（WITH_MARKET=1 连带出包发市场）
 ```
 
 ## 本地开发

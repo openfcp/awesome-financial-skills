@@ -97,12 +97,12 @@ https://github.com/openfcp/awesome-financial-skills/issues 提一个 issue，
 
 SHIM_SKILL = """---
 name: {name}
-description: {desc}（首次使用时自动从 SkillHub 取回正文）
+description: {desc}（首次使用时自动从{where}取回正文）
 ---
 
 # {name}
 
-这是一张**取件卡**：本插件不包含技能正文，正文在原作者处（SkillHub）。
+这是一张**取件卡**：本插件不包含技能正文，正文在原作者处（{where}）。
 
 ## 首次使用：先取件
 
@@ -110,7 +110,7 @@ description: {desc}（首次使用时自动从 SkillHub 取回正文）
 python3 scripts/fetch.py
 ```
 
-脚本位于本插件目录下的 `scripts/fetch.py`。它会去 SkillHub 取回「{id}」的当前版本，
+脚本位于本插件目录下的 `scripts/fetch.py`。它会去{where}取回「{id}」的当前版本，
 安装到 `~/.workbuddy/skills`。取件成功后再继续。
 
 ## 取件之后
@@ -162,7 +162,22 @@ sys.exit(subprocess.call([sys.executable, script,
 '''
 
 
+def homepage(s: dict) -> str:
+    """市场卡片上的「原页面」。两种源各自的落地页。"""
+    src = s["source"]
+    if src["type"] == "skillhub":
+        return f"https://skillhub.cn/skills/{src['slug']}"
+    return f"https://github.com/{src['repo']}"
+
+
 def build_mirror(s: dict, force: bool) -> bytes:
+    """镜像包：仅用于许可允许再分发、且来自 SkillHub 的条目。
+
+    GitHub 源一律走取件器：一个仓库里可能混着多种许可，整体搬运等于替作者
+    做再分发决定，不做。
+    """
+    if s["source"]["type"] != "skillhub":
+        raise SystemExit(f"[pack] {s['id']}: 镜像包只支持 skillhub 源（GitHub 源请走取件器）")
     sid = s["id"]
     dst = PKGS / f"{sid}.zip"
     if dst.is_file() and not force:
@@ -195,6 +210,11 @@ def build_mirror(s: dict, force: bool) -> bytes:
     return data
 
 
+def where_from(s: dict) -> str:
+    """取件说明里的「去哪儿取」——按来源说人话。"""
+    return "SkillHub" if s["source"]["type"] == "skillhub" else "作者的 GitHub 仓库"
+
+
 def build_shim(s: dict, dirname: str) -> bytes:
     sid = s["id"]
     stage = DIST / "_stage" / sid
@@ -205,8 +225,8 @@ def build_shim(s: dict, dirname: str) -> bytes:
     (stage / ".codebuddy-plugin" / "plugin.json").write_text(
         plugin_json(sid, s["summary"]["zh"], s.get("version", "1.0.0")), encoding="utf-8")
     (stage / "SKILL.md").write_text(
-        SHIM_SKILL.format(name=s["name"]["zh"], desc=s["summary"]["zh"],
-                          id=sid, dirname=dirname), encoding="utf-8")
+        SHIM_SKILL.format(name=s["name"]["zh"], desc=s["summary"]["zh"], id=sid,
+                          dirname=dirname, where=where_from(s)), encoding="utf-8")
     (stage / "scripts" / "fetch.py").write_text(FETCH_PY.format(id=sid), encoding="utf-8")
     data = write_zip(stage, PKGS / f"{sid}.zip")
     shutil.rmtree(stage)
@@ -229,7 +249,9 @@ def main() -> int:
     for s in cat["skills"]:
         sid = s["id"]
         lic = str(s.get("license", "")).lower()
-        if lic in REDISTRIBUTABLE:
+        # 镜像只在「许可允许 + 来源是 SkillHub（单包、单一许可）」时才做。
+        # GitHub 源一律取件：一个仓库可能混着多种许可，整体搬运等于替作者做决定。
+        if lic in REDISTRIBUTABLE and s["source"]["type"] == "skillhub":
             data = build_mirror(s, a.force)
             mirrored.append(sid)
             kind = "镜像"
@@ -244,7 +266,7 @@ def main() -> int:
             "version": s.get("version", "1.0.0"),
             "category": s.get("category", ""),
             "author": {"name": s.get("author", "未署名")},
-            "homepage": f"https://skillhub.cn/skills/{s['source']['slug']}",
+            "homepage": homepage(s),
             "license": s.get("license", "未声明"),
             "source": {
                 "source": "archive",
@@ -273,19 +295,38 @@ def main() -> int:
         order = [s["id"] for s in json.loads(
             (ROOT / "catalog.json").read_text(encoding="utf-8"))["skills"]]
         fresh = {p["name"]: p for p in entries}
-        merged = []
-        for sid in order:                       # 先按 catalog 顺序
+        merged, missing = [], []
+        for sid in order:                       # 只认 catalog 里的条目，顺序也照它
             if sid in fresh:
                 merged.append(fresh.pop(sid))
             elif sid in prev:
                 merged.append(prev[sid])
-        merged.extend(fresh.values())           # 不在 catalog 顺序里的新条目
-        merged.extend(p for n, p in prev.items() if n not in {m["name"] for m in merged})
+            else:
+                # catalog 里有、但既没重打也没旧清单 —— 缺卡，必须报出来
+                missing.append(sid)
         index["plugins"] = merged
+        dropped = [n for n in prev if n not in set(order)]
         print(f"\n[pack] --only 模式：清单合并后 {len(merged)} 条"
               f"（本次重打 {len(entries)} 条，沿用 {len(merged) - len(entries)} 条）")
+        if missing:
+            print(f"[pack] ⚠ 这些条目在 catalog 里但没有包、也没有旧清单，市场里会缺卡："
+                  f"{', '.join(missing)}")
+        if dropped:
+            print(f"[pack] 已从 catalog 移除、本次一并从清单删除：{', '.join(dropped)}")
     INDEX.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    total = sum(p.stat().st_size for p in PKGS.glob("*.zip"))
+
+    # 清单是唯一真相：不在清单里的本地包一律清掉，避免已下架的正文被 publish 重新上传
+    keep = {p["name"] for p in index["plugins"]}
+    pruned = []
+    for z in sorted(PKGS.glob("*.zip")):
+        if z.stem not in keep:
+            z.unlink()
+            pruned.append(z.stem)
+    if pruned:
+        print(f"[pack] 清理孤儿包（不在清单里，已下架或改名）：{', '.join(pruned)}")
+
+    total = sum(p.stat().st_size for p in PKGS.glob("*.zip")
+                if p.stem in keep)
     print(f"\n[pack] 镜像 {len(mirrored)} 条（许可允许再分发）：{', '.join(mirrored) or '-'}")
     print(f"[pack] 取件 {len(shimmed)} 条（未授权，只放取件器）：{len(shimmed)} 个包")
     print(f"[pack] 分支总体积 {total/1024/1024:.2f} MB · 清单 {INDEX.name} {INDEX.stat().st_size/1024:.1f} KB")

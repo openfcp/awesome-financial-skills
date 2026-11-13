@@ -67,7 +67,18 @@ def main() -> int:
     a = ap.parse_args()
 
     pkg_dir = Path(a.dir).expanduser()
-    zips = sorted(pkg_dir.glob("*.zip"))
+    # 只上传清单里点名的包：清单是唯一真相，多余的 zip 不该被推上分支
+    index = json.loads((ROOT / "marketplace.json").read_text(encoding="utf-8"))
+    wanted = [p["name"] for p in index.get("plugins", [])]
+    all_zips = {p.stem: p for p in sorted(pkg_dir.glob("*.zip"))}
+    zips = [all_zips[n] for n in wanted if n in all_zips]
+    absent = [n for n in wanted if n not in all_zips]
+    extra = sorted(set(all_zips) - set(wanted))
+    if absent:
+        raise SystemExit(f"[publish] 清单里有 {len(absent)} 条没有对应的包：{', '.join(absent)}\n"
+                         f"          先跑 python3 scripts/pack_market.py 补齐，或把它们从 catalog 删掉。")
+    if extra:
+        print(f"[publish] 跳过 {len(extra)} 个不在清单里的包：{', '.join(extra)}")
     if not zips:
         raise SystemExit(f"[publish] {pkg_dir} 里没有 zip，先跑 python3 scripts/pack_market.py")
     print(f"[publish] {len(zips)} 个包，合计 {sum(p.stat().st_size for p in zips)/1024/1024:.2f} MB")
@@ -101,10 +112,11 @@ def main() -> int:
         api("POST", f"/repos/{SLUG}/git/refs", {"ref": f"refs/heads/{BRANCH}", "sha": commit["sha"]})
     print(f"[publish] {BRANCH} → {commit['sha'][:10]}（{len(tree_entries)} 个包）")
 
-    index = json.loads((ROOT / "marketplace.json").read_text(encoding="utf-8"))
     print("\n[publish] 添加市场 → 市场源，填这一条：")
     print(f"  https://raw.githubusercontent.com/{SLUG}/main/marketplace.json")
     print(f"  （清单 {len(index['plugins'])} 条，均为 archive 源）")
+    print("\n[publish] 注意：分支已换新包，main 上的 marketplace.json 还是旧的 sha256。")
+    print("          紧接着跑 ./scripts/release.sh 推 main，否则这段时间点装会校验失败。")
     return 0
 
 

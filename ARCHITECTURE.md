@@ -398,7 +398,8 @@ sequenceDiagram
 catalog.json            唯一真相源：分类 + 16 条引用（双语、来源、安装方式、取回规则）
 marketplace.json        WorkBuddy 市场清单（构建产物，16 条 archive 源 + sha256）
 schema.json             catalog 的 JSON Schema
-ARCHITECTURE.md         本文
+ARCHITECTURE.md         本文：机制与设计（为什么）
+MAINTAINING.md          维护手册：收录、发版、验收、排错（怎么做）
 install.sh              一条命令安装的引导脚本（取 install.py + catalog.json）
 docs/
   index.html            静态站（单文件、无外部依赖）
@@ -409,7 +410,8 @@ scripts/
   publish_market.py     把 dist/pkgs 整体推到 marketplace 分支（API，不带 base_tree）
   build.py              校验清单 + 零正文守卫 + 生成 docs/catalog.js
   sync.py               经 GitHub API 推送 main（绕开直连 github.com 的限制）
-  release.sh            一键发布：校验 + 验证引用 + 构建 + 推 main（`WITH_MARKET=1` 时连带出包 + 发市场分支）
+  check_market.py       发布后验收：线上清单 / 分支包集合 / sha256 三者是否自洽
+  release.sh            一键发布：校验 + 验证引用 + 构建 + 推 main（`WITH_MARKET=1` 时连带出包 + 发市场分支 + 验收）
 dist/                   ← gitignore，本地构建产物（pkgs/ 新、archives/ 为历史遗留）
 ```
 
@@ -418,6 +420,8 @@ dist/                   ← gitignore，本地构建产物（pkgs/ 新、archive
 ---
 
 ## 10. 操作手册
+
+> 日常照着做的清单在 [`MAINTAINING.md`](./MAINTAINING.md)：新增 / 刷新 / 下架 / 只改文案，各自的命令、期望输出、验收与排错。本节只讲链路层面的关键点。
 
 ### 加一条技能
 
@@ -501,6 +505,9 @@ npm run serve                           # 本地预览站点 :8787
 | D14 | 站点 `catalog.js` 打内容指纹 | Pages 的 600s 缓存会造成「改了没生效」的假故障 |
 | D15 | `pack_market.py --only` 改为与既有清单**合并** | 原实现只把选中的条目写回 `marketplace.json`，`--only law-skills` 会把 16 条写成 1 条——用户市场里其余 15 张卡直接消失。实测复现后修掉，合并结果与原清单字节一致（幂等） |
 | D16 | `release.sh` 加 `WITH_MARKET=1`（默认关） | 站点与市场是两套脚本，只跑默认流程会「站点有新卡片、市场没有」。默认关是为了不必要地重传 2 MB 包；加技能时必须显式带上 |
+| D17 | GitHub 源一律出取件器，不做镜像 | 一个仓库可能混多种许可，整体搬运等于替作者做再分发决定。镜像分支加了硬断言（非 skillhub 源直接拒绝），市场卡片 `homepage` 按来源分别指向 SkillHub 页或仓库首页 |
+| D18 | 新增 `check_market.py` 做发布后验收 | 典型事故是「包传了清单没推」「清单改了包没重打」——两边都返回成功，只有 sha256 对不上，表现成"装不上"且难反查。脚本 30 秒给出结论，`release.sh` 在 `WITH_MARKET=1` 时自动调用（失败只提醒不中断） |
+| D19 | `pack_market.py` 清理孤儿包，`publish_market.py` 只上传清单点名的包 | 下架一个技能后，本地残留 zip 会被 publish 重新推上分支，等于把已下架的正文留在仓里。现在清单是唯一真相，两边都按清单收敛 |
 
 ---
 
@@ -511,7 +518,7 @@ npm run serve                           # 本地预览站点 :8787
 | 取件器首次使用要手动跑 `fetch.py` | 13 条都是这个体验，是一层摩擦 | 需要市场/技能支持「安装后钩子」才能自动；当前没有这个机制 |
 | 镜像包的 sha256 绑定上游版本 | 作者更新 SkillHub 上的正文后，包内镜像过期，需重跑 `pack_market.py` | 定期跑 `--force` 重打；或加 CI 定时任务比对 |
 | `marketplace` 分支每次整体替换 | 每次发布都要重传 16 个 blob（2 MB） | 量级还小，先不做增量 |
-| 16 条全走 SkillHub，GitHub 源未被真实使用 | resolver 已实现（三通道），但没有线上条目验证 | 收录第一条 GitHub 源时补测 |
+| 16 条全走 SkillHub，GitHub 源的取件链路未被真实使用 | `pack_market.py` 已支持（GitHub 源出取件器、`fetch.py` 复用 `install.py` 的 github resolver），但线上没有条目验证过 | 收录第一条 GitHub 源技能时按 MAINTAINING 场景 A 走一遍并补测 |
 | 清单只校验「可达」，不校验内容变化 | `install.py --verify` 只确认能取到 `SKILL.md` | 可加 `--verify --strict` 比对 `name` / 版本 |
 | 声明 9 个分类，5 个空着（`research-analysis` / `risk-management` / `invest-trading` / `product-business` / `other`） | `build.py` 只打印提示，不报错；站点上这几类筛不出东西 | 要么补条目，要么删掉分类 |
 
