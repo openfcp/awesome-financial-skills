@@ -40,7 +40,10 @@ DIST = ROOT / "dist"
 PKGS = DIST / "pkgs"
 INDEX = ROOT / "marketplace.json"
 RAW_MAIN = "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main"
-RAW_MKT = "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace"
+# 卡片里的包地址走 jsDelivr：raw.githubusercontent.com 在国内常整站 502/超时，而客户端
+# 「点安装」只认这一个 url、不会自行回退。改成镜像后，包内容与 sha256 都不变，
+# marketplace 分支无需重发（D22 把市场源换成 jsDelivr 后，下载链路也一并对齐）。
+PKG_BASE = "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace"
 SKILLHUB_ZIP = "https://api.skillhub.cn/api/v1/download?slug={slug}"
 UA = {"User-Agent": "afs-market-pack"}
 FIXED_TIME = (2026, 1, 1, 0, 0, 0)
@@ -262,7 +265,7 @@ def main() -> int:
             "license": s.get("license", "未声明"),
             "source": {
                 "source": "archive",
-                "url": f"{RAW_MKT}/pkgs/{sid}.zip",
+                "url": f"{PKG_BASE}/pkgs/{sid}.zip",
                 "sha256": hashlib.sha256(data).hexdigest(),
             },
         })

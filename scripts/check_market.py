@@ -7,7 +7,7 @@
 检查项（任一项失败退出码非 0，可以直接串进脚本里）：
   1. 线上 main 的 marketplace.json 能取到，且条数与本地一致、内容一致
   2. marketplace 分支上只有 pkgs/*.zip，且包数与清单一致（没有历史产物残留）
-  3. 清单里每条的 zip 都能 200 拿到
+  3. 清单里每条的 zip 都能 200 拿到（逐个镜像回退，raw 整站不通不算失败）
   4. 每个 zip 的实际 sha256 与清单里写的一致（这是用户点装时唯一的校验）
 
 为什么要这个：发布最典型的事故不是脚本报错，而是「包传上去了、清单没推」或
@@ -23,6 +23,7 @@ import json
 import subprocess
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -38,6 +39,14 @@ MANIFEST_MIRRORS = [
     f"https://cdn.jsdelivr.net/gh/{SLUG}@main/marketplace.json",
 ]
 UA = {"User-Agent": "afs-check-market"}
+# 包下载也做镜像回退：早先清单写死 raw，raw 整站超时会让 112 条里随机一批「下载失败」，
+# 但包本身和 sha256 都是好的。验收要回答的是「包能不能取到、对不对」，不是「raw 通不通」。
+PKG_BASES = (
+    f"https://cdn.jsdelivr.net/gh/{SLUG}@{BRANCH}",
+    f"https://fastly.jsdelivr.net/gh/{SLUG}@{BRANCH}",
+    f"https://gcore.jsdelivr.net/gh/{SLUG}@{BRANCH}",
+    f"https://raw.githubusercontent.com/{SLUG}/{BRANCH}",
+)
 
 problems: list[str] = []
 warns: list[str] = []
@@ -45,6 +54,22 @@ warns: list[str] = []
 
 def get(url: str, timeout: int = 60) -> bytes:
     return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout).read()
+
+
+def get_pkg(url: str, timeout: int = 25) -> tuple[bytes, str]:
+    """按镜像优先取包，返回 (内容, 实际命中的域名)；四个源都不通才算失败。"""
+    path = urllib.parse.urlparse(url).path
+    tail = path.split(f"/{BRANCH}/", 1)[-1]
+    candidates = [f"{b}/{tail}" for b in PKG_BASES]
+    if url not in candidates:
+        candidates.append(url)
+    last: Exception | None = None
+    for u in candidates:
+        try:
+            return get(u, timeout=timeout), urllib.parse.urlparse(u).netloc
+        except Exception as e:  # noqa: BLE001
+            last = e
+    raise RuntimeError(f"四个源都取不到（最后错误：{type(last).__name__}）")
 
 
 def get_manifest() -> tuple:
@@ -130,7 +155,7 @@ def main() -> int:
     for name, p in sorted(rp.items()):
         url, want = p["source"]["url"], p["source"].get("sha256", "")
         try:
-            data = get(url, timeout=180)
+            data, served_host = get_pkg(url)
         except Exception as e:                              # noqa: BLE001
             bad_get.append(f"{name}（{type(e).__name__}）")
             continue
@@ -138,7 +163,7 @@ def main() -> int:
         if want and got != want:
             bad_sha.append(f"{name}：清单 {want[:12]}… 实际 {got[:12]}…")
         if not a.quiet:
-            print(f"      {name:<44}{len(data)/1024:>8.1f} KB  {'✓' if got == want else '✗'}")
+            print(f"      {name:<44}{len(data)/1024:>8.1f} KB  {'✓' if got == want else '✗'}  {served_host}")
     if bad_get:
         problems.append(f"下载失败：{', '.join(bad_get)}")
     if bad_sha:

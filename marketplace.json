@@ -17,7 +17,7 @@
       "license": "proprietary",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/consumer-protection-review.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/consumer-protection-review.zip",
         "sha256": "7e0ac2b7fc0f7726645d2f5ef12c8f194664ccbb5498b3b20e6efad621ff8ebb"
       }
     },
@@ -33,7 +33,7 @@
       "license": "proprietary",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/consumer-protection-annual-evaluation.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/consumer-protection-annual-evaluation.zip",
         "sha256": "0de4bdea508ae6143057100f36e4fe507e9fd60f24668dcafad7d5bcdf4fac62"
       }
     },
@@ -49,7 +49,7 @@
       "license": "proprietary",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/compliance-sales.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/compliance-sales.zip",
         "sha256": "1b5eaeb618eb82cabc3394af760f2e792d70508416e7925107216d8d21bc3b16"
       }
     },
@@ -65,7 +65,7 @@
       "license": "proprietary",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/complaint-management.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/complaint-management.zip",
         "sha256": "1995af6f01ee474f17d136280f98c7cd545f7cedebf5295ae3b59029cf8e139f"
       }
     },
@@ -81,7 +81,7 @@
       "license": "proprietary",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/consumer-protection-inspection.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/consumer-protection-inspection.zip",
         "sha256": "4757ccf90ce8c6dd09a610934a222d672ee3b621b58e946e5a5e12a279c14c8d"
       }
     },
@@ -97,7 +97,7 @@
       "license": "proprietary",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/ai-ppt-skill.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/ai-ppt-skill.zip",
         "sha256": "c3c8893c0cc3ae504704ce9f80017753ab7b0c0cf06a1c912ea07f8548ece87b"
       }
     },
@@ -113,7 +113,7 @@
       "license": "proprietary",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/gongwenformat-pro.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/gongwenformat-pro.zip",
         "sha256": "e26d58adfa41d3a13073ef9df6823afeb0178d6916088611c70e974b22dde5b3"
       }
     },
@@ -129,7 +129,7 @@
       "license": "proprietary",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/ppt-win32com-editor.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/ppt-win32com-editor.zip",
         "sha256": "8790e80d2ebd0686664e01e708ba163e599fe02e825006bf2e8cb0091dc61e94"
       }
     },
@@ -145,7 +145,7 @@
       "license": "proprietary",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/official-document-skill.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/official-document-skill.zip",
         "sha256": "b102ea8349abb01b4531a39a0e346a6d979d46a5a56b5df356f3ed5c995dfad6"
       }
     },
@@ -161,7 +161,7 @@
       "license": "proprietary",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/xiaoshuojubenzhuanfenjing.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/xiaoshuojubenzhuanfenjing.zip",
         "sha256": "73b4ba26af3882037b2c6fd49f532576e533a6ed314a3b751141ae0b55981caf"
       }
     },
@@ -177,7 +177,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/aistockresearcher.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/aistockresearcher.zip",
         "sha256": "c7bdfda936302429ac5174e2e5fba863181f4c610152d205fc21c7006170b706"
       }
     },
@@ -193,7 +193,7 @@
       "license": "proprietary",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/generate-chart.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/generate-chart.zip",
         "sha256": "0943205fba8802e3a65472214978ce04afd9f46923de6c2fc364790c3cf9bad6"
       }
     },
@@ -209,7 +209,7 @@
       "license": "proprietary",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/tianji-business-search.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/tianji-business-search.zip",
         "sha256": "c393b756ceabf5445b09799faf716c43a07caad36562c7e64eb5619d313b69a8"
       }
     },
@@ -225,7 +225,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/smart-charts.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/smart-charts.zip",
         "sha256": "09ee1c7c1878f55b9c784af97d649e1dfa048f25c88956c9465ec0c6a3c833a7"
       }
     },
@@ -241,7 +241,7 @@
       "license": "proprietary",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/academic-figures.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/academic-figures.zip",
         "sha256": "8c226f135d1486a3c5533a9a11d956a097c9493e04313176f974474459d47d01"
       }
     },
@@ -257,7 +257,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/law-skills.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/law-skills.zip",
         "sha256": "f11c6137544054b022a3897c6a33921d306e3aadf7c1376d13efe74310b5a28b"
       }
     },
@@ -273,7 +273,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/return-calculations.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/return-calculations.zip",
         "sha256": "62d7939b6794438c1f6767195ac25a038d0542b2f5f0da4dd58e2b14e0385271"
       }
     },
@@ -289,7 +289,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/statistics-fundamentals.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/statistics-fundamentals.zip",
         "sha256": "5d790edfd8bc3789c45644512d16952dfdd1b91e9dd9fe30d4e5da6deea30e21"
       }
     },
@@ -305,7 +305,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/time-value-of-money.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/time-value-of-money.zip",
         "sha256": "28ee51394166ff34368fb73046f57dcda39a0ce020d54354e4f28ec1bfab509e"
       }
     },
@@ -321,7 +321,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/alternatives.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/alternatives.zip",
         "sha256": "127deeb9960d98902785bc49b0411332df2773903b06c0ba413aec8ba8862960"
       }
     },
@@ -337,7 +337,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/asset-allocation.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/asset-allocation.zip",
         "sha256": "c9ef18be44624d2b3904e72433eb0b2305475dc6d24fb77c12f1f221f3028115"
       }
     },
@@ -353,7 +353,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/bet-sizing.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/bet-sizing.zip",
         "sha256": "9c61d655b5f94d2672a276727d04147397fbf1fa5a44148dd5abb1618dd29d82"
       }
     },
@@ -369,7 +369,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/commodities.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/commodities.zip",
         "sha256": "a6da81aefd66c95854d30d305ee726ee241c0fd011446b76cea91c63e31f66d8"
       }
     },
@@ -385,7 +385,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/currencies-and-fx.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/currencies-and-fx.zip",
         "sha256": "cebcd5c3bc1f26d4fd918c8ad030257742aca1dc9e2dc552fd5693491e7fe673"
       }
     },
@@ -401,7 +401,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/debt-management.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/debt-management.zip",
         "sha256": "fc0147e632f82c9aee872374036cb7d6505bc5eaefa4ad4e0fcdd95c8bb0f6e0"
       }
     },
@@ -417,7 +417,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/digital-assets.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/digital-assets.zip",
         "sha256": "ef48b474ea1970482494969c6e88750e1aecd8f5523f380b9bf7d62965e85d48"
       }
     },
@@ -433,7 +433,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/diversification.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/diversification.zip",
         "sha256": "c0c0732ac7693dff77d4ed176f7bff57938a50ced2320beb192f7e48c104ec5c"
       }
     },
@@ -449,7 +449,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/emergency-fund.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/emergency-fund.zip",
         "sha256": "caf29effce4a2941909732710dcf4755e61803e41d6096b19449295a52e69d6a"
       }
     },
@@ -465,7 +465,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/equities.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/equities.zip",
         "sha256": "ddf6ff24d22429fc1ed4f463226abea44f77b86b7441e422f12367323e0320a8"
       }
     },
@@ -481,7 +481,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/equity-compensation.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/equity-compensation.zip",
         "sha256": "ce92c4caa7e4728381cdcf87c724a3cc15e0835187c43358c0a58328cdf22365"
       }
     },
@@ -497,7 +497,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/estate-gifting.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/estate-gifting.zip",
         "sha256": "0f6650ad9dd4923ff689c7d2934f18055c06c4e75d8c99bcf263eba517840f11"
       }
     },
@@ -513,7 +513,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/factor-investing.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/factor-investing.zip",
         "sha256": "a579e19d288040274bd70e2b965e0c55aaefa2982c44af2b74fe86f48b51bc4b"
       }
     },
@@ -529,7 +529,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/finance-psychology.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/finance-psychology.zip",
         "sha256": "a3322e45fa4a63b12b4b830c3a31c9de5f7b4ca3bf8111df00f9b27ca8b0c9ee"
       }
     },
@@ -545,7 +545,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/financial-statements.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/financial-statements.zip",
         "sha256": "09ecf19071afb377b2a2f3fb49f9667f87541a7136eadc75587f07dcde2cfd46"
       }
     },
@@ -561,7 +561,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/fixed-income-corporate.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/fixed-income-corporate.zip",
         "sha256": "09393f4a37afc201019d8ebf9a458e3ef719c3df1a29b7eb29eaf3ce7d696200"
       }
     },
@@ -577,7 +577,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/fixed-income-municipal.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/fixed-income-municipal.zip",
         "sha256": "84050a6567b93d1eaae73d5cc96467649443158d0f566aab1c0b813d581295e3"
       }
     },
@@ -593,7 +593,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/fixed-income-sovereign.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/fixed-income-sovereign.zip",
         "sha256": "a0c6e3a44b8a0fcd7f3c06483bdb22feb53cbda6c02f5ce3db83b2d754c68242"
       }
     },
@@ -609,7 +609,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/fixed-income-structured.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/fixed-income-structured.zip",
         "sha256": "3c1bf2b0e42683175c9dc593e3445c94565e150e86519a0f09fbbced8b259052"
       }
     },
@@ -625,7 +625,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/forward-risk.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/forward-risk.zip",
         "sha256": "cd22868f02f0b0509cc9e332971e31d702bab26acedb175d3b8ae9811e225b8e"
       }
     },
@@ -641,7 +641,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/fund-vehicles.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/fund-vehicles.zip",
         "sha256": "d22a79cb5f74a90bb9b04c33a1a27e7a3f04cc6132a5d04f6a4378537c7cc777"
       }
     },
@@ -657,7 +657,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/historical-risk.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/historical-risk.zip",
         "sha256": "459fad185d4aac14c9ce137549f17a8cede8d999981926b03797af7552ea2291"
       }
     },
@@ -673,7 +673,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/insurance-planning.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/insurance-planning.zip",
         "sha256": "b829b1290ec3558b4d28c6c4374286c2315a0302f8055bf171aac4db7e6c3a81"
       }
     },
@@ -689,7 +689,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/investment-policy.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/investment-policy.zip",
         "sha256": "d64d6fd860c134792ee719bc5fbda51a8d2e66d9d1c19a477b7c6964588224c5"
       }
     },
@@ -705,7 +705,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/lending.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/lending.zip",
         "sha256": "6709a3403a58b9131a5a7c8c99bff8c436ed4067eac1106f1c1390c8793edc98"
       }
     },
@@ -721,7 +721,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/liquidity-management.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/liquidity-management.zip",
         "sha256": "96af532568bb908035adcabd2200b7f8dad12926fdad02edec1ecc47076ba61a"
       }
     },
@@ -737,7 +737,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/performance-attribution.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/performance-attribution.zip",
         "sha256": "6c27547ec102c038fbf7d16aae75f7227bd61f4a0edd4cc169eaef67b23a16b3"
       }
     },
@@ -753,7 +753,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/performance-metrics.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/performance-metrics.zip",
         "sha256": "2f300020c1bd0f72ccc58425e876d63df1e4ccd831fa062a886d11056682fb1f"
       }
     },
@@ -769,7 +769,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/performance-reporting.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/performance-reporting.zip",
         "sha256": "ffcca3fbbac7a2584a0f2de7b2a9981bf6f9c9bdfa2ef5e7d0fa4c3f4916abd0"
       }
     },
@@ -785,7 +785,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/qualitative-valuation.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/qualitative-valuation.zip",
         "sha256": "5ebefe50fd53536b08905904cb98efd2bce1c8bf81eed83bbfe7e4eef3dcae40"
       }
     },
@@ -801,7 +801,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/quantitative-valuation.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/quantitative-valuation.zip",
         "sha256": "159e6423102f1224edb9641fc33600e960e8cb58143ddf3f62edf784c8eea1f6"
       }
     },
@@ -817,7 +817,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/real-assets.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/real-assets.zip",
         "sha256": "dd96b2e2da9e75942aa0ec467ff0cc15b65ba2b1fa6f6f3e6cb8c1ed287944f5"
       }
     },
@@ -833,7 +833,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/rebalancing.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/rebalancing.zip",
         "sha256": "ce6667ee01f953f4a3369add4a79b9774b97ebd7987d8c701a14b53f3d18c579"
       }
     },
@@ -849,7 +849,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/retirement-decumulation.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/retirement-decumulation.zip",
         "sha256": "ec8a909b7ccca1a1b9f5b1a1e410666d13eb3dee7c31c286594c59da87eefed8"
       }
     },
@@ -865,7 +865,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/savings-goals.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/savings-goals.zip",
         "sha256": "186772c82e06fdfae161e5759aeb2fa162389905175aad44c1b40149cbeab897"
       }
     },
@@ -881,7 +881,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/tax-efficiency.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/tax-efficiency.zip",
         "sha256": "77fe623eb613e73bdd1ff400d0473062a01078e1bd86ae7f7d968d499bda3faa"
       }
     },
@@ -897,7 +897,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/tax-loss-harvesting.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/tax-loss-harvesting.zip",
         "sha256": "5b8daad2b7502cb4235a65f75c3fe2576d2a15acbdfc311a48a92513e62ecd7e"
       }
     },
@@ -913,7 +913,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/volatility-modeling.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/volatility-modeling.zip",
         "sha256": "d246dc281952c383b1b3d15185c3d9a776b6d873361f88fac6e7874b01a43896"
       }
     },
@@ -929,7 +929,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/advertising-compliance.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/advertising-compliance.zip",
         "sha256": "e4cf867098feacba09dc5410a5c9f288884bab366d833065a10b0703c3eef9f1"
       }
     },
@@ -945,7 +945,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/advice-standards.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/advice-standards.zip",
         "sha256": "165929ad504d7b75b0f793e9d5f32ef9b8d1fc2355c3a49284e43c24d3dfb1f6"
       }
     },
@@ -961,7 +961,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/anti-money-laundering.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/anti-money-laundering.zip",
         "sha256": "737757b0ffe296b8bd4272354f0dd2a029de098ec67640eb5bd6d3380a123303"
       }
     },
@@ -977,7 +977,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/books-and-records.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/books-and-records.zip",
         "sha256": "19c4fe6801b4cc615cad95ffdfb3eb02de7f11cb6957eb062d392cf47eeabde8"
       }
     },
@@ -993,7 +993,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/client-disclosures.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/client-disclosures.zip",
         "sha256": "f43e54aad95da383caeebbafd8887ba646c857b5f85ee4a04bf00cc00176cdb8"
       }
     },
@@ -1009,7 +1009,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/conflicts-of-interest.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/conflicts-of-interest.zip",
         "sha256": "05206a260b81f3a6375372d4228ad74712b824e2e633f1bbecfa4fbda0835add"
       }
     },
@@ -1025,7 +1025,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/examination-readiness.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/examination-readiness.zip",
         "sha256": "65c447a7c2cd151030a2fa063289bf36fba74a56577042ffe9e643c3d21d0590"
       }
     },
@@ -1041,7 +1041,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/fee-disclosure.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/fee-disclosure.zip",
         "sha256": "e1920f10770dcfc80300192bb59db9a8860a19cd5d0bf6c94b301b6f6fa4c138"
       }
     },
@@ -1057,7 +1057,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/fiduciary-standards.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/fiduciary-standards.zip",
         "sha256": "11ddf91df0785bc0e8b749e172db38c7c95447eb67ce7829ac822054522a0268"
       }
     },
@@ -1073,7 +1073,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/gips-compliance.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/gips-compliance.zip",
         "sha256": "3583deeb4159525c0b72fd7fc8c597dd2bef97972b4fed01fcd07f5e4c1c2072"
       }
     },
@@ -1089,7 +1089,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/investment-suitability.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/investment-suitability.zip",
         "sha256": "5b88d4a5b4e0336dea0d3ea8d87792371dd460b271219779adea2ef83327792d"
       }
     },
@@ -1105,7 +1105,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/know-your-customer.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/know-your-customer.zip",
         "sha256": "28626a600dbcc56c4d1d5efe4197c8e882acb91ac9ccbd78421f380f9d95596a"
       }
     },
@@ -1121,7 +1121,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/privacy-data-security.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/privacy-data-security.zip",
         "sha256": "3113df8c470aaf51c59e944cba13dd025db0079db945a0a19ea1a0884df6a1e6"
       }
     },
@@ -1137,7 +1137,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/private-placements.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/private-placements.zip",
         "sha256": "f1ef038d70107b99dad62cdbf669fbb68f90f9e5aed0d1d58b8660148fc31b6f"
       }
     },
@@ -1153,7 +1153,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/reg-bi.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/reg-bi.zip",
         "sha256": "52fa6c048e38c2fdde303c17d482ac5da3947f00eb132adbf68edbd84e63fa14"
       }
     },
@@ -1169,7 +1169,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/regulatory-reporting.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/regulatory-reporting.zip",
         "sha256": "d547efa450ed5b9e33f264d2087d0a18c3eb4478c9031c3b85bfc89775293846"
       }
     },
@@ -1185,7 +1185,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/sales-practices.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/sales-practices.zip",
         "sha256": "5e4260061d78949e2cc23980c69109cbaeaa18336fc97339cdf51720f5d6aa69"
       }
     },
@@ -1201,7 +1201,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/advisor-dashboards.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/advisor-dashboards.zip",
         "sha256": "42805520a72d09a84345eb514d832fe189f2dc9e6a8020ddd8319a675d0ae340"
       }
     },
@@ -1217,7 +1217,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/client-onboarding.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/client-onboarding.zip",
         "sha256": "67681dd2abe8584f544b095c4e392af5388bd988ea25508cb5b17703b8d3b425"
       }
     },
@@ -1233,7 +1233,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/client-reporting-delivery.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/client-reporting-delivery.zip",
         "sha256": "2c49ad2dcbf2ce654400376893a2c87ae96e26b9e3f6327b78af8d7eb9239729"
       }
     },
@@ -1249,7 +1249,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/client-review-prep.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/client-review-prep.zip",
         "sha256": "8e9cc4fff7f4aa078ef2cd9cfb98c086d3357b6f191235fd827757a828fbaf8d"
       }
     },
@@ -1265,7 +1265,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/crm-client-lifecycle.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/crm-client-lifecycle.zip",
         "sha256": "a5b0ccbc06d56fd6f4504f8d4acc4161384865a0f7f4f5e2c977a9c5a137bd42"
       }
     },
@@ -1281,7 +1281,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/fee-billing.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/fee-billing.zip",
         "sha256": "ea9723d4790a48a0a3fa0077b421001c0d1985a4127ccc76492dce2410298050"
       }
     },
@@ -1297,7 +1297,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/financial-planning-integration.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/financial-planning-integration.zip",
         "sha256": "25438225bbcbc23fb9f3e6cc5a9e241042d7d141ecec1b882c0ac6788768c23c"
       }
     },
@@ -1313,7 +1313,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/financial-planning-workflow.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/financial-planning-workflow.zip",
         "sha256": "a050ef82824623a74301ad5b2879a16a89e9c3fd114da079d2f0d47180ff5f84"
       }
     },
@@ -1329,7 +1329,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/next-best-action.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/next-best-action.zip",
         "sha256": "2e4832422ca25cdb36d87a3c1c41c0df89d6a786b0795370b26b8622a3ce1bd5"
       }
     },
@@ -1345,7 +1345,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/order-management-advisor.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/order-management-advisor.zip",
         "sha256": "c0de80e6e3180f13a26010b1798159f1bcb2d06f220a9898535ec89985f7eef4"
       }
     },
@@ -1361,7 +1361,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/portfolio-management-systems.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/portfolio-management-systems.zip",
         "sha256": "c571038658d9046f11ff04cfd1c8f692e70351e88d2913d0c44906796c034c0d"
       }
     },
@@ -1377,7 +1377,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/proposal-generation.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/proposal-generation.zip",
         "sha256": "433147808a876a6c4222375eeca0e3802393b0be4e1f92bbaf37deba34354ae8"
       }
     },
@@ -1393,7 +1393,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/counterparty-risk.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/counterparty-risk.zip",
         "sha256": "c00bea8aa7688144ac840fc1d6bad6bd553201826015efefee7cc4e9c45f58c9"
       }
     },
@@ -1409,7 +1409,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/exchange-connectivity.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/exchange-connectivity.zip",
         "sha256": "858c109e8813021c07a7e23e0b35d3ecf83b5df058c76da804a3205b37d1783f"
       }
     },
@@ -1425,7 +1425,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/margin-operations.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/margin-operations.zip",
         "sha256": "37c47ff6caeb3a453ce424183601c14449534219ae76618fac3e6db074aa7232"
       }
     },
@@ -1441,7 +1441,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/operational-risk.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/operational-risk.zip",
         "sha256": "980992771c390610a0d9b1b39cdd66f053a5f5fc2fdf4f5b35397401e13fa142"
       }
     },
@@ -1457,7 +1457,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/order-lifecycle.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/order-lifecycle.zip",
         "sha256": "ab3269c64d3b6c3bd5e44cafa64f6ba9c00f81b4d6cb1f1b745186cce20d8c0f"
       }
     },
@@ -1473,7 +1473,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/post-trade-compliance.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/post-trade-compliance.zip",
         "sha256": "1d81b9664e391b35986a7951bd1ece52eb346e873fde8f1a5fe46ea1057e89cf"
       }
     },
@@ -1489,7 +1489,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/pre-trade-compliance.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/pre-trade-compliance.zip",
         "sha256": "2cf451868f39a1e376c925c7a161da7560759fbf7ea7273d22630240d43b80f6"
       }
     },
@@ -1505,7 +1505,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/settlement-clearing.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/settlement-clearing.zip",
         "sha256": "424130b9769d8329b7630501b52b167ba3e05a10ce702361efb1efe93fea59db"
       }
     },
@@ -1521,7 +1521,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/trade-execution.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/trade-execution.zip",
         "sha256": "3afbeb61a0e913da5cb46e0f44c894f5eb51bc5163d7a4a46a66db69749d6918"
       }
     },
@@ -1537,7 +1537,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/account-maintenance.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/account-maintenance.zip",
         "sha256": "5e6e4d608ada754d616775dbccd33a7d10d016b6efaeaf8a98902493827daf9f"
       }
     },
@@ -1553,7 +1553,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/account-opening-compliance.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/account-opening-compliance.zip",
         "sha256": "1ec266c17f56230dad4f7eca84bdc765a34b4d221645d9f104e79da85babf7d2"
       }
     },
@@ -1569,7 +1569,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/account-opening-workflow.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/account-opening-workflow.zip",
         "sha256": "90422be191fbaa0387def194eed92c170aba1030207f774d874ca23186a288e8"
       }
     },
@@ -1585,7 +1585,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/account-transfers.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/account-transfers.zip",
         "sha256": "998553ac2c190191cb45bdf21e4f1260766fa30a0879c75c7316011038b8c223"
       }
     },
@@ -1601,7 +1601,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/corporate-actions.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/corporate-actions.zip",
         "sha256": "dc899b5f9a55f3b466a754d03f0e398ed3bbc143428529807277db618626db4e"
       }
     },
@@ -1617,7 +1617,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/reconciliation.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/reconciliation.zip",
         "sha256": "357804070968bd613e1b947d9acc448045252c00f37c25a5c042ee7673c892fd"
       }
     },
@@ -1633,7 +1633,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/stp-automation.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/stp-automation.zip",
         "sha256": "917ec077d37b0e566fbf459a08fd3a90b8621f0c59915918ebe441de608c9bb4"
       }
     },
@@ -1649,7 +1649,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/workflow-automation.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/workflow-automation.zip",
         "sha256": "f98d5c26ce3076ebfcda3ec19e841658693d71a9fdeb6e3c83eea0f9f7573325"
       }
     },
@@ -1665,7 +1665,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/data-quality.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/data-quality.zip",
         "sha256": "ef9c9800030e2409fd2d61c2075f23910e5d9c8c13fe945d3248b0d88975e699"
       }
     },
@@ -1681,7 +1681,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/integration-patterns.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/integration-patterns.zip",
         "sha256": "153be91e227bb863bc64862c86d582ea1b4d0545381360f3620414ce93bde6ec"
       }
     },
@@ -1697,7 +1697,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/market-data.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/market-data.zip",
         "sha256": "10c975e2e5399df0fb22044859047b70f9f1c178ad5dadcb5803441831295050"
       }
     },
@@ -1713,7 +1713,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/reference-data.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/reference-data.zip",
         "sha256": "73bb90dad7b73e21022c5212632e884b20475074e58816d527b167b9cf971164"
       }
     },
@@ -1729,7 +1729,7 @@
       "license": "PolyForm-Noncommercial-1.0.0",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/lieflat-gongwen.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/lieflat-gongwen.zip",
         "sha256": "6c684760d9800153aa8a735d9c08305201d044fbdfd72c948d84e01df10c721a"
       }
     },
@@ -1745,7 +1745,7 @@
       "license": "PolyForm-Noncommercial-1.0.0",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/dyz-gongwen-skills.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/dyz-gongwen-skills.zip",
         "sha256": "4a741b70896a2dd1e6866a549b3c836c1cfffd4155370f8adf10e1c18719c4b6"
       }
     },
@@ -1761,7 +1761,7 @@
       "license": "CC-BY-NC-4.0",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/rayskills.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/rayskills.zip",
         "sha256": "fab0cc75851ef817feb20e951bd5dcb50fbf2c97cc11376dc115f17ff90983d9"
       }
     },
@@ -1777,7 +1777,7 @@
       "license": "MIT",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/ui-ux-pro-max-skill.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/ui-ux-pro-max-skill.zip",
         "sha256": "b2dd4da07deea2c1f8bb9f9a1d59d8a6a570ab0a4d12fb3f907af8131f4c4dd8"
       }
     },
@@ -1793,7 +1793,7 @@
       "license": "Apache-2.0",
       "source": {
         "source": "archive",
-        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/finskills.zip",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/finskills.zip",
         "sha256": "b37fdff44991a363ea3bda271ce1c401a677ceeb2d204178f960c52caddc1067"
       }
     }
