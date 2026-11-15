@@ -260,6 +260,1542 @@
         "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/law-skills.zip",
         "sha256": "f11c6137544054b022a3897c6a33921d306e3aadf7c1376d13efe74310b5a28b"
       }
+    },
+    {
+      "name": "return-calculations",
+      "description": "计算与比较投资收益指标：TWR、MWR/IRR、CAGR、子期联接与年化。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/return-calculations.zip",
+        "sha256": "62d7939b6794438c1f6767195ac25a038d0542b2f5f0da4dd58e2b14e0385271"
+      }
+    },
+    {
+      "name": "statistics-fundamentals",
+      "description": "金融数据统计方法：分布、协方差矩阵、回归、假设检验与自助法重采样。",
+      "version": "1.0.0",
+      "category": "data-tech",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/statistics-fundamentals.zip",
+        "sha256": "5d790edfd8bc3789c45644512d16952dfdd1b91e9dd9fe30d4e5da6deea30e21"
+      }
+    },
+    {
+      "name": "time-value-of-money",
+      "description": "货币时间价值：PV/FV/NPV/IRR、年金、贷款还款与摊还表（各种复利约定）。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/time-value-of-money.zip",
+        "sha256": "28ee51394166ff34368fb73046f57dcda39a0ce020d54354e4f28ec1bfab509e"
+      }
+    },
+    {
+      "name": "alternatives",
+      "description": "另类投资分析：对冲基金、私募股权、风险投资。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/alternatives.zip",
+        "sha256": "127deeb9960d98902785bc49b0411332df2773903b06c0ba413aec8ba8862960"
+      }
+    },
+    {
+      "name": "asset-allocation",
+      "description": "用战略与战术配置框架决定资金在大类资产间的分配（含 Black-Litterman、风险平价）。",
+      "version": "1.0.0",
+      "category": "invest-trading",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/asset-allocation.zip",
+        "sha256": "c9ef18be44624d2b3904e72433eb0b2305475dc6d24fb77c12f1f221f3028115"
+      }
+    },
+    {
+      "name": "bet-sizing",
+      "description": "决定单笔头寸的资金规模：仓位管理、Kelly 准则与风险预算。",
+      "version": "1.0.0",
+      "category": "invest-trading",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/bet-sizing.zip",
+        "sha256": "9c61d655b5f94d2672a276727d04147397fbf1fa5a44148dd5abb1618dd29d82"
+      }
+    },
+    {
+      "name": "commodities",
+      "description": "商品市场分析：期货期限结构、展期收益与供需基本面。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/commodities.zip",
+        "sha256": "a6da81aefd66c95854d30d305ee726ee241c0fd011446b76cea91c63e31f66d8"
+      }
+    },
+    {
+      "name": "currencies-and-fx",
+      "description": "汇率机制与外汇市场分析，以及国际组合的汇率风险对冲。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/currencies-and-fx.zip",
+        "sha256": "cebcd5c3bc1f26d4fd918c8ad030257742aca1dc9e2dc552fd5693491e7fe673"
+      }
+    },
+    {
+      "name": "debt-management",
+      "description": "个人债务管理与偿还优先级框架。",
+      "version": "1.0.0",
+      "category": "other",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/debt-management.zip",
+        "sha256": "fc0147e632f82c9aee872374036cb7d6505bc5eaefa4ad4e0fcdd95c8bb0f6e0"
+      }
+    },
+    {
+      "name": "digital-assets",
+      "description": "数字资产分析：加密资产基本面、区块链机制、DeFi 协议与链上指标。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/digital-assets.zip",
+        "sha256": "ef48b474ea1970482494969c6e88750e1aecd8f5523f380b9bf7d62965e85d48"
+      }
+    },
+    {
+      "name": "diversification",
+      "description": "用相关性分析、有效前沿与因子分散构建分散化组合。",
+      "version": "1.0.0",
+      "category": "invest-trading",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/diversification.zip",
+        "sha256": "c0c0732ac7693dff77d4ed176f7bff57938a50ced2320beb192f7e48c104ec5c"
+      }
+    },
+    {
+      "name": "emergency-fund",
+      "description": "依据收入稳定性与支出结构测算并配置应急储备金。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "other",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/emergency-fund.zip",
+        "sha256": "caf29effce4a2941909732710dcf4755e61803e41d6096b19449295a52e69d6a"
+      }
+    },
+    {
+      "name": "equities",
+      "description": "股票证券、因子模型与股票组合构建分析，含指数编制与盈利分析。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/equities.zip",
+        "sha256": "ddf6ff24d22429fc1ed4f463226abea44f77b86b7441e422f12367323e0320a8"
+      }
+    },
+    {
+      "name": "equity-compensation",
+      "description": "股权激励规划：RSU/NSO/ISO 行权税务、AMT、83(b)、ESPP、集中持股分散与 10b5-1 计划。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "other",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/equity-compensation.zip",
+        "sha256": "ce92c4caa7e4728381cdcf87c724a3cc15e0835187c43358c0a58328cdf22365"
+      }
+    },
+    {
+      "name": "estate-gifting",
+      "description": "遗产与赠与架构：统一遗产/赠与/GST 免税额、基数步进、信托类型与受益人规划。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "other",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/estate-gifting.zip",
+        "sha256": "0f6650ad9dd4923ff689c7d2934f18055c06c4e75d8c99bcf263eba517840f11"
+      }
+    },
+    {
+      "name": "factor-investing",
+      "description": "因子模型在组合构建与基金评估中的应用：CAPM、Fama-French 3/5 因子、动量与 smart beta。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/factor-investing.zip",
+        "sha256": "a579e19d288040274bd70e2b965e0c55aaefa2982c44af2b74fe86f48b51bc4b"
+      }
+    },
+    {
+      "name": "finance-psychology",
+      "description": "识别并缓解金融决策中的认知偏差，辅导客户建立价值导向的财务行为。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/finance-psychology.zip",
+        "sha256": "a3322e45fa4a63b12b4b830c3a31c9de5f7b4ca3bf8111df00f9b27ca8b0c9ee"
+      }
+    },
+    {
+      "name": "financial-statements",
+      "description": "财务报表分析：EBITDA/自由现金流推导、ROIC、杜邦 ROE 分解与盈余质量。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/financial-statements.zip",
+        "sha256": "09ecf19071afb377b2a2f3fb49f9667f87541a7136eadc75587f07dcde2cfd46"
+      }
+    },
+    {
+      "name": "fixed-income-corporate",
+      "description": "公司债与信用工具分析：投资级、高收益债与信用利差。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/fixed-income-corporate.zip",
+        "sha256": "09393f4a37afc201019d8ebf9a458e3ef719c3df1a29b7eb29eaf3ce7d696200"
+      }
+    },
+    {
+      "name": "fixed-income-municipal",
+      "description": "市政债分析：税收等价收益率、一般责任债/收益债评估与信用分析。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/fixed-income-municipal.zip",
+        "sha256": "84050a6567b93d1eaae73d5cc96467649443158d0f566aab1c0b813d581295e3"
+      }
+    },
+    {
+      "name": "fixed-income-sovereign",
+      "description": "美国国债与利率风险：债券定价、收益率曲线、久期凸性、TIPS、即期/远期利率。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/fixed-income-sovereign.zip",
+        "sha256": "a0c6e3a44b8a0fcd7f3c06483bdb22feb53cbda6c02f5ce3db83b2d754c68242"
+      }
+    },
+    {
+      "name": "fixed-income-structured",
+      "description": "结构化固收产品分析：MBS、ABS、CLO。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/fixed-income-structured.zip",
+        "sha256": "3c1bf2b0e42683175c9dc593e3445c94565e150e86519a0f09fbbced8b259052"
+      }
+    },
+    {
+      "name": "forward-risk",
+      "description": "前瞻性风险估计：参数/蒙特卡洛 VaR、期望损失 ES、压力测试与 GARCH。",
+      "version": "1.0.0",
+      "category": "risk-management",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/forward-risk.zip",
+        "sha256": "cd22868f02f0b0509cc9e332971e31d702bab26acedb175d3b8ae9811e225b8e"
+      }
+    },
+    {
+      "name": "fund-vehicles",
+      "description": "比较与选择投资载体：共同基金、ETF、指数基金与专户（SMA）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/fund-vehicles.zip",
+        "sha256": "d22a79cb5f74a90bb9b04c33a1a27e7a3f04cc6132a5d04f6a4378537c7cc777"
+      }
+    },
+    {
+      "name": "historical-risk",
+      "description": "用历史数据量化已实现风险：波动率估计、回撤分析与下行风险指标。",
+      "version": "1.0.0",
+      "category": "risk-management",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/historical-risk.zip",
+        "sha256": "459fad185d4aac14c9ce137549f17a8cede8d999981926b03797af7552ea2291"
+      }
+    },
+    {
+      "name": "insurance-planning",
+      "description": "保险规划：风险自留与转移、寿险保额测算、伤残/长期护理/年金/责任险。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "other",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/insurance-planning.zip",
+        "sha256": "b829b1290ec3558b4d28c6c4374286c2315a0302f8055bf171aac4db7e6c3a81"
+      }
+    },
+    {
+      "name": "investment-policy",
+      "description": "编制投资政策声明（IPS）：收益目标、风险承受度与组合约束。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "invest-trading",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/investment-policy.zip",
+        "sha256": "d64d6fd860c134792ee719bc5fbda51a8d2e66d9d1c19a477b7c6964588224c5"
+      }
+    },
+    {
+      "name": "lending",
+      "description": "贷款产品分析：房贷、HELOC、个人贷款及摊还与方案比较工具。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "other",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/lending.zip",
+        "sha256": "6709a3403a58b9131a5a7c8c99bff8c436ed4067eac1106f1c1390c8793edc98"
+      }
+    },
+    {
+      "name": "liquidity-management",
+      "description": "现金流与流动性管理：保证支付能力，同时降低闲置资金的机会成本。",
+      "version": "1.0.0",
+      "category": "other",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/liquidity-management.zip",
+        "sha256": "96af532568bb908035adcabd2200b7f8dad12926fdad02edec1ecc47076ba61a"
+      }
+    },
+    {
+      "name": "performance-attribution",
+      "description": "业绩归因：用 Brinson/因子模型分解组合收益，定位增值或损失来源。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/performance-attribution.zip",
+        "sha256": "6c27547ec102c038fbf7d16aae75f7227bd61f4a0edd4cc169eaef67b23a16b3"
+      }
+    },
+    {
+      "name": "performance-metrics",
+      "description": "风险调整后绩效评估：夏普等标准比率与上行/下行捕获率分析。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/performance-metrics.zip",
+        "sha256": "2f300020c1bd0f72ccc58425e876d63df1e4ccd831fa062a886d11056682fb1f"
+      }
+    },
+    {
+      "name": "performance-reporting",
+      "description": "生成清晰准确的业绩报告：基准对比、归因、目标进度与风险看板。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/performance-reporting.zip",
+        "sha256": "ffcca3fbbac7a2584a0f2de7b2a9981bf6f9c9bdfa2ef5e7d0fa4c3f4916abd0"
+      }
+    },
+    {
+      "name": "qualitative-valuation",
+      "description": "定性估值：商业质量、护城河、管理层、ESG 与价值创造可持续性。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/qualitative-valuation.zip",
+        "sha256": "5ebefe50fd53536b08905904cb98efd2bce1c8bf81eed83bbfe7e4eef3dcae40"
+      }
+    },
+    {
+      "name": "quantitative-valuation",
+      "description": "定量估值：DCF、股利折现、可比倍数与剩余收益模型。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/quantitative-valuation.zip",
+        "sha256": "159e6423102f1224edb9641fc33600e960e8cb58143ddf3f62edf784c8eea1f6"
+      }
+    },
+    {
+      "name": "real-assets",
+      "description": "实物资产分析：REITs、直接物业估值与基础设施资产。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/real-assets.zip",
+        "sha256": "dd96b2e2da9e75942aa0ec467ff0cc15b65ba2b1fa6f6f3e6cb8c1ed287944f5"
+      }
+    },
+    {
+      "name": "rebalancing",
+      "description": "再平衡策略：日历/阈值触发、交易成本与税务效率优化。",
+      "version": "1.0.0",
+      "category": "invest-trading",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/rebalancing.zip",
+        "sha256": "ce6667ee01f953f4a3369add4a79b9774b97ebd7987d8c701a14b53f3d18c579"
+      }
+    },
+    {
+      "name": "retirement-decumulation",
+      "description": "退休取现规划：收益序列风险、4% 法则、RMD、社保领取、罗斯转换、桶策略与年金化。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "other",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/retirement-decumulation.zip",
+        "sha256": "ec8a909b7ccca1a1b9f5b1a1e410666d13eb3dee7c31c286594c59da87eefed8"
+      }
+    },
+    {
+      "name": "savings-goals",
+      "description": "为退休、教育、购房等具体目标规划并追踪储蓄进度。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "other",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/savings-goals.zip",
+        "sha256": "186772c82e06fdfae161e5759aeb2fa162389905175aad44c1b40149cbeab897"
+      }
+    },
+    {
+      "name": "tax-efficiency",
+      "description": "税后收益最大化：资产配置位置、盈亏管理与提款顺序优化。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "invest-trading",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/tax-efficiency.zip",
+        "sha256": "77fe623eb613e73bdd1ff400d0473062a01078e1bd86ae7f7d968d499bda3faa"
+      }
+    },
+    {
+      "name": "tax-loss-harvesting",
+      "description": "税损收割完整工作流：候选识别、执行、洗售规则规避与事后监控。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "invest-trading",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/tax-loss-harvesting.zip",
+        "sha256": "5b8daad2b7502cb4235a65f75c3fe2576d2a15acbdfc311a48a92513e62ecd7e"
+      }
+    },
+    {
+      "name": "volatility-modeling",
+      "description": "波动率建模与预测：GARCH 等时间序列模型与期权隐含波动率曲面。",
+      "version": "1.0.0",
+      "category": "risk-management",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/volatility-modeling.zip",
+        "sha256": "d246dc281952c383b1b3d15185c3d9a776b6d873361f88fac6e7874b01a43896"
+      }
+    },
+    {
+      "name": "advertising-compliance",
+      "description": "确保投资广告与营销材料符合 SEC 营销规则 206(4)-1 与 FINRA Rule 2210。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "consumer-protection",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/advertising-compliance.zip",
+        "sha256": "e4cf867098feacba09dc5410a5c9f288884bab366d833065a10b0703c3eef9f1"
+      }
+    },
+    {
+      "name": "advice-standards",
+      "description": "判断产品、平台或沟通是否越过「投资者教育」与「投资建议」的监管边界。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "consumer-protection",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/advice-standards.zip",
+        "sha256": "165929ad504d7b75b0f793e9d5f32ef9b8d1fc2355c3a49284e43c24d3dfb1f6"
+      }
+    },
+    {
+      "name": "anti-money-laundering",
+      "description": "设计 BSA/AML 合规体系、持续交易监控与 FinCEN 申报（CTR/SAR、OFAC、拆分交易识别）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/anti-money-laundering.zip",
+        "sha256": "737757b0ffe296b8bd4272354f0dd2a029de098ec67640eb5bd6d3380a123303"
+      }
+    },
+    {
+      "name": "books-and-records",
+      "description": "依据 SEC 17a-3/17a-4、Rule 204-2 建立账簿记录保存（WORM 存储、电子通信归档）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/books-and-records.zip",
+        "sha256": "19c4fe6801b4cc615cad95ffdfb3eb02de7f11cb6957eb062d392cf47eeabde8"
+      }
+    },
+    {
+      "name": "client-disclosures",
+      "description": "明确客户披露文件（Form ADV、CRS、Reg S-P、成交确认）的内容与送达时点。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "consumer-protection",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/client-disclosures.zip",
+        "sha256": "f43e54aad95da383caeebbafd8887ba646c857b5f85ee4a04bf00cc00176cdb8"
+      }
+    },
+    {
+      "name": "conflicts-of-interest",
+      "description": "在 Reg BI 与信义义务下识别、披露并缓释投顾与经纪关系中的利益冲突。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/conflicts-of-interest.zip",
+        "sha256": "05206a260b81f3a6375372d4228ad74712b824e2e633f1bbecfa4fbda0835add"
+      }
+    },
+    {
+      "name": "examination-readiness",
+      "description": "SEC/FINRA 监管检查全流程准备与应对：文件制作、缺陷整改、模拟检查框架。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/examination-readiness.zip",
+        "sha256": "65c447a7c2cd151030a2fa063289bf36fba74a56577042ffe9e643c3d21d0590"
+      }
+    },
+    {
+      "name": "fee-disclosure",
+      "description": "评估费用与成本披露是否完整、准确、无误导（投顾、经纪、基金、退休计划场景）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "consumer-protection",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/fee-disclosure.zip",
+        "sha256": "e1920f10770dcfc80300192bb59db9a8860a19cd5d0bf6c94b301b6f6fa4c138"
+      }
+    },
+    {
+      "name": "fiduciary-standards",
+      "description": "适用投顾信义义务（IA Act §206）、ERISA §404、DOL 规则与州级信义规则。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/fiduciary-standards.zip",
+        "sha256": "11ddf91df0785bc0e8b749e172db38c7c95447eb67ce7829ac822054522a0268"
+      }
+    },
+    {
+      "name": "gips-compliance",
+      "description": "按 CFA Institute GIPS 要求处理组合构建、业绩计算、列报与独立验证。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/gips-compliance.zip",
+        "sha256": "3583deeb4159525c0b72fd7fc8c597dd2bef97972b4fed01fcd07f5e4c1c2072"
+      }
+    },
+    {
+      "name": "investment-suitability",
+      "description": "按 FINRA 2111/2090 评估合理基础、客户特定与数量适当性三项义务。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "consumer-protection",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/investment-suitability.zip",
+        "sha256": "5b88d4a5b4e0336dea0d3ea8d87792371dd460b271219779adea2ef83327792d"
+      }
+    },
+    {
+      "name": "know-your-customer",
+      "description": "客户身份识别、尽职调查与档案维护（FINRA 2090、CIP 规则、FinCEN CDD 规则）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/know-your-customer.zip",
+        "sha256": "28626a600dbcc56c4d1d5efe4197c8e882acb91ac9ccbd78421f380f9d95596a"
+      }
+    },
+    {
+      "name": "privacy-data-security",
+      "description": "依 Reg S-P、Reg S-ID 与 SEC 网络安全规则设计隐私与数据安全体系。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/privacy-data-security.zip",
+        "sha256": "3113df8c470aaf51c59e944cba13dd025db0079db945a0a19ea1a0884df6a1e6"
+      }
+    },
+    {
+      "name": "private-placements",
+      "description": "私募与非公开发行合规分析：Reg D 506(b)/(c)、合格投资者、Form D、FINRA 5122/5123。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/private-placements.zip",
+        "sha256": "f1ef038d70107b99dad62cdbf669fbb68f90f9e5aed0d1d58b8660148fc31b6f"
+      }
+    },
+    {
+      "name": "reg-bi",
+      "description": "解析 SEC Reg BI 下经纪商行为标准的四项义务：披露、谨慎、利益冲突、合规。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "consumer-protection",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/reg-bi.zip",
+        "sha256": "52fa6c048e38c2fdde303c17d482ac5da3947f00eb132adbf68edbd84e63fa14"
+      }
+    },
+    {
+      "name": "regulatory-reporting",
+      "description": "监管报送机制与时限：Form PF、13F/13H、Form ADV 修订、FOCUS、CAT 报告。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/regulatory-reporting.zip",
+        "sha256": "d547efa450ed5b9e33f264d2087d0a18c3eb4478c9031c3b85bfc89775293846"
+      }
+    },
+    {
+      "name": "sales-practices",
+      "description": "识别与防范销售行为违规：过度交易、断点滥用、私售、越权交易与监督缺失。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "consumer-protection",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/sales-practices.zip",
+        "sha256": "5e4260061d78949e2cc23980c69109cbaeaa18336fc97339cdf51720f5d6aa69"
+      }
+    },
+    {
+      "name": "advisor-dashboards",
+      "description": "设计并优化投顾事务所管理看板：AUM 追踪、收入分析、KPI 与异常预警。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/advisor-dashboards.zip",
+        "sha256": "42805520a72d09a84345eb514d832fe189f2dc9e6a8020ddd8319a675d0ae340"
+      }
+    },
+    {
+      "name": "client-onboarding",
+      "description": "设计端到端客户开户引导流程：KYC 核验、资料收集、电子签名、托管机构提交。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/client-onboarding.zip",
+        "sha256": "67681dd2abe8584f544b095c4e392af5388bd988ea25508cb5b17703b8d3b425"
+      }
+    },
+    {
+      "name": "client-reporting-delivery",
+      "description": "设计并生成客户绩效报告（季度/税务/门户），含合规审核与多渠道交付。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/client-reporting-delivery.zip",
+        "sha256": "2c49ad2dcbf2ce654400376893a2c87ae96e26b9e3f6327b78af8d7eb9239729"
+      }
+    },
+    {
+      "name": "client-review-prep",
+      "description": "为客户复盘会议准备资料包：业绩摘要、组合偏离分析、谈话要点与议程。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/client-review-prep.zip",
+        "sha256": "8e9cc4fff7f4aa078ef2cd9cfb98c086d3357b6f191235fd827757a828fbaf8d"
+      }
+    },
+    {
+      "name": "crm-client-lifecycle",
+      "description": "设计投顾机构 CRM 与客户生命周期：客户分层、家庭账户、服务等级、留存分析。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/crm-client-lifecycle.zip",
+        "sha256": "a5b0ccbc06d56fd6f4504f8d4acc4161384865a0f7f4f5e2c977a9c5a137bd42"
+      }
+    },
+    {
+      "name": "fee-billing",
+      "description": "搭建投顾费计费体系：费率设计、费用计算、收取、收入确认与合规披露。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/fee-billing.zip",
+        "sha256": "ea9723d4790a48a0a3fa0077b421001c0d1985a4127ccc76492dce2410298050"
+      }
+    },
+    {
+      "name": "financial-planning-integration",
+      "description": "理财规划引擎与 CRM/PMS/托管系统的数据集成、资本市场假设（CMA）治理、计划—IPS—模型联动。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/financial-planning-integration.zip",
+        "sha256": "25438225bbcbc23fb9f3e6cc5a9e241042d7d141ecec1b882c0ac6788768c23c"
+      }
+    },
+    {
+      "name": "financial-planning-workflow",
+      "description": "编排完整理财规划流程：数据采集、退休建模、蒙特卡洛、罗斯转换、社保领取与情景分析。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/financial-planning-workflow.zip",
+        "sha256": "a050ef82824623a74301ad5b2879a16a89e9c3fd114da079d2f0d47180ff5f84"
+      }
+    },
+    {
+      "name": "next-best-action",
+      "description": "设计「下一步最佳行动」引擎，基于组合、生活事件、市场与合规事件推送优先级建议。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/next-best-action.zip",
+        "sha256": "2e4832422ca25cdb36d87a3c1c41c0df89d6a786b0795370b26b8622a3ce1bd5"
+      }
+    },
+    {
+      "name": "order-management-advisor",
+      "description": "管理投顾端交易指令全生命周期：大宗交易、分配、交易前合规、托管路由与差错更正。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/order-management-advisor.zip",
+        "sha256": "c0de80e6e3180f13a26010b1798159f1bcb2d06f220a9898535ec89985f7eef4"
+      }
+    },
+    {
+      "name": "portfolio-management-systems",
+      "description": "选型与运营组合管理系统：模型组合、UMA/分仓管理、漂移监控、再平衡、托管数据接入。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/portfolio-management-systems.zip",
+        "sha256": "c571038658d9046f11ff04cfd1c8f692e70351e88d2913d0c44906796c034c0d"
+      }
+    },
+    {
+      "name": "proposal-generation",
+      "description": "生成投资建议书：风险测评、模型组合推荐、费用示例、收益测算与合规审阅。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/proposal-generation.zip",
+        "sha256": "433147808a876a6c4222375eeca0e3802393b0be4e1f92bbaf37deba34354ae8"
+      }
+    },
+    {
+      "name": "counterparty-risk",
+      "description": "交易对手信用风险管理：新对手准入评估、信用恶化响应、违约平仓与抵押品管理。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "risk-management",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/counterparty-risk.zip",
+        "sha256": "c00bea8aa7688144ac840fc1d6bad6bd553201826015efefee7cc4e9c45f58c9"
+      }
+    },
+    {
+      "name": "exchange-connectivity",
+      "description": "交易场所连接与市场数据基础设施的设计与管理（FIX 会话、停牌、熔断）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "invest-trading",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/exchange-connectivity.zip",
+        "sha256": "858c109e8813021c07a7e23e0b35d3ecf83b5df058c76da804a3205b37d1783f"
+      }
+    },
+    {
+      "name": "margin-operations",
+      "description": "保证金业务：Reg T、维持保证金、组合保证金、追保与强制平仓瀑布。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "invest-trading",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/margin-operations.zip",
+        "sha256": "37c47ff6caeb3a453ce424183601c14449534219ae76618fac3e6db074aa7232"
+      }
+    },
+    {
+      "name": "operational-risk",
+      "description": "交易与经纪运营风险的识别、计量与管理：交易差错、结算失败、损失事件分类、KRI。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "risk-management",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/operational-risk.zip",
+        "sha256": "980992771c390610a0d9b1b39cdd66f053a5f5fc2fdf4f5b35397401e13fa142"
+      }
+    },
+    {
+      "name": "order-lifecycle",
+      "description": "订单状态机与全生命周期管理：订单类型、有效期、FIX 协议、撤单改单。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "invest-trading",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/order-lifecycle.zip",
+        "sha256": "ab3269c64d3b6c3bd5e44cafa64f6ba9c00f81b4d6cb1f1b745186cce20d8c0f"
+      }
+    },
+    {
+      "name": "post-trade-compliance",
+      "description": "交易后合规监控与交易监察系统设计，含模式识别、最佳执行复核与分配公平性。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/post-trade-compliance.zip",
+        "sha256": "1d81b9664e391b35986a7951bd1ece52eb346e873fde8f1a5fe46ea1057e89cf"
+      }
+    },
+    {
+      "name": "pre-trade-compliance",
+      "description": "交易前合规引擎设计：规则引擎、集中度限制、限制名单、硬/软拦截。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/pre-trade-compliance.zip",
+        "sha256": "2cf451868f39a1e376c925c7a161da7560759fbf7ea7273d22630240d43b80f6"
+      }
+    },
+    {
+      "name": "settlement-clearing",
+      "description": "交易结算与清算：T+1、DTC/NSCC、失败管理、公司行动对结算的影响、DVP/RVP。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "invest-trading",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/settlement-clearing.zip",
+        "sha256": "424130b9769d8329b7630501b52b167ba3e05a10ce702361efb1efe93fea59db"
+      }
+    },
+    {
+      "name": "trade-execution",
+      "description": "执行质量与最佳执行：场所选择、智能订单路由（SOR）与交易成本分析（TCA）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "invest-trading",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/trade-execution.zip",
+        "sha256": "3afbeb61a0e913da5cb46e0f44c894f5eb51bc5163d7a4a46a66db69749d6918"
+      }
+    },
+    {
+      "name": "account-maintenance",
+      "description": "处理账户生命周期中的各类维护请求（地址变更、受益人、成本基准、限制等）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/account-maintenance.zip",
+        "sha256": "5e6e4d608ada754d616775dbccd33a7d10d016b6efaeaf8a98902493827daf9f"
+      }
+    },
+    {
+      "name": "account-opening-compliance",
+      "description": "在开户流程中嵌入合规控制并验证监管就绪度（CIP/KYC、适当性、OFAC、受益所有人）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/account-opening-compliance.zip",
+        "sha256": "1ec266c17f56230dad4f7eca84bdc765a34b4d221645d9f104e79da85babf7d2"
+      }
+    },
+    {
+      "name": "account-opening-workflow",
+      "description": "设计后台开户流水线：申请受理、审批、托管提交到账户激活，含 NIGO 处理。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/account-opening-workflow.zip",
+        "sha256": "90422be191fbaa0387def194eed92c170aba1030207f774d874ca23186a288e8"
+      }
+    },
+    {
+      "name": "account-transfers",
+      "description": "处理机构间与机构内账户转移（ACAT、非 ACAT、部分转移、转仓、遗产转移）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/account-transfers.zip",
+        "sha256": "998553ac2c190191cb45bdf21e4f1260766fa30a0879c75c7316011038b8c223"
+      }
+    },
+    {
+      "name": "corporate-actions",
+      "description": "处理公司行动全流程：公告、登记日、分红拆股、并购要约到结算。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/corporate-actions.zip",
+        "sha256": "dc899b5f9a55f3b466a754d03f0e398ed3bbc143428529807277db618626db4e"
+      }
+    },
+    {
+      "name": "reconciliation",
+      "description": "设计并执行组合、托管与清算系统间的头寸/现金/交易对账及差错识别（三方对账）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/reconciliation.zip",
+        "sha256": "357804070968bd613e1b947d9acc448045252c00f37c25a5c042ee7673c892fd"
+      }
+    },
+    {
+      "name": "stp-automation",
+      "description": "通过零接触、例外驱动处理提升证券运营直通处理率（STP）并度量指标。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/stp-automation.zip",
+        "sha256": "917ec077d37b0e566fbf459a08fd3a90b8621f0c59915918ebe441de608c9bb4"
+      }
+    },
+    {
+      "name": "workflow-automation",
+      "description": "设计人在环的运营工作流编排：任务路由、审批链、升级机制与 SLA 监控。｜美国市场与监管口径，境内业务需核对适用性。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/workflow-automation.zip",
+        "sha256": "f98d5c26ce3076ebfcda3ec19e841658693d71a9fdeb6e3c83eea0f9f7573325"
+      }
+    },
+    {
+      "name": "data-quality",
+      "description": "金融数据质量体系：校验规则、价格验证、数据血缘、例外管理与治理。",
+      "version": "1.0.0",
+      "category": "data-tech",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/data-quality.zip",
+        "sha256": "ef9c9800030e2409fd2d61c2075f23910e5d9c8c13fe945d3248b0d88975e699"
+      }
+    },
+    {
+      "name": "integration-patterns",
+      "description": "金融系统集成架构：API、FIX、ISO 20022、事件驱动、批量、幂等与韧性设计。",
+      "version": "1.0.0",
+      "category": "data-tech",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/integration-patterns.zip",
+        "sha256": "153be91e227bb863bc64862c86d582ea1b4d0545381360f3620414ce93bde6ec"
+      }
+    },
+    {
+      "name": "market-data",
+      "description": "行情数据基础设施：实时/延时、Level 1/2/3、合并行情与供应商选择及授权。",
+      "version": "1.0.0",
+      "category": "data-tech",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/market-data.zip",
+        "sha256": "10c975e2e5399df0fb22044859047b70f9f1c178ad5dadcb5803441831295050"
+      }
+    },
+    {
+      "name": "reference-data",
+      "description": "参考数据体系：证券/客户/账户主数据、CUSIP/ISIN/SEDOL/FIGI 映射、定价源与黄金源治理。",
+      "version": "1.0.0",
+      "category": "data-tech",
+      "author": {
+        "name": "Joel Lewis"
+      },
+      "homepage": "https://github.com/JoelLewis/finance_skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/reference-data.zip",
+        "sha256": "73bb90dad7b73e21022c5212632e884b20475074e58816d527b167b9cf971164"
+      }
+    },
+    {
+      "name": "lieflat-gongwen",
+      "description": "公文与党建材料起草的风格量化工具：用句长、顿号密度、力度词配额等参数把「像不像公文」变成可验收指标，覆盖调研报告、领导讲话等六类文体；只校验风格骨架、不核事实，公开版限非商业使用。",
+      "version": "1.0.0",
+      "category": "office-design",
+      "author": {
+        "name": "larashero3-dotcom"
+      },
+      "homepage": "https://github.com/larashero3-dotcom/lieflat-gongwen",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/lieflat-gongwen.zip",
+        "sha256": "6c684760d9800153aa8a735d9c08305201d044fbdfd72c948d84e01df10c721a"
+      }
+    },
+    {
+      "name": "dyz-gongwen-skills",
+      "description": "公文写作 22 个子技能的总入口：判断单位、文种与行文方向后分派起草、GB/T 9704 排版、核稿与去 AI 味；本条只装路由入口，其余子技能需另行安装，PolyForm 非商业许可。",
+      "version": "1.1.0",
+      "category": "office-design",
+      "author": {
+        "name": "gongwen-skills contributors"
+      },
+      "homepage": "https://github.com/duyunzhoudyz/dyz-gongwen-skills",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/dyz-gongwen-skills.zip",
+        "sha256": "4a741b70896a2dd1e6866a549b3c836c1cfffd4155370f8adf10e1c18719c4b6"
+      }
+    },
+    {
+      "name": "rayskills",
+      "description": "中文内容生产 9 个子技能的总入口：把选题分派到长文、口播稿、封面、公众号与 X 草稿；流程终点止于已验证草稿，不代为发布，CC BY-NC 4.0 非商业许可。",
+      "version": "1.0.0",
+      "category": "office-design",
+      "author": {
+        "name": "imraywang"
+      },
+      "homepage": "https://github.com/imraywang/rayskills",
+      "license": "CC-BY-NC-4.0",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/rayskills.zip",
+        "sha256": "fab0cc75851ef817feb20e951bd5dcb50fbf2c97cc11376dc115f17ff90983d9"
+      }
+    },
+    {
+      "name": "ui-ux-pro-max-skill",
+      "description": "界面设计的检索式知识库：80 种风格、192 套配色、74 组字体与 120 条 UX 准则，用于选型、评审与无障碍检查；不覆盖后端与基础设施设计，为 7 个子技能中的主入口。",
+      "version": "2.15.0",
+      "category": "data-tech",
+      "author": {
+        "name": "Next Level Builder"
+      },
+      "homepage": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/ui-ux-pro-max-skill.zip",
+        "sha256": "b2dd4da07deea2c1f8bb9f9a1d59d8a6a570ab0a4d12fb3f907af8131f4c4dd8"
+      }
+    },
+    {
+      "name": "finskills",
+      "description": "A 股与美股 30 个金融分析子技能中的适当性报告入口：生成投资理由、风险披露与客户适当性评估，供机构合规留痕；不构成投资建议，行情数据需自备。",
+      "version": "1.0.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": "Geeksfino"
+      },
+      "homepage": "https://github.com/Geeksfino/finskills",
+      "license": "Apache-2.0",
+      "source": {
+        "source": "archive",
+        "url": "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/marketplace/pkgs/finskills.zip",
+        "sha256": "b37fdff44991a363ea3bda271ce1c401a677ceeb2d204178f960c52caddc1067"
+      }
     }
   ]
 }

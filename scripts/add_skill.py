@@ -190,9 +190,10 @@ def check_entry(e: dict, cat: dict) -> list[str]:
             if not src.get(k):
                 errs.append(f"skillhub 源缺 {k}")
     else:
-        for k in ("repo", "path", "ref"):
+        for k in ("repo", "ref"):
             if not src.get(k):
                 errs.append(f"github 源缺 {k}")
+        # path 允许为空：SKILL.md 就在仓库根目录（如 lieflat-gongwen）。
     return errs
 
 

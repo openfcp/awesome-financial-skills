@@ -210,12 +210,33 @@ def resolve_github(spec: dict) -> dict[str, bytes]:
     # 先列文件。api 的 tree 接口一次拿到整棵树，比逐个 contents 省得多。
     files: list[str] = []
     try:
-        tree_url = f"https://api.github.com/repos/{repo}/git/trees/{urllib.parse.quote(ref)}?recursive=1"
-        tree = json.loads(get(tree_url).decode("utf-8"))
-        for node in tree.get("tree", []):
-            if node.get("type") != "blob":
-                continue
-            p = node["path"]
+        # 优先按目录逐层列：大仓库的 recursive tree 会到 2 MB+，经代理常读到
+        # 一半就 IncompleteRead；单个目录的 contents 只有几 KB，且更省配额。
+        # 目录接口失败时才退回整棵树（老路径），保证兼容。
+        raw_paths: list[str] = []
+        try:
+            stack = [path]
+            while stack:
+                cur = stack.pop().strip("/")
+                suffix = "/" + urllib.parse.quote(cur) if cur else ""
+                url = (f"https://api.github.com/repos/{repo}/contents{suffix}"
+                       f"?ref={urllib.parse.quote(ref)}")
+                items = json.loads(get(url).decode("utf-8"))
+                if not isinstance(items, list):
+                    raise RuntimeError("contents 未返回目录列表")
+                for it in items:
+                    if it.get("type") == "dir":
+                        stack.append(it["path"])
+                    elif it.get("type") == "file":
+                        raw_paths.append(it["path"])
+        except Exception:
+            tree_url = (f"https://api.github.com/repos/{repo}/git/trees/"
+                        f"{urllib.parse.quote(ref)}?recursive=1")
+            tree = json.loads(get(tree_url).decode("utf-8"))
+            raw_paths = [n["path"] for n in tree.get("tree", [])
+                         if n.get("type") == "blob"]
+
+        for p in raw_paths:
             if path and not p.startswith(path + "/"):
                 continue
             if p.split("/")[-1] in IGNORE:

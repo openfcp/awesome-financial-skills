@@ -79,9 +79,10 @@ def validate(cat: dict) -> None:
             if not (s.get("install") or {}).get("skillhub"):
                 fail(f"{sid}: 缺少 install.skillhub（站点要显示安装命令）")
         elif kind == "github":
-            for k in ("repo", "path", "ref"):
+            for k in ("repo", "ref"):
                 if not src.get(k):
                     fail(f"{sid}: github 源缺少 {k}")
+            # path 允许为空：表示 SKILL.md 就在仓库根目录（如 lieflat-gongwen）。
             if src.get("vendored"):
                 # 唯一允许自带正文的情形：显式声明，且目录真的在仓里
                 p = (ROOT / src["path"]).resolve()
@@ -94,7 +95,12 @@ def validate(cat: dict) -> None:
                 if not (s.get("install") or {}).get("plugin"):
                     fail(f"{sid}: vendored 技能缺少 install.plugin（站点要显示安装方式）")
             else:
-                fail(f"{sid}: github 源必须是 vendored（本仓不自带正文，外部仓库另计）")
+                # 外部仓库引用（format 3 的 resolve.github）：正文留在原作者仓库，
+                # 由 install.py 运行时按目录逐文件取回，本仓只存坐标。
+                # repo/path/ref 上面已校验；「仓内不得出现技能正文」由下面的守卫负责。
+                # 早期这里一刀切要求 vendored，导致 16 条全是 SkillHub 源时没暴露问题，
+                # 一旦收录 GitHub 源就全被误拦，故放开。
+                pass
         else:
             fail(f"{sid}: 未知 source.type '{kind}'")
 
@@ -131,7 +137,10 @@ def resolve_url(s: dict) -> str:
     src = s["source"]
     if src["type"] == "skillhub":
         return SKILLHUB_ZIP.format(slug=src["slug"])
-    return RAW.format(repo=src["repo"], ref=src["ref"], path=src["path"].strip("/"))
+    path = src.get("path", "").strip("/")
+    if not path:
+        return f"https://raw.githubusercontent.com/{src['repo']}/{src['ref']}/SKILL.md"
+    return RAW.format(repo=src["repo"], ref=src["ref"], path=path)
 
 
 # ------------------------------------------------------------------ 站点数据
