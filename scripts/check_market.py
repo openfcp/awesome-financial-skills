@@ -25,6 +25,7 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -150,20 +151,30 @@ def main() -> int:
         if not a.quiet:
             print(f"[3/4] 分支 {len(branch_zips)} 个包")
 
-    # 3+4. 逐条下载并校验 sha256
+    # 3+4. 逐条下载并校验 sha256（并发，串行时 112 个包遇上 CDN 抖动能跑十几分钟）
     bad_sha, bad_get = [], []
-    for name, p in sorted(rp.items()):
+
+    def one(item):
+        name, p = item
         url, want = p["source"]["url"], p["source"].get("sha256", "")
         try:
             data, served_host = get_pkg(url)
         except Exception as e:                              # noqa: BLE001
-            bad_get.append(f"{name}（{type(e).__name__}）")
-            continue
+            return name, "get", f"{name}（{type(e).__name__}）", 0, ""
         got = hashlib.sha256(data).hexdigest()
         if want and got != want:
-            bad_sha.append(f"{name}：清单 {want[:12]}… 实际 {got[:12]}…")
-        if not a.quiet:
-            print(f"      {name:<44}{len(data)/1024:>8.1f} KB  {'✓' if got == want else '✗'}  {served_host}")
+            return (name, "sha", f"{name}：清单 {want[:12]}… 实际 {got[:12]}…",
+                    len(data), served_host)
+        return name, "ok", "", len(data), served_host
+
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        for name, kind, msg, size, served_host in pool.map(one, sorted(rp.items())):
+            if kind == "get":
+                bad_get.append(msg)
+            elif kind == "sha":
+                bad_sha.append(msg)
+            if not a.quiet:
+                print(f"      {name:<44}{size/1024:>8.1f} KB  {'✓' if kind == 'ok' else '✗'}  {served_host}")
     if bad_get:
         problems.append(f"下载失败：{', '.join(bad_get)}")
     if bad_sha:
