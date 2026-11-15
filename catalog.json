@@ -3505,6 +3505,41 @@
       "install": {
         "plugin": "./China-market/suitability-report-generator"
       }
+    },
+    {
+      "id": "qiaomu-mondo-poster-design",
+      "name": {
+        "zh": "乔木 Mondo 海报设计",
+        "en": "Qiaomu Mondo Poster Design"
+      },
+      "summary": {
+        "zh": "把一句话需求转成 Mondo 丝网印刷风格的生图提示词，覆盖公众号封面、小红书配图、书籍与专辑封面等多平台比例，附 33+ 位设计师风格与构图参考；只产出视觉方案与提示词，不含文案合规审查，真正出图需自备 AI 图像生成接口。",
+        "en": "Turns a one-line brief into Mondo screen-print style image prompts for WeChat covers, social posts, book and album covers with multi-platform aspect ratios, backed by 33+ designer style references; visual prompts only, no copy compliance review, and actual image generation needs your own AI image API."
+      },
+      "category": "office-design",
+      "tags": [
+        "海报设计",
+        "封面设计",
+        "Mondo风格",
+        "AI出图",
+        "多平台比例"
+      ],
+      "version": "1.0.0",
+      "author": "joeseesun",
+      "license": "MIT",
+      "source": {
+        "type": "github",
+        "repo": "joeseesun/qiaomu-mondo-poster-design",
+        "path": "",
+        "ref": "master",
+        "vendored": false,
+        "exclude": [
+          "examples"
+        ]
+      },
+      "install": {
+        "plugin": "./"
+      }
     }
   ]
 }

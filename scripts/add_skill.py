@@ -120,9 +120,8 @@ def cmd_inspect(a) -> int:
     if a.slug:
         info = inspect_skillhub(a.slug)
     elif a.repo:
-        if not a.path:
-            raise SystemExit("[inspect] GitHub 源必须给 --path（技能目录）")
-        info = inspect_github(a.repo, a.path, a.ref)
+        # path 允许为空：SKILL.md 就在仓库根目录（如 lieflat-gongwen）。
+        info = inspect_github(a.repo, a.path or "", a.ref)
     else:
         raise SystemExit("[inspect] 给 --slug（SkillHub）或 --repo + --path（GitHub）")
 
@@ -154,6 +153,11 @@ def build_entry(a, cat: dict) -> dict:
            if a.slug else
            {"type": "github", "repo": a.repo, "path": a.path.strip("/"),
             "ref": a.ref, "vendored": False})
+    # 只跳过纯展示资源（examples/ 里的成品图常有几十 MB），运行必需的
+    # references/ 与 scripts/ 仍照常取回。按条目声明，不影响其他技能。
+    excl = [x.strip().strip("/") for x in (getattr(a, "exclude", "") or "").split(",") if x.strip()]
+    if excl and src["type"] == "github":
+        src["exclude"] = excl
     install = ({"skillhub": f"skillhub install {a.slug} --namespace {a.namespace}"}
                if a.slug else {"plugin": f"./{a.path.strip('/')}"})
     entry = {
@@ -194,6 +198,9 @@ def check_entry(e: dict, cat: dict) -> list[str]:
             if not src.get(k):
                 errs.append(f"github 源缺 {k}")
         # path 允许为空：SKILL.md 就在仓库根目录（如 lieflat-gongwen）。
+        excl = src.get("exclude", [])
+        if not isinstance(excl, list) or any(not isinstance(x, str) or not x.strip() for x in excl):
+            errs.append("github 源的 exclude 必须是非空路径前缀组成的数组")
     return errs
 
 
@@ -288,8 +295,10 @@ def main() -> int:
     p.add_argument("--slug", help="SkillHub slug（与 --repo 二选一）")
     p.add_argument("--namespace", help="SkillHub namespace")
     p.add_argument("--repo", help="GitHub owner/repo")
-    p.add_argument("--path", default="", help="GitHub 技能目录")
+    p.add_argument("--path", default="", help="GitHub 技能目录（留空＝仓库根目录）")
     p.add_argument("--ref", default="main")
+    p.add_argument("--exclude", default="",
+                   help="GitHub 源跳过的前缀，逗号分隔（如 examples/ 成品图）")
     p.add_argument("--license", required=True, help="proprietary / MIT / …（不猜）")
     p.add_argument("--author", default="未署名")
     p.add_argument("--version", default="1.0.0")

@@ -236,12 +236,19 @@ def resolve_github(spec: dict) -> dict[str, bytes]:
             raw_paths = [n["path"] for n in tree.get("tree", [])
                          if n.get("type") == "blob"]
 
+        # 条目可声明跳过纯展示资源（如 examples/ 里的几十 MB 成品图）。
+        # 只按该条目的相对路径前缀过滤，不影响其他技能，也不动运行必需的
+        # references/ 与 scripts/。
+        excl = [x.strip("/") for x in (src.get("exclude") or []) if x.strip()]
         for p in raw_paths:
             if path and not p.startswith(path + "/"):
                 continue
+            rel = p[len(path) + 1:] if path else p
             if p.split("/")[-1] in IGNORE:
                 continue
-            files.append(p[len(path) + 1:] if path else p)
+            if any(rel == e or rel.startswith(e + "/") for e in excl):
+                continue
+            files.append(rel)
     except Exception as e:
         raise RuntimeError(f"列目录失败（{repo}@{ref}/{path}）：{e}")
 

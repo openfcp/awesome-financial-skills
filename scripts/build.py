@@ -82,6 +82,12 @@ def validate(cat: dict) -> None:
             for k in ("repo", "ref"):
                 if not src.get(k):
                     fail(f"{sid}: github 源缺少 {k}")
+            excl = src.get("exclude", [])
+            if not isinstance(excl, list) or any(
+                    not isinstance(x, str) or not x.strip() or ".." in x for x in excl):
+                fail(f"{sid}: github 源的 exclude 必须是相对路径前缀数组")
+            if any(x.strip("/") == "SKILL.md" for x in excl):
+                fail(f"{sid}: exclude 不能排除 SKILL.md")
             # path 允许为空：表示 SKILL.md 就在仓库根目录（如 lieflat-gongwen）。
             if src.get("vendored"):
                 # 唯一允许自带正文的情形：显式声明，且目录真的在仓里

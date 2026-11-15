@@ -1796,6 +1796,22 @@
         "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/finskills.zip",
         "sha256": "b37fdff44991a363ea3bda271ce1c401a677ceeb2d204178f960c52caddc1067"
       }
+    },
+    {
+      "name": "qiaomu-mondo-poster-design",
+      "description": "把一句话需求转成 Mondo 丝网印刷风格的生图提示词，覆盖公众号封面、小红书配图、书籍与专辑封面等多平台比例，附 33+ 位设计师风格与构图参考；只产出视觉方案与提示词，不含文案合规审查，真正出图需自备 AI 图像生成接口。",
+      "version": "1.0.0",
+      "category": "office-design",
+      "author": {
+        "name": "joeseesun"
+      },
+      "homepage": "https://github.com/joeseesun/qiaomu-mondo-poster-design",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/qiaomu-mondo-poster-design.zip",
+        "sha256": "601cf9a1bdc72ba3fdbc5ffe9d72edfbe2b365a51ffe98a9989319c5d53efd97"
+      }
     }
   ]
 }
