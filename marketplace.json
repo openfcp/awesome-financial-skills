@@ -1828,6 +1828,70 @@
         "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/moneyprinterturbo-video.zip",
         "sha256": "18c6de17e8de49aa12764ac818a5e17eabfb414ed1bc3e9bfdaa63a6ed8b7ec6"
       }
+    },
+    {
+      "name": "cinecode",
+      "description": "用一个想法让 AI 编程代理编写剧本、逐帧用代码绘制画面并设计配乐，最终交付 MP4 成片，覆盖短片、广告、解说与音乐视频；提供 Quick/Film 两种模式，需 Node 22+、Python、ffmpeg 与 Chrome，只做代码生成的视觉成片，不处理真人实拍素材。",
+      "version": "1.0.0",
+      "category": "office-design",
+      "author": {
+        "name": "Sarp Yıldız (@sarpstar)"
+      },
+      "homepage": "https://github.com/sarpstar/cinecode",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/cinecode.zip",
+        "sha256": "f5f407e9c879d7dd2d74337e97e46b4e2255a9b16edc82e690bebdd7895dc954"
+      }
+    },
+    {
+      "name": "dashi-ppt",
+      "description": "按预置视觉主题组合页面，生成可离线打开、可在浏览器编辑的 HTML 演示，并可导出 PPTX/PDF，适合汇报与路演材料；依赖内置 Node 生成器，首次使用安装依赖、取件约 58 MB，采用 AGPL-3.0 许可。",
+      "version": "0.4.14",
+      "category": "office-design",
+      "author": {
+        "name": "chuspeeism"
+      },
+      "homepage": "https://github.com/chuspeeism/dashi-ppt-skill",
+      "license": "AGPL-3.0",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/dashi-ppt.zip",
+        "sha256": "28c5d58b321b6f42563d221da857b006bb515d0c1f88bd8d5de0869b30881229"
+      }
+    },
+    {
+      "name": "jellyfish-ui-ux-pro-max",
+      "description": "Jellyfish 短剧工作台内置的 UI/UX 设计规范检索库副本，含风格、配色、字体与 UX 准则，供界面选型与评审；注意它与清单已有的 ui-ux-pro-max-skill 内容同源，装到本机时 name 同为 ui-ux-pro-max，会互相覆盖，建议二选一。",
+      "version": "1.0.0",
+      "category": "data-tech",
+      "author": {
+        "name": "nexu-io / Jellyfish contributors"
+      },
+      "homepage": "https://github.com/Forget-C/Jellyfish",
+      "license": "Apache-2.0",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/jellyfish-ui-ux-pro-max.zip",
+        "sha256": "7883bde6cd84f4b28e19f24d4504fad44a49c3e2f03b15d4c8b7e52023458eab"
+      }
+    },
+    {
+      "name": "oh-my-ppt",
+      "description": "Oh My PPT 应用的幻灯片布局决策主干：定义逐页布局路径、版式目录、画布预算与碰撞规避，供生成或修复幻灯片结构；是应用内部组件，需配合 Oh My PPT 的 HTML 模板与运行时使用，其余 92 个样式/图表/动画技能为应用内置配套，不单独收录。",
+      "version": "1.0.0",
+      "category": "office-design",
+      "author": {
+        "name": "arcsin1"
+      },
+      "homepage": "https://github.com/arcsin1/oh-my-ppt",
+      "license": "Apache-2.0",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/oh-my-ppt.zip",
+        "sha256": "83daaa812404e0f7b539e855377cf67bdc84844a5724136c980985fd005b0605"
+      }
     }
   ]
 }

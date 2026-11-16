@@ -3571,6 +3571,136 @@
       "install": {
         "plugin": "./docs/skill"
       }
+    },
+    {
+      "id": "cinecode",
+      "name": {
+        "zh": "Cinecode 代码电影",
+        "en": "Cinecode"
+      },
+      "summary": {
+        "zh": "用一个想法让 AI 编程代理编写剧本、逐帧用代码绘制画面并设计配乐，最终交付 MP4 成片，覆盖短片、广告、解说与音乐视频；提供 Quick/Film 两种模式，需 Node 22+、Python、ffmpeg 与 Chrome，只做代码生成的视觉成片，不处理真人实拍素材。",
+        "en": "Turns an idea into an MP4 by having an AI coding agent write the script, draw every frame in code and design the sound, covering shorts, ads, explainers and music videos; offers Quick/Film modes, needs Node 22+, Python, ffmpeg and Chrome, and delivers code-rendered visuals only rather than live-action footage."
+      },
+      "category": "office-design",
+      "tags": [
+        "代码生成",
+        "短片",
+        "动画",
+        "配乐",
+        "MP4"
+      ],
+      "version": "1.0.0",
+      "author": "Sarp Yıldız (@sarpstar)",
+      "license": "MIT",
+      "source": {
+        "type": "github",
+        "repo": "sarpstar/cinecode",
+        "path": "",
+        "ref": "main",
+        "vendored": false,
+        "exclude": [
+          "docs"
+        ]
+      },
+      "install": {
+        "plugin": "./"
+      }
+    },
+    {
+      "id": "dashi-ppt",
+      "name": {
+        "zh": "大石 PPT",
+        "en": "Dashi PPT"
+      },
+      "summary": {
+        "zh": "按预置视觉主题组合页面，生成可离线打开、可在浏览器编辑的 HTML 演示，并可导出 PPTX/PDF，适合汇报与路演材料；依赖内置 Node 生成器，首次使用安装依赖、取件约 58 MB，采用 AGPL-3.0 许可。",
+        "en": "Composes browser-editable, offline-capable HTML presentations from preset visual themes with PPTX/PDF export for reports and pitches; relies on a bundled Node generator (first-run dependency install, ~58 MB fetch) and is licensed AGPL-3.0."
+      },
+      "category": "office-design",
+      "tags": [
+        "PPT",
+        "演示文稿",
+        "HTML幻灯片",
+        "PPTX",
+        "主题模板"
+      ],
+      "version": "0.4.14",
+      "author": "chuspeeism",
+      "license": "AGPL-3.0",
+      "source": {
+        "type": "github",
+        "repo": "chuspeeism/dashi-ppt-skill",
+        "path": "skills/dashi-ppt",
+        "ref": "main",
+        "vendored": false
+      },
+      "install": {
+        "plugin": "./skills/dashi-ppt"
+      }
+    },
+    {
+      "id": "jellyfish-ui-ux-pro-max",
+      "name": {
+        "zh": "UI/UX Pro Max（Jellyfish 内置副本）",
+        "en": "UI/UX Pro Max (Jellyfish Copy)"
+      },
+      "summary": {
+        "zh": "Jellyfish 短剧工作台内置的 UI/UX 设计规范检索库副本，含风格、配色、字体与 UX 准则，供界面选型与评审；注意它与清单已有的 ui-ux-pro-max-skill 内容同源，装到本机时 name 同为 ui-ux-pro-max，会互相覆盖，建议二选一。",
+        "en": "A vendored copy of the UI/UX design-guideline library bundled in the Jellyfish drama workspace for interface selection and review; it is the same skill as the existing ui-ux-pro-max-skill entry and shares the name ui-ux-pro-max, so installing both will overwrite each other—pick one."
+      },
+      "category": "data-tech",
+      "tags": [
+        "UI设计",
+        "设计规范",
+        "配色",
+        "字体",
+        "Jellyfish副本"
+      ],
+      "version": "1.0.0",
+      "author": "nexu-io / Jellyfish contributors",
+      "license": "Apache-2.0",
+      "source": {
+        "type": "github",
+        "repo": "Forget-C/Jellyfish",
+        "path": ".cursor/skills/ui-ux-pro-max",
+        "ref": "main",
+        "vendored": false
+      },
+      "install": {
+        "plugin": "./.cursor/skills/ui-ux-pro-max"
+      }
+    },
+    {
+      "id": "oh-my-ppt",
+      "name": {
+        "zh": "Oh My PPT 布局主干",
+        "en": "Oh My PPT Layout"
+      },
+      "summary": {
+        "zh": "Oh My PPT 应用的幻灯片布局决策主干：定义逐页布局路径、版式目录、画布预算与碰撞规避，供生成或修复幻灯片结构；是应用内部组件，需配合 Oh My PPT 的 HTML 模板与运行时使用，其余 92 个样式/图表/动画技能为应用内置配套，不单独收录。",
+        "en": "The layout decision backbone of the Oh My PPT app: defines per-page layout paths, a pattern catalog, canvas budgeting and collision avoidance for generating or fixing slide structure; an internal app component that needs Oh My PPT's HTML templates and runtime, with its other 92 style/chart/animation skills bundled inside the app."
+      },
+      "category": "office-design",
+      "tags": [
+        "PPT",
+        "幻灯片布局",
+        "版式",
+        "Oh My PPT"
+      ],
+      "version": "1.0.0",
+      "author": "arcsin1",
+      "license": "Apache-2.0",
+      "source": {
+        "type": "github",
+        "repo": "arcsin1/oh-my-ppt",
+        "path": "resources/skills/oh-my-ppt-layout",
+        "ref": "main",
+        "vendored": false
+      },
+      "install": {
+        "plugin": "./resources/skills/oh-my-ppt-layout"
+      }
     }
   ]
 }
