@@ -1,7 +1,7 @@
 {
   "format": 3,
   "id": "awesome-financial-skills",
-  "updated": "2026-11-15",
+  "updated": "2026-11-16",
   "title": {
     "zh": "金融行业skill精选",
     "en": "Awesome Financial Skills"
@@ -3539,6 +3539,37 @@
       },
       "install": {
         "plugin": "./"
+      }
+    },
+    {
+      "id": "moneyprinterturbo-video",
+      "name": {
+        "zh": "MoneyPrinterTurbo 短视频生成",
+        "en": "MoneyPrinterTurbo Video"
+      },
+      "summary": {
+        "zh": "给一个主题或脚本，让 AI 代理自动完成 MoneyPrinterTurbo 的安装、配置、生成、等待与 MP4 交付，覆盖口播、教育、营销与素材混剪；依赖终端与网络、需自备 API 密钥，默认产出中文 9:16 竖屏视频，只交付成片不代替选题策划。",
+        "en": "Let an AI agent install, configure, generate, wait and deliver a finished MP4 from a topic or script, covering voice-over, educational, marketing and stock-footage videos; needs terminal, network and your own API keys, defaults to Chinese 9:16 portrait, and delivers the video only rather than the content strategy."
+      },
+      "category": "office-design",
+      "tags": [
+        "短视频",
+        "视频生成",
+        "AI代理",
+        "素材混剪"
+      ],
+      "version": "1.3.2",
+      "author": "harry0703 (Harry)",
+      "license": "MIT",
+      "source": {
+        "type": "github",
+        "repo": "harry0703/MoneyPrinterTurbo",
+        "path": "docs/skill",
+        "ref": "main",
+        "vendored": false
+      },
+      "install": {
+        "plugin": "./docs/skill"
       }
     }
   ]

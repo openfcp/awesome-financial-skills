@@ -1812,6 +1812,22 @@
         "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/qiaomu-mondo-poster-design.zip",
         "sha256": "601cf9a1bdc72ba3fdbc5ffe9d72edfbe2b365a51ffe98a9989319c5d53efd97"
       }
+    },
+    {
+      "name": "moneyprinterturbo-video",
+      "description": "给一个主题或脚本，让 AI 代理自动完成 MoneyPrinterTurbo 的安装、配置、生成、等待与 MP4 交付，覆盖口播、教育、营销与素材混剪；依赖终端与网络、需自备 API 密钥，默认产出中文 9:16 竖屏视频，只交付成片不代替选题策划。",
+      "version": "1.3.2",
+      "category": "office-design",
+      "author": {
+        "name": "harry0703 (Harry)"
+      },
+      "homepage": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/moneyprinterturbo-video.zip",
+        "sha256": "18c6de17e8de49aa12764ac818a5e17eabfb414ed1bc3e9bfdaa63a6ed8b7ec6"
+      }
     }
   ]
 }
