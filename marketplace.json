@@ -2500,6 +2500,230 @@
         "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/customer-segment.zip",
         "sha256": "cd31c4437eda10dc375e33e6ba1f7732de07cec4224e0a162d5a941750afed9b"
       }
+    },
+    {
+      "name": "drama-skills",
+      "description": "从项目初始化到剧本、分镜、提示词与剪辑的短剧创作路由，串起五份核心文档并分发给各创作子技能；不替代单次写作或剪辑的执行细节。",
+      "version": "main@37232f6d22e1",
+      "category": "other",
+      "author": {
+        "name": "drama-skills contributors"
+      },
+      "homepage": "https://github.com/zenstory-ai/drama-skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/drama-skills.zip",
+        "sha256": "dd81d85c18e86914beaca02a753c0202fccc6025a08b7d4f2c7157b9e6c5106e"
+      }
+    },
+    {
+      "name": "generative-media-skills",
+      "description": "用 muapi 把图像与视频生成、增强、编辑串成可视化多步工作流；面向生成任务编排，不负责本地剪辑或非 muapi 服务。",
+      "version": "0.1.0",
+      "category": "other",
+      "author": {
+        "name": "samuraigpt"
+      },
+      "homepage": "https://github.com/samuraigpt/generative-media-skills",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/generative-media-skills.zip",
+        "sha256": "e71247869acba28068f656417cb8bf412663a3e3a6a6693085b4c3cfb983b44b"
+      }
+    },
+    {
+      "name": "video-use",
+      "description": "按素材转写与确认方案来剪、调色、加字幕与叠加动画，适合口播、蒙太奇与教程等成片迭代；不是预设化模板剪辑。",
+      "version": "main@43cfc5668335",
+      "category": "other",
+      "author": {
+        "name": "Browser Use"
+      },
+      "homepage": "https://github.com/browser-use/video-use",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/video-use.zip",
+        "sha256": "fc063b13c1e37c95536e5c2a73d206a9226ab716dee9f3f4f5ccd20292ebfa5a"
+      }
+    },
+    {
+      "name": "hyperframes",
+      "description": "用 HTML 时间轴逐帧确定性渲染宣传片、讲解、图表与竖屏视频；面向 HyperFrames/HTML 渲染路径，不覆盖通用剪辑。",
+      "version": "main@b064e40e1381",
+      "category": "other",
+      "author": {
+        "name": "HeyGen"
+      },
+      "homepage": "https://github.com/heygen-com/hyperframes",
+      "license": "Apache-2.0",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/hyperframes.zip",
+        "sha256": "a020510ddd211b2814cbf0cc447f70fc29701c80b29f89e90a0ed16c1a3139ad"
+      }
+    },
+    {
+      "name": "remotion-skills",
+      "description": "Remotion 视频项目的技能入口，按创建、标记、字幕、地图、渲染等任务路由到对应参考；只做方向指引，不直接产出成片。",
+      "version": "4.0.544",
+      "category": "data-tech",
+      "author": {
+        "name": "Remotion"
+      },
+      "homepage": "https://github.com/remotion-dev/skills",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/remotion-skills.zip",
+        "sha256": "e9daf0e52cd873b604e1d0fcb8ed95b700d6f13ac85cbfb52532fd3739e657bf"
+      }
+    },
+    {
+      "name": "chengfeng-videocut",
+      "description": "在既有剪辑工程里定位词句、增删画面片段并回读核验；只操作已有工程，不负责自动识别口误、字幕或导出。",
+      "version": "main@a33b43e08c34",
+      "category": "other",
+      "author": {
+        "name": "agentchengfeng"
+      },
+      "homepage": "https://github.com/agentchengfeng/chengfeng-videocut-skills",
+      "license": "Apache-2.0",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/chengfeng-videocut.zip",
+        "sha256": "c8b7342446a21801cf307404a0021f4a606bb378bb36ca7da57e14cc8403b681"
+      }
+    },
+    {
+      "name": "huashu-art-motion",
+      "description": "用镜头表与风格库拆解复刻艺术及解说动画，按口播参数渲染片段；含 36 种实做风格与逐帧检查，不做通用视频剪辑。",
+      "version": "1.3.1",
+      "category": "other",
+      "author": {
+        "name": "花叔"
+      },
+      "homepage": "https://github.com/alchaincyf/huashu-art-motion",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/huashu-art-motion.zip",
+        "sha256": "1d1fadd69108dc13e27a241a93b6c76d726fd05f8ff7f6ab5955450a4d0bdf82"
+      }
+    },
+    {
+      "name": "html-explainer",
+      "description": "把任意主题做成带配音与词级硬字幕的讲解视频，采用 HTML/CSS/GSAP 画面与确定性逐帧渲染；不做通用剪辑或非 HTML 模板。",
+      "version": "2.0.10",
+      "category": "other",
+      "author": {
+        "name": "Moh"
+      },
+      "homepage": "https://github.com/onemoh/html-explainer",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/html-explainer.zip",
+        "sha256": "bc71e34202f3e6a2cdd58c489c5ca8b54185a8c0e90a08f8d1f84c669349872a"
+      }
+    },
+    {
+      "name": "vibe-knowledge",
+      "description": "把一个知识点做成 45 秒至 5 分钟、句句有出处的知识短片，覆盖脚本母版、配音、风格库与逐帧成片；不用于系列课或数字人口播。",
+      "version": "main@c3a13a85f7cc",
+      "category": "other",
+      "author": {
+        "name": "Berryxia (andyhuo520)"
+      },
+      "homepage": "https://github.com/andyhuo520/vibe-knowledge",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/vibe-knowledge.zip",
+        "sha256": "9e4796239a32c8d6344163a42eeaaea1344b8d42096069740c7773e63d5ec542"
+      }
+    },
+    {
+      "name": "guizang-ppt-skill",
+      "description": "生成单文件横向翻页网页 PPT，含电子杂志与瑞士国际主义两套风格及演讲者视图；不做传统 .pptx 编辑。",
+      "version": "main@93d21bf4a73a",
+      "category": "office-design",
+      "author": {
+        "name": "歸藏"
+      },
+      "homepage": "https://github.com/op7418/guizang-ppt-skill",
+      "license": "AGPL-3.0",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/guizang-ppt-skill.zip",
+        "sha256": "b551240c1f79678f7961978dcd630da3adee52385dacb7b2942d03b8d38372e5"
+      }
+    },
+    {
+      "name": "guizang-material-illustration",
+      "description": "把文章、截图或图表数据转成带中文标签的解释图与材质化图表配图；只出中心配图，不做整张社交卡片或 PPT 排版。",
+      "version": "main@cf26e194ce07",
+      "category": "office-design",
+      "author": {
+        "name": "歸藏"
+      },
+      "homepage": "https://github.com/op7418/guizang-material-illustration",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/guizang-material-illustration.zip",
+        "sha256": "dfe66f5996a0022bde22f352e4f3dbdceb3ad9e71c352fda1de8c331c35fd41c"
+      }
+    },
+    {
+      "name": "dsh-guizang-design",
+      "description": "把 Markdown 文档排成精排单页 HTML 并可导出 PDF 或长图，提供杂志风与瑞士风；不做公众号排版或 PPT 演示。",
+      "version": "main@e275f1e4d4a8",
+      "category": "office-design",
+      "author": {
+        "name": "歸藏"
+      },
+      "homepage": "https://github.com/op7418/dsh-guizang-design",
+      "license": "AGPL-3.0",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/dsh-guizang-design.zip",
+        "sha256": "ed8a0946f122d9814002cc2743a5ee203fa6868e28672282e15d2e583222eed1"
+      }
+    },
+    {
+      "name": "guizang-product-video-skill",
+      "description": "用真实产品组件与 GSAP/Three.js 动效做软件宣传片和版本更新片；面向代码驱动出片，不套模板也不做通用剪辑。",
+      "version": "main@18842e0f49a9",
+      "category": "other",
+      "author": {
+        "name": "歸藏"
+      },
+      "homepage": "https://github.com/op7418/guizang-product-video-skill",
+      "license": "AGPL-3.0; CodePilot fallback assets: BUSL-1.1",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/guizang-product-video-skill.zip",
+        "sha256": "e8aba08dc9c5c56f841e34cb75aed237eb6d65121f78d7bfee017ba39aceeeb3"
+      }
+    },
+    {
+      "name": "frontend-slides",
+      "description": "从零生成动画丰富的单文件 HTML 演示，或把 PPT/PPTX 转成网页；固定 16:9 舞台，不依赖 npm 构建。",
+      "version": "main@9906a34d640d",
+      "category": "office-design",
+      "author": {
+        "name": "Zara Zhang"
+      },
+      "homepage": "https://github.com/zarazhangrui/frontend-slides",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/frontend-slides.zip",
+        "sha256": "b9269505797c4a2ab757c2edfcca929853fff49fb7e60105ed8f63c026c62374"
+      }
     }
   ]
 }

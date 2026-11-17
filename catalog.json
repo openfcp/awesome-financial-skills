@@ -4803,6 +4803,429 @@
       "install": {
         "skillhub": "skillhub install customer-segment --namespace clawhub_yukirang"
       }
+    },
+    {
+      "id": "drama-skills",
+      "name": {
+        "zh": "短剧创作台",
+        "en": "Short Drama Studio"
+      },
+      "summary": {
+        "zh": "从项目初始化到剧本、分镜、提示词与剪辑的短剧创作路由，串起五份核心文档并分发给各创作子技能；不替代单次写作或剪辑的执行细节。",
+        "en": "Routes short-drama projects from setup through script, storyboard and prompt handoffs; not a substitute for single-step writing or editing."
+      },
+      "category": "other",
+      "tags": [
+        "短剧",
+        "创作流程",
+        "视频"
+      ],
+      "version": "main@37232f6d22e1",
+      "author": "drama-skills contributors",
+      "license": "MIT",
+      "source": {
+        "type": "github",
+        "repo": "zenstory-ai/drama-skills",
+        "path": "skills/short-drama",
+        "ref": "main",
+        "vendored": false
+      },
+      "install": {
+        "plugin": "./skills/short-drama"
+      }
+    },
+    {
+      "id": "generative-media-skills",
+      "name": {
+        "zh": "生成式媒体技能集",
+        "en": "Generative Media Skills"
+      },
+      "summary": {
+        "zh": "用 muapi 把图像与视频生成、增强、编辑串成可视化多步工作流；面向生成任务编排，不负责本地剪辑或非 muapi 服务。",
+        "en": "Builds and runs multi-step muapi image and video generation pipelines; scoped to generation orchestration, not local editing or other services."
+      },
+      "category": "other",
+      "tags": [
+        "AI生成",
+        "工作流",
+        "视频"
+      ],
+      "version": "0.1.0",
+      "author": "samuraigpt",
+      "license": "MIT",
+      "source": {
+        "type": "github",
+        "repo": "samuraigpt/generative-media-skills",
+        "path": "library/workflow",
+        "ref": "main",
+        "vendored": false
+      },
+      "install": {
+        "plugin": "./library/workflow"
+      }
+    },
+    {
+      "id": "video-use",
+      "name": {
+        "zh": "对话式视频剪辑",
+        "en": "Video Use"
+      },
+      "summary": {
+        "zh": "按素材转写与确认方案来剪、调色、加字幕与叠加动画，适合口播、蒙太奇与教程等成片迭代；不是预设化模板剪辑。",
+        "en": "Conversation-driven editing with transcript-first planning, cuts, grading and captions; not a preset-based template editor."
+      },
+      "category": "other",
+      "tags": [
+        "视频剪辑",
+        "转写",
+        "字幕"
+      ],
+      "version": "main@43cfc5668335",
+      "author": "Browser Use",
+      "license": "MIT",
+      "source": {
+        "type": "github",
+        "repo": "browser-use/video-use",
+        "path": "",
+        "ref": "main",
+        "vendored": false
+      },
+      "install": {
+        "plugin": "./"
+      }
+    },
+    {
+      "id": "hyperframes",
+      "name": {
+        "zh": "HyperFrames 视频渲染",
+        "en": "HyperFrames Video"
+      },
+      "summary": {
+        "zh": "用 HTML 时间轴逐帧确定性渲染宣传片、讲解、图表与竖屏视频；面向 HyperFrames/HTML 渲染路径，不覆盖通用剪辑。",
+        "en": "Deterministic HTML-to-video rendering for explainers, charts and promos; limited to the HyperFrames/HTML workflow, not general editing."
+      },
+      "category": "other",
+      "tags": [
+        "HTML视频",
+        "渲染",
+        "动画"
+      ],
+      "version": "main@b064e40e1381",
+      "author": "HeyGen",
+      "license": "Apache-2.0",
+      "source": {
+        "type": "github",
+        "repo": "heygen-com/hyperframes",
+        "path": "skills/hyperframes",
+        "ref": "main",
+        "vendored": false
+      },
+      "install": {
+        "plugin": "./skills/hyperframes"
+      }
+    },
+    {
+      "id": "remotion-skills",
+      "name": {
+        "zh": "Remotion 最佳实践路由",
+        "en": "Remotion Best Practices Router"
+      },
+      "summary": {
+        "zh": "Remotion 视频项目的技能入口，按创建、标记、字幕、地图、渲染等任务路由到对应参考；只做方向指引，不直接产出成片。",
+        "en": "Router for Remotion project tasks such as creation, markup, captions, maps and rendering; guidance only, not a rendering engine."
+      },
+      "category": "data-tech",
+      "tags": [
+        "Remotion",
+        "视频开发",
+        "路由"
+      ],
+      "version": "4.0.544",
+      "author": "Remotion",
+      "license": "proprietary",
+      "source": {
+        "type": "github",
+        "repo": "remotion-dev/skills",
+        "path": "skills/remotion-best-practices",
+        "ref": "main",
+        "vendored": false
+      },
+      "install": {
+        "plugin": "./skills/remotion-best-practices"
+      }
+    },
+    {
+      "id": "chengfeng-videocut",
+      "name": {
+        "zh": "橙锋剪辑工作台",
+        "en": "Chengfeng Videocut Workbench"
+      },
+      "summary": {
+        "zh": "在既有剪辑工程里定位词句、增删画面片段并回读核验；只操作已有工程，不负责自动识别口误、字幕或导出。",
+        "en": "Edits existing videocut projects through a Runtime CLI with read-back verification; not for auto filler detection, subtitles or export."
+      },
+      "category": "other",
+      "tags": [
+        "视频剪辑",
+        "时间线",
+        "工作台"
+      ],
+      "version": "main@a33b43e08c34",
+      "author": "agentchengfeng",
+      "license": "Apache-2.0",
+      "source": {
+        "type": "github",
+        "repo": "agentchengfeng/chengfeng-videocut-skills",
+        "path": "plugins/chengfeng-videocut/skills/chengfeng-videocut-workbench",
+        "ref": "main",
+        "vendored": false
+      },
+      "install": {
+        "plugin": "./plugins/chengfeng-videocut/skills/chengfeng-videocut-workbench"
+      }
+    },
+    {
+      "id": "huashu-art-motion",
+      "name": {
+        "zh": "花叔艺术动画",
+        "en": "Huashu Art Motion"
+      },
+      "summary": {
+        "zh": "用镜头表与风格库拆解复刻艺术及解说动画，按口播参数渲染片段；含 36 种实做风格与逐帧检查，不做通用视频剪辑。",
+        "en": "Reproduces art and explainer animation via storyboard tables and a style library with deterministic frame rendering; not a general editor."
+      },
+      "category": "other",
+      "tags": [
+        "动画",
+        "艺术风格",
+        "逐帧渲染"
+      ],
+      "version": "1.3.1",
+      "author": "花叔",
+      "license": "MIT",
+      "source": {
+        "type": "github",
+        "repo": "alchaincyf/huashu-art-motion",
+        "path": "",
+        "ref": "main",
+        "vendored": false,
+        "exclude": [
+          "assets/showcase"
+        ]
+      },
+      "install": {
+        "plugin": "./"
+      }
+    },
+    {
+      "id": "html-explainer",
+      "name": {
+        "zh": "HTML 讲解视频",
+        "en": "HTML Explainer"
+      },
+      "summary": {
+        "zh": "把任意主题做成带配音与词级硬字幕的讲解视频，采用 HTML/CSS/GSAP 画面与确定性逐帧渲染；不做通用剪辑或非 HTML 模板。",
+        "en": "Turns topics into narrated explainer videos with HTML/CSS/GSAP scenes and deterministic frame rendering; not a general editor."
+      },
+      "category": "other",
+      "tags": [
+        "科普视频",
+        "HTML",
+        "字幕"
+      ],
+      "version": "2.0.10",
+      "author": "Moh",
+      "license": "MIT",
+      "source": {
+        "type": "github",
+        "repo": "onemoh/html-explainer",
+        "path": "",
+        "ref": "main",
+        "vendored": false
+      },
+      "install": {
+        "plugin": "./"
+      }
+    },
+    {
+      "id": "vibe-knowledge",
+      "name": {
+        "zh": "Vibe 知识短片",
+        "en": "Vibe Knowledge Shorts"
+      },
+      "summary": {
+        "zh": "把一个知识点做成 45 秒至 5 分钟、句句有出处的知识短片，覆盖脚本母版、配音、风格库与逐帧成片；不用于系列课或数字人口播。",
+        "en": "Produces sourced knowledge shorts (45s-5min) with script templates, voice cloning and frame rendering; not for courses or digital avatars."
+      },
+      "category": "other",
+      "tags": [
+        "知识视频",
+        "脚本",
+        "科普"
+      ],
+      "version": "main@c3a13a85f7cc",
+      "author": "Berryxia (andyhuo520)",
+      "license": "MIT",
+      "source": {
+        "type": "github",
+        "repo": "andyhuo520/vibe-knowledge",
+        "path": "skills/vibe-knowledge",
+        "ref": "main",
+        "vendored": false
+      },
+      "install": {
+        "plugin": "./skills/vibe-knowledge"
+      }
+    },
+    {
+      "id": "guizang-ppt-skill",
+      "name": {
+        "zh": "归藏网页 PPT",
+        "en": "Guizang Web PPT"
+      },
+      "summary": {
+        "zh": "生成单文件横向翻页网页 PPT，含电子杂志与瑞士国际主义两套风格及演讲者视图；不做传统 .pptx 编辑。",
+        "en": "Generates single-file horizontal web decks with magazine and Swiss styles plus presenter view; not a .pptx editor."
+      },
+      "category": "office-design",
+      "tags": [
+        "PPT",
+        "网页演示",
+        "设计"
+      ],
+      "version": "main@93d21bf4a73a",
+      "author": "歸藏",
+      "license": "AGPL-3.0",
+      "source": {
+        "type": "github",
+        "repo": "op7418/guizang-ppt-skill",
+        "path": "",
+        "ref": "main",
+        "vendored": false
+      },
+      "install": {
+        "plugin": "./"
+      }
+    },
+    {
+      "id": "guizang-material-illustration",
+      "name": {
+        "zh": "归藏材质插画",
+        "en": "Guizang Material Illustration"
+      },
+      "summary": {
+        "zh": "把文章、截图或图表数据转成带中文标签的解释图与材质化图表配图；只出中心配图，不做整张社交卡片或 PPT 排版。",
+        "en": "Turns text, screenshots or chart data into labeled material-style explanatory illustrations; not full card or slide layout."
+      },
+      "category": "office-design",
+      "tags": [
+        "配图",
+        "图表美化",
+        "插画"
+      ],
+      "version": "main@cf26e194ce07",
+      "author": "歸藏",
+      "license": "proprietary",
+      "source": {
+        "type": "github",
+        "repo": "op7418/guizang-material-illustration",
+        "path": "",
+        "ref": "main",
+        "vendored": false
+      },
+      "install": {
+        "plugin": "./"
+      }
+    },
+    {
+      "id": "dsh-guizang-design",
+      "name": {
+        "zh": "归藏文档排版",
+        "en": "Guizang Page Design"
+      },
+      "summary": {
+        "zh": "把 Markdown 文档排成精排单页 HTML 并可导出 PDF 或长图，提供杂志风与瑞士风；不做公众号排版或 PPT 演示。",
+        "en": "Renders Markdown into refined single-page HTML with PDF and long-image export in magazine or Swiss styles; not for WeChat layout or slides."
+      },
+      "category": "office-design",
+      "tags": [
+        "文档排版",
+        "HTML",
+        "网页"
+      ],
+      "version": "main@e275f1e4d4a8",
+      "author": "歸藏",
+      "license": "AGPL-3.0",
+      "source": {
+        "type": "github",
+        "repo": "op7418/dsh-guizang-design",
+        "path": "skills/guizang-page-skill",
+        "ref": "main",
+        "vendored": false
+      },
+      "install": {
+        "plugin": "./skills/guizang-page-skill"
+      }
+    },
+    {
+      "id": "guizang-product-video-skill",
+      "name": {
+        "zh": "归藏产品宣传片",
+        "en": "Guizang Product Video"
+      },
+      "summary": {
+        "zh": "用真实产品组件与 GSAP/Three.js 动效做软件宣传片和版本更新片；面向代码驱动出片，不套模板也不做通用剪辑。",
+        "en": "Creates code-driven product promo and release videos from real UI components with GSAP and Three.js; not templated or general editing."
+      },
+      "category": "other",
+      "tags": [
+        "产品宣传片",
+        "视频",
+        "GSAP"
+      ],
+      "version": "main@18842e0f49a9",
+      "author": "歸藏",
+      "license": "AGPL-3.0; CodePilot fallback assets: BUSL-1.1",
+      "source": {
+        "type": "github",
+        "repo": "op7418/guizang-product-video-skill",
+        "path": "",
+        "ref": "main",
+        "vendored": false
+      },
+      "install": {
+        "plugin": "./"
+      }
+    },
+    {
+      "id": "frontend-slides",
+      "name": {
+        "zh": "前端演示文稿",
+        "en": "Frontend Slides"
+      },
+      "summary": {
+        "zh": "从零生成动画丰富的单文件 HTML 演示，或把 PPT/PPTX 转成网页；固定 16:9 舞台，不依赖 npm 构建。",
+        "en": "Creates animation-rich single-file HTML presentations or converts PPT/PPTX to web; fixed 16:9 stage with zero build dependencies."
+      },
+      "category": "office-design",
+      "tags": [
+        "演示文稿",
+        "HTML",
+        "PPT转换"
+      ],
+      "version": "main@9906a34d640d",
+      "author": "Zara Zhang",
+      "license": "MIT",
+      "source": {
+        "type": "github",
+        "repo": "zarazhangrui/frontend-slides",
+        "path": "",
+        "ref": "main",
+        "vendored": false
+      },
+      "install": {
+        "plugin": "./"
+      }
     }
   ]
 }
