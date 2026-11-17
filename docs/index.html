@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>金融行业skills精选 · Awesome Financial Skills</title>
 <meta name="description" content="为金融从业者策展的 AI 技能清单：按业务场景分类，标注能力边界与来源。">
+<link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
 :root{
   --bg:#fbfbf9; --panel:#ffffff; --ink:#16181d; --ink-2:#5b6270; --ink-3:#8b929e;
@@ -282,6 +284,7 @@ footer a{color:var(--ink-2)}
   }
 
   // 每条卡片复制的是「可直接安装的提示词」：带坐标、取回规则、目标目录与校验要求。
+  // 目录按运行环境二选一：WorkBuddy 用 ~/.workbuddy/skills，DSH 用 ~/.dsh/skills，只装一处。
   function promptFor(s){
     const name = T(s.name), source = s.source || {};
     const zipUrl = "https://api.skillhub.cn/api/v1/download?slug=" + (source.slug || s.id);
@@ -299,14 +302,14 @@ footer a{color:var(--ink-2)}
       `请帮我安装技能「${name}」（id: ${s.id}）。`,
       `清单：${CATALOG_URL}（按其中的 resolve 规则和该条 source 坐标取回正文，不要使用别处的副本）。`,
       fetchLine,
-      `把取回的全部文件安装到 ~/.workbuddy/skills/${s.id}/，确认 SKILL.md 存在且可读。`,
+      `安装到你当前所处的运行环境，只装一处：若在 WorkBuddy 就装到 ~/.workbuddy/skills/${s.id}/；若在 DeepSeek Harness（DSH）就装到 ~/.dsh/skills/${s.id}/（即 <DSH_HOME>/skills/${s.id}/）。确认 SKILL.md 存在且可读。`,
       `下载或校验失败就报错并清理暂存，不要留下空壳；完成后告诉我安装路径和文件数。`
     ].join("\n");
     return [
       `Please install the skill "${name}" (id: ${s.id}).`,
       `Catalog: ${CATALOG_URL} (follow its resolve rules and this entry's source coordinates; do not use copies from elsewhere).`,
       fetchLine,
-      `Install every fetched file into ~/.workbuddy/skills/${s.id}/ and verify SKILL.md exists and is readable.`,
+      `Install into whichever runtime you are currently running in — install to only one: if in WorkBuddy use ~/.workbuddy/skills/${s.id}/; if in DeepSeek Harness (DSH) use ~/.dsh/skills/${s.id}/ (i.e. <DSH_HOME>/skills/${s.id}/). Verify SKILL.md exists and is readable.`,
       `On download or validation failure, report the error and clean up staging; never leave a partial install. Then report the install path and file count.`
     ].join("\n");
   }
