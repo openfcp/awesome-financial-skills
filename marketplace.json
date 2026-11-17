@@ -1892,6 +1892,614 @@
         "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/oh-my-ppt.zip",
         "sha256": "83daaa812404e0f7b539e855377cf67bdc84844a5724136c980985fd005b0605"
       }
+    },
+    {
+      "name": "unclecheng-reduce-ai-perception-v2",
+      "description": "检测并去除中文文本中的 AI 写作痕迹：高频词、过度结构化、机械连接词、公式化结尾与空洞比喻，逐类改写为自然人类表达；只做文字润色，不核事实、不改观点立场。",
+      "version": "4.2.0",
+      "category": "office-design",
+      "author": {
+        "name": "unclecheng"
+      },
+      "homepage": "https://skillhub.cn/skills/unclecheng-reduce-ai-perception-v2",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/unclecheng-reduce-ai-perception-v2.zip",
+        "sha256": "262e724c89a4654ec443dd1d0c6bcc16fb9f84e23a86d56a2bf10967ce3ad72b"
+      }
+    },
+    {
+      "name": "chinese-official-writing",
+      "description": "机关企事业单位公文与新闻稿的起草、改写、压缩、审校与文种核对，覆盖请示/报告/通知/纪要等 20+ 法定文种，含去口语化、降 AI 味与 Word 排版；产出规范文稿，不代替发文审批与事实审核。",
+      "version": "2.0.62",
+      "category": "office-design",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/chinese-official-writing",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/chinese-official-writing.zip",
+        "sha256": "0cfdedd8577bce615b9bca0304141c6b139ddbabc802ffb732d32eb70a6ef30e"
+      }
+    },
+    {
+      "name": "poster-design-studio",
+      "description": "把活动描述、产品图或品牌参考转化为活动海报、宣传 banner 与社交媒体配图，自动做视觉层级、品类配色与文案留白，覆盖音乐节/电影/发布/促销；产出设计方案与生图提示词，不负责文案合规审查。",
+      "version": "0.2.4",
+      "category": "office-design",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/poster-design-studio",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/poster-design-studio.zip",
+        "sha256": "c001f5bc020889b86c5aec97690ca9088a65fb137034965dc0fff634073e5475"
+      }
+    },
+    {
+      "name": "meeting-and-brief",
+      "description": "把会议文字稿整理成结构化正式纪要 docx（议题、结论、待办、责任人与截止日），支持归档检索与月底一键聚合成月度工作简报；按管理咨询交付标准输出，只做文字整理不代替会议决议。",
+      "version": "2.2.1",
+      "category": "office-design",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/meeting-and-brief",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/meeting-and-brief.zip",
+        "sha256": "0402c9b2f10317030df28c5b0a554746c89538e9847e7e93ef1ddff5dc867e8e"
+      }
+    },
+    {
+      "name": "chanlun-multidimensional-tech-analysis",
+      "description": "融合缠论、K 线形态、资金流向、成交量与 MACD/KDJ/RSI/OBV/BOLL/均线系统的多维技术分析，内置缠论原著方法论与 ETF 投研适配，输出 ECharts 交互 HTML 报告（含笔/线段/中枢）；为技术分析工具，不构成投资建议。",
+      "version": "1.0.0",
+      "category": "invest-trading",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/chanlun-multidimensional-tech-analysis",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/chanlun-multidimensional-tech-analysis.zip",
+        "sha256": "732a4e84581dc5262281ca37f099b3072fe417dec831cea446c304baa72ecc2a"
+      }
+    },
+    {
+      "name": "three-year-valuation",
+      "description": "用三年期估值框架分析公司、投资逻辑、估值区间与选股决策，适合把基本面判断落到可复核的估值数字上；输出分析结论，不接入实时行情，需另行提供财务数据。",
+      "version": "1.0.1",
+      "category": "invest-trading",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/three-year-valuation",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/three-year-valuation.zip",
+        "sha256": "8dde111e8e8ae0031f2d5a303b13394b92e29c39d60ca80f734ef875f600d1ee"
+      }
+    },
+    {
+      "name": "straightflush",
+      "description": "基于 thsdk 的高级股票分析：分钟 K 线、板块/指数行情、多股批量对比（走势与相关性热力图）、盘口深度、大单流向、集合竞价异动与日内分时；依赖同花顺数据接口，属数据工具，不作买卖建议。",
+      "version": "1.0.0",
+      "category": "data-tech",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/straightflush",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/straightflush.zip",
+        "sha256": "08bce4613a5be9ae96372ce6bac09385c09b6fab68f06d370943a1b635f3eeb3"
+      }
+    },
+    {
+      "name": "business-analyst",
+      "description": "输入行业或公司名，自动选典型案例，从商业模式框架、近期战略动态与核心指标三维生成「战略+策略+指标」报告，输出卡片式 HTML；基于公开信息分析，不含实时数据核验。",
+      "version": "1.1.0",
+      "category": "research-analysis",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/business-analyst",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/business-analyst.zip",
+        "sha256": "1b17ed73aac524178907055c8a676306746fe4479fa01186f67c45bc0e24036f"
+      }
+    },
+    {
+      "name": "research-reportskill",
+      "description": "多平台搜索→智能摘要→结构化 Word 报告全自动流程，用于生成调研报告、行业分析、竞品研究与市场调查文档；质量取决于可检索的公开来源，不保证信息完整。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/research-reportskill",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/research-reportskill.zip",
+        "sha256": "0cc1485015b442ca852df2d6d0f75b68183167b5a8c089d147f5c599b97a2c8e"
+      }
+    },
+    {
+      "name": "deep-research-zh",
+      "description": "基于 academic-deep-research 中文优化的调研工具：Tavily 搜索集成、严格方法论、自动中文 PDF（内嵌样式、容错降级）与飞书交付，适合竞品分析、行业调研与政策研究；需自备搜索 API。",
+      "version": "1.1.0",
+      "category": "research-analysis",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/deep-research-zh",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/deep-research-zh.zip",
+        "sha256": "413d48322f9d19660cdf93944d70bc5d2cc7af8b6a13048e603b743416c24bdd"
+      }
+    },
+    {
+      "name": "preloan-industry-dd",
+      "description": "以商业银行授信审批行业研究员视角，按七大维度对公信贷贷前行业做系统风险评估，生成行业尽调/贷前行业分析/行业风险报告，服务授信准入与审批参考；为风险研判工具，不替代审批决策。",
+      "version": "1.0.8",
+      "category": "risk-management",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/preloan-industry-dd",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/preloan-industry-dd.zip",
+        "sha256": "fd5eaf3b99f76b93944a2af377b02ad1629066e63e49170a73c3e41223568c7a"
+      }
+    },
+    {
+      "name": "business-writing",
+      "description": "以商业分析师视角撰写行业研究报告、商业洞察、咨询分析与公司研究，把零散信息组织成结构化专业文本；产出文字内容，不负责数据真实性核验。",
+      "version": "0.1.0",
+      "category": "research-analysis",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/business-writing",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/business-writing.zip",
+        "sha256": "a31043ccaf3123895969dbe7a5702478afe6f6cae9661a10eac4e0e69cf6a514"
+      }
+    },
+    {
+      "name": "mckinsey-report",
+      "description": "把零散文档、笔记与访谈记录整理成结构化麦肯锡风格行业研究报告，擅长改写、润色与咨询风表达；只做素材重组与文风转换，不核实原始素材的事实准确性。",
+      "version": "1.1.0",
+      "category": "research-analysis",
+      "author": {
+        "name": "AgentPeng"
+      },
+      "homepage": "https://skillhub.cn/skills/mckinsey-report",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/mckinsey-report.zip",
+        "sha256": "e55294a37f4bab203b1c9431a31c2d7da3462beaad15a753fd750a3a4d2d08d6"
+      }
+    },
+    {
+      "name": "libai",
+      "description": "检测并消除中文文本中的 AI 生成痕迹，用规则检测、分层改写与质控流水线把生硬机器输出转为自然文笔，目标是通过人工审查；只做语言润色，不改事实与观点。",
+      "version": "2.2.0",
+      "category": "office-design",
+      "author": {
+        "name": "智慧&半岛 (ebandao.com.cn)"
+      },
+      "homepage": "https://skillhub.cn/skills/libai",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/libai.zip",
+        "sha256": "604c26226f4dbb2229dfba0f506e8c5a8e4cf045bf2f2c50fe5db7fd9b5337c2"
+      }
+    },
+    {
+      "name": "baozheng",
+      "description": "专业法律咨询、要素式/通用起诉状起草、刑事专项材料与法条检索，优先 flk.npc.gov.cn API 实时法条、不可用时 AI 知识库兜底，并按四档标注法条来源可核验性；为辅助工具，不替代执业律师意见。",
+      "version": "1.1.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": "智慧&半岛 (ebandao.com.cn)"
+      },
+      "homepage": "https://skillhub.cn/skills/baozheng",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/baozheng.zip",
+        "sha256": "c9df715048580480aa5183b45f1a4291e1a1a96ee8fb4693431a0a1dca98bef7"
+      }
+    },
+    {
+      "name": "ppt-design-master",
+      "description": "融合麦肯锡/BCG/贝恩及 Apple/Google 等 500 强 PPT 设计规范与主流设计系统原则，收录锐普专业设计体系，指导版式、字体、配色与视觉层级；产出设计建议，具体排版仍需在 PPT 工具中落地。",
+      "version": "1.1.0",
+      "category": "office-design",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/ppt-design-master",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/ppt-design-master.zip",
+        "sha256": "e4fe80b01458be4a1a6c2c4ce4028d02cb1a354f448c09998db244de9e87ab97"
+      }
+    },
+    {
+      "name": "legal-research-assistant",
+      "description": "按法律问题自动检索相关法规、司法解释、典型案例与操作指南，覆盖债务纠纷、劳动争议与合同纠纷三大场景，本地检索、数据不出本地；检索结果需人工核对适用性。",
+      "version": "2.1.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": "泓景咨询"
+      },
+      "homepage": "https://skillhub.cn/skills/legal-research-assistant",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/legal-research-assistant.zip",
+        "sha256": "bc94f70128fa36c83b69857903aa2aeb0645521dcc723dd9218fde89b22f02c9"
+      }
+    },
+    {
+      "name": "ai-contract-review",
+      "description": "基于民法典及司法解释对合同逐条审查，五维风险评估（合法/公平/完整/明确/可执行），识别违约金、争议解决、不可抗力、保密、知识产权等 12 类常见缺失条款并标注风险等级；为审查辅助，不替代律师定稿。",
+      "version": "1.6.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": "筱润科技"
+      },
+      "homepage": "https://skillhub.cn/skills/ai-contract-review",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/ai-contract-review.zip",
+        "sha256": "cafd61901844e801cf457a741510d2e62b1043e79d7c699fb9ce7301e277566d"
+      }
+    },
+    {
+      "name": "fin-pipl",
+      "description": "基于个人信息保护法、JR/T 0171、JR/T 0197 等，对银行、证券、保险、支付四类场景做金融 PIPL 合规评估与自查；输出合规判断，不替代正式法律意见与监管报送。",
+      "version": "1.7.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/fin-pipl",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/fin-pipl.zip",
+        "sha256": "e90e0e04d612da63afcddc388e80ee8d1e6135d2675bce163554c0a16dac1bde"
+      }
+    },
+    {
+      "name": "ba-capability-110",
+      "description": "提供贷款、租赁、股权及内部融资的多元融资全流程管理，统筹方案设计、风险控制与成本优化，提升资金效益；为管理方法论工具，不含实时融资市场数据。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/ba-capability-110",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/ba-capability-110.zip",
+        "sha256": "dcbea97a18177e529415f2d1167a4951e9ba8863756a0510625046eb10390906"
+      }
+    },
+    {
+      "name": "finance-paper-daily",
+      "description": "每日从 arXiv(q-fin)、Semantic Scholar、OpenAlex、Google Scholar 抓取量化金融、资产定价、风险管理、算法交易与 FinTech 最新论文，整理成格式化 Excel 存到桌面；依赖外网学术源可达。",
+      "version": "1.0.0",
+      "category": "research-analysis",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/finance-paper-daily",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/finance-paper-daily.zip",
+        "sha256": "898a98d3eae1e6b468ae99e51ceb013799280a7a41a5736dfdc0fa8226178fe2"
+      }
+    },
+    {
+      "name": "quant-backtest-strategy",
+      "description": "A 股本地量化平台 OneQuant 4.0，提供 Web 界面、REST API、CLI、批量脚本与 Docker 五种调用方式，102 个 API 端点，支持 AkShare/JQData/RQData 数据源；本地部署，数据接口需自备。",
+      "version": "4.0.0",
+      "category": "invest-trading",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/quant-backtest-strategy",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/quant-backtest-strategy.zip",
+        "sha256": "3ef16803f64033fc73605c940f68a08477e47811fe06f56c9ab82d88228244d9"
+      }
+    },
+    {
+      "name": "quant-research-lab",
+      "description": "让 AI 按高盛、文艺复兴、Two Sigma、Citadel 等 15 个机构角色分工，系统性设计、验证、风控与执行量化策略；提供流程框架，回测结果依赖用户数据与参数，不构成投资建议。",
+      "version": "1.0.3",
+      "category": "invest-trading",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/quant-research-lab",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/quant-research-lab.zip",
+        "sha256": "607ea9f98e981087d4ac7f86f9c8f9c99fbbecc29ab131efa1b7e363f80c09e1"
+      }
+    },
+    {
+      "name": "kpi-design-generator",
+      "description": "根据公司战略目标与组织架构自动拆解部门与岗位 KPI，内置 300+ 指标库、SMART 校验与指标冲突诊断，输出目标承接矩阵、KPI 卡片与指标字典；管理方法论工具，指标需结合业务实际校准。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/kpi-design-generator",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/kpi-design-generator.zip",
+        "sha256": "792ae7cc83630439670832ea64d6424f8d4d0d910cda0c4d7ac2f5fe49b37d6f"
+      }
+    },
+    {
+      "name": "private-fund-compliance",
+      "description": "私募证券投资基金合规问答知识库，覆盖信披、适当性、募集、备案、投资运作与估值清算，按「结论→法条定位→处罚案例→避坑→建议」输出；内置处罚汇编与 523 问速查，法条需核对现行有效性，不替代法律意见。",
+      "version": "1.1.6",
+      "category": "compliance-legal",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/private-fund-compliance",
+      "license": "CC BY-SA 4.0",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/private-fund-compliance.zip",
+        "sha256": "0f7bf3d6eaaf262e60ebe3133dadad40237f8009fab8aa3b7778d3c8202e8eb3"
+      }
+    },
+    {
+      "name": "corporate-banking-advisor",
+      "description": "分析企业、行业、政策信号、客户对话与银行组合，识别银行中立的服务机会并设计方案，面向对公客户经理与产品团队；输出机会判断，需结合本行政策落地。",
+      "version": "1.0.1",
+      "category": "product-business",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/corporate-banking-advisor",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/corporate-banking-advisor.zip",
+        "sha256": "e267146654db7d3ca1aea8a8a0b069740efbba739ff2dd6c191a2ae471d928de"
+      }
+    },
+    {
+      "name": "kunlun-loanbroker-pro-product",
+      "description": "面向贷款居间与融资经理，拆解信用/抵押/经营/政策四类贷款产品的额度、期限与准入，讲透月费率与 IRR 换算、砍头息与各类费用计入综合成本、提前还款与过桥成本，用六维矩阵比选；为成本测算工具，非投资建议。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": "kunlungrowth"
+      },
+      "homepage": "https://skillhub.cn/skills/kunlun-loanbroker-pro-product",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/kunlun-loanbroker-pro-product.zip",
+        "sha256": "428de6a0cbcbd1843a844f1d0da16ef3e69f11adef5bbd9439793f9e4478b330"
+      }
+    },
+    {
+      "name": "loanbroker-pro-product",
+      "description": "面向贷款居间与融资经理，拆解信用/抵押/经营/政策四类贷款产品的额度、期限与准入，讲透月费率与 IRR 换算、各类费用计入综合成本、提前还款与过桥成本，用六维矩阵比选；与 kunlun 版内容同源，二选一即可。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/loanbroker-pro-product",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/loanbroker-pro-product.zip",
+        "sha256": "433cc4a99e566b79f3f68a72603bc7dbaf8c022d903c3dba90b4b74baa07ff2b"
+      }
+    },
+    {
+      "name": "banker",
+      "description": "覆盖贷款、按揭、存款、信用与银行产品交易的金融服务顾问，解答银行业务问题与产品选择；通用咨询工具，具体条款与准入以经办机构为准。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/banker",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/banker.zip",
+        "sha256": "45c5126675176ecfb378b56a96b494303016cd769c1b54f10d17f334fc613862"
+      }
+    },
+    {
+      "name": "akshare-finance",
+      "description": "封装 AKShare 财经数据接口，覆盖股票、期货、期权、基金、外汇、债券、指数与加密货币的基本面、实时与历史行情及衍生数据；数据取自公开接口，需本地安装依赖并处理接口限流。",
+      "version": "1.0.0",
+      "category": "data-tech",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/akshare-finance",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/akshare-finance.zip",
+        "sha256": "b316cf4a164418b4127808a5d4562a57aa0e366192a121a208c0ad5d953b2f45"
+      }
+    },
+    {
+      "name": "investment-data",
+      "description": "基于 investment_data 项目获取高质量 A 股日终价格、涨跌停与指数数据，每日更新、多数据源交叉验证；为数据获取工具，不含分析结论。",
+      "version": "1.0.0",
+      "category": "data-tech",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/investment-data",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/investment-data.zip",
+        "sha256": "e659d43a750f054ee17eb08c68820131eed92c1c8ec9f593fdcbef2ea4262c7f"
+      }
+    },
+    {
+      "name": "regulation-monitor",
+      "description": "监控金融监管总局、证监会、央行等监管机构网站，抓取最新政策、行政处罚、通知公告与风险提示，按标题+摘要输出并支持 Word 与纯文本；依赖监管网站可访问，内容为公开信息摘要。",
+      "version": "1.0.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/regulation-monitor",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/regulation-monitor.zip",
+        "sha256": "37fa9d1938803006786d1c6646d6d6c6421d8e54a18610af3dd3915d163a6d1d"
+      }
+    },
+    {
+      "name": "patent-value-analysis",
+      "description": "评估专利多维价值：技术、法律、市场、经济、战略五维雷达图，法律稳固性与技术成熟度评分、剩余经济寿命与市场价值区间测算、转化路径与金融适配度匹配；价值测算为估算，不作资产评估结论。",
+      "version": "1.0.0",
+      "category": "product-business",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/patent-value-analysis",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/patent-value-analysis.zip",
+        "sha256": "dbe6e90e611c1a76bdbe4a92ee37dfdeed24b6b2571737ed9318663a38cb95bf"
+      }
+    },
+    {
+      "name": "quant-analyst-skill",
+      "description": "构建金融模型、回测交易策略并分析市场数据，实现风险指标、组合优化与统计套利；提供量化分析框架，回测依赖用户数据，不构成投资建议。",
+      "version": "1.0.0",
+      "category": "invest-trading",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/quant-analyst-skill",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/quant-analyst-skill.zip",
+        "sha256": "be661dec7828905c366f0dc21101a66131d11572815dff6dd4f7d42ff3b24e11"
+      }
+    },
+    {
+      "name": "ai-compliance",
+      "description": "面向欧盟 AI Act、ISO 42001、NIST AI RMF、GDPR、OECD 及金融监管（SEC/FCA/FINRA/DORA/MiFID II）的 AI 合规分析，识别适用法规与义务；为合规梳理工具，不替代法律意见或认证。",
+      "version": "1.1.0",
+      "category": "compliance-legal",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/ai-compliance",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/ai-compliance.zip",
+        "sha256": "ad3fd3e07a7285c77666cd60a51619aca3c9a1f1139521f9c654f18eb4161bf9"
+      }
+    },
+    {
+      "name": "behavioral-finance",
+      "description": "识别与利用市场中的认知偏差、情绪极端与群体行为，构建逆向交易与超额收益策略；属策略研究方法，实际收益不确定，不构成投资建议。",
+      "version": "1.0.0",
+      "category": "invest-trading",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/behavioral-finance",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/behavioral-finance.zip",
+        "sha256": "6dadae81c09dd995f591a50d698c7911e89831a732011fba61479c18f7d9056a"
+      }
+    },
+    {
+      "name": "animated-financial-display",
+      "description": "用弹簧物理与格式化规则实现金融数字动效：动画计数器、价格跳动、百分比变化与视觉反馈，适配仪表盘与行情展示；提供前端实现模式，不含数据源。",
+      "version": "1.0.0",
+      "category": "data-tech",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/animated-financial-display",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/animated-financial-display.zip",
+        "sha256": "53edbd96ce86f707f29a6dbf125dc9586a7a9a6f94aada950485498b6f615e91"
+      }
+    },
+    {
+      "name": "customer-segment",
+      "description": "上传银行客户数据表格（CSV/Excel）后自动完成客户分层、特征提取与可视化输出，输出分群结果与图表；结果依赖数据质量与所选维度，属分析辅助工具。",
+      "version": "1.0.2",
+      "category": "data-tech",
+      "author": {
+        "name": ""
+      },
+      "homepage": "https://skillhub.cn/skills/customer-segment",
+      "license": "proprietary",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/customer-segment.zip",
+        "sha256": "cd31c4437eda10dc375e33e6ba1f7732de07cec4224e0a162d5a941750afed9b"
+      }
     }
   ]
 }
