@@ -2724,6 +2724,22 @@
         "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/frontend-slides.zip",
         "sha256": "b9269505797c4a2ab757c2edfcca929853fff49fb7e60105ed8f63c026c62374"
       }
+    },
+    {
+      "name": "line-art-animation",
+      "description": "用 SVG 与 TypeScript 逐帧构建线条插画动画，覆盖人物步态、风、昼夜场景与视频导出；面向手绘风格组件开发，不做位图绘画或通用剪辑。",
+      "version": "0.1.0",
+      "category": "other",
+      "author": {
+        "name": "JDhruv14"
+      },
+      "homepage": "https://github.com/jdhruv14/line-art-animation",
+      "license": "MIT",
+      "source": {
+        "source": "archive",
+        "url": "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@marketplace/pkgs/line-art-animation.zip",
+        "sha256": "d912bcf4ac9ea23d1f91b00250093581700384dd14dcbd26cfdb2768a1895dca"
+      }
     }
   ]
 }

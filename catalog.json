@@ -5226,6 +5226,39 @@
       "install": {
         "plugin": "./"
       }
+    },
+    {
+      "id": "line-art-animation",
+      "name": {
+        "zh": "线条动画",
+        "en": "Line-Art Animation"
+      },
+      "summary": {
+        "zh": "用 SVG 与 TypeScript 逐帧构建线条插画动画，覆盖人物步态、风、昼夜场景与视频导出；面向手绘风格组件开发，不做位图绘画或通用剪辑。",
+        "en": "Builds SVG/TypeScript line-art animations with figure gaits, wind, day-night scenes and video export; not bitmap painting or general editing."
+      },
+      "category": "other",
+      "tags": [
+        "动画",
+        "SVG",
+        "TypeScript"
+      ],
+      "version": "0.1.0",
+      "author": "JDhruv14",
+      "license": "MIT",
+      "source": {
+        "type": "github",
+        "repo": "jdhruv14/line-art-animation",
+        "path": "",
+        "ref": "main",
+        "vendored": false,
+        "exclude": [
+          "media"
+        ]
+      },
+      "install": {
+        "plugin": "./"
+      }
     }
   ]
 }
