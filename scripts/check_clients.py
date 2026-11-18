@@ -50,7 +50,8 @@ def get(url: str, timeout: int = 20):
 
 def brief(doc: dict):
     skills = doc.get("skills") or []
-    return len(skills), str(doc.get("updated", "?")), {s.get("id") for s in skills}
+    return (len(skills), str(doc.get("updated", "?")),
+            str(doc.get("verified_at", "?")), {s.get("id") for s in skills})
 
 
 def ts(ms: int) -> str:
@@ -67,8 +68,8 @@ def main() -> int:
         print(f"[clients] 找不到 {CATALOG}")
         return 2
 
-    local_n, local_up, local_ids = brief(json.loads(CATALOG.read_text(encoding="utf-8")))
-    print(f"[clients] 本地 catalog.json ：{local_n} 条，updated={local_up}\n")
+    local_n, local_up, local_ver, local_ids = brief(json.loads(CATALOG.read_text(encoding="utf-8")))
+    print(f"[clients] 本地 catalog.json ：{local_n} 条，updated={local_up}，verified={local_ver}\n")
 
     if a.purge:
         try:
@@ -80,12 +81,16 @@ def main() -> int:
 
     print("[clients] 镜像链（dsh 插件按此顺序取，第一个成功即用，不比较新旧）")
     stale = []
+    meta_stale = []
     raw_ok = False
     for name, url in MIRRORS:
         try:
-            n, up, ids = brief(get(url))
-            mark = "✓ 与本地一致" if ids == local_ids else f"✗ 落后/超前 {local_n - n:+d} 条"
-            print(f"  {name}  {n:>3} 条  updated={up}  {mark}")
+            n, up, ver, ids = brief(get(url))
+            mark = "✓ 条目一致" if ids == local_ids else f"✗ 落后/超前 {local_n - n:+d} 条"
+            if (up, ver) != (local_up, local_ver):
+                mark += " · 元数据旧"
+                meta_stale.append(name.strip())
+            print(f"  {name}  {n:>3} 条  updated={up}  verified={ver}  {mark}")
             if name.strip() == "raw":
                 raw_ok = True
             if ids != local_ids:
@@ -99,10 +104,10 @@ def main() -> int:
     if DSH_CACHE.is_file():
         try:
             c = json.loads(DSH_CACHE.read_text(encoding="utf-8"))
-            n, up, ids = brief(c.get("data", {}))
+            n, up, ver, ids = brief(c.get("data", {}))
             lag = [i for i in local_ids - ids]
             extra = [i for i in ids - local_ids]
-            print(f"[clients] dsh 缓存：{n} 条，updated={up}，"
+            print(f"[clients] dsh 缓存：{n} 条，updated={up}，verified={ver}，"
                   f"抓取于 {ts(c.get('fetchedAt', 0))}")
             if extra:
                 print(f"          多出（本地已无）：{', '.join(sorted(extra))}")
@@ -117,7 +122,11 @@ def main() -> int:
 
     print()
     if not stale:
-        print("[clients] ✓ 全部镜像与本地一致，刷新即可看到最新清单")
+        if meta_stale:
+            print(f"[clients] ✓ 条目一致；元数据仍旧的镜像：{', '.join(meta_stale)}"
+                  "（dsh 展示日期会滞后，条目不受影响）")
+        else:
+            print("[clients] ✓ 全部镜像与本地一致，刷新即可看到最新清单")
         return 0
 
     print("[clients] ! 有镜像落后：")
