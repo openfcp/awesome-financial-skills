@@ -103,12 +103,14 @@ gh auth status         # 需要已登录：sync.py 和 publish_market.py 都从 
 ### A3 · 本地校验
 
 ```bash
-python3 scripts/build.py --check
+python3 scripts/check_schema.py      # 格式契约（需 pip install "jsonschema>=4,<5"；CI 里已装）
+python3 scripts/build.py --check     # 业务规则 + 零正文守卫
 ```
 
 期望输出：
 
 ```
+[schema] ✓ catalog.json 符合 schema.json（172 条）
 [build] 校验通过：172 条引用 / 9 个分类 / 来源 {'skillhub': 55, 'github': 117}
 ```
 
@@ -146,6 +148,52 @@ WITH_MARKET=1 MARKET_ONLY=new-skill-id ./scripts/release.sh "feat: 新增 中文
 **当前 171 条全是取件器**：点装后第一次调用时，按 `SKILL.md` 的指引跑一次 `python3 scripts/fetch.py` 取回正文。包只有 2 KB，点装瞬间完成，真正的下载发生在首次使用（从原作者处、单个技能，不在市场侧）。
 
 > 如果哪天要用回「镜像包」（正文随包分发、装完离线可用），打包时去掉 `--shim-only` 即可——但那样分支体积会从 360 KB 涨回近 1 MB，且每次发布都会把这份体积写进 git 历史。
+
+---
+
+## 3b. 场景 A'：别人提了 Issue / PR，我来处理
+
+对外只有两个入口，都不需要你去"到处找"：
+
+| 入口 | 落点 | 你的动作 |
+|---|---|---|
+| **Issue 表单** `skill-submission.yml` | issue 区，标签 `submission` | 判断值不值得收 → `add_skill.py add` 代录入 |
+| **PR**（改 `catalog.json`） | 拉取请求，CI 自动跑 `validate` | 看 CI 是否绿 → 只审"该不该收"，不用审格式 |
+
+### 处理 PR 的标准动作
+
+```bash
+gh pr view <n> --json title,files,additions          # 确认只动了 catalog.json
+gh pr checks <n>                                      # 等 validate 绿
+python3 scripts/changed_ids.py --base origin/main     # 本地复核：这次到底动了哪几条
+```
+
+CI 做了三件事（`.github/workflows/validate.yml`）：
+
+1. `check_schema.py` —— 格式契约（缺字段、类型错、双语半填）；
+2. `build.py --check` —— 业务规则 + 零正文守卫；
+3. `install.py --verify --only <本次改动 id>` —— **只验改动条目**能否取回正文。
+
+格式问题一律由 CI 挡回去，不要替提交者改 JSON。你只需要回答一个问题：**这条该不该进金融垂类清单**（看能力边界、实际使用、许可）。
+
+### 合并之后
+
+合并只是进了 `main`，**没有进市场**。还得自己跑一次 A4：
+
+```bash
+WITH_MARKET=1 MARKET_ONLY=<new-id> ./scripts/release.sh "feat: 收录 <new-id>（#<PR 号>）"
+python3 scripts/check_market.py
+```
+
+### 三条不许松的口子
+
+- **PR 合并绝不自动发布。** CI 只校验，`publish_market.py` 永远手动跑——金融垂类需要人确认坐标与许可，也避免恶意坐标直接进市场分支。
+- **不提正文的 PR 一律不收。** 哪怕 CI 绿了，`SKILL.md` 一旦进仓就违反零正文。
+- **许可不明不收。** 原件没声明就按 `proprietary` 记，不接受"应该能商用"。
+
+### 数量不够时先别建流水线
+
+如果一个月收到的提交不到 5 条，瓶颈不是工具而是**曝光和收录标准**：优先改 README 顶部的"为什么值得提交"，而不是继续加自动标签、自动回复。
 
 ---
 

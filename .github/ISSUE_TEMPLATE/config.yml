@@ -1,0 +1,9 @@
+# Issue 模板选择页：不给「空白 issue」入口，只留两条结构化路径。
+blank_issues_enabled: false
+contact_links:
+  - name: 我来提 PR（自己改 catalog.json）
+    url: https://github.com/openfcp/awesome-financial-skills/compare
+    about: 会写 JSON、跑得动脚本的走这条路；一条 PR 只加一个技能，CI 会自动校验格式与引用可达性。
+  - name: 技能作者要求下架
+    url: https://github.com/openfcp/awesome-financial-skills/issues/new
+    about: 附上技能 id 与身份说明，24 小时内移除对应清单条目与市场包。

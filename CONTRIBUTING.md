@@ -46,6 +46,25 @@ python3 scripts/install.py --only <id> --dry-run
 ./scripts/release.sh "feat: 收录 <slug>"
 ```
 
+## CI 会替你检查什么
+
+提 PR 后自动跑（`.github/workflows/validate.yml`），全绿才进入人工评审：
+
+| 检查 | 命令 | 拦什么 |
+|---|---|---|
+| 格式契约 | `scripts/check_schema.py` | 缺字段、类型不对、双语只填一半 |
+| 业务规则 | `scripts/build.py --check` | id 重复、分类不存在、安装字段缺失、仓库里出现未声明的正文 |
+| 引用可达 | `scripts/install.py --verify --only <本次改动>` | 坐标写错、仓库 404、zip 里没有 `SKILL.md` |
+
+只验**你改过的那几条**，不会因为别人条目的上游抖动把你判红。本地想完全复现：
+
+```bash
+python3 scripts/changed_ids.py --base origin/main       # 看本次动了哪些 id
+python3 scripts/install.py --verify --only <id>         # 只验这几条
+```
+
+CI 只校验，**不发布**。合并后由维护者跑 `WITH_MARKET=1 MARKET_ONLY=<id> ./scripts/release.sh "feat: 收录 <id>"` 重打包上架，所以 PR 合并到出现在 WorkBuddy 市场里通常在同一天。
+
 ## PR 规范
 
 1. **一条 PR 只加一个技能**，评审更快；

@@ -35,6 +35,8 @@
   "scripts": {
     "build": "python3 scripts/build.py",
     "check": "python3 scripts/build.py --check",
+    "schema": "python3 scripts/check_schema.py",
+    "changed": "python3 scripts/changed_ids.py --base origin/main",
     "verify": "python3 scripts/install.py --verify",
     "install-skills": "python3 scripts/install.py --all",
     "sync": "python3 scripts/build.py && python3 scripts/sync.py",

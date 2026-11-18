@@ -10,6 +10,7 @@
     python3 scripts/install.py --only law-skills      # 只装一个
     python3 scripts/install.py --only a,b --dir /tmp/skills
     python3 scripts/install.py --verify               # 只验证引用还通不通，不落盘
+    python3 scripts/install.py --verify --only a,b    # 只验这几条（PR / CI 用）
     python3 scripts/install.py --all --dry-run        # 只说到做到哪一步
 
 设计约束（踩过的坑，别改回去）：
@@ -400,10 +401,17 @@ def cmd_list(cat: dict, dest: Path, as_json: bool) -> int:
     return 0
 
 
-def cmd_verify(cat: dict) -> int:
-    """只验证每条引用还能取到 SKILL.md，不写本地。"""
+def cmd_verify(cat: dict, only: list[str] | None = None) -> int:
+    """只验证引用还能取到 SKILL.md，不写本地。only 非空时只验这几条。"""
+    rows = cat["skills"]
+    if only:
+        keep = set(only)
+        rows = [s for s in rows if s["id"] in keep]
+    if not rows:
+        print("[verify] 没有要验的条目")
+        return 0
     bad = 0
-    for s in cat["skills"]:
+    for s in rows:
         label = f"{s['id']:<44}"
         try:
             files = fetch(s)
@@ -417,7 +425,7 @@ def cmd_verify(cat: dict) -> int:
         except Exception as e:
             print(f"{label}✗ {e}")
             bad += 1
-    print(f"\n{len(cat['skills']) - bad}/{len(cat['skills'])} 条引用可用")
+    print(f"\n{len(rows) - bad}/{len(rows)} 条引用可用")
     return 1 if bad else 0
 
 
@@ -433,7 +441,8 @@ def main() -> int:
     ap.add_argument("--dir", help=f"安装目录（默认 {default_dir()}）")
     ap.add_argument("--catalog", help="清单地址或路径（默认仓库内 catalog.json，其次远程）")
     ap.add_argument("--list", action="store_true", help="列出清单与安装状态，不下载")
-    ap.add_argument("--verify", action="store_true", help="只验证引用是否可达")
+    ap.add_argument("--verify", action="store_true",
+                    help="只验证引用是否可达（可与 --only 连用，只验几条）")
     ap.add_argument("--dry-run", action="store_true", help="不落盘，只打印将要做什么")
     ap.add_argument("--force", action="store_true", help="已存在且内容不同时覆盖（旧的留 .bak）")
     ap.add_argument("--json", action="store_true", help="机器可读输出")
@@ -449,16 +458,20 @@ def main() -> int:
 
     if args.list:
         return cmd_list(cat, dest, args.json)
-    if args.verify:
-        return cmd_verify(cat)
 
     wanted = [t.strip() for t in (args.only.split(",") if args.only else args.targets) if t.strip()]
     by_id = {s["id"]: s for s in cat["skills"]}
     unknown = [w for w in wanted if w not in by_id]
     if unknown:
+        known = sorted(by_id)
+        shown = ", ".join(known[:12])
+        more = f" …（共 {len(known)} 条，用 --list 看全部）" if len(known) > 12 else ""
         print(f"[install] 清单里没有：{', '.join(unknown)}", file=sys.stderr)
-        print(f"[install] 可用：{', '.join(sorted(by_id))}", file=sys.stderr)
+        print(f"[install] 可用：{shown}{more}", file=sys.stderr)
         return 2
+
+    if args.verify:
+        return cmd_verify(cat, wanted)
 
     todo = [by_id[w] for w in wanted] if wanted else list(cat["skills"])
     if not (wanted or args.all) and not sys.stdin.isatty():

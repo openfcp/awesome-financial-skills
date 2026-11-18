@@ -200,4 +200,32 @@ npm run serve                         # 本地预览站点 http://localhost:8787
 
 ## 贡献
 
-见 [CONTRIBUTING.md](./CONTRIBUTING.md)。
+<table>
+<tr><td width="50%" valign="top">
+
+**① 提交推荐（推荐）**
+不用改文件，30 秒填完。
+
+[![提交推荐](https://img.shields.io/badge/提交推荐-Issue%20表单-2f6f4e?style=for-the-badge)](https://github.com/openfcp/awesome-financial-skills/issues/new?template=skill-submission.yml)
+
+填：名称与链接、分类、一句话说明、**能力边界**、**实际使用情况**、开源协议。维护者审核后代入 `catalog.json`。
+
+</td><td width="50%" valign="top">
+
+**② 直接提 PR**
+会写 JSON、跑得动脚本的人走这条。
+
+[![直接提 PR](https://img.shields.io/badge/直接提_PR-compare-1f4e79?style=for-the-badge)](https://github.com/openfcp/awesome-financial-skills/compare)
+
+一条 PR 只加一个技能，只改 `catalog.json`。CI 会自动校验格式、分类、许可字段，并真去上游取一次正文。
+
+</td></tr>
+</table>
+
+两条路的门槛都不高，但下面这几条不放宽：
+
+- **只写引用，不搬正文。** 把 `SKILL.md` 复制进仓库的 PR 一律不收（`build.py` 也会直接拦）。
+- **许可必须能说清。** 原件没声明就按 `proprietary` 记，别猜。
+- **要讲能力边界。** 只说“能做金融分析”的不收，要写到具体岗位任务与必须人工介入的环节。
+
+合并后由维护者统一重打包、发布市场 —— **合并 ≠ 立刻出现在 WorkBuddy 市场**，通常当天生效。完整流程、评审口径与下架规则见 [CONTRIBUTING.md](./CONTRIBUTING.md)；技能作者要求下架，发一条 [下架 issue](https://github.com/openfcp/awesome-financial-skills/issues/new)，24 小时内移除清单条目与市场包。

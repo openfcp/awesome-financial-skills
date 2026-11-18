@@ -1,0 +1,80 @@
+name: validate
+
+# PR 的机器闸门：结构不合格直接红，不用人来读 JSON。
+# 合并仍然人工把关；发布（pack/publish/purge）永远不进 CI。
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  catalog:
+    name: catalog
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # 要比对 base 提交里的 catalog.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 安装校验依赖
+        run: python3 -m pip install --quiet "jsonschema>=4,<5"
+
+      - name: 格式契约（schema.json）
+        run: python3 scripts/check_schema.py
+
+      - name: 业务规则与零正文守卫
+        run: python3 scripts/build.py --check
+
+      - name: 找出本次改动的条目
+        id: changed
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin "$BASE_SHA" || true
+          python3 scripts/changed_ids.py --base "$BASE_SHA" --github-output
+          {
+            echo "### 本次改动"
+            echo '```'
+            python3 scripts/changed_ids.py --base "$BASE_SHA"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: 验证改动条目能取回正文
+        if: github.event_name == 'pull_request' && steps.changed.outputs.ids != ''
+        env:
+          IDS: ${{ steps.changed.outputs.ids }}
+        run: python3 scripts/install.py --verify --only "$IDS"
+
+      - name: 提醒不要手改构建产物
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -euo pipefail
+          touched=$(git diff --name-only "$BASE_SHA"...HEAD | grep -E '^(docs/catalog\.js|marketplace\.json|dist/)' || true)
+          if [ -n "$touched" ]; then
+            echo "::warning::这些是构建产物，不该手改：$touched —— 合并后由维护者生成"
+          fi
+
+      - name: 发现删除条目时提示
+        if: github.event_name == 'pull_request' && steps.changed.outputs.removed != ''
+        run: |
+          echo "::warning::这个 PR 删除了条目：${{ steps.changed.outputs.removed }}。确认是有意下架。"
