@@ -74,9 +74,10 @@ button.copy.done{border-color:var(--accent); color:var(--accent-ink); background
 .steps b{color:var(--ink); font-weight:620}
 .steps em{font-style:normal; background:#f4f3ef; border:1px solid var(--line-2); border-radius:4px; padding:0 4px; font-size:11.5px; color:var(--ink-2)}
 /* 兜底话术：贴在卡片底部，虚线分隔，失败时才需要看 */
+.ep-dsh .steps{margin-bottom:12px}   /* 窄屏单列时虚线不贴着上一步 */
 .ep-fail{margin-top:auto; padding-top:9px; border-top:1px dashed var(--line-2);
   font-size:11.5px; line-height:1.6; color:var(--ink-3)}
-.ep-fail button{border:0; background:none; padding:0; margin:0 1px; font:inherit; font-weight:600;
+.ep-fail button{border:0; background:none; padding:0; margin:0; font:inherit; font-weight:600;
   color:var(--accent-ink); cursor:pointer; text-decoration:underline; text-underline-offset:2px}
 .ep-fail button:hover{color:var(--accent)}
 .ep-fail button.done{text-decoration:none; color:var(--accent)}
@@ -188,7 +189,7 @@ footer a{color:var(--ink-2)}
         </ol>
       </div>
 
-      <div class="ep">
+      <div class="ep ep-dsh">
         <div class="ep-head">
           <span class="k">DeepSeek Harness</span>
           <span class="role" data-zh="插件" data-en="Plugin">插件</span>
@@ -203,7 +204,7 @@ footer a{color:var(--ink-2)}
           <li data-zh="等安装完成，彻底退出再打开 DSH 即可" data-en="Wait for it to finish, fully quit and reopen DSH">等安装完成，彻底退出再打开 DSH 即可</li>
         </ol>
         <div class="ep-fail">
-          <span data-zh="如果安装不成功，" data-en="If it fails, ">如果安装不成功，</span><button type="button" id="dsh-fail" data-zh="点击此处" data-en="click here">点击此处</button><span data-zh="，把复制的话发给对话框，让它帮你装。" data-en=" and paste the copied message into the chat to have it install for you.">，把复制的话发给对话框，让它帮你装。</span>
+          <span data-zh="如果安装不成功，" data-en="If it fails, ">如果安装不成功，</span><button type="button" id="dsh-fail" data-zh="点击此处" data-en="click here">点击此处</button><span data-zh="，复制这段话后粘到对话框发送，让它帮你装。" data-en=", copy the message and paste it into the chat to have it install for you.">，复制这段话后粘到对话框发送，让它帮你装。</span>
         </div>
       </div>
 
@@ -442,11 +443,11 @@ footer a{color:var(--ink-2)}
 
   function render(){ renderChips(); renderCards(); }
 
-  function copy(text, btn){
+  function copy(text, btn, msg){
     const done = () => {
       const old = btn.textContent;
       btn.textContent = UI[lang].copied; btn.classList.add("done");
-      toast(UI[lang].copied);
+      toast(msg || UI[lang].copied);
       setTimeout(() => { btn.textContent = old; btn.classList.remove("done"); }, 1400);
     };
     if (navigator.clipboard && window.isSecureContext){
@@ -509,7 +510,10 @@ footer a{color:var(--ink-2)}
     ].join("\n")
   };
   const failBtn = document.getElementById("dsh-fail");
-  if (failBtn) failBtn.onclick = function(){ copy(DSH_PROMPT[lang] || DSH_PROMPT.zh, this); };
+  const FAIL_TOAST = {zh: "已复制，粘到 DSH 对话框发送", en: "Copied — paste it into the DSH chat"};
+  if (failBtn) failBtn.onclick = function(){
+    copy(DSH_PROMPT[lang] || DSH_PROMPT.zh, this, FAIL_TOAST[lang] || FAIL_TOAST.zh);
+  };
 
   // 点菜单外部或按 Esc 收起，不依赖再点一次「安装」。
   document.addEventListener("click", e => {
