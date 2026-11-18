@@ -104,14 +104,14 @@ main{padding:16px 0 56px}
 .card h3{margin:0 0 2px; font-size:16.5px; font-weight:660; letter-spacing:-.2px}
 .card .id{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; color:var(--ink-3); margin-bottom:9px; word-break:break-all}
 .card p{margin:0 0 11px; color:var(--ink-2); font-size:13.5px; flex:1}
-.badges{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px}
-.b{font-size:11px; padding:2.5px 8px; border-radius:6px; font-weight:600; letter-spacing:.2px}
+.badges{display:flex; gap:5px; flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; margin-bottom:8px; padding-bottom:1px}
+.badges::-webkit-scrollbar{display:none}
+.b{font-size:10.5px; padding:2.5px 7px; border-radius:6px; font-weight:600; letter-spacing:.2px; white-space:nowrap; flex:none}
 .b.cat{background:var(--accent-soft); color:var(--accent-ink)}
 .b.skillhub{background:var(--accent-soft); color:var(--accent-ink)}
 .b.github{background:#eef0f4; color:#3d4553}
 .b.ver{background:#f4f3ef; color:var(--ink-3); font-weight:500; font-family:ui-monospace,Menlo,monospace}
 .b.license{background:#f4f3ef; color:var(--ink-2); font-weight:600}
-.b.review{background:#fff4e5; color:#8a5a13}
 .card .meta{display:flex; flex-wrap:wrap; gap:3px 12px; font-size:11.5px; color:var(--ink-3); margin-bottom:10px}
 .card .meta b{font-weight:600; color:var(--ink-2)}
 .card .foot{border-top:1px solid var(--line-2); padding-top:11px; display:flex; align-items:center; gap:8px; min-width:0}
@@ -128,8 +128,6 @@ main{padding:16px 0 56px}
 .inst .menu button:hover{background:var(--accent-soft); color:var(--accent-ink)}
 .inst .menu b{display:block; font-size:12px; font-weight:600}
 .inst .menu small{display:block; font-size:10.5px; color:var(--ink-3); margin-top:2px}
-.risk{margin-top:14px; padding:9px 12px; border:1px solid #f0d9ae; background:#fffaf0; border-radius:9px;
-  font-size:12px; line-height:1.55; color:#7a5517}
 
 /* ---------- empty ---------- */
 .empty-state{margin-top:34px; text-align:center; color:var(--ink-3); padding:36px 20px; border:1px dashed var(--line); border-radius:var(--radius)}
@@ -213,7 +211,6 @@ footer a{color:var(--ink-2)}
       </div>
     </div>
 
-    <div class="risk" data-zh="风险提示：安装第三方技能会执行其代码，可能读取文件、调用网络或使用凭证；本清单只做索引，不构成授权或背书。金融、合规、投资等场景请先核对来源与许可，并保留人工复核。" data-en="Risk notice: installing a third-party skill runs its code, which may read files, access the network, or use credentials. This index is not an endorsement or a grant of rights. For finance, compliance, and investment use, review the source and license and keep a human in the loop.">风险提示：安装第三方技能会执行其代码，可能读取文件、调用网络或使用凭证；本清单只做索引，不构成授权或背书。金融、合规、投资等场景请先核对来源与许可，并保留人工复核。</div>
   </div>
 </header>
 
@@ -277,13 +274,11 @@ footer a{color:var(--ink-2)}
     zh: {none:"没有匹配的技能", noneHint:"换个关键词，或切回「全部分类」", copied:"已复制",
          install:"安装 ▾", wb:"WorkBuddy · 复制市场源 + id", wbHint:"在市场中找到该 id 后点安装",
          dsh:"DSH · 复制安装提示词", dshHint:"装到 ~/.dsh/skills/<id>", generic:"通用 · 复制安装提示词",
-         genericHint:"WorkBuddy / DSH 二选一", author:"作者", verified:"最近核验", review:"需人工复核",
-         metaReview:"金融场景请保留人工复核"},
+         genericHint:"WorkBuddy / DSH 二选一", author:"作者", verified:"最近核验"},
     en: {none:"No matching skills", noneHint:"Try another keyword or reset the category", copied:"Copied",
          install:"Install ▾", wb:"WorkBuddy · copy market URL + id", wbHint:"find the id in the market and install",
          dsh:"DSH · copy install prompt", dshHint:"install into ~/.dsh/skills/<id>", generic:"Generic · copy install prompt",
-         genericHint:"choose WorkBuddy or DSH", author:"Author", verified:"Verified", review:"Human review",
-         metaReview:"Keep a human in the loop for finance use"}
+         genericHint:"choose WorkBuddy or DSH", author:"Author", verified:"Verified"}
   };
 
   function applyI18n(){
@@ -388,13 +383,11 @@ footer a{color:var(--ink-2)}
           <span class="b cat">${esc(T(catOf(s.category).title))}</span>
           <span class="b ${s.source.type}">${s.source.type}</span>
           <span class="b license">${esc(s.license || "—")}</span>
-          <span class="b review">${esc(UI[lang].review)}</span>
           <span class="b ver">v${esc(s.version)}</span>
         </div>
         <div class="meta">
           <span><b>${esc(UI[lang].author)}</b> ${esc(s.author || "—")}</span>
           <span><b>${esc(UI[lang].verified)}</b> ${esc(verified)}</span>
-          <span>${esc(UI[lang].metaReview)}</span>
         </div>
         <p>${esc(T(s.summary))}</p>
         <div class="foot">
@@ -415,6 +408,16 @@ footer a{color:var(--ink-2)}
       copy(b.dataset.cmd, b);
       const box = b.closest("details");
       if (box) box.open = false;
+    });
+
+    // 同时只开一个安装菜单；点开另一个时自动收起前一个。
+    grid.querySelectorAll("details.inst").forEach(d => {
+      d.addEventListener("toggle", () => {
+        if (!d.open) return;
+        grid.querySelectorAll("details.inst[open]").forEach(other => {
+          if (other !== d) other.open = false;
+        });
+      });
     });
 
     const none = document.getElementById("none");
@@ -472,6 +475,17 @@ footer a{color:var(--ink-2)}
 
   document.querySelectorAll("button.copy[data-copy]").forEach(b => b.onclick = () =>
     copy(document.getElementById(b.dataset.copy).textContent, b));
+
+  // 点菜单外部或按 Esc 收起，不依赖再点一次「安装」。
+  document.addEventListener("click", e => {
+    document.querySelectorAll("details.inst[open]").forEach(d => {
+      if (!d.contains(e.target)) d.open = false;
+    });
+  });
+  document.addEventListener("keydown", e => {
+    if (e.key !== "Escape") return;
+    document.querySelectorAll("details.inst[open]").forEach(d => { d.open = false; });
+  });
 
   applyI18n(); render();
 })();
