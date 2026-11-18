@@ -406,12 +406,16 @@ install.sh              一条命令安装的引导脚本（取 install.py + cat
 docs/
   index.html            静态站（单文件、无外部依赖）
   catalog.js            ← 构建产物，站点内嵌数据（带内容指纹）
+  assets/               README 三张配图（hero / how-it-works / zero-body）
 scripts/
   install.py            读清单 → 回原件取正文 → 装进 ~/.workbuddy/skills
   add_skill.py          收录一条：inspect 读原件元信息 / add / update / list（写 catalog.json）
   pack_market.py        出市场包（--shim-only：171 个取件器共 360 KB）；重写 marketplace.json
   publish_market.py     把 dist/pkgs 整体推到 marketplace 分支（API，不带 base_tree）
   build.py              校验清单 + 零正文守卫 + 生成 docs/catalog.js
+  check_schema.py       按 schema.json 校验清单结构（对外格式契约）
+  changed_ids.py        比对 base 提交，输出新增/修改/删除的条目（PR 校验用）
+  make_readme_assets.py 用 PIL 生成 README 配图，设计 token 与站点同源
   sync.py               经 GitHub API 推送 main（绕开直连 github.com 的限制）
   check_market.py       发布后验收：线上清单 / 分支包集合 / sha256 三者是否自洽
   check_clients.py      发布后核对客户端：raw + 3 个 jsDelivr 镜像 + dsh 缓存各是哪一版
