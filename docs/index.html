@@ -104,14 +104,32 @@ main{padding:16px 0 56px}
 .card h3{margin:0 0 2px; font-size:16.5px; font-weight:660; letter-spacing:-.2px}
 .card .id{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; color:var(--ink-3); margin-bottom:9px; word-break:break-all}
 .card p{margin:0 0 11px; color:var(--ink-2); font-size:13.5px; flex:1}
-.badges{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px}
+.badges{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px}
 .b{font-size:11px; padding:2.5px 8px; border-radius:6px; font-weight:600; letter-spacing:.2px}
 .b.cat{background:var(--accent-soft); color:var(--accent-ink)}
 .b.skillhub{background:var(--accent-soft); color:var(--accent-ink)}
 .b.github{background:#eef0f4; color:#3d4553}
 .b.ver{background:#f4f3ef; color:var(--ink-3); font-weight:500; font-family:ui-monospace,Menlo,monospace}
+.b.license{background:#f4f3ef; color:var(--ink-2); font-weight:600}
+.b.review{background:#fff4e5; color:#8a5a13}
+.card .meta{display:flex; flex-wrap:wrap; gap:3px 12px; font-size:11.5px; color:var(--ink-3); margin-bottom:10px}
+.card .meta b{font-weight:600; color:var(--ink-2)}
 .card .foot{border-top:1px solid var(--line-2); padding-top:11px; display:flex; align-items:center; gap:8px; min-width:0}
 .card .cmd{font-family:ui-monospace,Menlo,monospace; font-size:10.5px; color:var(--ink-3); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; min-width:0}
+.inst{position:relative; margin-left:auto; flex:none}
+.inst summary{list-style:none; border:1px solid var(--line); background:var(--panel); color:var(--ink-2); border-radius:6px;
+  padding:3px 9px; font-size:11.5px; cursor:pointer; transition:.15s; white-space:nowrap}
+.inst summary::-webkit-details-marker{display:none}
+.inst summary:hover,.inst[open] summary{border-color:var(--accent); color:var(--accent-ink); background:var(--accent-soft)}
+.inst .menu{position:absolute; right:0; bottom:calc(100% + 6px); min-width:236px; z-index:30;
+  background:var(--panel); border:1px solid var(--line); border-radius:10px; box-shadow:0 12px 32px -12px rgba(22,24,29,.28); padding:5px}
+.inst .menu button{display:block; width:100%; text-align:left; border:0; background:none; border-radius:7px; padding:8px 10px;
+  font-family:inherit; cursor:pointer; color:var(--ink-2)}
+.inst .menu button:hover{background:var(--accent-soft); color:var(--accent-ink)}
+.inst .menu b{display:block; font-size:12px; font-weight:600}
+.inst .menu small{display:block; font-size:10.5px; color:var(--ink-3); margin-top:2px}
+.risk{margin-top:14px; padding:9px 12px; border:1px solid #f0d9ae; background:#fffaf0; border-radius:9px;
+  font-size:12px; line-height:1.55; color:#7a5517}
 
 /* ---------- empty ---------- */
 .empty-state{margin-top:34px; text-align:center; color:var(--ink-3); padding:36px 20px; border:1px dashed var(--line); border-radius:var(--radius)}
@@ -184,16 +202,18 @@ footer a{color:var(--ink-2)}
       <div class="ep">
         <div class="ep-head">
           <span class="k" data-zh="单独安装" data-en="Single skill">单独安装</span>
-          <span class="role" data-zh="复制提示词" data-en="Copy prompt">复制提示词</span>
+          <span class="role" data-zh="安装选项" data-en="Install options">安装选项</span>
         </div>
-        <div class="ep-note"><span data-zh="不想装市场或插件：点下方每张技能卡片右下角的「复制提示词」，会复制一条<b>可直接安装</b>的指令；粘贴到对话发送，就能装好这一个技能。" data-en="No marketplace or plugin needed: click <b>Copy prompt</b> on any skill card below to copy a ready-to-run install instruction; paste it into a chat and send to install that one skill.">不想装市场或插件：点下方每张技能卡片右下角的「复制提示词」，会复制一条<b>可直接安装</b>的指令；粘贴到对话发送，就能装好这一个技能。</span></div>
+        <div class="ep-note"><span data-zh="不想装市场或插件：点卡片右下「安装 ▾」，可选 <b>WorkBuddy 市场源 + id</b>、<b>DSH 安装提示词</b>或通用提示词；粘贴到对话发送即可安装这一个技能。不提供 SkillHub CLI 复制。" data-en="No marketplace or plugin needed: open <b>Install ▾</b> on a card to copy the <b>WorkBuddy market URL + id</b>, a <b>DSH install prompt</b>, or the generic prompt; paste it into a chat to install that one skill. No SkillHub CLI copy.">不想装市场或插件：点卡片右下「安装 ▾」，可选 <b>WorkBuddy 市场源 + id</b>、<b>DSH 安装提示词</b>或通用提示词；粘贴到对话发送即可安装这一个技能。不提供 SkillHub CLI 复制。</span></div>
         <ol class="steps">
-          <li data-zh="在下方列表找到需要的技能，点卡片右下「复制提示词」" data-en="Find the skill below and click <b>Copy prompt</b> on its card">在下方列表找到需要的技能，点卡片右下「复制提示词」</li>
-          <li data-zh="粘贴到 WorkBuddy 或 DSH 对话框，直接发送" data-en="Paste it into a WorkBuddy or DSH chat and send">粘贴到 WorkBuddy 或 DSH 对话框，直接发送</li>
-          <li data-zh="等它取回正文并装到技能目录，装完即可调用" data-en="Wait for it to fetch and install the skill, then call it">等它取回正文并装到技能目录，装完即可调用</li>
+          <li data-zh="在下方列表找到需要的技能，点卡片右下「安装 ▾」" data-en="Find the skill below and open <b>Install ▾</b> on its card">在下方列表找到需要的技能，点卡片右下「安装 ▾」</li>
+          <li data-zh="按当前运行环境复制对应提示词，或复制 WorkBuddy 市场源 + id" data-en="Copy the prompt for your current runtime, or the WorkBuddy market URL + id">按当前运行环境复制对应提示词，或复制 WorkBuddy 市场源 + id</li>
+          <li data-zh="粘贴到 WorkBuddy 或 DSH 对话框发送，装完即可调用" data-en="Paste into WorkBuddy or DSH and send; call the skill once installed">粘贴到 WorkBuddy 或 DSH 对话框发送，装完即可调用</li>
         </ol>
       </div>
     </div>
+
+    <div class="risk" data-zh="风险提示：安装第三方技能会执行其代码，可能读取文件、调用网络或使用凭证；本清单只做索引，不构成授权或背书。金融、合规、投资等场景请先核对来源与许可，并保留人工复核。" data-en="Risk notice: installing a third-party skill runs its code, which may read files, access the network, or use credentials. This index is not an endorsement or a grant of rights. For finance, compliance, and investment use, review the source and license and keep a human in the loop.">风险提示：安装第三方技能会执行其代码，可能读取文件、调用网络或使用凭证；本清单只做索引，不构成授权或背书。金融、合规、投资等场景请先核对来源与许可，并保留人工复核。</div>
   </div>
 </header>
 
@@ -232,7 +252,7 @@ footer a{color:var(--ink-2)}
 
 <div class="toast" id="toast"></div>
 
-<script src="catalog.js?v=c8f0313e"></script>
+<script src="catalog.js?v=ad01662c"></script>
 <script>
 (function(){
   const C = window.__CATALOG__;
@@ -242,9 +262,10 @@ footer a{color:var(--ink-2)}
   // 或临时改用备用地址 https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main/marketplace.json
   const CDN = "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@main";
   const CATALOG_URL = CDN + "/catalog.json";
+  const MARKET_URL = CDN + "/marketplace.json";
   document.getElementById("url-wb").textContent  = CDN + "/marketplace.json";
   document.getElementById("url-dsh").textContent = "https://github.com/openfcp/dsh-financial-skills";
-  document.getElementById("stamp").textContent   = "updated " + C.updated;
+  document.getElementById("stamp").textContent   = "updated " + C.updated + " · verified " + (C.verified_at || C.updated);
 
   let lang = "zh", cat = "all", src = "all", q = "";
 
@@ -253,8 +274,16 @@ footer a{color:var(--ink-2)}
   const esc = (s) => String(s).replace(/[&<>"]/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
 
   const UI = {
-    zh: {none:"没有匹配的技能", noneHint:"换个关键词，或切回「全部分类」", copied:"已复制", copy:"复制提示词"},
-    en: {none:"No matching skills", noneHint:"Try another keyword or reset the category", copied:"Copied", copy:"Copy prompt"}
+    zh: {none:"没有匹配的技能", noneHint:"换个关键词，或切回「全部分类」", copied:"已复制",
+         install:"安装 ▾", wb:"WorkBuddy · 复制市场源 + id", wbHint:"在市场中找到该 id 后点安装",
+         dsh:"DSH · 复制安装提示词", dshHint:"装到 ~/.dsh/skills/<id>", generic:"通用 · 复制安装提示词",
+         genericHint:"WorkBuddy / DSH 二选一", author:"作者", verified:"最近核验", review:"需人工复核",
+         metaReview:"金融场景请保留人工复核"},
+    en: {none:"No matching skills", noneHint:"Try another keyword or reset the category", copied:"Copied",
+         install:"Install ▾", wb:"WorkBuddy · copy market URL + id", wbHint:"find the id in the market and install",
+         dsh:"DSH · copy install prompt", dshHint:"install into ~/.dsh/skills/<id>", generic:"Generic · copy install prompt",
+         genericHint:"choose WorkBuddy or DSH", author:"Author", verified:"Verified", review:"Human review",
+         metaReview:"Keep a human in the loop for finance use"}
   };
 
   function applyI18n(){
@@ -287,8 +316,9 @@ footer a{color:var(--ink-2)}
   }
 
   // 每条卡片复制的是「可直接安装的提示词」：带坐标、取回规则、目标目录与校验要求。
-  // 目录按运行环境二选一：WorkBuddy 用 ~/.workbuddy/skills，DSH 用 ~/.dsh/skills，只装一处。
-  function promptFor(s){
+  // runtime = wb / dsh / both；不提供 SkillHub CLI 复制项。
+  function promptFor(s, runtime){
+    runtime = runtime || "both";
     const name = T(s.name), source = s.source || {};
     const zipUrl = "https://api.skillhub.cn/api/v1/download?slug=" + (source.slug || s.id);
     let fetchLine;
@@ -301,20 +331,33 @@ footer a{color:var(--ink-2)}
         ? `取回：按清单 resolve.github，从 ${source.repo || ""} 的 ${source.path || ""}（ref ${source.ref || "main"}）逐文件下载，raw 不通依次退到 GitHub API 与 jsDelivr。`
         : `Fetch: follow resolve.github, download every file from ${source.repo || ""}/${source.path || ""} (ref ${source.ref || "main"}) via raw, falling back to GitHub API then jsDelivr.`;
     }
-    if (lang === "zh") return [
-      `请帮我安装技能「${name}」（id: ${s.id}）。`,
-      `清单：${CATALOG_URL}（按其中的 resolve 规则和该条 source 坐标取回正文，不要使用别处的副本）。`,
-      fetchLine,
-      `安装到你当前所处的运行环境，只装一处：若在 WorkBuddy 就装到 ~/.workbuddy/skills/${s.id}/；若在 DeepSeek Harness（DSH）就装到 ~/.dsh/skills/${s.id}/（即 <DSH_HOME>/skills/${s.id}/）。确认 SKILL.md 存在且可读。`,
-      `下载或校验失败就报错并清理暂存，不要留下空壳；完成后告诉我安装路径和文件数。`
-    ].join("\n");
-    return [
-      `Please install the skill "${name}" (id: ${s.id}).`,
-      `Catalog: ${CATALOG_URL} (follow its resolve rules and this entry's source coordinates; do not use copies from elsewhere).`,
-      fetchLine,
-      `Install into whichever runtime you are currently running in — install to only one: if in WorkBuddy use ~/.workbuddy/skills/${s.id}/; if in DeepSeek Harness (DSH) use ~/.dsh/skills/${s.id}/ (i.e. <DSH_HOME>/skills/${s.id}/). Verify SKILL.md exists and is readable.`,
-      `On download or validation failure, report the error and clean up staging; never leave a partial install. Then report the install path and file count.`
-    ].join("\n");
+    const head = lang === "zh"
+      ? `请帮我安装技能「${name}」（id: ${s.id}）。`
+      : `Please install the skill "${name}" (id: ${s.id}).`;
+    const catalog = lang === "zh"
+      ? `清单：${CATALOG_URL}（按其中的 resolve 规则和该条 source 坐标取回正文，不要使用别处的副本）。`
+      : `Catalog: ${CATALOG_URL} (follow its resolve rules and this entry's source coordinates; do not use copies from elsewhere).`;
+    const guard = lang === "zh"
+      ? `下载或校验失败就报错并清理暂存，不要留下空壳；完成后告诉我安装路径和文件数。`
+      : `On download or validation failure, report the error and clean up staging; never leave a partial install. Then report the install path and file count.`;
+    const wb = lang === "zh"
+      ? `只装到 WorkBuddy：~/.workbuddy/skills/${s.id}/。确认 SKILL.md 存在且可读。`
+      : `Install only into WorkBuddy: ~/.workbuddy/skills/${s.id}/. Verify SKILL.md exists and is readable.`;
+    const dsh = lang === "zh"
+      ? `只装到 DeepSeek Harness（DSH）：~/.dsh/skills/${s.id}/（即 <DSH_HOME>/skills/${s.id}/）。确认 SKILL.md 存在且可读。`
+      : `Install only into DeepSeek Harness (DSH): ~/.dsh/skills/${s.id}/ (i.e. <DSH_HOME>/skills/${s.id}/). Verify SKILL.md exists and is readable.`;
+    const both = lang === "zh"
+      ? `安装到你当前所处的运行环境，只装一处：若在 WorkBuddy 就装到 ~/.workbuddy/skills/${s.id}/；若在 DeepSeek Harness（DSH）就装到 ~/.dsh/skills/${s.id}/（即 <DSH_HOME>/skills/${s.id}/）。确认 SKILL.md 存在且可读。`
+      : `Install into whichever runtime you are currently running in — install to only one: if in WorkBuddy use ~/.workbuddy/skills/${s.id}/; if in DeepSeek Harness (DSH) use ~/.dsh/skills/${s.id}/ (i.e. <DSH_HOME>/skills/${s.id}/). Verify SKILL.md exists and is readable.`;
+    const target = runtime === "wb" ? wb : runtime === "dsh" ? dsh : both;
+    return [head, catalog, fetchLine, target, guard].join("\n");
+  }
+
+  function workbuddyInstallText(s){
+    const market = document.getElementById("url-wb").textContent || MARKET_URL;
+    return lang === "zh"
+      ? [`WorkBuddy 市场源：${market}`, `技能 id（卡片标题是英文 id）：${s.id}`, `中文名：${T(s.name)}`, `在技能 → 套件中添加上面的市场源，找到 id 为 ${s.id} 的卡片后点「安装」。`].join("\n")
+      : [`WorkBuddy marketplace URL: ${market}`, `Skill id (card title is the English id): ${s.id}`, `Name: ${T(s.name)}`, `Add the marketplace under Skills → Suites, find the card with id ${s.id}, then click Install.`].join("\n");
   }
 
   function renderCards(){
@@ -332,8 +375,11 @@ footer a{color:var(--ink-2)}
     });
 
     const grid = document.getElementById("grid");
+    const verified = C.verified_at || C.updated;
     grid.innerHTML = list.map(s => {
-      const p = promptFor(s);
+      const wbText = workbuddyInstallText(s);
+      const dshText = promptFor(s, "dsh");
+      const genericText = promptFor(s, "both");
       return `
       <article class="card" id="${s.id}">
         <h3>${esc(T(s.name))}</h3>
@@ -341,17 +387,35 @@ footer a{color:var(--ink-2)}
         <div class="badges">
           <span class="b cat">${esc(T(catOf(s.category).title))}</span>
           <span class="b ${s.source.type}">${s.source.type}</span>
+          <span class="b license">${esc(s.license || "—")}</span>
+          <span class="b review">${esc(UI[lang].review)}</span>
           <span class="b ver">v${esc(s.version)}</span>
+        </div>
+        <div class="meta">
+          <span><b>${esc(UI[lang].author)}</b> ${esc(s.author || "—")}</span>
+          <span><b>${esc(UI[lang].verified)}</b> ${esc(verified)}</span>
+          <span>${esc(UI[lang].metaReview)}</span>
         </div>
         <p>${esc(T(s.summary))}</p>
         <div class="foot">
-          <span class="cmd" title="${esc(p)}">${esc(p.split("\n")[0])}</span>
-          <button class="copy" data-prompt="${esc(p)}">${UI[lang].copy}</button>
+          <span class="cmd">WorkBuddy / DSH</span>
+          <details class="inst">
+            <summary>${esc(UI[lang].install)}</summary>
+            <div class="menu" role="menu">
+              <button type="button" role="menuitem" data-cmd="${esc(wbText)}"><b>${esc(UI[lang].wb)}</b><small>${esc(UI[lang].wbHint)}</small></button>
+              <button type="button" role="menuitem" data-cmd="${esc(dshText)}"><b>${esc(UI[lang].dsh)}</b><small>${esc(UI[lang].dshHint)}</small></button>
+              <button type="button" role="menuitem" data-cmd="${esc(genericText)}"><b>${esc(UI[lang].generic)}</b><small>${esc(UI[lang].genericHint)}</small></button>
+            </div>
+          </details>
         </div>
       </article>`;
     }).join("");
 
-    grid.querySelectorAll("button.copy").forEach(b => b.onclick = () => copy(b.dataset.prompt, b));
+    grid.querySelectorAll(".inst button[data-cmd]").forEach(b => b.onclick = () => {
+      copy(b.dataset.cmd, b);
+      const box = b.closest("details");
+      if (box) box.open = false;
+    });
 
     const none = document.getElementById("none");
     none.hidden = list.length > 0;
