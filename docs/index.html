@@ -236,10 +236,13 @@ footer a{color:var(--ink-2)}
 <script>
 (function(){
   const C = window.__CATALOG__;
-  // raw 优先：jsDelivr 会把 @main 的解析结果缓存十几小时，改完仓它还在发旧副本
-  const RAW = "https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main";
-  const CATALOG_URL = RAW + "/catalog.json";
-  document.getElementById("url-wb").textContent  = RAW + "/marketplace.json";
+  // jsDelivr 优先：实测 raw.githubusercontent.com 会 20 秒抖动、甚至整站 30 秒零字节超时，
+  // 用它当「添加市场」的地址会让国内用户每次刷新都卡住甚至加不上。
+  // jsDelivr 的代价是 @main 可能缓存旧副本（最长十几小时）；刚发布看不到新卡时等一会儿，
+  // 或临时改用备用地址 https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main/marketplace.json
+  const CDN = "https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@main";
+  const CATALOG_URL = CDN + "/catalog.json";
+  document.getElementById("url-wb").textContent  = CDN + "/marketplace.json";
   document.getElementById("url-dsh").textContent = "https://github.com/openfcp/dsh-financial-skills";
   document.getElementById("stamp").textContent   = "updated " + C.updated;
 
