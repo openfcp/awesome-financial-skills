@@ -73,6 +73,13 @@ button.copy.done{border-color:var(--accent); color:var(--accent-ink); background
   background:var(--accent-soft); color:var(--accent-ink); font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; line-height:1}
 .steps b{color:var(--ink); font-weight:620}
 .steps em{font-style:normal; background:#f4f3ef; border:1px solid var(--line-2); border-radius:4px; padding:0 4px; font-size:11.5px; color:var(--ink-2)}
+/* 兜底话术：贴在卡片底部，虚线分隔，失败时才需要看 */
+.ep-fail{margin-top:auto; padding-top:9px; border-top:1px dashed var(--line-2);
+  font-size:11.5px; line-height:1.6; color:var(--ink-3)}
+.ep-fail button{border:0; background:none; padding:0; margin:0 1px; font:inherit; font-weight:600;
+  color:var(--accent-ink); cursor:pointer; text-decoration:underline; text-underline-offset:2px}
+.ep-fail button:hover{color:var(--accent)}
+.ep-fail button.done{text-decoration:none; color:var(--accent)}
 
 /* ---------- toolbar ---------- */
 .toolbar{position:sticky; top:0; z-index:20; background:rgba(251,251,249,.94); backdrop-filter:blur(10px);
@@ -191,10 +198,13 @@ footer a{color:var(--ink-2)}
           <button class="copy" data-copy="url-dsh" data-zh="复制" data-en="Copy">复制</button>
         </div>
         <ol class="steps">
-          <li data-zh="终端执行 <em>dsh plugin --profile desktop add github:openfcp/dsh-financial-skills</em>" data-en="Run <em>dsh plugin --profile desktop add github:openfcp/dsh-financial-skills</em>">终端执行 <em>dsh plugin --profile desktop add github:openfcp/dsh-financial-skills</em></li>
-          <li data-zh="在 profile 的 <em>dsh.profile.bundles</em> 加入 <em>dsh-financial-skills</em>" data-en="Add <em>dsh-financial-skills</em> to <em>dsh.profile.bundles</em> in the profile">在 profile 的 <em>dsh.profile.bundles</em> 加入 <em>dsh-financial-skills</em></li>
-          <li data-zh="彻底退出并重启 DSH，左侧栏点「金融技能」" data-en="Fully quit and restart DSH, then open <b>金融技能</b> in the sidebar">彻底退出并重启 DSH，左侧栏点「金融技能」</li>
+          <li data-zh="打开 DSH →「插件」→「添加插件」" data-en="Open DSH → <b>Plugins</b> → <b>Add plugin</b>">打开 DSH →「插件」→「添加插件」</li>
+          <li data-zh="把上面的地址粘进去，确认添加（末尾 <em>#v0.2.3</em> 是版本号，别删）" data-en="Paste the address above and confirm (keep the <em>#v0.2.3</em> tag at the end)">把上面的地址粘进去，确认添加（末尾 <em>#v0.2.3</em> 是版本号，别删）</li>
+          <li data-zh="等安装完成，彻底退出再打开 DSH 即可" data-en="Wait for it to finish, fully quit and reopen DSH">等安装完成，彻底退出再打开 DSH 即可</li>
         </ol>
+        <div class="ep-fail">
+          <span data-zh="如果安装不成功，" data-en="If it fails, ">如果安装不成功，</span><button type="button" id="dsh-fail" data-zh="点击此处" data-en="click here">点击此处</button><span data-zh="，把复制的话发给对话框，让它帮你装。" data-en=" and paste the copied message into the chat to have it install for you.">，把复制的话发给对话框，让它帮你装。</span>
+        </div>
       </div>
 
       <div class="ep">
@@ -261,7 +271,10 @@ footer a{color:var(--ink-2)}
   const CATALOG_URL = CDN + "/catalog.json";
   const MARKET_URL = CDN + "/marketplace.json";
   document.getElementById("url-wb").textContent  = CDN + "/marketplace.json";
-  document.getElementById("url-dsh").textContent = "https://github.com/openfcp/dsh-financial-skills";
+  // DSH 插件必须带 tag：不带 ref 时 pnpm 会把默认分支的 commit 钉进 lockfile，
+  // 再点安装只会说 Already up to date，插件管理器就报「无法确定安装了哪个包」。
+  const DSH_URL = "https://github.com/openfcp/dsh-financial-skills#v0.2.3";
+  document.getElementById("url-dsh").textContent = DSH_URL;
   document.getElementById("stamp").textContent   = "updated " + C.updated + " · verified " + (C.verified_at || C.updated);
 
   let lang = "zh", cat = "all", src = "all", q = "";
@@ -475,6 +488,28 @@ footer a{color:var(--ink-2)}
 
   document.querySelectorAll("button.copy[data-copy]").forEach(b => b.onclick = () =>
     copy(document.getElementById(b.dataset.copy).textContent, b));
+
+  // 界面装不上时的兜底：给一段自包含的话术，让对话把插件装好。
+  const DSH_PROMPT = {
+    zh: [
+      "帮我安装 DSH 插件「金融技能」（openfcp/dsh-financial-skills，v0.2.3）。",
+      "地址：" + DSH_URL,
+      "1) 优先走命令行：dsh plugin --profile desktop add " + DSH_URL,
+      "2) 装完把 dsh-financial-skills 写进 ~/.dsh/profiles/desktop/package.json 的 dsh.profile.bundles；少这一条，侧栏不会出现入口。",
+      "3) 然后彻底退出（Cmd+Q，并确认活动监视器里没有残留进程）再打开 DSH，左侧栏应出现「金融技能」。",
+      "4) 任何一步报错，把命令原文和报错贴给我，不要跳过、也不要当成装好了。"
+    ].join("\n"),
+    en: [
+      "Please install the DSH plugin “Financial Skills” (openfcp/dsh-financial-skills, v0.2.3).",
+      "Address: " + DSH_URL,
+      "1) Prefer the CLI: dsh plugin --profile desktop add " + DSH_URL,
+      "2) Then add dsh-financial-skills to dsh.profile.bundles in ~/.dsh/profiles/desktop/package.json — without it the sidebar entry never appears.",
+      "3) Fully quit (Cmd+Q, confirm no leftover process) and reopen DSH; “金融技能” should appear in the sidebar.",
+      "4) If any step fails, paste the exact command and error back to me. Do not skip steps or claim success."
+    ].join("\n")
+  };
+  const failBtn = document.getElementById("dsh-fail");
+  if (failBtn) failBtn.onclick = function(){ copy(DSH_PROMPT[lang] || DSH_PROMPT.zh, this); };
 
   // 点菜单外部或按 Esc 收起，不依赖再点一次「安装」。
   document.addEventListener("click", e => {

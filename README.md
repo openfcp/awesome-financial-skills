@@ -121,13 +121,25 @@ https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@main/marketplace.js
 > 备用地址（raw，国内常整站超时，优先用上面那条）：
 > `https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main/marketplace.json`
 
-### ③ DSH 插件
+### ③ DSH 插件：左侧栏多一个「金融技能」
 
-```bash
-dsh plugin --profile desktop add github:openfcp/dsh-financial-skills
+打开 DSH →「插件」→「添加插件」，把地址粘进去：
+
+```
+https://github.com/openfcp/dsh-financial-skills#v0.2.3
 ```
 
-然后在 profile 的 `dsh.profile.bundles` 加入 `dsh-financial-skills`，彻底退出并重启 DSH，左侧栏会出现「金融技能」。插件实时读 `catalog.json`（TTL 6 小时，页脚可强制刷新）。
+等安装完成，**彻底退出再打开 DSH**（Cmd+Q，确认活动监视器里没有残留进程），左侧栏就会出现「金融技能」：搜索、看正文、一键安装，装完当前对话里直接能用。插件实时读 `catalog.json`（TTL 6 小时，页脚可强制刷新）。
+
+> **地址末尾的 `#v0.2.3` 别删。** 不带 ref 时 pnpm 会把默认分支的 commit 钉进 lockfile，再点安装只会说 `Already up to date`，插件管理器就报「无法从依赖变更中确定安装了哪一个包」——**那不是装坏了，是它已经装着**。升级换新 tag 的地址；想跟最新可填 `#main`。
+
+界面装不上时，用命令行等价操作：
+
+```bash
+dsh plugin --profile desktop add https://github.com/openfcp/dsh-financial-skills#v0.2.3
+```
+
+再把 `dsh-financial-skills` 写进 `~/.dsh/profiles/desktop/package.json` 的 `dsh.profile.bundles`——少这一条，侧栏不会出现入口。
 
 ### ④ 终端一条命令
 
