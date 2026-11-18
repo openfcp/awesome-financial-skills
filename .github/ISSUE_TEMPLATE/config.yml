@@ -1,5 +1,6 @@
-# Issue 模板选择页：不给「空白 issue」入口，只留两条结构化路径。
-blank_issues_enabled: false
+# Issue 模板选择页：保留空白 issue 入口（有人要报"某条链接打不开"），
+# 另外把「自己提 PR」和「作者要求下架」放到显眼位置。
+blank_issues_enabled: true
 contact_links:
   - name: 我来提 PR（自己改 catalog.json）
     url: https://github.com/openfcp/awesome-financial-skills/compare
