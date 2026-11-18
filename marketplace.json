@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "consumer-protection-review",
-      "description": "营销材料、协议条款、定价方案、销售话术的合规审查：六维审查模型、八项权益映射、风险定级与法规依据库。",
+      "description": "【消保审查】营销材料、协议条款、定价方案、销售话术的合规审查：六维审查模型、八项权益映射、风险定级与法规依据库。",
       "version": "1.0.0",
       "category": "consumer-protection",
       "author": {
@@ -23,7 +23,7 @@
     },
     {
       "name": "consumer-protection-annual-evaluation",
-      "description": "年度消保监管评价自评全流程：指标解读、台账分工、证据链整理、自评报告撰写、失分诊断与模拟打分。",
+      "description": "【消保评价】年度消保监管评价自评全流程：指标解读、台账分工、证据链整理、自评报告撰写、失分诊断与模拟打分。",
       "version": "1.0.0",
       "category": "consumer-protection",
       "author": {
@@ -39,7 +39,7 @@
     },
     {
       "name": "compliance-sales",
-      "description": "营销宣传八不得审查、禁用词扫描、双录规范、适当性匹配（P1-P5/R1-R5）与渠道合作机构管理。",
+      "description": "【合规销售】营销宣传八不得审查、禁用词扫描、双录规范、适当性匹配（P1-P5/R1-R5）与渠道合作机构管理。",
       "version": "1.0.0",
       "category": "consumer-protection",
       "author": {
@@ -55,7 +55,7 @@
     },
     {
       "name": "complaint-management",
-      "description": "投诉数据统计分析、分类打标（JR/T 0169-2018）、复杂投诉谈判支持、和解协议起草、溯源整改与月报生成。",
+      "description": "【投诉管理】投诉数据统计分析、分类打标（JR/T 0169-2018）、复杂投诉谈判支持、和解协议起草、溯源整改与月报生成。",
       "version": "1.0.0",
       "category": "consumer-protection",
       "author": {
@@ -71,7 +71,7 @@
     },
     {
       "name": "consumer-protection-inspection",
-      "description": "检查制度与年度计划、六大领域检查执行、检查方案与记录表生成、整改跟踪台账与覆盖率统计。",
+      "description": "【消保检查】检查制度与年度计划、六大领域检查执行、检查方案与记录表生成、整改跟踪台账与覆盖率统计。",
       "version": "1.0.0",
       "category": "consumer-protection",
       "author": {
@@ -87,7 +87,7 @@
     },
     {
       "name": "ai-ppt-skill",
-      "description": "五阶段交互工作流生成可直接编辑的 .pptx：20 种图表类型、8 大温和色系，从大纲到成片一次交付。",
+      "description": "【PPT Master · 智能生成】五阶段交互工作流生成可直接编辑的 .pptx：20 种图表类型、8 大温和色系，从大纲到成片一次交付。",
       "version": "3.0.0",
       "category": "office-design",
       "author": {
@@ -103,7 +103,7 @@
     },
     {
       "name": "gongwenformat-pro",
-      "description": "按 GB/T 9704-2012 把 Markdown/TXT/DOCX 转成国标格式 Word：红头、发文字号、版记、字体字号与页边距一次到位。",
+      "description": "【公文排版 Pro】按 GB/T 9704-2012 把 Markdown/TXT/DOCX 转成国标格式 Word：红头、发文字号、版记、字体字号与页边距一次到位。",
       "version": "1.0.0",
       "category": "office-design",
       "author": {
@@ -119,7 +119,7 @@
     },
     {
       "name": "ppt-win32com-editor",
-      "description": "通过 PowerPoint COM 接口就地修改已有 .pptx，布局、图片、形状、渐变与特效全部保留；只改不重建。仅支持 Windows。",
+      "description": "【PPT 原位编辑（win32com）】通过 PowerPoint COM 接口就地修改已有 .pptx，布局、图片、形状、渐变与特效全部保留；只改不重建。仅支持 Windows。",
       "version": "1.0.0",
       "category": "office-design",
       "author": {
@@ -135,7 +135,7 @@
     },
     {
       "name": "official-document-skill",
-      "description": "起草、改写、润色与校核中文公文与政务应用文：文种选择、格式规范、克制语体、事实密度与降 AI 味。",
+      "description": "【公文写作】起草、改写、润色与校核中文公文与政务应用文：文种选择、格式规范、克制语体、事实密度与降 AI 味。",
       "version": "1.4.0",
       "category": "office-design",
       "author": {
@@ -151,7 +151,7 @@
     },
     {
       "name": "xiaoshuojubenzhuanfenjing",
-      "description": "从小说到剧本再到分镜的完整链路：素材挖点、三幕结构、场景剧本、分镜表、角色人设卡与 AI 绘图/视频提示词。",
+      "description": "【小说剧本分镜流水线】从小说到剧本再到分镜的完整链路：素材挖点、三幕结构、场景剧本、分镜表、角色人设卡与 AI 绘图/视频提示词。",
       "version": "1.0.0",
       "category": "office-design",
       "author": {
@@ -167,7 +167,7 @@
     },
     {
       "name": "aistockresearcher",
-      "description": "A股/港股/美股/基金/ETF/期货/黄金/债券全资产量化分析与概率预测：多源自动降级、分位数与方向概率、可追溯证据链，支持导出 Word/PPT/PDF。",
+      "description": "【全球智能投研】A股/港股/美股/基金/ETF/期货/黄金/债券全资产量化分析与概率预测：多源自动降级、分位数与方向概率、可追溯证据链，支持导出 Word/PPT/PDF。",
       "version": "14.0.0",
       "category": "data-tech",
       "author": {
@@ -183,7 +183,7 @@
     },
     {
       "name": "generate-chart",
-      "description": "分析数据特征并推荐最佳图表组合，用 Plotly 生成交互式 HTML 仪表板，覆盖柱状/折线/散点/箱线/热力/旭日等十余种图型。",
+      "description": "【智能数据可视化】分析数据特征并推荐最佳图表组合，用 Plotly 生成交互式 HTML 仪表板，覆盖柱状/折线/散点/箱线/热力/旭日等十余种图型。",
       "version": "1.0.0",
       "category": "data-tech",
       "author": {
@@ -199,7 +199,7 @@
     },
     {
       "name": "tianji-business-search",
-      "description": "企业情报聚合查询：工商信息、股东结构、经营状态、司法风险、融资上市与舆情，用于投融资尽调、竞品分析与商业合作背景核验。",
+      "description": "【天机商查】企业情报聚合查询：工商信息、股东结构、经营状态、司法风险、融资上市与舆情，用于投融资尽调、竞品分析与商业合作背景核验。",
       "version": "1.0.0",
       "category": "data-tech",
       "author": {
@@ -215,7 +215,7 @@
     },
     {
       "name": "smart-charts",
-      "description": "把 CSV/Excel/JSON 转成独立可交互的 ECharts HTML：32 类图表、3 套主题、全离线无 CDN，并内置数据画像与事实卡供解读引用。",
+      "description": "【智能图表】把 CSV/Excel/JSON 转成独立可交互的 ECharts HTML：32 类图表、3 套主题、全离线无 CDN，并内置数据画像与事实卡供解读引用。",
       "version": "8.4.0",
       "category": "data-tech",
       "author": {
@@ -231,7 +231,7 @@
     },
     {
       "name": "academic-figures",
-      "description": "一条命令从 JSON/CSV/Excel 生成顶刊级学术图表：40 种图型（森林图、KM 曲线、ROC、列线图、火山图、PRISMA 等）、色盲安全配色、期刊预设与 600dpi 多格式导出。",
+      "description": "【学术配图】一条命令从 JSON/CSV/Excel 生成顶刊级学术图表：40 种图型（森林图、KM 曲线、ROC、列线图、火山图、PRISMA 等）、色盲安全配色、期刊预设与 600dpi 多格式导出。",
       "version": "1.0.0",
       "category": "data-tech",
       "author": {
@@ -247,7 +247,7 @@
     },
     {
       "name": "law-skills",
-      "description": "法律咨询、要素式/通用民事起诉状起草，以及国家法律法规数据库实时法条查询；含逻辑自检与诉讼时效追踪。",
+      "description": "【法律咨询与起诉状】法律咨询、要素式/通用民事起诉状起草，以及国家法律法规数据库实时法条查询；含逻辑自检与诉讼时效追踪。",
       "version": "6.0",
       "category": "compliance-legal",
       "author": {
@@ -263,7 +263,7 @@
     },
     {
       "name": "return-calculations",
-      "description": "计算与比较投资收益指标：TWR、MWR/IRR、CAGR、子期联接与年化。",
+      "description": "【投资收益计算】计算与比较投资收益指标：TWR、MWR/IRR、CAGR、子期联接与年化。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -279,7 +279,7 @@
     },
     {
       "name": "statistics-fundamentals",
-      "description": "金融数据统计方法：分布、协方差矩阵、回归、假设检验与自助法重采样。",
+      "description": "【金融统计基础】金融数据统计方法：分布、协方差矩阵、回归、假设检验与自助法重采样。",
       "version": "1.0.0",
       "category": "data-tech",
       "author": {
@@ -295,7 +295,7 @@
     },
     {
       "name": "time-value-of-money",
-      "description": "货币时间价值：PV/FV/NPV/IRR、年金、贷款还款与摊还表（各种复利约定）。",
+      "description": "【货币时间价值】货币时间价值：PV/FV/NPV/IRR、年金、贷款还款与摊还表（各种复利约定）。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -311,7 +311,7 @@
     },
     {
       "name": "alternatives",
-      "description": "另类投资分析：对冲基金、私募股权、风险投资。",
+      "description": "【另类投资】另类投资分析：对冲基金、私募股权、风险投资。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -327,7 +327,7 @@
     },
     {
       "name": "asset-allocation",
-      "description": "用战略与战术配置框架决定资金在大类资产间的分配（含 Black-Litterman、风险平价）。",
+      "description": "【资产配置】用战略与战术配置框架决定资金在大类资产间的分配（含 Black-Litterman、风险平价）。",
       "version": "1.0.0",
       "category": "invest-trading",
       "author": {
@@ -343,7 +343,7 @@
     },
     {
       "name": "bet-sizing",
-      "description": "决定单笔头寸的资金规模：仓位管理、Kelly 准则与风险预算。",
+      "description": "【仓位规模】决定单笔头寸的资金规模：仓位管理、Kelly 准则与风险预算。",
       "version": "1.0.0",
       "category": "invest-trading",
       "author": {
@@ -359,7 +359,7 @@
     },
     {
       "name": "commodities",
-      "description": "商品市场分析：期货期限结构、展期收益与供需基本面。",
+      "description": "【商品市场】商品市场分析：期货期限结构、展期收益与供需基本面。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -375,7 +375,7 @@
     },
     {
       "name": "currencies-and-fx",
-      "description": "汇率机制与外汇市场分析，以及国际组合的汇率风险对冲。",
+      "description": "【外汇与汇率】汇率机制与外汇市场分析，以及国际组合的汇率风险对冲。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -391,7 +391,7 @@
     },
     {
       "name": "debt-management",
-      "description": "个人债务管理与偿还优先级框架。",
+      "description": "【债务偿还】个人债务管理与偿还优先级框架。",
       "version": "1.0.0",
       "category": "other",
       "author": {
@@ -407,7 +407,7 @@
     },
     {
       "name": "digital-assets",
-      "description": "数字资产分析：加密资产基本面、区块链机制、DeFi 协议与链上指标。",
+      "description": "【数字资产】数字资产分析：加密资产基本面、区块链机制、DeFi 协议与链上指标。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -423,7 +423,7 @@
     },
     {
       "name": "diversification",
-      "description": "用相关性分析、有效前沿与因子分散构建分散化组合。",
+      "description": "【组合分散化】用相关性分析、有效前沿与因子分散构建分散化组合。",
       "version": "1.0.0",
       "category": "invest-trading",
       "author": {
@@ -439,7 +439,7 @@
     },
     {
       "name": "emergency-fund",
-      "description": "依据收入稳定性与支出结构测算并配置应急储备金。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【应急储备金】依据收入稳定性与支出结构测算并配置应急储备金。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "other",
       "author": {
@@ -455,7 +455,7 @@
     },
     {
       "name": "equities",
-      "description": "股票证券、因子模型与股票组合构建分析，含指数编制与盈利分析。",
+      "description": "【股票与因子】股票证券、因子模型与股票组合构建分析，含指数编制与盈利分析。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -471,7 +471,7 @@
     },
     {
       "name": "equity-compensation",
-      "description": "股权激励规划：RSU/NSO/ISO 行权税务、AMT、83(b)、ESPP、集中持股分散与 10b5-1 计划。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【股权激励规划】股权激励规划：RSU/NSO/ISO 行权税务、AMT、83(b)、ESPP、集中持股分散与 10b5-1 计划。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "other",
       "author": {
@@ -487,7 +487,7 @@
     },
     {
       "name": "estate-gifting",
-      "description": "遗产与赠与架构：统一遗产/赠与/GST 免税额、基数步进、信托类型与受益人规划。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【遗产与赠与】遗产与赠与架构：统一遗产/赠与/GST 免税额、基数步进、信托类型与受益人规划。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "other",
       "author": {
@@ -503,7 +503,7 @@
     },
     {
       "name": "factor-investing",
-      "description": "因子模型在组合构建与基金评估中的应用：CAPM、Fama-French 3/5 因子、动量与 smart beta。",
+      "description": "【因子投资】因子模型在组合构建与基金评估中的应用：CAPM、Fama-French 3/5 因子、动量与 smart beta。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -519,7 +519,7 @@
     },
     {
       "name": "finance-psychology",
-      "description": "识别并缓解金融决策中的认知偏差，辅导客户建立价值导向的财务行为。",
+      "description": "【行为金融辅导】识别并缓解金融决策中的认知偏差，辅导客户建立价值导向的财务行为。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -535,7 +535,7 @@
     },
     {
       "name": "financial-statements",
-      "description": "财务报表分析：EBITDA/自由现金流推导、ROIC、杜邦 ROE 分解与盈余质量。",
+      "description": "【财务报表分析】财务报表分析：EBITDA/自由现金流推导、ROIC、杜邦 ROE 分解与盈余质量。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -551,7 +551,7 @@
     },
     {
       "name": "fixed-income-corporate",
-      "description": "公司债与信用工具分析：投资级、高收益债与信用利差。",
+      "description": "【公司债】公司债与信用工具分析：投资级、高收益债与信用利差。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -567,7 +567,7 @@
     },
     {
       "name": "fixed-income-municipal",
-      "description": "市政债分析：税收等价收益率、一般责任债/收益债评估与信用分析。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【市政债】市政债分析：税收等价收益率、一般责任债/收益债评估与信用分析。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -583,7 +583,7 @@
     },
     {
       "name": "fixed-income-sovereign",
-      "description": "美国国债与利率风险：债券定价、收益率曲线、久期凸性、TIPS、即期/远期利率。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【国债与利率风险】美国国债与利率风险：债券定价、收益率曲线、久期凸性、TIPS、即期/远期利率。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -599,7 +599,7 @@
     },
     {
       "name": "fixed-income-structured",
-      "description": "结构化固收产品分析：MBS、ABS、CLO。",
+      "description": "【结构化固收】结构化固收产品分析：MBS、ABS、CLO。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -615,7 +615,7 @@
     },
     {
       "name": "forward-risk",
-      "description": "前瞻性风险估计：参数/蒙特卡洛 VaR、期望损失 ES、压力测试与 GARCH。",
+      "description": "【前瞻风险度量】前瞻性风险估计：参数/蒙特卡洛 VaR、期望损失 ES、压力测试与 GARCH。",
       "version": "1.0.0",
       "category": "risk-management",
       "author": {
@@ -631,7 +631,7 @@
     },
     {
       "name": "fund-vehicles",
-      "description": "比较与选择投资载体：共同基金、ETF、指数基金与专户（SMA）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【投资载体比较】比较与选择投资载体：共同基金、ETF、指数基金与专户（SMA）。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -647,7 +647,7 @@
     },
     {
       "name": "historical-risk",
-      "description": "用历史数据量化已实现风险：波动率估计、回撤分析与下行风险指标。",
+      "description": "【历史风险度量】用历史数据量化已实现风险：波动率估计、回撤分析与下行风险指标。",
       "version": "1.0.0",
       "category": "risk-management",
       "author": {
@@ -663,7 +663,7 @@
     },
     {
       "name": "insurance-planning",
-      "description": "保险规划：风险自留与转移、寿险保额测算、伤残/长期护理/年金/责任险。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【保险规划】保险规划：风险自留与转移、寿险保额测算、伤残/长期护理/年金/责任险。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "other",
       "author": {
@@ -679,7 +679,7 @@
     },
     {
       "name": "investment-policy",
-      "description": "编制投资政策声明（IPS）：收益目标、风险承受度与组合约束。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【投资政策声明】编制投资政策声明（IPS）：收益目标、风险承受度与组合约束。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "invest-trading",
       "author": {
@@ -695,7 +695,7 @@
     },
     {
       "name": "lending",
-      "description": "贷款产品分析：房贷、HELOC、个人贷款及摊还与方案比较工具。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【贷款产品分析】贷款产品分析：房贷、HELOC、个人贷款及摊还与方案比较工具。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "other",
       "author": {
@@ -711,7 +711,7 @@
     },
     {
       "name": "liquidity-management",
-      "description": "现金流与流动性管理：保证支付能力，同时降低闲置资金的机会成本。",
+      "description": "【流动性管理】现金流与流动性管理：保证支付能力，同时降低闲置资金的机会成本。",
       "version": "1.0.0",
       "category": "other",
       "author": {
@@ -727,7 +727,7 @@
     },
     {
       "name": "performance-attribution",
-      "description": "业绩归因：用 Brinson/因子模型分解组合收益，定位增值或损失来源。",
+      "description": "【业绩归因】业绩归因：用 Brinson/因子模型分解组合收益，定位增值或损失来源。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -743,7 +743,7 @@
     },
     {
       "name": "performance-metrics",
-      "description": "风险调整后绩效评估：夏普等标准比率与上行/下行捕获率分析。",
+      "description": "【风险调整绩效】风险调整后绩效评估：夏普等标准比率与上行/下行捕获率分析。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -759,7 +759,7 @@
     },
     {
       "name": "performance-reporting",
-      "description": "生成清晰准确的业绩报告：基准对比、归因、目标进度与风险看板。",
+      "description": "【业绩报告】生成清晰准确的业绩报告：基准对比、归因、目标进度与风险看板。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -775,7 +775,7 @@
     },
     {
       "name": "qualitative-valuation",
-      "description": "定性估值：商业质量、护城河、管理层、ESG 与价值创造可持续性。",
+      "description": "【定性估值】定性估值：商业质量、护城河、管理层、ESG 与价值创造可持续性。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -791,7 +791,7 @@
     },
     {
       "name": "quantitative-valuation",
-      "description": "定量估值：DCF、股利折现、可比倍数与剩余收益模型。",
+      "description": "【定量估值】定量估值：DCF、股利折现、可比倍数与剩余收益模型。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -807,7 +807,7 @@
     },
     {
       "name": "real-assets",
-      "description": "实物资产分析：REITs、直接物业估值与基础设施资产。",
+      "description": "【实物资产】实物资产分析：REITs、直接物业估值与基础设施资产。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -823,7 +823,7 @@
     },
     {
       "name": "rebalancing",
-      "description": "再平衡策略：日历/阈值触发、交易成本与税务效率优化。",
+      "description": "【组合再平衡】再平衡策略：日历/阈值触发、交易成本与税务效率优化。",
       "version": "1.0.0",
       "category": "invest-trading",
       "author": {
@@ -839,7 +839,7 @@
     },
     {
       "name": "retirement-decumulation",
-      "description": "退休取现规划：收益序列风险、4% 法则、RMD、社保领取、罗斯转换、桶策略与年金化。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【退休取现】退休取现规划：收益序列风险、4% 法则、RMD、社保领取、罗斯转换、桶策略与年金化。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "other",
       "author": {
@@ -855,7 +855,7 @@
     },
     {
       "name": "savings-goals",
-      "description": "为退休、教育、购房等具体目标规划并追踪储蓄进度。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【储蓄目标规划】为退休、教育、购房等具体目标规划并追踪储蓄进度。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "other",
       "author": {
@@ -871,7 +871,7 @@
     },
     {
       "name": "tax-efficiency",
-      "description": "税后收益最大化：资产配置位置、盈亏管理与提款顺序优化。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【税务效率优化】税后收益最大化：资产配置位置、盈亏管理与提款顺序优化。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "invest-trading",
       "author": {
@@ -887,7 +887,7 @@
     },
     {
       "name": "tax-loss-harvesting",
-      "description": "税损收割完整工作流：候选识别、执行、洗售规则规避与事后监控。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【税损收割】税损收割完整工作流：候选识别、执行、洗售规则规避与事后监控。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "invest-trading",
       "author": {
@@ -903,7 +903,7 @@
     },
     {
       "name": "volatility-modeling",
-      "description": "波动率建模与预测：GARCH 等时间序列模型与期权隐含波动率曲面。",
+      "description": "【波动率建模】波动率建模与预测：GARCH 等时间序列模型与期权隐含波动率曲面。",
       "version": "1.0.0",
       "category": "risk-management",
       "author": {
@@ -919,7 +919,7 @@
     },
     {
       "name": "advertising-compliance",
-      "description": "确保投资广告与营销材料符合 SEC 营销规则 206(4)-1 与 FINRA Rule 2210。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【营销材料合规】确保投资广告与营销材料符合 SEC 营销规则 206(4)-1 与 FINRA Rule 2210。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "consumer-protection",
       "author": {
@@ -935,7 +935,7 @@
     },
     {
       "name": "advice-standards",
-      "description": "判断产品、平台或沟通是否越过「投资者教育」与「投资建议」的监管边界。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【投顾建议边界】判断产品、平台或沟通是否越过「投资者教育」与「投资建议」的监管边界。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "consumer-protection",
       "author": {
@@ -951,7 +951,7 @@
     },
     {
       "name": "anti-money-laundering",
-      "description": "设计 BSA/AML 合规体系、持续交易监控与 FinCEN 申报（CTR/SAR、OFAC、拆分交易识别）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【反洗钱】设计 BSA/AML 合规体系、持续交易监控与 FinCEN 申报（CTR/SAR、OFAC、拆分交易识别）。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "compliance-legal",
       "author": {
@@ -967,7 +967,7 @@
     },
     {
       "name": "books-and-records",
-      "description": "依据 SEC 17a-3/17a-4、Rule 204-2 建立账簿记录保存（WORM 存储、电子通信归档）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【账簿记录保存】依据 SEC 17a-3/17a-4、Rule 204-2 建立账簿记录保存（WORM 存储、电子通信归档）。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "compliance-legal",
       "author": {
@@ -983,7 +983,7 @@
     },
     {
       "name": "client-disclosures",
-      "description": "明确客户披露文件（Form ADV、CRS、Reg S-P、成交确认）的内容与送达时点。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【客户披露文件】明确客户披露文件（Form ADV、CRS、Reg S-P、成交确认）的内容与送达时点。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "consumer-protection",
       "author": {
@@ -999,7 +999,7 @@
     },
     {
       "name": "conflicts-of-interest",
-      "description": "在 Reg BI 与信义义务下识别、披露并缓释投顾与经纪关系中的利益冲突。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【利益冲突管理】在 Reg BI 与信义义务下识别、披露并缓释投顾与经纪关系中的利益冲突。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "compliance-legal",
       "author": {
@@ -1015,7 +1015,7 @@
     },
     {
       "name": "examination-readiness",
-      "description": "SEC/FINRA 监管检查全流程准备与应对：文件制作、缺陷整改、模拟检查框架。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【监管检查应对】SEC/FINRA 监管检查全流程准备与应对：文件制作、缺陷整改、模拟检查框架。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "compliance-legal",
       "author": {
@@ -1031,7 +1031,7 @@
     },
     {
       "name": "fee-disclosure",
-      "description": "评估费用与成本披露是否完整、准确、无误导（投顾、经纪、基金、退休计划场景）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【费用披露】评估费用与成本披露是否完整、准确、无误导（投顾、经纪、基金、退休计划场景）。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "consumer-protection",
       "author": {
@@ -1047,7 +1047,7 @@
     },
     {
       "name": "fiduciary-standards",
-      "description": "适用投顾信义义务（IA Act §206）、ERISA §404、DOL 规则与州级信义规则。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【信义义务】适用投顾信义义务（IA Act §206）、ERISA §404、DOL 规则与州级信义规则。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "compliance-legal",
       "author": {
@@ -1063,7 +1063,7 @@
     },
     {
       "name": "gips-compliance",
-      "description": "按 CFA Institute GIPS 要求处理组合构建、业绩计算、列报与独立验证。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【GIPS 业绩标准】按 CFA Institute GIPS 要求处理组合构建、业绩计算、列报与独立验证。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "compliance-legal",
       "author": {
@@ -1079,7 +1079,7 @@
     },
     {
       "name": "investment-suitability",
-      "description": "按 FINRA 2111/2090 评估合理基础、客户特定与数量适当性三项义务。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【投资适当性】按 FINRA 2111/2090 评估合理基础、客户特定与数量适当性三项义务。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "consumer-protection",
       "author": {
@@ -1095,7 +1095,7 @@
     },
     {
       "name": "know-your-customer",
-      "description": "客户身份识别、尽职调查与档案维护（FINRA 2090、CIP 规则、FinCEN CDD 规则）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【客户尽职调查】客户身份识别、尽职调查与档案维护（FINRA 2090、CIP 规则、FinCEN CDD 规则）。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "compliance-legal",
       "author": {
@@ -1111,7 +1111,7 @@
     },
     {
       "name": "privacy-data-security",
-      "description": "依 Reg S-P、Reg S-ID 与 SEC 网络安全规则设计隐私与数据安全体系。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【隐私与数据安全】依 Reg S-P、Reg S-ID 与 SEC 网络安全规则设计隐私与数据安全体系。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "compliance-legal",
       "author": {
@@ -1127,7 +1127,7 @@
     },
     {
       "name": "private-placements",
-      "description": "私募与非公开发行合规分析：Reg D 506(b)/(c)、合格投资者、Form D、FINRA 5122/5123。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【私募发行合规】私募与非公开发行合规分析：Reg D 506(b)/(c)、合格投资者、Form D、FINRA 5122/5123。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "compliance-legal",
       "author": {
@@ -1143,7 +1143,7 @@
     },
     {
       "name": "reg-bi",
-      "description": "解析 SEC Reg BI 下经纪商行为标准的四项义务：披露、谨慎、利益冲突、合规。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【Reg BI 最佳利益】解析 SEC Reg BI 下经纪商行为标准的四项义务：披露、谨慎、利益冲突、合规。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "consumer-protection",
       "author": {
@@ -1159,7 +1159,7 @@
     },
     {
       "name": "regulatory-reporting",
-      "description": "监管报送机制与时限：Form PF、13F/13H、Form ADV 修订、FOCUS、CAT 报告。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【监管报表报送】监管报送机制与时限：Form PF、13F/13H、Form ADV 修订、FOCUS、CAT 报告。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "compliance-legal",
       "author": {
@@ -1175,7 +1175,7 @@
     },
     {
       "name": "sales-practices",
-      "description": "识别与防范销售行为违规：过度交易、断点滥用、私售、越权交易与监督缺失。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【销售行为合规】识别与防范销售行为违规：过度交易、断点滥用、私售、越权交易与监督缺失。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "consumer-protection",
       "author": {
@@ -1191,7 +1191,7 @@
     },
     {
       "name": "advisor-dashboards",
-      "description": "设计并优化投顾事务所管理看板：AUM 追踪、收入分析、KPI 与异常预警。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【投顾经营看板】设计并优化投顾事务所管理看板：AUM 追踪、收入分析、KPI 与异常预警。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1207,7 +1207,7 @@
     },
     {
       "name": "client-onboarding",
-      "description": "设计端到端客户开户引导流程：KYC 核验、资料收集、电子签名、托管机构提交。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【客户开户引导】设计端到端客户开户引导流程：KYC 核验、资料收集、电子签名、托管机构提交。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1223,7 +1223,7 @@
     },
     {
       "name": "client-reporting-delivery",
-      "description": "设计并生成客户绩效报告（季度/税务/门户），含合规审核与多渠道交付。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【客户报告交付】设计并生成客户绩效报告（季度/税务/门户），含合规审核与多渠道交付。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1239,7 +1239,7 @@
     },
     {
       "name": "client-review-prep",
-      "description": "为客户复盘会议准备资料包：业绩摘要、组合偏离分析、谈话要点与议程。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【客户复盘会准备】为客户复盘会议准备资料包：业绩摘要、组合偏离分析、谈话要点与议程。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1255,7 +1255,7 @@
     },
     {
       "name": "crm-client-lifecycle",
-      "description": "设计投顾机构 CRM 与客户生命周期：客户分层、家庭账户、服务等级、留存分析。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【客户生命周期 CRM】设计投顾机构 CRM 与客户生命周期：客户分层、家庭账户、服务等级、留存分析。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1271,7 +1271,7 @@
     },
     {
       "name": "fee-billing",
-      "description": "搭建投顾费计费体系：费率设计、费用计算、收取、收入确认与合规披露。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【投顾计费】搭建投顾费计费体系：费率设计、费用计算、收取、收入确认与合规披露。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1287,7 +1287,7 @@
     },
     {
       "name": "financial-planning-integration",
-      "description": "理财规划引擎与 CRM/PMS/托管系统的数据集成、资本市场假设（CMA）治理、计划—IPS—模型联动。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【理财规划系统集成】理财规划引擎与 CRM/PMS/托管系统的数据集成、资本市场假设（CMA）治理、计划—IPS—模型联动。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1303,7 +1303,7 @@
     },
     {
       "name": "financial-planning-workflow",
-      "description": "编排完整理财规划流程：数据采集、退休建模、蒙特卡洛、罗斯转换、社保领取与情景分析。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【理财规划编制】编排完整理财规划流程：数据采集、退休建模、蒙特卡洛、罗斯转换、社保领取与情景分析。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1319,7 +1319,7 @@
     },
     {
       "name": "next-best-action",
-      "description": "设计「下一步最佳行动」引擎，基于组合、生活事件、市场与合规事件推送优先级建议。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【下一步最佳行动】设计「下一步最佳行动」引擎，基于组合、生活事件、市场与合规事件推送优先级建议。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1335,7 +1335,7 @@
     },
     {
       "name": "order-management-advisor",
-      "description": "管理投顾端交易指令全生命周期：大宗交易、分配、交易前合规、托管路由与差错更正。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【投顾订单管理】管理投顾端交易指令全生命周期：大宗交易、分配、交易前合规、托管路由与差错更正。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1351,7 +1351,7 @@
     },
     {
       "name": "portfolio-management-systems",
-      "description": "选型与运营组合管理系统：模型组合、UMA/分仓管理、漂移监控、再平衡、托管数据接入。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【组合管理系统】选型与运营组合管理系统：模型组合、UMA/分仓管理、漂移监控、再平衡、托管数据接入。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1367,7 +1367,7 @@
     },
     {
       "name": "proposal-generation",
-      "description": "生成投资建议书：风险测评、模型组合推荐、费用示例、收益测算与合规审阅。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【投资建议书生成】生成投资建议书：风险测评、模型组合推荐、费用示例、收益测算与合规审阅。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1383,7 +1383,7 @@
     },
     {
       "name": "counterparty-risk",
-      "description": "交易对手信用风险管理：新对手准入评估、信用恶化响应、违约平仓与抵押品管理。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【交易对手风险】交易对手信用风险管理：新对手准入评估、信用恶化响应、违约平仓与抵押品管理。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "risk-management",
       "author": {
@@ -1399,7 +1399,7 @@
     },
     {
       "name": "exchange-connectivity",
-      "description": "交易场所连接与市场数据基础设施的设计与管理（FIX 会话、停牌、熔断）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【交易场所连接】交易场所连接与市场数据基础设施的设计与管理（FIX 会话、停牌、熔断）。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "invest-trading",
       "author": {
@@ -1415,7 +1415,7 @@
     },
     {
       "name": "margin-operations",
-      "description": "保证金业务：Reg T、维持保证金、组合保证金、追保与强制平仓瀑布。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【保证金业务】保证金业务：Reg T、维持保证金、组合保证金、追保与强制平仓瀑布。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "invest-trading",
       "author": {
@@ -1431,7 +1431,7 @@
     },
     {
       "name": "operational-risk",
-      "description": "交易与经纪运营风险的识别、计量与管理：交易差错、结算失败、损失事件分类、KRI。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【运营风险】交易与经纪运营风险的识别、计量与管理：交易差错、结算失败、损失事件分类、KRI。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "risk-management",
       "author": {
@@ -1447,7 +1447,7 @@
     },
     {
       "name": "order-lifecycle",
-      "description": "订单状态机与全生命周期管理：订单类型、有效期、FIX 协议、撤单改单。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【订单生命周期】订单状态机与全生命周期管理：订单类型、有效期、FIX 协议、撤单改单。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "invest-trading",
       "author": {
@@ -1463,7 +1463,7 @@
     },
     {
       "name": "post-trade-compliance",
-      "description": "交易后合规监控与交易监察系统设计，含模式识别、最佳执行复核与分配公平性。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【交易后合规】交易后合规监控与交易监察系统设计，含模式识别、最佳执行复核与分配公平性。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "compliance-legal",
       "author": {
@@ -1479,7 +1479,7 @@
     },
     {
       "name": "pre-trade-compliance",
-      "description": "交易前合规引擎设计：规则引擎、集中度限制、限制名单、硬/软拦截。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【交易前合规】交易前合规引擎设计：规则引擎、集中度限制、限制名单、硬/软拦截。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "compliance-legal",
       "author": {
@@ -1495,7 +1495,7 @@
     },
     {
       "name": "settlement-clearing",
-      "description": "交易结算与清算：T+1、DTC/NSCC、失败管理、公司行动对结算的影响、DVP/RVP。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【结算与清算】交易结算与清算：T+1、DTC/NSCC、失败管理、公司行动对结算的影响、DVP/RVP。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "invest-trading",
       "author": {
@@ -1511,7 +1511,7 @@
     },
     {
       "name": "trade-execution",
-      "description": "执行质量与最佳执行：场所选择、智能订单路由（SOR）与交易成本分析（TCA）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【交易执行质量】执行质量与最佳执行：场所选择、智能订单路由（SOR）与交易成本分析（TCA）。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "invest-trading",
       "author": {
@@ -1527,7 +1527,7 @@
     },
     {
       "name": "account-maintenance",
-      "description": "处理账户生命周期中的各类维护请求（地址变更、受益人、成本基准、限制等）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【账户维护】处理账户生命周期中的各类维护请求（地址变更、受益人、成本基准、限制等）。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1543,7 +1543,7 @@
     },
     {
       "name": "account-opening-compliance",
-      "description": "在开户流程中嵌入合规控制并验证监管就绪度（CIP/KYC、适当性、OFAC、受益所有人）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【开户合规控制】在开户流程中嵌入合规控制并验证监管就绪度（CIP/KYC、适当性、OFAC、受益所有人）。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1559,7 +1559,7 @@
     },
     {
       "name": "account-opening-workflow",
-      "description": "设计后台开户流水线：申请受理、审批、托管提交到账户激活，含 NIGO 处理。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【开户作业流水线】设计后台开户流水线：申请受理、审批、托管提交到账户激活，含 NIGO 处理。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1575,7 +1575,7 @@
     },
     {
       "name": "account-transfers",
-      "description": "处理机构间与机构内账户转移（ACAT、非 ACAT、部分转移、转仓、遗产转移）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【账户转移】处理机构间与机构内账户转移（ACAT、非 ACAT、部分转移、转仓、遗产转移）。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1591,7 +1591,7 @@
     },
     {
       "name": "corporate-actions",
-      "description": "处理公司行动全流程：公告、登记日、分红拆股、并购要约到结算。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【公司行动处理】处理公司行动全流程：公告、登记日、分红拆股、并购要约到结算。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1607,7 +1607,7 @@
     },
     {
       "name": "reconciliation",
-      "description": "设计并执行组合、托管与清算系统间的头寸/现金/交易对账及差错识别（三方对账）。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【对账与差错】设计并执行组合、托管与清算系统间的头寸/现金/交易对账及差错识别（三方对账）。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1623,7 +1623,7 @@
     },
     {
       "name": "stp-automation",
-      "description": "通过零接触、例外驱动处理提升证券运营直通处理率（STP）并度量指标。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【直通处理自动化】通过零接触、例外驱动处理提升证券运营直通处理率（STP）并度量指标。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1639,7 +1639,7 @@
     },
     {
       "name": "workflow-automation",
-      "description": "设计人在环的运营工作流编排：任务路由、审批链、升级机制与 SLA 监控。｜美国市场与监管口径，境内业务需核对适用性。",
+      "description": "【运营工作流编排】设计人在环的运营工作流编排：任务路由、审批链、升级机制与 SLA 监控。｜美国市场与监管口径，境内业务需核对适用性。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -1655,7 +1655,7 @@
     },
     {
       "name": "data-quality",
-      "description": "金融数据质量体系：校验规则、价格验证、数据血缘、例外管理与治理。",
+      "description": "【数据质量治理】金融数据质量体系：校验规则、价格验证、数据血缘、例外管理与治理。",
       "version": "1.0.0",
       "category": "data-tech",
       "author": {
@@ -1671,7 +1671,7 @@
     },
     {
       "name": "integration-patterns",
-      "description": "金融系统集成架构：API、FIX、ISO 20022、事件驱动、批量、幂等与韧性设计。",
+      "description": "【系统集成架构】金融系统集成架构：API、FIX、ISO 20022、事件驱动、批量、幂等与韧性设计。",
       "version": "1.0.0",
       "category": "data-tech",
       "author": {
@@ -1687,7 +1687,7 @@
     },
     {
       "name": "market-data",
-      "description": "行情数据基础设施：实时/延时、Level 1/2/3、合并行情与供应商选择及授权。",
+      "description": "【行情数据基础设施】行情数据基础设施：实时/延时、Level 1/2/3、合并行情与供应商选择及授权。",
       "version": "1.0.0",
       "category": "data-tech",
       "author": {
@@ -1703,7 +1703,7 @@
     },
     {
       "name": "reference-data",
-      "description": "参考数据体系：证券/客户/账户主数据、CUSIP/ISIN/SEDOL/FIGI 映射、定价源与黄金源治理。",
+      "description": "【参考主数据】参考数据体系：证券/客户/账户主数据、CUSIP/ISIN/SEDOL/FIGI 映射、定价源与黄金源治理。",
       "version": "1.0.0",
       "category": "data-tech",
       "author": {
@@ -1719,7 +1719,7 @@
     },
     {
       "name": "lieflat-gongwen",
-      "description": "公文与党建材料起草的风格量化工具：用句长、顿号密度、力度词配额等参数把「像不像公文」变成可验收指标，覆盖调研报告、领导讲话等六类文体；只校验风格骨架、不核事实，公开版限非商业使用。",
+      "description": "【躺平公文】公文与党建材料起草的风格量化工具：用句长、顿号密度、力度词配额等参数把「像不像公文」变成可验收指标，覆盖调研报告、领导讲话等六类文体；只校验风格骨架、不核事实，公开版限非商业使用。",
       "version": "1.0.0",
       "category": "office-design",
       "author": {
@@ -1735,7 +1735,7 @@
     },
     {
       "name": "dyz-gongwen-skills",
-      "description": "公文写作 22 个子技能的总入口：判断单位、文种与行文方向后分派起草、GB/T 9704 排版、核稿与去 AI 味；本条只装路由入口，其余子技能需另行安装，PolyForm 非商业许可。",
+      "description": "【公文写作技能包】公文写作 22 个子技能的总入口：判断单位、文种与行文方向后分派起草、GB/T 9704 排版、核稿与去 AI 味；本条只装路由入口，其余子技能需另行安装，PolyForm 非商业许可。",
       "version": "1.1.0",
       "category": "office-design",
       "author": {
@@ -1751,7 +1751,7 @@
     },
     {
       "name": "rayskills",
-      "description": "中文内容生产 9 个子技能的总入口：把选题分派到长文、口播稿、封面、公众号与 X 草稿；流程终点止于已验证草稿，不代为发布，CC BY-NC 4.0 非商业许可。",
+      "description": "【Ray 中文内容技能集】中文内容生产 9 个子技能的总入口：把选题分派到长文、口播稿、封面、公众号与 X 草稿；流程终点止于已验证草稿，不代为发布，CC BY-NC 4.0 非商业许可。",
       "version": "1.0.0",
       "category": "office-design",
       "author": {
@@ -1767,7 +1767,7 @@
     },
     {
       "name": "ui-ux-pro-max-skill",
-      "description": "界面设计的检索式知识库：80 种风格、192 套配色、74 组字体与 120 条 UX 准则，用于选型、评审与无障碍检查；不覆盖后端与基础设施设计，为 7 个子技能中的主入口。",
+      "description": "【UI/UX Pro Max】界面设计的检索式知识库：80 种风格、192 套配色、74 组字体与 120 条 UX 准则，用于选型、评审与无障碍检查；不覆盖后端与基础设施设计，为 7 个子技能中的主入口。",
       "version": "2.15.0",
       "category": "data-tech",
       "author": {
@@ -1783,7 +1783,7 @@
     },
     {
       "name": "finskills",
-      "description": "A 股与美股 30 个金融分析子技能中的适当性报告入口：生成投资理由、风险披露与客户适当性评估，供机构合规留痕；不构成投资建议，行情数据需自备。",
+      "description": "【金融工程与合规技能集】A 股与美股 30 个金融分析子技能中的适当性报告入口：生成投资理由、风险披露与客户适当性评估，供机构合规留痕；不构成投资建议，行情数据需自备。",
       "version": "1.0.0",
       "category": "compliance-legal",
       "author": {
@@ -1799,7 +1799,7 @@
     },
     {
       "name": "qiaomu-mondo-poster-design",
-      "description": "把一句话需求转成 Mondo 丝网印刷风格的生图提示词，覆盖公众号封面、小红书配图、书籍与专辑封面等多平台比例，附 33+ 位设计师风格与构图参考；只产出视觉方案与提示词，不含文案合规审查，真正出图需自备 AI 图像生成接口。",
+      "description": "【乔木 Mondo 海报设计】把一句话需求转成 Mondo 丝网印刷风格的生图提示词，覆盖公众号封面、小红书配图、书籍与专辑封面等多平台比例，附 33+ 位设计师风格与构图参考；只产出视觉方案与提示词，不含文案合规审查，真正出图需自备 AI 图像生成接口。",
       "version": "1.0.0",
       "category": "office-design",
       "author": {
@@ -1815,7 +1815,7 @@
     },
     {
       "name": "moneyprinterturbo-video",
-      "description": "给一个主题或脚本，让 AI 代理自动完成 MoneyPrinterTurbo 的安装、配置、生成、等待与 MP4 交付，覆盖口播、教育、营销与素材混剪；依赖终端与网络、需自备 API 密钥，默认产出中文 9:16 竖屏视频，只交付成片不代替选题策划。",
+      "description": "【MoneyPrinterTurbo 短视频生成】给一个主题或脚本，让 AI 代理自动完成 MoneyPrinterTurbo 的安装、配置、生成、等待与 MP4 交付，覆盖口播、教育、营销与素材混剪；依赖终端与网络、需自备 API 密钥，默认产出中文 9:16 竖屏视频，只交付成片不代替选题策划。",
       "version": "1.3.2",
       "category": "office-design",
       "author": {
@@ -1831,7 +1831,7 @@
     },
     {
       "name": "cinecode",
-      "description": "用一个想法让 AI 编程代理编写剧本、逐帧用代码绘制画面并设计配乐，最终交付 MP4 成片，覆盖短片、广告、解说与音乐视频；提供 Quick/Film 两种模式，需 Node 22+、Python、ffmpeg 与 Chrome，只做代码生成的视觉成片，不处理真人实拍素材。",
+      "description": "【Cinecode 代码电影】用一个想法让 AI 编程代理编写剧本、逐帧用代码绘制画面并设计配乐，最终交付 MP4 成片，覆盖短片、广告、解说与音乐视频；提供 Quick/Film 两种模式，需 Node 22+、Python、ffmpeg 与 Chrome，只做代码生成的视觉成片，不处理真人实拍素材。",
       "version": "1.0.0",
       "category": "office-design",
       "author": {
@@ -1847,7 +1847,7 @@
     },
     {
       "name": "dashi-ppt",
-      "description": "按预置视觉主题组合页面，生成可离线打开、可在浏览器编辑的 HTML 演示，并可导出 PPTX/PDF，适合汇报与路演材料；依赖内置 Node 生成器，首次使用安装依赖、取件约 58 MB，采用 AGPL-3.0 许可。",
+      "description": "【大石 PPT】按预置视觉主题组合页面，生成可离线打开、可在浏览器编辑的 HTML 演示，并可导出 PPTX/PDF，适合汇报与路演材料；依赖内置 Node 生成器，首次使用安装依赖、取件约 58 MB，采用 AGPL-3.0 许可。",
       "version": "0.4.14",
       "category": "office-design",
       "author": {
@@ -1863,7 +1863,7 @@
     },
     {
       "name": "jellyfish-ui-ux-pro-max",
-      "description": "Jellyfish 短剧工作台内置的 UI/UX 设计规范检索库副本，含风格、配色、字体与 UX 准则，供界面选型与评审；注意它与清单已有的 ui-ux-pro-max-skill 内容同源，装到本机时 name 同为 ui-ux-pro-max，会互相覆盖，建议二选一。",
+      "description": "【UI/UX Pro Max（Jellyfish 内置副本）】Jellyfish 短剧工作台内置的 UI/UX 设计规范检索库副本，含风格、配色、字体与 UX 准则，供界面选型与评审；注意它与清单已有的 ui-ux-pro-max-skill 内容同源，装到本机时 name 同为 ui-ux-pro-max，会互相覆盖，建议二选一。",
       "version": "1.0.0",
       "category": "data-tech",
       "author": {
@@ -1879,7 +1879,7 @@
     },
     {
       "name": "oh-my-ppt",
-      "description": "Oh My PPT 应用的幻灯片布局决策主干：定义逐页布局路径、版式目录、画布预算与碰撞规避，供生成或修复幻灯片结构；是应用内部组件，需配合 Oh My PPT 的 HTML 模板与运行时使用，其余 92 个样式/图表/动画技能为应用内置配套，不单独收录。",
+      "description": "【Oh My PPT 布局主干】Oh My PPT 应用的幻灯片布局决策主干：定义逐页布局路径、版式目录、画布预算与碰撞规避，供生成或修复幻灯片结构；是应用内部组件，需配合 Oh My PPT 的 HTML 模板与运行时使用，其余 92 个样式/图表/动画技能为应用内置配套，不单独收录。",
       "version": "1.0.0",
       "category": "office-design",
       "author": {
@@ -1895,7 +1895,7 @@
     },
     {
       "name": "unclecheng-reduce-ai-perception-v2",
-      "description": "检测并去除中文文本中的 AI 写作痕迹：高频词、过度结构化、机械连接词、公式化结尾与空洞比喻，逐类改写为自然人类表达；只做文字润色，不核事实、不改观点立场。",
+      "description": "【去 AI 味润色（Humanizer v4）】检测并去除中文文本中的 AI 写作痕迹：高频词、过度结构化、机械连接词、公式化结尾与空洞比喻，逐类改写为自然人类表达；只做文字润色，不核事实、不改观点立场。",
       "version": "4.2.0",
       "category": "office-design",
       "author": {
@@ -1911,7 +1911,7 @@
     },
     {
       "name": "chinese-official-writing",
-      "description": "机关企事业单位公文与新闻稿的起草、改写、压缩、审校与文种核对，覆盖请示/报告/通知/纪要等 20+ 法定文种，含去口语化、降 AI 味与 Word 排版；产出规范文稿，不代替发文审批与事实审核。",
+      "description": "【中文公文写作】机关企事业单位公文与新闻稿的起草、改写、压缩、审校与文种核对，覆盖请示/报告/通知/纪要等 20+ 法定文种，含去口语化、降 AI 味与 Word 排版；产出规范文稿，不代替发文审批与事实审核。",
       "version": "2.0.62",
       "category": "office-design",
       "author": {
@@ -1927,7 +1927,7 @@
     },
     {
       "name": "poster-design-studio",
-      "description": "把活动描述、产品图或品牌参考转化为活动海报、宣传 banner 与社交媒体配图，自动做视觉层级、品类配色与文案留白，覆盖音乐节/电影/发布/促销；产出设计方案与生图提示词，不负责文案合规审查。",
+      "description": "【海报设计工作室】把活动描述、产品图或品牌参考转化为活动海报、宣传 banner 与社交媒体配图，自动做视觉层级、品类配色与文案留白，覆盖音乐节/电影/发布/促销；产出设计方案与生图提示词，不负责文案合规审查。",
       "version": "0.2.4",
       "category": "office-design",
       "author": {
@@ -1943,7 +1943,7 @@
     },
     {
       "name": "meeting-and-brief",
-      "description": "把会议文字稿整理成结构化正式纪要 docx（议题、结论、待办、责任人与截止日），支持归档检索与月底一键聚合成月度工作简报；按管理咨询交付标准输出，只做文字整理不代替会议决议。",
+      "description": "【会议纪要与工作简报】把会议文字稿整理成结构化正式纪要 docx（议题、结论、待办、责任人与截止日），支持归档检索与月底一键聚合成月度工作简报；按管理咨询交付标准输出，只做文字整理不代替会议决议。",
       "version": "2.2.1",
       "category": "office-design",
       "author": {
@@ -1959,7 +1959,7 @@
     },
     {
       "name": "chanlun-multidimensional-tech-analysis",
-      "description": "融合缠论、K 线形态、资金流向、成交量与 MACD/KDJ/RSI/OBV/BOLL/均线系统的多维技术分析，内置缠论原著方法论与 ETF 投研适配，输出 ECharts 交互 HTML 报告（含笔/线段/中枢）；为技术分析工具，不构成投资建议。",
+      "description": "【缠论多维技术分析】融合缠论、K 线形态、资金流向、成交量与 MACD/KDJ/RSI/OBV/BOLL/均线系统的多维技术分析，内置缠论原著方法论与 ETF 投研适配，输出 ECharts 交互 HTML 报告（含笔/线段/中枢）；为技术分析工具，不构成投资建议。",
       "version": "1.0.0",
       "category": "invest-trading",
       "author": {
@@ -1975,7 +1975,7 @@
     },
     {
       "name": "three-year-valuation",
-      "description": "用三年期估值框架分析公司、投资逻辑、估值区间与选股决策，适合把基本面判断落到可复核的估值数字上；输出分析结论，不接入实时行情，需另行提供财务数据。",
+      "description": "【三年期估值分析】用三年期估值框架分析公司、投资逻辑、估值区间与选股决策，适合把基本面判断落到可复核的估值数字上；输出分析结论，不接入实时行情，需另行提供财务数据。",
       "version": "1.0.1",
       "category": "invest-trading",
       "author": {
@@ -1991,7 +1991,7 @@
     },
     {
       "name": "straightflush",
-      "description": "基于 thsdk 的高级股票分析：分钟 K 线、板块/指数行情、多股批量对比（走势与相关性热力图）、盘口深度、大单流向、集合竞价异动与日内分时；依赖同花顺数据接口，属数据工具，不作买卖建议。",
+      "description": "【同花顺高级行情分析】基于 thsdk 的高级股票分析：分钟 K 线、板块/指数行情、多股批量对比（走势与相关性热力图）、盘口深度、大单流向、集合竞价异动与日内分时；依赖同花顺数据接口，属数据工具，不作买卖建议。",
       "version": "1.0.0",
       "category": "data-tech",
       "author": {
@@ -2007,7 +2007,7 @@
     },
     {
       "name": "business-analyst",
-      "description": "输入行业或公司名，自动选典型案例，从商业模式框架、近期战略动态与核心指标三维生成「战略+策略+指标」报告，输出卡片式 HTML；基于公开信息分析，不含实时数据核验。",
+      "description": "【商业模式分析师】输入行业或公司名，自动选典型案例，从商业模式框架、近期战略动态与核心指标三维生成「战略+策略+指标」报告，输出卡片式 HTML；基于公开信息分析，不含实时数据核验。",
       "version": "1.1.0",
       "category": "research-analysis",
       "author": {
@@ -2023,7 +2023,7 @@
     },
     {
       "name": "research-reportskill",
-      "description": "多平台搜索→智能摘要→结构化 Word 报告全自动流程，用于生成调研报告、行业分析、竞品研究与市场调查文档；质量取决于可检索的公开来源，不保证信息完整。",
+      "description": "【调研报告生成器】多平台搜索→智能摘要→结构化 Word 报告全自动流程，用于生成调研报告、行业分析、竞品研究与市场调查文档；质量取决于可检索的公开来源，不保证信息完整。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -2039,7 +2039,7 @@
     },
     {
       "name": "deep-research-zh",
-      "description": "基于 academic-deep-research 中文优化的调研工具：Tavily 搜索集成、严格方法论、自动中文 PDF（内嵌样式、容错降级）与飞书交付，适合竞品分析、行业调研与政策研究；需自备搜索 API。",
+      "description": "【中文深度调研】基于 academic-deep-research 中文优化的调研工具：Tavily 搜索集成、严格方法论、自动中文 PDF（内嵌样式、容错降级）与飞书交付，适合竞品分析、行业调研与政策研究；需自备搜索 API。",
       "version": "1.1.0",
       "category": "research-analysis",
       "author": {
@@ -2055,7 +2055,7 @@
     },
     {
       "name": "preloan-industry-dd",
-      "description": "以商业银行授信审批行业研究员视角，按七大维度对公信贷贷前行业做系统风险评估，生成行业尽调/贷前行业分析/行业风险报告，服务授信准入与审批参考；为风险研判工具，不替代审批决策。",
+      "description": "【贷前行业尽调】以商业银行授信审批行业研究员视角，按七大维度对公信贷贷前行业做系统风险评估，生成行业尽调/贷前行业分析/行业风险报告，服务授信准入与审批参考；为风险研判工具，不替代审批决策。",
       "version": "1.0.8",
       "category": "risk-management",
       "author": {
@@ -2071,7 +2071,7 @@
     },
     {
       "name": "business-writing",
-      "description": "以商业分析师视角撰写行业研究报告、商业洞察、咨询分析与公司研究，把零散信息组织成结构化专业文本；产出文字内容，不负责数据真实性核验。",
+      "description": "【商业写作助手】以商业分析师视角撰写行业研究报告、商业洞察、咨询分析与公司研究，把零散信息组织成结构化专业文本；产出文字内容，不负责数据真实性核验。",
       "version": "0.1.0",
       "category": "research-analysis",
       "author": {
@@ -2087,7 +2087,7 @@
     },
     {
       "name": "mckinsey-report",
-      "description": "把零散文档、笔记与访谈记录整理成结构化麦肯锡风格行业研究报告，擅长改写、润色与咨询风表达；只做素材重组与文风转换，不核实原始素材的事实准确性。",
+      "description": "【麦肯锡风格行研报告】把零散文档、笔记与访谈记录整理成结构化麦肯锡风格行业研究报告，擅长改写、润色与咨询风表达；只做素材重组与文风转换，不核实原始素材的事实准确性。",
       "version": "1.1.0",
       "category": "research-analysis",
       "author": {
@@ -2103,7 +2103,7 @@
     },
     {
       "name": "libai",
-      "description": "检测并消除中文文本中的 AI 生成痕迹，用规则检测、分层改写与质控流水线把生硬机器输出转为自然文笔，目标是通过人工审查；只做语言润色，不改事实与观点。",
+      "description": "【李白润色】检测并消除中文文本中的 AI 生成痕迹，用规则检测、分层改写与质控流水线把生硬机器输出转为自然文笔，目标是通过人工审查；只做语言润色，不改事实与观点。",
       "version": "2.2.0",
       "category": "office-design",
       "author": {
@@ -2119,7 +2119,7 @@
     },
     {
       "name": "baozheng",
-      "description": "专业法律咨询、要素式/通用起诉状起草、刑事专项材料与法条检索，优先 flk.npc.gov.cn API 实时法条、不可用时 AI 知识库兜底，并按四档标注法条来源可核验性；为辅助工具，不替代执业律师意见。",
+      "description": "【包拯法律专家团】专业法律咨询、要素式/通用起诉状起草、刑事专项材料与法条检索，优先 flk.npc.gov.cn API 实时法条、不可用时 AI 知识库兜底，并按四档标注法条来源可核验性；为辅助工具，不替代执业律师意见。",
       "version": "1.1.0",
       "category": "compliance-legal",
       "author": {
@@ -2135,7 +2135,7 @@
     },
     {
       "name": "ppt-design-master",
-      "description": "融合麦肯锡/BCG/贝恩及 Apple/Google 等 500 强 PPT 设计规范与主流设计系统原则，收录锐普专业设计体系，指导版式、字体、配色与视觉层级；产出设计建议，具体排版仍需在 PPT 工具中落地。",
+      "description": "【PPT 设计大师】融合麦肯锡/BCG/贝恩及 Apple/Google 等 500 强 PPT 设计规范与主流设计系统原则，收录锐普专业设计体系，指导版式、字体、配色与视觉层级；产出设计建议，具体排版仍需在 PPT 工具中落地。",
       "version": "1.1.0",
       "category": "office-design",
       "author": {
@@ -2151,7 +2151,7 @@
     },
     {
       "name": "legal-research-assistant",
-      "description": "按法律问题自动检索相关法规、司法解释、典型案例与操作指南，覆盖债务纠纷、劳动争议与合同纠纷三大场景，本地检索、数据不出本地；检索结果需人工核对适用性。",
+      "description": "【法律检索助手】按法律问题自动检索相关法规、司法解释、典型案例与操作指南，覆盖债务纠纷、劳动争议与合同纠纷三大场景，本地检索、数据不出本地；检索结果需人工核对适用性。",
       "version": "2.1.0",
       "category": "compliance-legal",
       "author": {
@@ -2167,7 +2167,7 @@
     },
     {
       "name": "ai-contract-review",
-      "description": "基于民法典及司法解释对合同逐条审查，五维风险评估（合法/公平/完整/明确/可执行），识别违约金、争议解决、不可抗力、保密、知识产权等 12 类常见缺失条款并标注风险等级；为审查辅助，不替代律师定稿。",
+      "description": "【AI 合同审查】基于民法典及司法解释对合同逐条审查，五维风险评估（合法/公平/完整/明确/可执行），识别违约金、争议解决、不可抗力、保密、知识产权等 12 类常见缺失条款并标注风险等级；为审查辅助，不替代律师定稿。",
       "version": "1.6.0",
       "category": "compliance-legal",
       "author": {
@@ -2183,7 +2183,7 @@
     },
     {
       "name": "fin-pipl",
-      "description": "基于个人信息保护法、JR/T 0171、JR/T 0197 等，对银行、证券、保险、支付四类场景做金融 PIPL 合规评估与自查；输出合规判断，不替代正式法律意见与监管报送。",
+      "description": "【金融个人信息保护合规检查】基于个人信息保护法、JR/T 0171、JR/T 0197 等，对银行、证券、保险、支付四类场景做金融 PIPL 合规评估与自查；输出合规判断，不替代正式法律意见与监管报送。",
       "version": "1.7.0",
       "category": "compliance-legal",
       "author": {
@@ -2199,7 +2199,7 @@
     },
     {
       "name": "ba-capability-110",
-      "description": "提供贷款、租赁、股权及内部融资的多元融资全流程管理，统筹方案设计、风险控制与成本优化，提升资金效益；为管理方法论工具，不含实时融资市场数据。",
+      "description": "【融资管理专家】提供贷款、租赁、股权及内部融资的多元融资全流程管理，统筹方案设计、风险控制与成本优化，提升资金效益；为管理方法论工具，不含实时融资市场数据。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -2215,7 +2215,7 @@
     },
     {
       "name": "finance-paper-daily",
-      "description": "每日从 arXiv(q-fin)、Semantic Scholar、OpenAlex、Google Scholar 抓取量化金融、资产定价、风险管理、算法交易与 FinTech 最新论文，整理成格式化 Excel 存到桌面；依赖外网学术源可达。",
+      "description": "【金融论文日报】每日从 arXiv(q-fin)、Semantic Scholar、OpenAlex、Google Scholar 抓取量化金融、资产定价、风险管理、算法交易与 FinTech 最新论文，整理成格式化 Excel 存到桌面；依赖外网学术源可达。",
       "version": "1.0.0",
       "category": "research-analysis",
       "author": {
@@ -2231,7 +2231,7 @@
     },
     {
       "name": "quant-backtest-strategy",
-      "description": "A 股本地量化平台 OneQuant 4.0，提供 Web 界面、REST API、CLI、批量脚本与 Docker 五种调用方式，102 个 API 端点，支持 AkShare/JQData/RQData 数据源；本地部署，数据接口需自备。",
+      "description": "【OneQuant 量化回测】A 股本地量化平台 OneQuant 4.0，提供 Web 界面、REST API、CLI、批量脚本与 Docker 五种调用方式，102 个 API 端点，支持 AkShare/JQData/RQData 数据源；本地部署，数据接口需自备。",
       "version": "4.0.0",
       "category": "invest-trading",
       "author": {
@@ -2247,7 +2247,7 @@
     },
     {
       "name": "quant-research-lab",
-      "description": "让 AI 按高盛、文艺复兴、Two Sigma、Citadel 等 15 个机构角色分工，系统性设计、验证、风控与执行量化策略；提供流程框架，回测结果依赖用户数据与参数，不构成投资建议。",
+      "description": "【量化策略研发实验室】让 AI 按高盛、文艺复兴、Two Sigma、Citadel 等 15 个机构角色分工，系统性设计、验证、风控与执行量化策略；提供流程框架，回测结果依赖用户数据与参数，不构成投资建议。",
       "version": "1.0.3",
       "category": "invest-trading",
       "author": {
@@ -2263,7 +2263,7 @@
     },
     {
       "name": "kpi-design-generator",
-      "description": "根据公司战略目标与组织架构自动拆解部门与岗位 KPI，内置 300+ 指标库、SMART 校验与指标冲突诊断，输出目标承接矩阵、KPI 卡片与指标字典；管理方法论工具，指标需结合业务实际校准。",
+      "description": "【绩效指标设计器】根据公司战略目标与组织架构自动拆解部门与岗位 KPI，内置 300+ 指标库、SMART 校验与指标冲突诊断，输出目标承接矩阵、KPI 卡片与指标字典；管理方法论工具，指标需结合业务实际校准。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -2279,7 +2279,7 @@
     },
     {
       "name": "private-fund-compliance",
-      "description": "私募证券投资基金合规问答知识库，覆盖信披、适当性、募集、备案、投资运作与估值清算，按「结论→法条定位→处罚案例→避坑→建议」输出；内置处罚汇编与 523 问速查，法条需核对现行有效性，不替代法律意见。",
+      "description": "【私募证券合规问答】私募证券投资基金合规问答知识库，覆盖信披、适当性、募集、备案、投资运作与估值清算，按「结论→法条定位→处罚案例→避坑→建议」输出；内置处罚汇编与 523 问速查，法条需核对现行有效性，不替代法律意见。",
       "version": "1.1.6",
       "category": "compliance-legal",
       "author": {
@@ -2295,7 +2295,7 @@
     },
     {
       "name": "corporate-banking-advisor",
-      "description": "分析企业、行业、政策信号、客户对话与银行组合，识别银行中立的服务机会并设计方案，面向对公客户经理与产品团队；输出机会判断，需结合本行政策落地。",
+      "description": "【对公银行机会顾问】分析企业、行业、政策信号、客户对话与银行组合，识别银行中立的服务机会并设计方案，面向对公客户经理与产品团队；输出机会判断，需结合本行政策落地。",
       "version": "1.0.1",
       "category": "product-business",
       "author": {
@@ -2311,7 +2311,7 @@
     },
     {
       "name": "kunlun-loanbroker-pro-product",
-      "description": "面向贷款居间与融资经理，拆解信用/抵押/经营/政策四类贷款产品的额度、期限与准入，讲透月费率与 IRR 换算、砍头息与各类费用计入综合成本、提前还款与过桥成本，用六维矩阵比选；为成本测算工具，非投资建议。",
+      "description": "【贷款产品与融资成本测算（昆仑版）】面向贷款居间与融资经理，拆解信用/抵押/经营/政策四类贷款产品的额度、期限与准入，讲透月费率与 IRR 换算、砍头息与各类费用计入综合成本、提前还款与过桥成本，用六维矩阵比选；为成本测算工具，非投资建议。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -2327,7 +2327,7 @@
     },
     {
       "name": "loanbroker-pro-product",
-      "description": "面向贷款居间与融资经理，拆解信用/抵押/经营/政策四类贷款产品的额度、期限与准入，讲透月费率与 IRR 换算、各类费用计入综合成本、提前还款与过桥成本，用六维矩阵比选；与 kunlun 版内容同源，二选一即可。",
+      "description": "【贷款产品与融资成本测算】面向贷款居间与融资经理，拆解信用/抵押/经营/政策四类贷款产品的额度、期限与准入，讲透月费率与 IRR 换算、各类费用计入综合成本、提前还款与过桥成本，用六维矩阵比选；与 kunlun 版内容同源，二选一即可。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -2343,7 +2343,7 @@
     },
     {
       "name": "banker",
-      "description": "覆盖贷款、按揭、存款、信用与银行产品交易的金融服务顾问，解答银行业务问题与产品选择；通用咨询工具，具体条款与准入以经办机构为准。",
+      "description": "【银行业务顾问】覆盖贷款、按揭、存款、信用与银行产品交易的金融服务顾问，解答银行业务问题与产品选择；通用咨询工具，具体条款与准入以经办机构为准。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -2359,7 +2359,7 @@
     },
     {
       "name": "akshare-finance",
-      "description": "封装 AKShare 财经数据接口，覆盖股票、期货、期权、基金、外汇、债券、指数与加密货币的基本面、实时与历史行情及衍生数据；数据取自公开接口，需本地安装依赖并处理接口限流。",
+      "description": "【AKShare 财经数据】封装 AKShare 财经数据接口，覆盖股票、期货、期权、基金、外汇、债券、指数与加密货币的基本面、实时与历史行情及衍生数据；数据取自公开接口，需本地安装依赖并处理接口限流。",
       "version": "1.0.0",
       "category": "data-tech",
       "author": {
@@ -2375,7 +2375,7 @@
     },
     {
       "name": "investment-data",
-      "description": "基于 investment_data 项目获取高质量 A 股日终价格、涨跌停与指数数据，每日更新、多数据源交叉验证；为数据获取工具，不含分析结论。",
+      "description": "【A 股投资数据】基于 investment_data 项目获取高质量 A 股日终价格、涨跌停与指数数据，每日更新、多数据源交叉验证；为数据获取工具，不含分析结论。",
       "version": "1.0.0",
       "category": "data-tech",
       "author": {
@@ -2391,7 +2391,7 @@
     },
     {
       "name": "regulation-monitor",
-      "description": "监控金融监管总局、证监会、央行等监管机构网站，抓取最新政策、行政处罚、通知公告与风险提示，按标题+摘要输出并支持 Word 与纯文本；依赖监管网站可访问，内容为公开信息摘要。",
+      "description": "【监管动态监测】监控金融监管总局、证监会、央行等监管机构网站，抓取最新政策、行政处罚、通知公告与风险提示，按标题+摘要输出并支持 Word 与纯文本；依赖监管网站可访问，内容为公开信息摘要。",
       "version": "1.0.0",
       "category": "compliance-legal",
       "author": {
@@ -2407,7 +2407,7 @@
     },
     {
       "name": "patent-value-analysis",
-      "description": "评估专利多维价值：技术、法律、市场、经济、战略五维雷达图，法律稳固性与技术成熟度评分、剩余经济寿命与市场价值区间测算、转化路径与金融适配度匹配；价值测算为估算，不作资产评估结论。",
+      "description": "【专利价值分析】评估专利多维价值：技术、法律、市场、经济、战略五维雷达图，法律稳固性与技术成熟度评分、剩余经济寿命与市场价值区间测算、转化路径与金融适配度匹配；价值测算为估算，不作资产评估结论。",
       "version": "1.0.0",
       "category": "product-business",
       "author": {
@@ -2423,7 +2423,7 @@
     },
     {
       "name": "quant-analyst-skill",
-      "description": "构建金融模型、回测交易策略并分析市场数据，实现风险指标、组合优化与统计套利；提供量化分析框架，回测依赖用户数据，不构成投资建议。",
+      "description": "【量化分析师】构建金融模型、回测交易策略并分析市场数据，实现风险指标、组合优化与统计套利；提供量化分析框架，回测依赖用户数据，不构成投资建议。",
       "version": "1.0.0",
       "category": "invest-trading",
       "author": {
@@ -2439,7 +2439,7 @@
     },
     {
       "name": "ai-compliance",
-      "description": "面向欧盟 AI Act、ISO 42001、NIST AI RMF、GDPR、OECD 及金融监管（SEC/FCA/FINRA/DORA/MiFID II）的 AI 合规分析，识别适用法规与义务；为合规梳理工具，不替代法律意见或认证。",
+      "description": "【AI 合规分析】面向欧盟 AI Act、ISO 42001、NIST AI RMF、GDPR、OECD 及金融监管（SEC/FCA/FINRA/DORA/MiFID II）的 AI 合规分析，识别适用法规与义务；为合规梳理工具，不替代法律意见或认证。",
       "version": "1.1.0",
       "category": "compliance-legal",
       "author": {
@@ -2455,7 +2455,7 @@
     },
     {
       "name": "behavioral-finance",
-      "description": "识别与利用市场中的认知偏差、情绪极端与群体行为，构建逆向交易与超额收益策略；属策略研究方法，实际收益不确定，不构成投资建议。",
+      "description": "【行为金融策略】识别与利用市场中的认知偏差、情绪极端与群体行为，构建逆向交易与超额收益策略；属策略研究方法，实际收益不确定，不构成投资建议。",
       "version": "1.0.0",
       "category": "invest-trading",
       "author": {
@@ -2471,7 +2471,7 @@
     },
     {
       "name": "animated-financial-display",
-      "description": "用弹簧物理与格式化规则实现金融数字动效：动画计数器、价格跳动、百分比变化与视觉反馈，适配仪表盘与行情展示；提供前端实现模式，不含数据源。",
+      "description": "【金融数字动效】用弹簧物理与格式化规则实现金融数字动效：动画计数器、价格跳动、百分比变化与视觉反馈，适配仪表盘与行情展示；提供前端实现模式，不含数据源。",
       "version": "1.0.0",
       "category": "data-tech",
       "author": {
@@ -2487,7 +2487,7 @@
     },
     {
       "name": "customer-segment",
-      "description": "上传银行客户数据表格（CSV/Excel）后自动完成客户分层、特征提取与可视化输出，输出分群结果与图表；结果依赖数据质量与所选维度，属分析辅助工具。",
+      "description": "【金融客户分群】上传银行客户数据表格（CSV/Excel）后自动完成客户分层、特征提取与可视化输出，输出分群结果与图表；结果依赖数据质量与所选维度，属分析辅助工具。",
       "version": "1.0.2",
       "category": "data-tech",
       "author": {
@@ -2503,7 +2503,7 @@
     },
     {
       "name": "drama-skills",
-      "description": "从项目初始化到剧本、分镜、提示词与剪辑的短剧创作路由，串起五份核心文档并分发给各创作子技能；不替代单次写作或剪辑的执行细节。",
+      "description": "【短剧创作台】从项目初始化到剧本、分镜、提示词与剪辑的短剧创作路由，串起五份核心文档并分发给各创作子技能；不替代单次写作或剪辑的执行细节。",
       "version": "main@37232f6d22e1",
       "category": "other",
       "author": {
@@ -2519,7 +2519,7 @@
     },
     {
       "name": "generative-media-skills",
-      "description": "用 muapi 把图像与视频生成、增强、编辑串成可视化多步工作流；面向生成任务编排，不负责本地剪辑或非 muapi 服务。",
+      "description": "【生成式媒体技能集】用 muapi 把图像与视频生成、增强、编辑串成可视化多步工作流；面向生成任务编排，不负责本地剪辑或非 muapi 服务。",
       "version": "0.1.0",
       "category": "other",
       "author": {
@@ -2535,7 +2535,7 @@
     },
     {
       "name": "video-use",
-      "description": "按素材转写与确认方案来剪、调色、加字幕与叠加动画，适合口播、蒙太奇与教程等成片迭代；不是预设化模板剪辑。",
+      "description": "【对话式视频剪辑】按素材转写与确认方案来剪、调色、加字幕与叠加动画，适合口播、蒙太奇与教程等成片迭代；不是预设化模板剪辑。",
       "version": "main@43cfc5668335",
       "category": "other",
       "author": {
@@ -2551,7 +2551,7 @@
     },
     {
       "name": "hyperframes",
-      "description": "用 HTML 时间轴逐帧确定性渲染宣传片、讲解、图表与竖屏视频；面向 HyperFrames/HTML 渲染路径，不覆盖通用剪辑。",
+      "description": "【HyperFrames 视频渲染】用 HTML 时间轴逐帧确定性渲染宣传片、讲解、图表与竖屏视频；面向 HyperFrames/HTML 渲染路径，不覆盖通用剪辑。",
       "version": "main@b064e40e1381",
       "category": "other",
       "author": {
@@ -2567,7 +2567,7 @@
     },
     {
       "name": "remotion-skills",
-      "description": "Remotion 视频项目的技能入口，按创建、标记、字幕、地图、渲染等任务路由到对应参考；只做方向指引，不直接产出成片。",
+      "description": "【Remotion 最佳实践路由】Remotion 视频项目的技能入口，按创建、标记、字幕、地图、渲染等任务路由到对应参考；只做方向指引，不直接产出成片。",
       "version": "4.0.544",
       "category": "data-tech",
       "author": {
@@ -2583,7 +2583,7 @@
     },
     {
       "name": "chengfeng-videocut",
-      "description": "在既有剪辑工程里定位词句、增删画面片段并回读核验；只操作已有工程，不负责自动识别口误、字幕或导出。",
+      "description": "【橙锋剪辑工作台】在既有剪辑工程里定位词句、增删画面片段并回读核验；只操作已有工程，不负责自动识别口误、字幕或导出。",
       "version": "main@a33b43e08c34",
       "category": "other",
       "author": {
@@ -2599,7 +2599,7 @@
     },
     {
       "name": "huashu-art-motion",
-      "description": "用镜头表与风格库拆解复刻艺术及解说动画，按口播参数渲染片段；含 36 种实做风格与逐帧检查，不做通用视频剪辑。",
+      "description": "【花叔艺术动画】用镜头表与风格库拆解复刻艺术及解说动画，按口播参数渲染片段；含 36 种实做风格与逐帧检查，不做通用视频剪辑。",
       "version": "1.3.1",
       "category": "other",
       "author": {
@@ -2615,7 +2615,7 @@
     },
     {
       "name": "html-explainer",
-      "description": "把任意主题做成带配音与词级硬字幕的讲解视频，采用 HTML/CSS/GSAP 画面与确定性逐帧渲染；不做通用剪辑或非 HTML 模板。",
+      "description": "【HTML 讲解视频】把任意主题做成带配音与词级硬字幕的讲解视频，采用 HTML/CSS/GSAP 画面与确定性逐帧渲染；不做通用剪辑或非 HTML 模板。",
       "version": "2.0.10",
       "category": "other",
       "author": {
@@ -2631,7 +2631,7 @@
     },
     {
       "name": "vibe-knowledge",
-      "description": "把一个知识点做成 45 秒至 5 分钟、句句有出处的知识短片，覆盖脚本母版、配音、风格库与逐帧成片；不用于系列课或数字人口播。",
+      "description": "【Vibe 知识短片】把一个知识点做成 45 秒至 5 分钟、句句有出处的知识短片，覆盖脚本母版、配音、风格库与逐帧成片；不用于系列课或数字人口播。",
       "version": "main@c3a13a85f7cc",
       "category": "other",
       "author": {
@@ -2647,7 +2647,7 @@
     },
     {
       "name": "guizang-ppt-skill",
-      "description": "生成单文件横向翻页网页 PPT，含电子杂志与瑞士国际主义两套风格及演讲者视图；不做传统 .pptx 编辑。",
+      "description": "【归藏网页 PPT】生成单文件横向翻页网页 PPT，含电子杂志与瑞士国际主义两套风格及演讲者视图；不做传统 .pptx 编辑。",
       "version": "main@93d21bf4a73a",
       "category": "office-design",
       "author": {
@@ -2663,7 +2663,7 @@
     },
     {
       "name": "guizang-material-illustration",
-      "description": "把文章、截图或图表数据转成带中文标签的解释图与材质化图表配图；只出中心配图，不做整张社交卡片或 PPT 排版。",
+      "description": "【归藏材质插画】把文章、截图或图表数据转成带中文标签的解释图与材质化图表配图；只出中心配图，不做整张社交卡片或 PPT 排版。",
       "version": "main@cf26e194ce07",
       "category": "office-design",
       "author": {
@@ -2679,7 +2679,7 @@
     },
     {
       "name": "dsh-guizang-design",
-      "description": "把 Markdown 文档排成精排单页 HTML 并可导出 PDF 或长图，提供杂志风与瑞士风；不做公众号排版或 PPT 演示。",
+      "description": "【归藏文档排版】把 Markdown 文档排成精排单页 HTML 并可导出 PDF 或长图，提供杂志风与瑞士风；不做公众号排版或 PPT 演示。",
       "version": "main@e275f1e4d4a8",
       "category": "office-design",
       "author": {
@@ -2695,7 +2695,7 @@
     },
     {
       "name": "guizang-product-video-skill",
-      "description": "用真实产品组件与 GSAP/Three.js 动效做软件宣传片和版本更新片；面向代码驱动出片，不套模板也不做通用剪辑。",
+      "description": "【归藏产品宣传片】用真实产品组件与 GSAP/Three.js 动效做软件宣传片和版本更新片；面向代码驱动出片，不套模板也不做通用剪辑。",
       "version": "main@18842e0f49a9",
       "category": "other",
       "author": {
@@ -2711,7 +2711,7 @@
     },
     {
       "name": "frontend-slides",
-      "description": "从零生成动画丰富的单文件 HTML 演示，或把 PPT/PPTX 转成网页；固定 16:9 舞台，不依赖 npm 构建。",
+      "description": "【前端演示文稿】从零生成动画丰富的单文件 HTML 演示，或把 PPT/PPTX 转成网页；固定 16:9 舞台，不依赖 npm 构建。",
       "version": "main@9906a34d640d",
       "category": "office-design",
       "author": {
@@ -2727,7 +2727,7 @@
     },
     {
       "name": "line-art-animation",
-      "description": "用 SVG 与 TypeScript 逐帧构建线条插画动画，覆盖人物步态、风、昼夜场景与视频导出；面向手绘风格组件开发，不做位图绘画或通用剪辑。",
+      "description": "【线条动画】用 SVG 与 TypeScript 逐帧构建线条插画动画，覆盖人物步态、风、昼夜场景与视频导出；面向手绘风格组件开发，不做位图绘画或通用剪辑。",
       "version": "0.1.0",
       "category": "other",
       "author": {

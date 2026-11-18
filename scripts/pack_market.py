@@ -255,9 +255,15 @@ def main() -> int:
             data = build_shim(s, sid)
             shimmed.append(sid)
             kind = "取件"
+        # WorkBuddy 卡片标题取 name（英文 id），没有独立显示名字段；
+        # 把中文名放进 description 开头，用户在市场里才看得懂是哪一项。
+        # 只作用于清单描述，包内正文/sha256 不受影响；catalog.json 保持干净供网站与 dsh 使用。
+        zh_name = (s.get("name") or {}).get("zh", "").strip()
+        raw_desc = s["summary"]["zh"]
+        card_desc = f"【{zh_name}】{raw_desc}" if zh_name and not raw_desc.startswith("【") else raw_desc
         entries.append({
             "name": sid,
-            "description": s["summary"]["zh"],
+            "description": card_desc,
             "version": s.get("version", "1.0.0"),
             "category": s.get("category", ""),
             "author": {"name": s.get("author", "未署名")},
