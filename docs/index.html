@@ -204,7 +204,7 @@ footer a{color:var(--ink-2)}
           <li data-zh="等安装完成，彻底退出再打开 DSH 即可" data-en="Wait for it to finish, fully quit and reopen DSH">等安装完成，彻底退出再打开 DSH 即可</li>
         </ol>
         <div class="ep-fail">
-          <span data-zh="如果安装不成功，" data-en="If it fails, ">如果安装不成功，</span><button type="button" id="dsh-fail" data-zh="点击此处" data-en="click here">点击此处</button><span data-zh="，复制这段话后粘到对话框发送，让它帮你装。" data-en=", copy the message and paste it into the chat to have it install for you.">，复制这段话后粘到对话框发送，让它帮你装。</span>
+          <span data-zh="如果安装不成功，" data-en="If it fails, ">如果安装不成功，</span><button type="button" id="dsh-fail" data-zh="点击此处" data-en="click here">点击此处</button><span data-zh="，复制这段话后粘到 DSH 对话框发送，让 DeepSeek Harness 帮你装。" data-en=", copy the message and paste it into the DSH chat — DeepSeek Harness will install it for you.">，复制这段话后粘到 DSH 对话框发送，让 DeepSeek Harness 帮你装。</span>
         </div>
       </div>
 
@@ -497,16 +497,14 @@ footer a{color:var(--ink-2)}
       "地址：" + DSH_URL,
       "1) 优先走命令行：dsh plugin --profile desktop add " + DSH_URL,
       "2) 装完把 dsh-financial-skills 写进 ~/.dsh/profiles/desktop/package.json 的 dsh.profile.bundles；少这一条，侧栏不会出现入口。",
-      "3) 然后彻底退出（Cmd+Q，并确认活动监视器里没有残留进程）再打开 DSH，左侧栏应出现「金融技能」。",
-      "4) 任何一步报错，把命令原文和报错贴给我，不要跳过、也不要当成装好了。"
+      "3) 然后彻底退出再打开 DSH：macOS 按 Cmd+Q，并确认活动监视器里已没有 DSH 进程；Windows 从托盘图标右键退出，并在任务管理器里确认没有残留进程。重开后左侧栏应出现「金融技能」。"
     ].join("\n"),
     en: [
       "Please install the DSH plugin “Financial Skills” (openfcp/dsh-financial-skills, v0.2.3).",
       "Address: " + DSH_URL,
       "1) Prefer the CLI: dsh plugin --profile desktop add " + DSH_URL,
       "2) Then add dsh-financial-skills to dsh.profile.bundles in ~/.dsh/profiles/desktop/package.json — without it the sidebar entry never appears.",
-      "3) Fully quit (Cmd+Q, confirm no leftover process) and reopen DSH; “金融技能” should appear in the sidebar.",
-      "4) If any step fails, paste the exact command and error back to me. Do not skip steps or claim success."
+      "3) Fully quit and reopen DSH: on macOS press Cmd+Q and confirm the process is gone from Activity Monitor; on Windows quit from the tray icon and confirm no leftover process in Task Manager. “金融技能” should then appear in the sidebar."
     ].join("\n")
   };
   const failBtn = document.getElementById("dsh-fail");

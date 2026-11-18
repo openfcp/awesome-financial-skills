@@ -129,7 +129,7 @@ https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@main/marketplace.js
 https://github.com/openfcp/dsh-financial-skills#v0.2.3
 ```
 
-等安装完成，**彻底退出再打开 DSH**（Cmd+Q，确认活动监视器里没有残留进程），左侧栏就会出现「金融技能」：搜索、看正文、一键安装，装完当前对话里直接能用。插件实时读 `catalog.json`（TTL 6 小时，页脚可强制刷新）。
+等安装完成，**彻底退出再打开 DSH**（macOS：Cmd+Q 后确认活动监视器里没有 DSH 进程；Windows：托盘图标右键退出，任务管理器确认无残留），左侧栏就会出现「金融技能」：搜索、看正文、一键安装，装完当前对话里直接能用。插件实时读 `catalog.json`（TTL 6 小时，页脚可强制刷新）。
 
 > **地址末尾的 `#v0.2.3` 别删。** 不带 ref 时 pnpm 会把默认分支的 commit 钉进 lockfile，再点安装只会说 `Already up to date`，插件管理器就报「无法从依赖变更中确定安装了哪一个包」——**那不是装坏了，是它已经装着**。升级换新 tag 的地址；想跟最新可填 `#main`。
 
