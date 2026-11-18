@@ -13,7 +13,7 @@
 | **作者更新了正文** | **不用管**（取件器每次现取）；仅镜像包需 `WITH_MARKET=1 MARKET_FORCE=1 MARKET_ONLY=<id> ./scripts/release.sh "chore: 刷新 xx"` |
 | **下架一条技能** | 删 `catalog.json` 条目 → `WITH_MARKET=1 ./scripts/release.sh "chore: 下架 xx"` |
 | **只改文案 / 分类 / 排序** | `./scripts/release.sh "docs: …"`（带 `WITH_MARKET=1` 才会刷新市场卡片描述） |
-| **控制仓体积**（全部取件器） | 打包加 `--shim-only`：16 个包共 34 KB（当前就是这么发的） |
+| **控制仓体积**（全部取件器） | 打包加 `--shim-only`：171 个包共 360 KB（当前就是这么发的） |
 | **发布后验收** | `python3 scripts/check_market.py`（市场）+ `python3 scripts/check_clients.py`（客户端能看到哪一版） |
 | **只看不动** | `DRY=1 ./scripts/release.sh` |
 
@@ -26,7 +26,7 @@
 ```
 catalog.json
   ├─ build.py ─────────────▶ docs/catalog.js ──▶ 静态站（GitHub Pages）
-  ├─ pack_market.py ───────▶ marketplace.json（市场清单，16 条卡片）
+  ├─ pack_market.py ───────▶ marketplace.json（市场清单，171 条卡片）
   │                    └────▶ dist/pkgs/*.zip
   └─ publish_market.py ────▶ marketplace 分支（用户点装时真正下载的包）
 ```
@@ -109,8 +109,7 @@ python3 scripts/build.py --check
 期望输出：
 
 ```
-[build] 校验通过：17 条引用 / 9 个分类 / 来源 {'skillhub': 17}
-[build] 空分类：research-analysis, risk-management, …
+[build] 校验通过：172 条引用 / 9 个分类 / 来源 {'skillhub': 55, 'github': 117}
 ```
 
 看到 `仓库内出现未声明的技能正文：xx/SKILL.md` 就是踩了红线——把正文复制进仓了，删掉。
@@ -121,19 +120,19 @@ python3 scripts/build.py --check
 WITH_MARKET=1 MARKET_ONLY=new-skill-id ./scripts/release.sh "feat: 新增 中文名"
 ```
 
-`MARKET_ONLY` 只重打这一条，其余 16 个包沿用现有文件，快很多。不带它则全量重打（有缓存，也就慢几秒）。
+`MARKET_ONLY` 只重打这一条，其余 171 个包沿用现有文件，快很多。不带它则全量重打（有缓存，也就慢几秒）。
 
 期望输出（关键几行）：
 
 ```
-[build] 校验通过：17 条引用 …
-[install] 17/17 条引用可用
+[build] 校验通过：172 条引用 …
+[install] 172/172 条引用可用
 [pack] new-skill-id                          取件      2.0 KB
-[pack] --only 模式：清单合并后 17 条（本次重打 1 条，沿用 16 条）
-[publish] 17 个包，合计 2.00 MB
-[publish] marketplace → 1a2b3c4d5e（17 个包）
+[pack] --only 模式：清单合并后 172 条（本次重打 1 条，沿用 171 条）
+[publish] 172 个包，合计 0.36 MB
+[publish] marketplace → 1a2b3c4d5e（172 个包）
 [sync] 完成 9f8e7d6c5b  https://github.com/…/commit/…
-[check] ✓ 通过：清单 17 条 / 分支 17 包 / sha256 全部一致
+[check] ✓ 通过：清单 172 条 / 分支 172 包 / sha256 全部一致
 ```
 
 `[check] ✓` 是最后一道闸。**没有它就别当成完事**。
@@ -144,15 +143,15 @@ WITH_MARKET=1 MARKET_ONLY=new-skill-id ./scripts/release.sh "feat: 新增 中文
 
 市场卡片来自 `marketplace.json`，重新添加一次市场（或刷新市场源）就能看到新卡。
 
-**当前 16 条全是取件器**：点装后第一次调用时，按 `SKILL.md` 的指引跑一次 `python3 scripts/fetch.py` 取回正文。包只有 2 KB，点装瞬间完成，真正的下载发生在首次使用（从原作者处、单个技能，不在市场侧）。
+**当前 171 条全是取件器**：点装后第一次调用时，按 `SKILL.md` 的指引跑一次 `python3 scripts/fetch.py` 取回正文。包只有 2 KB，点装瞬间完成，真正的下载发生在首次使用（从原作者处、单个技能，不在市场侧）。
 
-> 如果哪天要用回「镜像包」（正文随包分发、装完离线可用），打包时去掉 `--shim-only` 即可——但那样分支体积会从 34 KB 涨回 2 MB，且每次发布都会把这份体积写进 git 历史。
+> 如果哪天要用回「镜像包」（正文随包分发、装完离线可用），打包时去掉 `--shim-only` 即可——但那样分支体积会从 360 KB 涨回近 1 MB，且每次发布都会把这份体积写进 git 历史。
 
 ---
 
 ## 4. 场景 B：作者更新了正文
 
-**现在不需要做任何事。** 16 条全是取件器，每次使用都从原作者处现取最新版，不存在"包里是旧正文"的问题。
+**现在不需要做任何事。** 171 条全是取件器，每次使用都从原作者处现取最新版，不存在"包里是旧正文"的问题。
 
 只有当某条被切成镜像包（去掉 `--shim-only` 后打包）时，才需要按下面的方式重打：
 
@@ -192,7 +191,7 @@ WITH_MARKET=1 ./scripts/release.sh "chore: 下架 xxx"
 ./scripts/release.sh "docs: 修正 xx 的描述"
 ```
 
-站点会更新。**但市场卡片的描述不会变**——它来自 `marketplace.json` 的 `description`，只有 `pack_market.py` 会写这个文件。在意的话带上 `WITH_MARKET=1`（会重打全部包，13 个取件器的 sha 都会变，属正常）。
+站点会更新。**但市场卡片的描述不会变**——它来自 `marketplace.json` 的 `description`，只有 `pack_market.py` 会写这个文件。在意的话带上 `WITH_MARKET=1`（会重打全部包，171 个取件器的 sha 都会变，属正常）。
 
 ---
 
@@ -203,10 +202,10 @@ gh auth login                 # 必需：推 main 和推分支都靠它
 git clone https://github.com/openfcp/awesome-financial-skills.git
 cd awesome-financial-skills
 python3 scripts/build.py --check          # 确认环境 OK
-python3 scripts/install.py --verify       # 确认 16 条引用都还取得到
+python3 scripts/install.py --verify       # 确认 171 条引用都还取得到
 ```
 
-`dist/` 是 gitignore 的本地产物，新克隆里没有。第一次 `pack_market.py` 只做本地打包，**不下载任何正文**（16 个取件器共 34 KB，秒出）。只有去掉 `--shim-only` 想重建镜像包时，才会从 SkillHub 下载正文。
+`dist/` 是 gitignore 的本地产物，新克隆里没有。第一次 `pack_market.py` 只做本地打包，**不下载任何正文**（171 个取件器共 360 KB，秒出）。只有去掉 `--shim-only` 想重建镜像包时，才会从 SkillHub 下载正文。
 
 > 打包全程在内存里构包，不建 `_stage` 目录、不删任何文件，重复跑不会残留。
 
@@ -232,7 +231,7 @@ python3 scripts/check_market.py        # 加 -q 只看问题
 期望最后一行：
 
 ```
-[check] ✓ 通过：清单 17 条 / 分支 17 包 / sha256 全部一致
+[check] ✓ 通过：清单 172 条 / 分支 172 包 / sha256 全部一致
 ```
 
 手工核对版（不想跑脚本时）：

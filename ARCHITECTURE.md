@@ -21,15 +21,15 @@
 
 **awesome-financial-skills**：为金融从业者（消保、合规、公文、投研、数据）策展的 AI 技能清单。
 
-它不是一个技能仓库，是**一张带坐标的目录**。仓库里没有一个技能的正文，只有 16 条「去哪儿取」的记录。
+它不是一个技能仓库，是**一张带坐标的目录**。仓库里没有一个技能的正文，只有 171 条「去哪儿取」的记录。
 
 | 事实 | 值 |
 |---|---|
-| 收录条数 | 16 |
-| 分类 | 声明 9 个，有内容 4 个（消费者保护 5 / 办公设计 5 / 数据技术 5 / 合规法务 1） |
-| 来源 | 16 条全部 SkillHub（`source.type = "skillhub"`） |
-| 许可 | MIT 3 条、proprietary 13 条 |
-| 仓库体积 | main 分支 18 个文件，`catalog.json` 21 KB |
+| 收录条数 | 171（2026-11-18） |
+| 分类 | 9 类全有内容：产品业务 28 / 研究分析 26 / 办公设计 23 / 合规法务 21 / 数据技术 18 / 投资交易 18 / 其他 19 / 消保 12 / 风险管理 6 |
+| 来源 | SkillHub 54 / GitHub 117（`source.type`） |
+| 许可 | MIT 110 / proprietary 48 / 其他 13（Apache 5、AGPL 3、CC 等） |
+| 仓库体积 | `catalog.json` 184 KB、`marketplace.json` 123 KB、站点 `catalog.js` 141 KB |
 | 站点 | https://openfcp.github.io/awesome-financial-skills/ |
 
 三条对外入口：
@@ -223,7 +223,7 @@ curl -fsSL .../main/install.sh | bash -s -- --all
 | 市场 | 类型 | 磁盘占用 | 说明 |
 |---|---|---|---|
 | `workbuddy-connector-plugins-official` | provider | **1.2 MB**（1 个文件：803 条清单） | 正文按需下载 |
-| `awesome-financial-skills`（本仓） | 远程清单 → 每条 `archive` | **12 KB**（1 个文件：16 条清单） | 正文按需下载 |
+| `awesome-financial-skills`（本仓） | 远程清单 → 每条 `archive` | **123 KB**（1 个文件：171 条清单） | 正文按需下载 |
 | `cb_teams_marketplace` | zip | 13 MB | 整包 |
 | `codebuddy-plugins-official` | zip | 46 MB | 整包，206 个插件正文全在本地 |
 | `workbuddy-wecom-unified` | zip | 44 MB | 整包 |
@@ -279,17 +279,17 @@ curl -fsSL .../main/install.sh | bash -s -- --all
 ### 7.1 分支分工
 
 ```
-main 分支（源码，18 个文件）
+main 分支（源码）
   catalog.json          坐标清单（唯一真相源）
-  marketplace.json      市场清单（16 条 archive 源，11 KB）
+  marketplace.json      市场清单（171 条 archive 源，123 KB）
   scripts/*.py          取回 / 打包 / 发布
   docs/                 静态站
 
 marketplace 分支（构建产物，只有 zip，不进 main）
-  pkgs/<id>.zip         16 个包，合计 2.0 MB
+  pkgs/<id>.zip         171 个包，合计 360 KB（全取件器）
 ```
 
-为什么分两个分支：包是构建产物、体积会涨、且不该出现在源码树的任何遍历里（R1 守卫会把 `dist/` 当正文）。用分支做分发，`main` 永远保持 20 KB 量级。
+为什么分两个分支：包是构建产物、体积会涨、且不该出现在源码树的任何遍历里（R1 守卫会把 `dist/` 当正文）。用分支做分发，`main` 只放清单与源码，不放任何正文。
 
 `marketplace.json` 里每条：
 
@@ -321,15 +321,15 @@ REDISTRIBUTABLE = {"mit","apache-2.0","bsd-2-clause","bsd-3-clause","isc","mpl-2
 | | 镜像包 | 取件器 |
 |---|---|---|
 | 条件 | `license` ∈ 白名单 **且** 未加 `--shim-only` | 其余（含 `proprietary` / 未声明 / 所有 GitHub 源） |
-| 当前条数 | **0**（已用 `--shim-only` 全量转为取件器） | **16** |
+| 当前条数 | **0**（2026-11-18 已用 `--shim-only` 全量转为取件器） | **171** |
 | 包里是什么 | SkillHub 取回的正文 + `plugin.json` + `NOTICE.md` | 只有我们自己的 3 个文件：`plugin.json` / `SKILL.md` / `scripts/fetch.py` |
-| 体积 | 63 KB / 960 KB / 983 KB（曾用过，共 1.96 MB） | 约 2.1 KB，16 个合计 **34 KB** |
+| 体积 | 曾 3 条共 532 KB（baozheng/libai/preloan-industry-dd），2026-11-18 已转取件器 | 约 2.1 KB，171 个合计 **360 KB** |
 | 点装后 | 立即可用，离线可用 | 首次使用时跑一次 `fetch.py` 现取正文 |
 | 版权处理 | `NOTICE.md` 写明作者、原页面、许可、下架通道 | 包里没有任何他人正文 |
 
 许可不明就按「未授权」处理——这是默认值，不是失败分支。
 
-**为什么连 MIT 也不做镜像了（D20）**：MIT 允许再分发，法律上没问题；但每做一条镜像，分支就多一份正文，而且每次发布都会把这份体积再写一遍 git 历史。16 条里有 3 条镜像就占 1.96 MB，涨到 1000 条时会变成上百 MB。取件器把这笔成本推给了"真正要用的人"：他点装 2 KB，首次使用时下他自己需要的那一个技能。仓里始终 34 KB，与收录条数几乎无关。
+**为什么连 MIT 也不做镜像了（D20）**：MIT 允许再分发，法律上没问题；但每做一条镜像，分支就多一份正文，而且每次发布都会把这份体积再写一遍 git 历史。171 条里曾有 3 条镜像占 532 KB，涨到 1000 条时会变成几十上百 MB。取件器把这笔成本推给了"真正要用的人"：他点装 2 KB，首次使用时下他自己需要的那一个技能。仓里始终保持在 2 KB × 条数，几乎不随正文体积增长。
 
 ### 7.3 取件器怎么工作
 
@@ -355,9 +355,9 @@ sequenceDiagram
     participant SH as SkillHub(原作者)
 
     U->>WB: 添加市场，填 marketplace.json 地址
-    WB->>GH: GET marketplace.json (11 KB)
-    GH-->>WB: 16 条清单，只有坐标
-    Note over WB: 落盘 12 KB，装 0 个技能
+    WB->>GH: GET marketplace.json (123 KB)
+    GH-->>WB: 171 条清单，只有坐标
+    Note over WB: 落盘 123 KB，装 0 个技能
     U->>WB: 点「安装 law-skills」
     WB->>MKT: GET pkgs/law-skills.zip
     MKT-->>WB: 63 KB（正文+NOTICE）
@@ -387,8 +387,8 @@ sequenceDiagram
 ## 8. 版权与下架
 
 - 清单本身 MIT；各技能正文版权归各自作者。
-- 13 条 `proprietary` 的正文**不在本仓任何位置**，取件器只是把我们自己的代码交给用户，取正文的动作发生在用户机器与原作者服务器之间。
-- 3 条 MIT 镜像包内附 `NOTICE.md`：技能名、作者、原页面、namespace、许可证、清单版本，以及下架通道。
+- 48 条 `proprietary`（及其余非 MIT 许可）的正文**不在本仓任何位置**，取件器只是把我们自己的代码交给用户，取正文的动作发生在用户机器与原作者服务器之间。
+- 曾为 3 条 MIT 镜像包附 `NOTICE.md`（技能名 / 作者 / 原页面 / 许可 / 下架通道）；2026-11-18 起全部转为取件器，当前无镜像包、无 `NOTICE.md` 随包分发。
 - 下架：issue 提一条 → 确认后 24 小时内删除对应包 + 清单条目（`pack_market.py --only` 重打、`publish_market.py` 整体替换会清掉旧包）。
 - 免责：本清单是技术资源索引，不构成投资建议、法律意见或合规承诺。
 
@@ -397,8 +397,8 @@ sequenceDiagram
 ## 9. 仓库结构与职责
 
 ```
-catalog.json            唯一真相源：分类 + 16 条引用（双语、来源、安装方式、取回规则）
-marketplace.json        WorkBuddy 市场清单（构建产物，16 条 archive 源 + sha256）
+catalog.json            唯一真相源：分类 + 171 条引用（双语、来源、安装方式、取回规则）
+marketplace.json        WorkBuddy 市场清单（构建产物，171 条 archive 源 + sha256，123 KB）
 schema.json             catalog 的 JSON Schema
 ARCHITECTURE.md         本文：机制与设计（为什么）
 MAINTAINING.md          维护手册：收录、发版、验收、排错（怎么做）
@@ -409,7 +409,7 @@ docs/
 scripts/
   install.py            读清单 → 回原件取正文 → 装进 ~/.workbuddy/skills
   add_skill.py          收录一条：inspect 读原件元信息 / add / update / list（写 catalog.json）
-  pack_market.py        出市场包（当前 --shim-only：全部取件器，16 个共 34 KB）；重写 marketplace.json
+  pack_market.py        出市场包（--shim-only：171 个取件器共 360 KB）；重写 marketplace.json
   publish_market.py     把 dist/pkgs 整体推到 marketplace 分支（API，不带 base_tree）
   build.py              校验清单 + 零正文守卫 + 生成 docs/catalog.js
   sync.py               经 GitHub API 推送 main（绕开直连 github.com 的限制）
@@ -454,12 +454,12 @@ catalog.json ──build.py──────────────▶ docs/ca
 WITH_MARKET=1 MARKET_ONLY=law-skills ./scripts/release.sh "chore: 刷新 law-skills"
 ```
 
-`pack_market.py --only` 只重打选中的包，**清单与既有 `marketplace.json` 合并**，不会把 16 条写残成 1 条（见 D15）。
+`pack_market.py --only` 只重打选中的包，**清单与既有 `marketplace.json` 合并**，不会把 171 条写残成 1 条（见 D15）。
 
 ### 只更新市场，不动站点
 
 ```bash
-python3 scripts/pack_market.py                      # 出 16 个包到 dist/pkgs，重写 marketplace.json
+python3 scripts/pack_market.py --shim-only          # 出 171 个包到 dist/pkgs，重写 marketplace.json
 python3 scripts/publish_market.py                   # 推到 marketplace 分支，打印市场源地址
 ./scripts/release.sh "chore: 更新市场清单"           # 再推 main（marketplace.json 在 main 上）
 ```
@@ -497,7 +497,7 @@ npm run serve                           # 本地预览站点 :8787
 | D2 | 删除 `official-source-qa` 这条 vendored 例外 | 它是唯一把正文放在本仓的条目；保留例外就要维护例外，收益不抵成本。收录 17 → 16 |
 | D3 | 废弃 3.0 MB 的全量市场 zip（`dist/archives/awesome-financial-skills.zip`） | 违反「添加市场只下载清单」；改为一技能一包 + 按需下载。`publish_market.py` 不带 `base_tree` 重建树，把这类历史产物一并清掉 |
 | D4 | 市场清单用 `archive` 而非 `provider` | `provider` 需应用内注册实现，第三方用不了；`archive` 支持逐条独立 URL + sha256 强校验 |
-| D5 | 13 条 proprietary 出「取件器」而不是镜像 | 未获再分发许可的正文不能进本仓（含分支产物）；取件器只有我们自己的 2 KB 代码 |
+| D5 | 非 MIT 许可出「取件器」而不是镜像 | 未获再分发许可的正文不能进本仓（含分支产物）；取件器只有我们自己的 2 KB 代码 |
 | D6 | 取件器复用 `install.py` 而不是自己实现下载 | 单一实现，避免两处漂移；取件器只有十几行 |
 | D7 | 目录名取 `SKILL.md` 的 `name` | WorkBuddy 按 `name` 触发技能；用 `id` 当目录名会「列表看得到、调用不到」 |
 | D8 | 下载失败不装空壳 | 空壳能列出、一调用就错，比装不上难排查 |
@@ -508,13 +508,14 @@ npm run serve                           # 本地预览站点 :8787
 | D13 | 市场清单先于包发布 | 清单里的 sha256 是包的指纹；包变了清单没更新 → 校验失败 |
 | D14 | 站点 `catalog.js` 打内容指纹 | Pages 的 600s 缓存会造成「改了没生效」的假故障 |
 | D15 | `pack_market.py --only` 改为与既有清单**合并** | 原实现只把选中的条目写回 `marketplace.json`，`--only law-skills` 会把 16 条写成 1 条——用户市场里其余 15 张卡直接消失。实测复现后修掉，合并结果与原清单字节一致（幂等） |
-| D16 | `release.sh` 加 `WITH_MARKET=1`（默认关） | 站点与市场是两套脚本，只跑默认流程会「站点有新卡片、市场没有」。默认关是为了不必要地重传 2 MB 包；加技能时必须显式带上 |
+| D16 | `release.sh` 加 `WITH_MARKET=1`（默认关） | 站点与市场是两套脚本，只跑默认流程会「站点有新卡片、市场没有」。默认关是为了不必每次重传整包；加技能时必须显式带上 |
 | D17 | GitHub 源一律出取件器，不做镜像 | 一个仓库可能混多种许可，整体搬运等于替作者做再分发决定。镜像分支加了硬断言（非 skillhub 源直接拒绝），市场卡片 `homepage` 按来源分别指向 SkillHub 页或仓库首页 |
 | D18 | 新增 `check_market.py` 做发布后验收 | 典型事故是「包传了清单没推」「清单改了包没重打」——两边都返回成功，只有 sha256 对不上，表现成"装不上"且难反查。脚本 30 秒给出结论，`release.sh` 在 `WITH_MARKET=1` 时自动调用（失败只提醒不中断） |
 | D19 | `publish_market.py` 只上传清单点名的包 | 下架一个技能后，本地残留 zip 会被 publish 重新推上分支，等于把已下架的正文留在仓里。现在清单是唯一真相 |
-| D20 | MIT 条目也不做镜像，全量 `--shim-only` | MIT 允许再分发，法律上没问题；但 3 条镜像就让分支占 1.96 MB，且每次发布都把这份体积再写一遍 git 历史（仓已累计到 8.4 MB，其中约 6 MB 是这类历史）。改后 16 个包共 34 KB，且这个数字几乎不随收录条数增长 |
+| D20 | MIT 条目也不做镜像，全量 `--shim-only` | MIT 允许再分发，法律上没问题；但 3 条镜像（baozheng/libai/preloan-industry-dd）占 532 KB，且每次发布都把这份体积再写一遍 git 历史。2026-11-18 全量转取件器：分支 907 KB → 360 KB，171 个包全是 2.1 KB，体积几乎只随条数增长 |
 | D21 | 打包改为「纯内存构包」，不建 `_stage`、不删文件 | 原实现先铺 `dist/_stage/<id>` 再 `rmtree`，构建中途被打断就留垃圾，而且带删除的构建在受限环境里会被拦。现在 `write_zip({路径: 内容}, out)` 直接生成 zip 字节、就地覆盖；`--only` 的孤儿包也只报告不删 |
 | D22 | 市场源推荐 jsDelivr 地址，raw 降为备用 | 实测 raw.githubusercontent.com 多次整站 30 秒零字节超时，而用户「添加市场」填的就是这个地址——填不通就等于市场加不上。`publish_market.py` 现在先打印 jsDelivr 那条 |
+| D23 | 市场卡片 `description` 开头加 `【中文名】`，`catalog.json` 不动 | WorkBuddy 卡片标题取 `name`（英文 id），代码里没有独立显示名字段，用户看不懂是哪一项。网站与 dsh 标题本就是 `name.zh`（中文），若把前缀加进 `catalog.json` 会让它们的简介重复出现中文名。故只在 `pack_market.py` 生成 `marketplace.json` 时加前缀，幂等；包内正文与 sha256 不受影响 |
 
 ---
 
@@ -522,12 +523,12 @@ npm run serve                           # 本地预览站点 :8787
 
 | 限制 | 现状 | 可能的解法 |
 |---|---|---|
-| 取件器首次使用要手动跑 `fetch.py` | 13 条都是这个体验，是一层摩擦 | 需要市场/技能支持「安装后钩子」才能自动；当前没有这个机制 |
+| 取件器首次使用要手动跑 `fetch.py` | 171 条都是这个体验，是一层摩擦 | 需要市场/技能支持「安装后钩子」才能自动；当前没有这个机制 |
 | 镜像包的 sha256 绑定上游版本 | 仅在使用镜像包时成立（当前 0 条，全是取件器，不涉及） | 若将来重建镜像：定期 `--force` 重打，或加 CI 比对 |
-| `marketplace` 分支每次整体替换 | 每次发布重传 16 个 blob（合计 34 KB），量级极小 | 无需优化 |
-| 16 条全走 SkillHub，GitHub 源的取件链路未被真实使用 | `pack_market.py` 已支持（GitHub 源出取件器、`fetch.py` 复用 `install.py` 的 github resolver），但线上没有条目验证过 | 收录第一条 GitHub 源技能时按 MAINTAINING 场景 A 走一遍并补测 |
+| `marketplace` 分支每次整体替换 | 每次发布重传 171 个 blob（合计 360 KB），量级很小 | 无需优化 |
+| 117 条 GitHub 源的取件链路未被真实端到端验证 | `pack_market.py` 已支持（GitHub 源出取件器、`fetch.py` 复用 `install.py` 的 github resolver），但线上没有条目验证过 | 收录第一条 GitHub 源技能时按 MAINTAINING 场景 A 走一遍并补测 |
 | 清单只校验「可达」，不校验内容变化 | `install.py --verify` 只确认能取到 `SKILL.md` | 可加 `--verify --strict` 比对 `name` / 版本 |
-| 声明 9 个分类，5 个空着（`research-analysis` / `risk-management` / `invest-trading` / `product-business` / `other`） | `build.py` 只打印提示，不报错；站点上这几类筛不出东西 | 要么补条目，要么删掉分类 |
+| 9 个分类均有内容（2026-11-18） | 旧的「5 类空着」已随批量收录填平，`build.py` 不再打印空类提示 | 无需处理 |
 | dsh 面板可能拿到旧清单（下发版本不受控） | 它按 `raw → fastly → gcore → cdn` 顺序取，第一个成功就用，不比新旧；jsDelivr 的 `@main` 分支缓存最长 12 小时。实测过一次 fastly 还停在上一版 | 用 `check_clients.py` 定位；等缓存过期，不改清单。根治要靠插件侧改成「多源取最新」或改用不可变 tag 地址 |
 
 ---

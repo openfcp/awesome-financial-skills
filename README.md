@@ -19,7 +19,7 @@
 - **体积膨胀**——每加一个技能就多一份正文，仓库最终会长成一个臃肿的镜像站；
 - **三份包装**——同一份正文为了喂不同客户端，还要各自生成 `package.json` / `index.js` / 插件元数据。
 
-现在的做法：`catalog.json` 里每条只记**坐标**（SkillHub 的 `namespace/slug`，或 GitHub 的 `repo/path/ref`），消费端按清单顶部的 `resolve` 规则回原件取正文。仓库体积从 22 MB 降到 20 KB 量级，收录新技能只改一行 JSON。
+现在的做法：`catalog.json` 里每条只记**坐标**（SkillHub 的 `namespace/slug`，或 GitHub 的 `repo/path/ref`），消费端按清单顶部的 `resolve` 规则回原件取正文。171 条坐标的 `catalog.json` 约 184 KB（正文一点没进仓），收录新技能只改一行 JSON。
 
 > **零正文**：仓内任何位置出现清单未声明的 `SKILL.md` 都会让构建失败——防止副本再长回来。`vendored: true` 机制保留给"正文确实必须在本仓"的特例（当前没有），用到时构建会校验目录真实存在。
 
@@ -43,15 +43,17 @@ https://cdn.jsdelivr.net/gh/openfcp/awesome-financial-skills@main/marketplace.js
 
 （备用 raw 地址：`https://raw.githubusercontent.com/openfcp/awesome-financial-skills/main/marketplace.json`，国内时常整站超时，优先用上面那条。）
 
-**添加时只下载这份清单（11 KB），不会把技能全部拉到本地。** 之后市场里出现 16 张卡，点哪张装哪张。
+**添加时只下载这份清单（约 123 KB），不会把技能全部拉到本地。** 之后市场里出现 171 张卡，点哪张装哪张。
 
-清单里每条都是 `archive` 源，**16 条全部是「取件器」**：
+清单里每条都是 `archive` 源，**171 条全部是「取件器」**：
 
 | 类型 | 条数 | 包里是什么 | 装完能不能直接用 |
 |---|---|---|---|
-| **取件器**（全部） | 16 | 只有我们自己的 `plugin.json` / `SKILL.md` / `fetch.py`，2 KB 上下 | 首次使用时跑一次 `fetch.py`，从原作者处现取正文 |
+| **取件器**（全部） | 171 | 只有我们自己的 `plugin.json` / `SKILL.md` / `fetch.py`，2 KB 上下 | 首次使用时跑一次 `fetch.py`，从原作者处现取正文 |
 
-这样做是因为：**本仓不存任何他人正文**，对方的许可是他的事，我们不替他做再分发决定。整个市场的 16 个包合计 34 KB。
+WorkBuddy 的卡片标题显示的是英文 id（ marketplace.json 的 `name`，没有独立中文字段），所以每条描述开头会自动带 `【中文名】`，方便你在市场里辨认。`catalog.json` 保持干净——网站和 dsh 本来就用中文名当标题，不受影响。
+
+这样做是因为：**本仓不存任何他人正文**，对方的许可是他的事，我们不替他做再分发决定。整个市场的 171 个包合计约 360 KB（上架时只下清单，点装才下单个 2 KB 包）。
 
 早先 MIT 许可的 3 条曾做成「镜像包」（正文随包分发，附 `NOTICE.md`），现已统一改为取件器——MIT 允许再分发，但仓更小、点装更快。如果你是作者并要求下架，到 issue 区提一条，我们 24 小时内移除对应包与清单条目。
 
@@ -64,7 +66,7 @@ WITH_MARKET=1 ./scripts/release.sh "feat: 新增 xx"   # 站点 + 市场包 + �
 只刷新市场包、不动站点：
 
 ```bash
-python3 scripts/pack_market.py     # 出 16 个包到 dist/pkgs，并重写 marketplace.json
+python3 scripts/pack_market.py --shim-only   # 出 171 个包到 dist/pkgs，并重写 marketplace.json
 python3 scripts/publish_market.py  # 推到 marketplace 分支，打印市场源地址
 ./scripts/release.sh "chore: 更新市场清单"   # marketplace.json 在 main 上，还得推一次
 ```
@@ -153,7 +155,7 @@ GitHub 源把 `source` 换成：
 ARCHITECTURE.md           架构与原理：市场机制、数据流、许可分流、决策日志
 MAINTAINING.md            维护手册：新增 / 刷新 / 下架技能的操作步骤与验收
 catalog.json              唯一真相源：分类 + 技能引用（双语、来源、安装方式、取回规则）
-marketplace.json          WorkBuddy 市场清单（构建产物，16 条 archive 源）
+marketplace.json          WorkBuddy 市场清单（构建产物，171 条 archive 源，约 123 KB）
 schema.json               catalog 的 JSON Schema（构建时校验）
 install.sh                一条命令装的引导脚本
 docs/                     GitHub Pages 站点目录（Pages 只认 / 或 /docs）
@@ -161,7 +163,7 @@ docs/                     GitHub Pages 站点目录（Pages 只认 / 或 /docs�
   catalog.js              ← 构建产物，站点内嵌数据（带内容指纹）
 scripts/
   install.py              读清单 → 回原件取正文 → 装进技能目录（WorkBuddy 侧）
-  pack_market.py          出市场包：许可允许再分发的出镜像，其余出取件器
+  pack_market.py          出市场包：--shim-only 全量取件器（当前用法）；不加则 MIT 出镜像
   publish_market.py       把 dist/pkgs 推到 marketplace 分支（整体替换）
   build.py                校验清单 + 生成 docs/catalog.js
   sync.py                 经 GitHub API 推送改动（绕开直连 github.com 的限制）
